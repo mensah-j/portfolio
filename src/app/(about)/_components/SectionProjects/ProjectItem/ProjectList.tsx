@@ -6,7 +6,7 @@ export interface ProjectListProps {
 
 export function ProjectList(props: ProjectListProps) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-16 pt-4">
       {props.projects.map((project) => (
         <ProjectItem key={project.name} {...project} />
       ))}
