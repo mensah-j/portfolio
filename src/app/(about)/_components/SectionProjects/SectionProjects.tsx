@@ -44,7 +44,7 @@ const projects = [
         , created by Gerardo Martinez.
       </p>
     ),
-    image: "/projects/enharmonic2.png",
+    image: "/projects/enharmonic.png",
   },
 ];
 
