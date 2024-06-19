@@ -16,7 +16,7 @@ export function SocialIcon(props: SocialIconProps) {
       <img
         src={`/socials/${props.name}.svg`}
         alt={props.name}
-        className="w-auto max-h-full icon"
+        className="aspect-square icon"
       />
     </a>
   );
