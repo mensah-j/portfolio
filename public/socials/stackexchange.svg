@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="9.745 2.228 44.509 58.013" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, -8.881784197001252e-16, -1.7763568394002505e-15)">
+    <linearGradient id="GRpVixdlwmrkz5DwvhaR5d" x1="32" x2="32" y1="51.109" y2="8.15" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+      <stop offset="0.04" stop-color="#0277bd"/>
+      <stop offset="0.371" stop-color="#039be5"/>
+      <stop offset="0.476" stop-color="#25aded"/>
+      <stop offset="0.59" stop-color="#43bdf4"/>
+      <stop offset="0.654" stop-color="#4fc3f7"/>
+      <stop offset="0.663" stop-color="#54c5f7"/>
+      <stop offset="0.751" stop-color="#7dd3f9"/>
+      <stop offset="0.831" stop-color="#9addfb"/>
+      <stop offset="0.899" stop-color="#ade3fc"/>
+      <stop offset="0.948" stop-color="#b3e5fc"/>
+    </linearGradient>
+    <path fill="url(#GRpVixdlwmrkz5DwvhaR5d)" d="M10,19h44v9H10V19z M54,31H10v9h44V31z M54,16v-5c0-2.209-1.791-4-4-4H14 c-2.209,0-4,1.791-4,4v5H54z M10,43v5c0,2.209,1.791,4,4,4h22v6.59c0,0.779,0.631,1.41,1.41,1.41h0.006 c0.374,0,0.733-0.149,0.997-0.413L46,52h4c2.209,0,4-1.791,4-4v-5H10z"/>
+    <linearGradient id="GRpVixdlwmrkz5DwvhaR5e" x1="36.889" x2="36.889" y1="60" y2="14.395" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+      <stop offset="0.142" stop-color="#01579b"/>
+      <stop offset="0.339" stop-color="#016fb5"/>
+      <stop offset="0.522" stop-color="#0288d1"/>
+      <stop offset="0.786" stop-color="#039be5"/>
+      <stop offset="0.969" stop-color="#81d4fa"/>
+    </linearGradient>
+    <path fill="url(#GRpVixdlwmrkz5DwvhaR5e)" d="M48.899,19H54v9H41.619L48.899,19z M54,31H37.979l-7.28,9H54V31z M54,16v-1.605L52.54,16H54z M27.058,43l-7.28,9H36v6.59c0,0.779,0.631,1.41,1.41,1.41h0.006c0.374,0,0.733-0.149,0.997-0.413L46,52h4c2.209,0,4-1.791,4-4v-5 H27.058z"/>
+  </g>
+</svg>
