@@ -30,7 +30,7 @@ export function NavigationBar() {
 
   return (
     <div className="flex justify-center w-full h-10 bg-[#6b9491]">
-      <nav className="flex flex-row items-center justify-end h-full gap-8 font-bold w-[min(100%,_var(--content-width))] pr-4">
+      <nav className="flex flex-row items-center justify-end h-full gap-8 pr-4 font-bold w-content">
         {pages.map((page) => (
           <Link
             key={page.name}
