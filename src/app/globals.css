@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --content-width: 1000px;
-}
-
 ::-webkit-scrollbar {
   background-color: #202324;
   color: #aba499;
@@ -21,5 +17,9 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .w-content {
+    width: min(100%, 1000px);
   }
 }
