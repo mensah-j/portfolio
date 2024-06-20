@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "../Section";
-import { ProjectList } from "./ProjectItem";
+import { ProjectList } from "./ProjectList";
 import { ArrowLink } from "@/app/_components/ArrowLink";
 
 const projects = [
