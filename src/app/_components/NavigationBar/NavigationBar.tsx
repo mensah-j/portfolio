@@ -11,12 +11,12 @@ export function NavigationBar() {
       path: "/",
     },
     {
-      name: "blog",
-      path: "/blog",
-    },
-    {
       name: "projects",
       path: "/projects",
+    },
+    {
+      name: "blog",
+      path: "/blog",
     },
     {
       name: "music",
