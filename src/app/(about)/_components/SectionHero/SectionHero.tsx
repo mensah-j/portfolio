@@ -2,6 +2,7 @@
 
 import { HeroMessage } from "./HeroMessage";
 import { SocialsList } from "./SocialsList";
+import arrayShuffle from "array-shuffle";
 
 export function SectionHero() {
   return (
@@ -10,8 +11,25 @@ export function SectionHero() {
         <HeroMessage
           activities={[
             "build websites.",
-            "compose early music.",
-            "do geometry.",
+            "write code.",
+            ...arrayShuffle([
+              "create animations.",
+              "do geometry.",
+              "create puzzles.",
+              "make educational videos.",
+              "create art.",
+              "learn new technologies.",
+              "analyze data.",
+              "compose music.",
+              "study physics.",
+              "optimize code.",
+              "study math.",
+              "solve puzzles.",
+              "make games.",
+              "write fugues.",
+              "write bash scripts.",
+            ]),
+            "use arch, btw.",
           ]}
         />
         <SocialsList
