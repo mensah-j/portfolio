@@ -1,13 +1,16 @@
 import React from "react";
 import { TechnologyTag, TechnologyTagProps } from "./TechnologyTag";
+import mix from "classnames";
 
 export interface ProjectItemProps {
   name: string;
-  path: string;
+  path?: string;
 
   description: React.ReactNode;
   image: string;
   technologies?: TechnologyTagProps[];
+
+  inProgress?: boolean;
 }
 
 export function ProjectItem(props: ProjectItemProps) {
@@ -27,14 +30,24 @@ export function ProjectItem(props: ProjectItemProps) {
       </a>
       <div className="flex flex-col justify-between">
         <div className="flex flex-col items-start gap-2">
-          <a
-            href={props.path}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pb-px font-extrabold transition border-b border-transparent text-md hover:border-black motion-reduce:transition-none"
-          >
-            {props.name}
-          </a>
+          <span>
+            <a
+              href={props.path}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={mix(
+                { "hover:border-black": !props.inProgress },
+                "pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none"
+              )}
+            >
+              {props.name}
+            </a>{" "}
+            {props.inProgress && (
+              <span className="inline-block text-sm font-bold text-gray-600">
+                (in progress)
+              </span>
+            )}
+          </span>
           <div className="text-[15px] overflow-ellipsis overflow-hidden">
             {props.description}
           </div>
