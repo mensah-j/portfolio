@@ -17,7 +17,6 @@ const projects = [
   },
   {
     name: "Enharmonic",
-    path: "/",
     description: (
       <p>
         Enharmonic provides a curated collection of public domain classical
@@ -66,6 +65,7 @@ const projects = [
         logo: "/technologies/express.svg",
       },
     ],
+    inProgress: true,
   },
 ];
 
