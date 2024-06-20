@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export interface PostItemProps {
+  id: number;
   name: string | React.ReactNode;
   path: string;
 
