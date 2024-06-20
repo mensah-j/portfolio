@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-screen">
           <NavigationBar />
           {children}
         </div>
