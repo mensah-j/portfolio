@@ -7,8 +7,13 @@ const projects = [
   {
     name: "Portmanteau",
     path: "https://portmanteaux.io",
-    description:
-      "Portmanteaux is an addictive word game based on composing words into large portmanteaux.",
+    description: (
+      <p>
+        Portmanteau is an addictive word game based on combining words together
+        to score points. Each new word must begin with a part of the previous
+        word (e.g. <i>portman</i> and <i>manteau</i>).
+      </p>
+    ),
     image: "/projects/portmanteaux.png",
     technologies: [
       {
