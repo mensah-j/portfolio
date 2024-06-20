@@ -73,9 +73,9 @@ const projects = [
 
 export function SectionProjects() {
   return (
-    <Section name="projects" color="#edeaea">
+    <Section name="projects" background="#edeaea">
       <ProjectList projects={projects} />
-      <ArrowLink href="/projects">See all projects</ArrowLink>
+      <ArrowLink href="/projects">see all projects</ArrowLink>
     </Section>
   );
 }
