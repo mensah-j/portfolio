@@ -7,6 +7,7 @@ import "katex/dist/katex.min.css";
 
 const posts: PostItemProps[] = [
   {
+    id: 1,
     name: (
       <span>
         Finite arithmetic progressions in{" "}
@@ -29,6 +30,7 @@ const posts: PostItemProps[] = [
     ),
   },
   {
+    id: 2,
     name: (
       <span>
         Recording on Linux with <code>bluetoothctl</code> and FluidSynth
@@ -42,6 +44,7 @@ const posts: PostItemProps[] = [
     `,
   },
   {
+    id: 3,
     name: "A quick proof of Holditch's Theorem",
     path: "/blog",
     date: "June 20, 2024",
