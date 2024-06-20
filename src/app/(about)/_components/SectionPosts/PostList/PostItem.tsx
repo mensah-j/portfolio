@@ -1,15 +1,14 @@
 "use client";
-import NanoClamp from "nanoclamp";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export interface PostItemProps {
-  name: string;
+  name: string | React.ReactNode;
   path: string;
 
   date: string;
   length: string;
-  excerpt: string;
+  excerpt: string | React.ReactNode;
 }
 
 export function PostItem(props: PostItemProps) {
@@ -17,13 +16,13 @@ export function PostItem(props: PostItemProps) {
   return (
     /* go to path on click */
     <div
-      className="flex flex-col items-start gap-4 hover:scale-[1.005] cursor-pointer"
+      className="flex flex-col items-start gap-4 hover:scale-[1.015] cursor-pointer"
       onClick={() => router.push(props.path)}
     >
       <div className="flex flex-col items-start ">
         <Link
           href={props.path}
-          className="pb-px text-[#e5d6ba] font-extrabold transition-[text-decoration] hover:decoration-[#dfc89e] underline decoration-transparent text-2xl motion-reduce:transition-none decoration-2"
+          className="text-[#e5d6ba] font-extrabold text-2xl"
         >
           {props.name}
         </Link>
@@ -33,7 +32,7 @@ export function PostItem(props: PostItemProps) {
       </div>
 
       <Link href={props.path}>
-        <p>{props.excerpt}…</p>
+        <p>{props.excerpt}</p>
       </Link>
     </div>
   );

@@ -2,33 +2,60 @@ import { ArrowLink } from "@/app/_components/ArrowLink";
 import { Section } from "../Section/Section";
 import { PostList } from "./PostList";
 import { PostItemProps } from "./PostList/PostItem";
+import Latex from "react-latex-next";
+import "katex/dist/katex.min.css";
 
 const posts: PostItemProps[] = [
   {
-    name: "Differential Geometry via Sheaves",
-    path: "/",
-    date: "December 1, 2022",
+    name: (
+      <span>
+        Finite arithmetic progressions in{" "}
+        <Latex>$\mathbb Z / q \mathbb Z$</Latex>
+      </span>
+    ),
+    path: "/blog",
+    date: "June 20, 2024",
     length: "5 min",
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+    excerpt: (
+      <p>
+        <Latex>
+          Let $q$ be a prime number and $S \subseteq \mathbb Z / q \mathbb Z$ be
+          a subset of size $n$. In this post, we devise an algorithm to
+          determine the number of arithmetic progressions of length $k$ in
+          $\mathbb Z / q \mathbb Z$ disjoint from $S$, with time complexity
+          $\mathscr O (qn \log n)$...
+        </Latex>
+      </p>
+    ),
   },
   {
-    name: "Calculus of Variations",
-    path: "/",
-    date: "December 1, 2022",
+    name: (
+      <span>
+        Recording on Linux with <code>bluetoothctl</code> and FluidSynth
+      </span>
+    ),
+    path: "/blog",
+    date: "June 20, 2024",
     length: "5 min",
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+    excerpt: `Here's how I record and synthesize MIDI performances on my Kawaii ES110 
+    with real-time MIDI visualization using FluidSynth...
+    `,
   },
   {
-    name: "Algorithms for Differential Geometry",
-    path: "/",
-    date: "December 1, 2022",
+    name: "A quick proof of Holditch's Theorem",
+    path: "/blog",
+    date: "June 20, 2024",
     length: "5 min",
-    excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+    excerpt: (
+      <p>
+        <Latex>
+          Let $C$ be a convex curve in the plane, and consider an arbitrary
+          chord of length $\ell$ between two points on $C$. Fix $p$ and $q$ such
+          that $p + q = \ell$, and consider the point that is a distance $p$
+          from one endpoint of the chord and a distance $q$ from the...
+        </Latex>
+      </p>
+    ),
   },
 ];
 

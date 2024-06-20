@@ -6,9 +6,9 @@ export interface PostListProps {
 
 export function PostList(props: PostListProps) {
   return (
-    <div className="flex flex-col gap-8 pt-4 pb-4">
+    <div className="flex flex-col gap-12 pt-4 pb-4">
       {props.posts.map((post) => (
-        <PostItem key={post.name} {...post} />
+        <PostItem {...post} />
       ))}
     </div>
   );
