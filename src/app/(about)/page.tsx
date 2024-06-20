@@ -2,6 +2,7 @@ import { SectionHero } from "./_components/SectionHero";
 import { SectionAbout } from "./_components/SectionAbout";
 import { SectionProjects } from "./_components/SectionProjects";
 import { SectionPosts } from "./_components/SectionPosts";
+import { Footer } from "./_components/Footer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <SectionAbout />
       <SectionProjects />
       <SectionPosts />
+      <Footer />
     </main>
   );
 }
