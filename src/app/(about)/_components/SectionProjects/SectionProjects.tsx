@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Section } from "../Section";
 import { ProjectList } from "./ProjectItem";
+import { ArrowLink } from "@/app/_components/ArrowLink";
 
 const projects = [
   {
@@ -74,14 +75,7 @@ export function SectionProjects() {
   return (
     <Section name="projects" color="#edeaea">
       <ProjectList projects={projects} />
-      <Link
-        className="text-gray-600 hover:text-black hover:border-black pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none"
-        href="/projects"
-      >
-        <span className="inline-flex items-center gap-1 font-bold motion-reduce:transition-none text-md hover:gap-2 transition-all">
-          See all projects <span className="text-xl font-bold">➝</span>
-        </span>
-      </Link>
+      <ArrowLink href="/projects">See all projects</ArrowLink>
     </Section>
   );
 }
