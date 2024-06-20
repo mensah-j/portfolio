@@ -25,7 +25,7 @@ export function ProjectItem(props: ProjectItemProps) {
         <img
           src={props.image}
           alt={props.name}
-          className="w-auto rounded-[4px] shadow h-full shadow-gray-600"
+          className="shrink-0 rounded-[4px] shadow h-full aspect-video shadow-gray-600"
         />
       </a>
       <div className="flex flex-col justify-between">
