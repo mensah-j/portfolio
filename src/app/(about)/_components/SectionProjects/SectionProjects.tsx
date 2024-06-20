@@ -1,6 +1,5 @@
 import { Section } from "../Section";
 import { ProjectList } from "./ProjectItem";
-import { ProjectListProps } from "./ProjectItem/ProjectList";
 
 const projects = [
   {
@@ -45,6 +44,28 @@ const projects = [
       </p>
     ),
     image: "/projects/enharmonic.png",
+    technologies: [
+      {
+        name: "Vue.js",
+        logo: "/technologies/vuejs.svg",
+      },
+      {
+        name: "Radix Vue",
+        logo: "/technologies/radix-vue.svg",
+      },
+      {
+        name: "OpenSearch",
+        logo: "/technologies/opensearch.svg",
+      },
+      {
+        name: "PostgreSQL",
+        logo: "/technologies/postgresql.svg",
+      },
+      {
+        name: "Express",
+        logo: "/technologies/express.svg",
+      },
+    ],
   },
 ];
 
