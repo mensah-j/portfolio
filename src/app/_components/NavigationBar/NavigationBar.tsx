@@ -36,7 +36,7 @@ export function NavigationBar() {
             key={page.name}
             href={page.path}
             className={`${
-              pathname === page.path ? "text-emerald-950" : "text-white"
+              pathname === page.path ? "text-[#000c09]" : "text-white"
             } hover:text-teal-900`}
           >
             {page.name}
