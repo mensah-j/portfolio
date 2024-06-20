@@ -41,7 +41,7 @@ export function SectionPosts() {
       dark={true}
     >
       <PostList posts={posts} />
-      <ArrowLink dark={true} href="/posts">
+      <ArrowLink dark={true} href="/blog">
         see all posts
       </ArrowLink>
     </Section>
