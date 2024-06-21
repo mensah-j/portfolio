@@ -32,9 +32,7 @@ export function PostItem(props: PostItemProps) {
         </span>
       </div>
 
-      <Link href={props.path}>
-        <p>{props.excerpt}</p>
-      </Link>
+      <div>{props.excerpt}</div>
     </div>
   );
 }

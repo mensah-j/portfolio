@@ -27,26 +27,7 @@ const projects = [
     description: (
       <p>
         Enharmonic provides a curated collection of public domain classical
-        recordings along with handcrafted visualizations. This project draws
-        inspiration from two other notable projects: the{" "}
-        <a
-          className="hover:underline font-bold"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://youtube.com/smalin"
-        >
-          Music Animation Machine
-        </a>
-        , created by Stephen Malinowski, and the{" "}
-        <a
-          className="hover:underline font-bold"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://youtube.com/gerubach"
-        >
-          Scrolling Bach Project
-        </a>
-        , created by Gerardo Martinez.
+        recordings along with handcrafted visualizations.
       </p>
     ),
     image: "/projects/enharmonic.png",
