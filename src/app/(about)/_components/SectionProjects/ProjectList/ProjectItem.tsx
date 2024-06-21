@@ -15,7 +15,7 @@ export interface ProjectItemProps {
 
 export function ProjectItem(props: ProjectItemProps) {
   return (
-    <div className="flex flex-row items-stretch gap-4 h-48">
+    <div className="flex flex-col sm:flex-row items-stretch gap-4">
       <a
         href={props.path}
         target="_blank"
@@ -25,7 +25,7 @@ export function ProjectItem(props: ProjectItemProps) {
         <img
           src={props.image}
           alt={props.name}
-          className="shrink-0 rounded-[4px] shadow h-full aspect-video shadow-gray-600"
+          className="shrink-0 rounded-[4px] shadow sm:h-36 md:h-48 sm:w-auto w-full aspect-video shadow-gray-600"
         />
       </a>
       <div className="flex flex-col justify-between">
@@ -52,7 +52,7 @@ export function ProjectItem(props: ProjectItemProps) {
             {props.description}
           </div>
         </div>
-        <div className="flex flex-row items-center justify-start gap-4">
+        <div className="flex flex-row flex-wrap items-center justify-start gap-3 pt-3">
           {props.technologies?.map((technology) => (
             <TechnologyTag key={technology.name} {...technology} />
           ))}
