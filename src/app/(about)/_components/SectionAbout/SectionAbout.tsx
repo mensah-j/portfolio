@@ -1,4 +1,4 @@
-import { Section } from "../Section";
+import { Section } from "@/app/_components/Section";
 
 export function SectionAbout() {
   return (
