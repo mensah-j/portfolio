@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./icon.css";
 
 interface SocialIconProps {
@@ -11,11 +12,15 @@ export function SocialIcon(props: SocialIconProps) {
       href={props.path}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-9 aspect-square"
+      className="relative flex h-9 aspect-square"
     >
-      <img
+      <Image
         src={`/socials/${props.name}.svg`}
         alt={props.name}
+        fill
+        style={{
+          objectFit: "fill",
+        }}
         className="icon"
       />
     </a>
