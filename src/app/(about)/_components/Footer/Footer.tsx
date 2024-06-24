@@ -1,5 +1,3 @@
-import { Section } from "../Section";
-
 export function Footer() {
   return (
     <footer className="w-full">
