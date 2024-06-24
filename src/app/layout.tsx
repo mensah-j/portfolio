@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { NavigationBar } from "./_components/NavigationBar";
+import "katex/dist/katex.min.css";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
