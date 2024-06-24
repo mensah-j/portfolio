@@ -1,6 +1,7 @@
 import React from "react";
 import { TechnologyTag, TechnologyTagProps } from "./TechnologyTag";
 import mix from "classnames";
+import Image from "next/image";
 
 export interface ProjectItemProps {
   name: string;
@@ -20,12 +21,16 @@ export function ProjectItem(props: ProjectItemProps) {
         href={props.path}
         target="_blank"
         rel="noopener noreferrer"
-        className="shrink-0 contents"
+        className="shrink-0 sm:h-36 md:h-48 sm:w-auto w-full aspect-video relative"
       >
-        <img
+        <Image
           src={props.image}
           alt={props.name}
-          className="shrink-0 rounded-[4px] shadow sm:h-36 md:h-48 sm:w-auto w-full aspect-video shadow-gray-600"
+          fill
+          style={{
+            objectFit: "fill",
+          }}
+          className="shrink-0 rounded-[4px] shadow  shadow-gray-600"
         />
       </a>
       <div className="flex flex-col justify-between">
@@ -37,7 +42,7 @@ export function ProjectItem(props: ProjectItemProps) {
               rel="noopener noreferrer"
               className={mix(
                 { "hover:border-black": !props.inProgress },
-                "pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none"
+                "pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none",
               )}
             >
               {props.name}

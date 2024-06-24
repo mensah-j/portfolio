@@ -1,7 +1,6 @@
-import Link from "next/link";
-import { Section } from "../Section";
-import { ProjectList } from "./ProjectList";
+import { Section } from "../../../_components/Section";
 import { ArrowLink } from "@/app/_components/ArrowLink";
+import { ProjectItem } from "./ProjectItem";
 
 const projects = [
   {
@@ -60,7 +59,11 @@ const projects = [
 export function SectionProjects() {
   return (
     <Section name="projects" background="#edeaea">
-      <ProjectList projects={projects} />
+      <div className="flex flex-col gap-16 pt-4 pb-4">
+        {projects.map((project) => (
+          <ProjectItem key={project.name} {...project} />
+        ))}
+      </div>
       <ArrowLink href="/projects">see all projects</ArrowLink>
     </Section>
   );
