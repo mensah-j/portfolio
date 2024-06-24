@@ -12,7 +12,7 @@ export function SocialIcon(props: SocialIconProps) {
       href={props.path}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative flex h-9 aspect-square"
+      className="flex relative h-9 aspect-square"
     >
       <Image
         src={`/socials/${props.name}.svg`}

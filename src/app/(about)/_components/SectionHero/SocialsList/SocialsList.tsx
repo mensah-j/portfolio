@@ -6,7 +6,7 @@ export interface SocialsListProps {
 
 export function SocialsList(props: SocialsListProps) {
   return (
-    <div className="flex flex-row items-center justify-center gap-6">
+    <div className="flex flex-row gap-6 justify-center items-center">
       {props.socials.map((social) => (
         <SocialIcon key={social.name} name={social.name} path={social.path} />
       ))}

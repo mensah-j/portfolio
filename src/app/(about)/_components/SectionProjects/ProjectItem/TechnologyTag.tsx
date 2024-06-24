@@ -7,8 +7,8 @@ export interface TechnologyTagProps {
 
 export function TechnologyTag(props: TechnologyTagProps) {
   return (
-    <div className="box-content flex flex-row items-center h-5 shrink-0 gap-1 p-1 bg-white rounded-sm shadow">
-      <div className="h-full aspect-square relative">
+    <div className="box-content flex flex-row gap-1 items-center p-1 h-5 bg-white rounded-sm shadow shrink-0">
+      <div className="relative h-full aspect-square">
         <Image
           src={props.logo}
           alt={props.name}

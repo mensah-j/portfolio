@@ -2,14 +2,14 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 
 export function SearchBar() {
   return (
-    <div>
-      <button>
+    <button className="flex flex-row gap-1 items-center w-40">
+      <div className="flex flex-row gap-1 items-center">
         <FaMagnifyingGlass />
         <span>search</span>
-        <div>
-          <span>ctrl+k</span>
-        </div>
-      </button>
-    </div>
+      </div>
+      <div>
+        <span>ctrl+k</span>
+      </div>
+    </button>
   );
 }

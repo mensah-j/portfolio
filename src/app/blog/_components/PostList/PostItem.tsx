@@ -23,13 +23,13 @@ export function PostItem(props: PostItemProps) {
   const router = useRouter();
   return (
     <div
-      className="flex flex-col items-start gap-4 hover:scale-[1.015] cursor-pointer"
+      className="flex flex-col gap-4 items-start cursor-pointer hover:scale-[1.015]"
       onClick={() => router.push(props.path)}
     >
-      <div className="flex flex-col items-start ">
+      <div className="flex flex-col items-start">
         <Link
           href={props.path}
-          className="font-extrabold text-2xl"
+          className="text-2xl font-extrabold"
           style={{ color: props.titleColor ?? "black" }}
         >
           <Markdown

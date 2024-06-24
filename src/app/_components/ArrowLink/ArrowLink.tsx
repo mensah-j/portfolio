@@ -19,7 +19,7 @@ export function ArrowLink(props: ArrowLinkProps) {
       )}
       href={props.href}
     >
-      <span className="inline-flex items-center gap-1 font-bold motion-reduce:transition-none text-md hover:gap-2 transition-all">
+      <span className="inline-flex gap-1 items-center font-bold transition-all hover:gap-2 motion-reduce:transition-none text-md">
         {props.children} <span className="text-xl font-bold">➝</span>
       </span>
     </Link>
