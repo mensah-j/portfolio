@@ -17,9 +17,8 @@ export function SortOption(props: SortOptionProps) {
 
   const currentSort = params.get("sort");
   const active = currentSort ? currentSort === props.sort : props.default;
-  console.log(props.sort, active);
   return (
-    <div className="flex flex-col items-center group">
+    <div className="flex flex-col items-center gap-px group">
       <div>
         <Link
           href={{
@@ -38,10 +37,10 @@ export function SortOption(props: SortOptionProps) {
       <div
         className={mix(
           {
-            "border-b-[16px] duration-300": active,
+            "border-b-[15px] duration-500": active,
             "group-hover:border-b-[6px] duration-100": !active,
           },
-          "w-[115%] h-4 border-[#edeaea] transition-all duration-300",
+          "w-[115%] h-[15px] border-[#edeaea] transition-all duration-500",
         )}
       ></div>
     </div>
