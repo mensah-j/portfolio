@@ -2,7 +2,7 @@
 
 import { FaSearch } from "react-icons/fa";
 
-export function SearchBar() {
+export function SearchBarTrigger() {
   return (
     <div className="flex flex-row items-center justify-between w-40 gap-1 rounded h-7 bg-[#dedede] p-1">
       <div className="flex flex-row items-center gap-1 font-bold text-[#808080] pl-1">
