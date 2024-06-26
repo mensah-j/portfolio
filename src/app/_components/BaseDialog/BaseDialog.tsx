@@ -1,13 +1,13 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import styles from "./DialogBase.module.css";
+import styles from "./BaseDialog.module.css";
 import mix from "classnames";
 
-export interface DialogBaseProps {
+export interface BaseDialogProps {
   trigger: React.ReactNode;
   children: React.ReactNode;
 }
 
-export function DialogBase(props: DialogBaseProps) {
+export function BaseDialog(props: BaseDialogProps) {
   return (
     <Dialog.Root>
       <Dialog.Trigger>{props.trigger}</Dialog.Trigger>
