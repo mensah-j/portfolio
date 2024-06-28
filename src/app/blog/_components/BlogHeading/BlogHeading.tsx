@@ -1,7 +1,6 @@
 import { Section } from "@/app/_components/Section";
 import { SortOption } from "./SortOption";
-import { SearchBarTrigger } from "@/app/_components/SearchBarTrigger";
-import { SearchDialog } from "@/app/_components/SearchDialog";
+import { BlogSearch } from "./BlogSearch";
 
 const sorts = [
   {
@@ -30,7 +29,7 @@ export function BlogHeading() {
           ))}
         </div>
         <div className="pb-4">
-          <SearchDialog trigger={<SearchBarTrigger />}></SearchDialog>
+          <BlogSearch />
         </div>
       </div>
     </Section>
