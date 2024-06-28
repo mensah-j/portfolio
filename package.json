@@ -15,6 +15,7 @@
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-visually-hidden": "^1.1.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "array-shuffle": "^3.0.0",
     "classnames": "^2.5.1",
