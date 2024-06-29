@@ -21,6 +21,7 @@
     "classnames": "^2.5.1",
     "D": "^1.0.0",
     "date-fns": "^3.6.0",
+    "debounce": "^2.1.0",
     "eslint-config-prettier": "^9.1.0",
     "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
