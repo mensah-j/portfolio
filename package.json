@@ -22,6 +22,7 @@
     "D": "^1.0.0",
     "date-fns": "^3.6.0",
     "eslint-config-prettier": "^9.1.0",
+    "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "husky": "^9.0.11",
     "js-yaml": "^4.1.0",

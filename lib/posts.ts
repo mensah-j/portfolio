@@ -2,20 +2,24 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import yaml from "js-yaml";
+import Fuse from "fuse.js";
 import { z } from "zod";
+import postsIndex from "@build/post-index.json" assert { type: "json" };
 
-const PostSchema = z.object({
+export const PostSchema = z.object({
   id: z.string(),
   date: z.string(),
   title: z.string(),
   length: z.string(),
   excerpt: z.string().optional(),
+  content: z.string().optional(),
 });
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function getPostsFromFiles(fileNames: string[]) {
-  const allPosts = fileNames
+export function createPosts() {
+  const allPosts = fs
+    .readdirSync(postsDirectory)
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, "");
 
@@ -35,6 +39,7 @@ function getPostsFromFiles(fileNames: string[]) {
         id,
         ...matterResult.data,
         excerpt: matterResult.excerpt,
+        content: matterResult.content,
       };
     })
     .map((post) => {
@@ -49,23 +54,43 @@ function getPostsFromFiles(fileNames: string[]) {
     .map((post) => ({
       ...post,
       path: `/blog/${post.id}`,
-    }));
+    }))
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 
-  return allPosts.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
+  const previewPosts = allPosts.map((post) => {
+    return { ...post, content: undefined };
   });
+
+  const fuse = new Fuse(
+    allPosts,
+    {
+      keys: ["id", "title", "content"],
+    },
+    Fuse.parseIndex(postsIndex),
+  );
+
+  const searchPosts = (query: string) => fuse.search(query);
+
+  return { all: allPosts, preview: previewPosts, search: searchPosts };
 }
 
-export function getPosts() {
-  const fileNames = fs.readdirSync(postsDirectory);
-  return getPostsFromFiles(fileNames);
-}
+export type Posts = ReturnType<typeof createPosts>;
 
-export function getPostsPreview() {
-  const fileNames = fs.readdirSync(postsDirectory).slice(0, 3);
-  return getPostsFromFiles(fileNames);
-}
+const posts = (() => {
+  if (process.env.NODE_ENV === "production") {
+    return createPosts();
+  } else {
+    if (!global.posts) {
+      global.posts = createPosts();
+    }
+    return global.posts as Posts;
+  }
+})();
+
+export default posts;
