@@ -1,12 +1,10 @@
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
-import yaml from "js-yaml";
-import Fuse from "fuse.js";
+import jsYaml from "js-yaml";
+import path from "path";
 import { z } from "zod";
-import postsIndex from "@build/post-index.json" assert { type: "json" };
 
-export const PostSchema = z.object({
+const PostSchema = z.object({
   id: z.string(),
   date: z.string(),
   title: z.string(),
@@ -15,10 +13,12 @@ export const PostSchema = z.object({
   content: z.string().optional(),
 });
 
-const postsDirectory = path.join(process.cwd(), "posts");
+export type Post = z.infer<typeof PostSchema> & { path: string };
 
-export function createPosts() {
-  const allPosts = fs
+export function parsePosts() {
+  const postsDirectory = path.join(process.cwd(), "posts");
+
+  return fs
     .readdirSync(postsDirectory)
     .map((fileName) => {
       const id = fileName.replace(/\.md$/, "");
@@ -31,7 +31,7 @@ export function createPosts() {
         excerpt_separator: "<!--more-->",
         engines: {
           yaml: (s: string) =>
-            yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+            jsYaml.load(s, { schema: jsYaml.JSON_SCHEMA }) as object,
         },
       });
 
@@ -62,35 +62,4 @@ export function createPosts() {
         return -1;
       }
     });
-
-  const previewPosts = allPosts.map((post) => {
-    return { ...post, content: undefined };
-  });
-
-  const fuse = new Fuse(
-    allPosts,
-    {
-      keys: ["id", "title", "content"],
-    },
-    Fuse.parseIndex(postsIndex),
-  );
-
-  const searchPosts = (query: string) => fuse.search(query);
-
-  return { all: allPosts, preview: previewPosts, search: searchPosts };
 }
-
-export type Posts = ReturnType<typeof createPosts>;
-
-const posts = (() => {
-  if (process.env.NODE_ENV === "production") {
-    return createPosts();
-  } else {
-    if (!global.posts) {
-      global.posts = createPosts();
-    }
-    return global.posts as Posts;
-  }
-})();
-
-export default posts;
