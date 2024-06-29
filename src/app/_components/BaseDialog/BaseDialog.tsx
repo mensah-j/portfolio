@@ -17,16 +17,13 @@ export function BaseDialog(props: BaseDialogProps) {
           <Dialog.Title>Search</Dialog.Title>
         </VisuallyHidden.Root>
         <Dialog.Overlay
-          className={mix(
-            styles["overlay"],
-            "fixed inset-0 bg-black/50 overlay",
-          )}
+          className={mix(styles["overlay"], "fixed inset-0 bg-black/50")}
         />
         <Dialog.Content
           aria-describedby={undefined}
           className={mix(
             styles["content"],
-            "fixed top-0 left-1/2 -translate-x-1/2 translate-y-[25%] w-[700px] h-60 rounded bg-white p-4",
+            "fixed top-0 left-1/2 -translate-x-1/2 translate-y-[25%] w-[700px] h-fit rounded bg-gray-100",
           )}
         >
           {props.children}

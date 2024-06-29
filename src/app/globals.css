@@ -11,6 +11,11 @@
   background-color: #454a4d;
 }
 
+mark {
+  background: inherit;
+  color: #06867e;
+}
+
 @media (prefers-color-scheme: dark) {
 }
 

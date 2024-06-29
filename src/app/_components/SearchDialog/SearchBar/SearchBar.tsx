@@ -11,7 +11,7 @@ export function SearchBar(props: SearchBarProps) {
   const [input, setInput] = useState("");
 
   return (
-    <div className="flex flex-row items-center gap-4 bg-gray-100 border border-gray-300 w-full p-4 rounded">
+    <div className="flex flex-row items-center gap-4 bg-white border border-gray-300 w-full p-4 rounded">
       <FaSearch size={25} className="text-gray-500" />
       <input
         type="text"
