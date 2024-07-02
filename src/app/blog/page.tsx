@@ -1,3 +1,4 @@
+import { Footer } from "../_components/Footer";
 import { Section } from "../_components/Section";
 import { BlogHeading } from "./_components/BlogHeading";
 import { PostItem, PostItemProps } from "./_components/PostList/PostItem";
@@ -27,15 +28,16 @@ export default function Page({
   })();
 
   return (
-    <main>
+    <main className="flex flex-col items-center grow">
       <BlogHeading />
-      <Section background="#edeaea">
+      <Section background="#e9e9e9" last>
         <div className="flex flex-col gap-12 pt-4 pb-4">
           {sortedPosts.map((post) => (
             <PostItem key={post.id} {...post} />
           ))}
         </div>
       </Section>
+      <Footer className="bg-[#f5f5f5]" />
     </main>
   );
 }
