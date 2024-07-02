@@ -29,7 +29,7 @@ export function PostItem(props: PostItemProps) {
       <div className="flex flex-col items-start">
         <Link
           href={props.path}
-          className="h-8 text-2xl font-extrabold"
+          className="sm:h-8 text-xl sm:text-2xl font-extrabold"
           style={{ color: props.titleColor ?? "black" }}
         >
           <Markdown
