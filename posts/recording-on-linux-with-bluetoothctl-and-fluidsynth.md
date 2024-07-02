@@ -1,5 +1,5 @@
 ---
-title: "Recording on Linux with <code>bluetoothctl</code> and FluidSynth"
+title: "Recording on Linux with bluetoothctl and FluidSynth"
 date: 2024-06-21
 length: "5 min"
 ---
