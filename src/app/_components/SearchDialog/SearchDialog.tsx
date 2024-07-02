@@ -53,7 +53,7 @@ export function SearchDialog(props: SearchDialogProps) {
           <div className="flex flex-row items-center gap-4 p-4">
             <div className="sm:hidden">
               <FaArrowLeft
-                className="text-xl text-gray-500 "
+                className="text-xl text-gray-500 hover:text-gray-700"
                 onClick={() => setOpen(false)}
               />
             </div>
