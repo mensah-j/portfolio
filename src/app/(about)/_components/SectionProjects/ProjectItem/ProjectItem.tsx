@@ -27,9 +27,7 @@ export function ProjectItem(props: ProjectItemProps) {
           src={props.image}
           alt={props.name}
           fill
-          style={{
-            objectFit: "fill",
-          }}
+          sizes={"100%"}
           className="shadow shrink-0 rounded-[4px] shadow-gray-600"
         />
       </a>
