@@ -13,7 +13,11 @@
 
 mark {
   background: inherit;
-  color: #06867e;
+  color: #00916c;
+}
+
+code {
+  font-family: var(--font-code);
 }
 
 @media (prefers-color-scheme: dark) {
