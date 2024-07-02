@@ -1,5 +1,5 @@
 import Fuse, { IFuseOptions } from "fuse.js";
-import postsIndex from "@build/post-index.json" assert { type: "json" };
+import postsIndex from "@prebuild/post-index.json" assert { type: "json" };
 import { Post } from "./parse";
 
 export function createPostsIndex(posts: Post[]) {
