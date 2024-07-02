@@ -1,7 +1,7 @@
 import { Footer } from "../_components/Footer";
 import { Section } from "../_components/Section";
 import { BlogHeading } from "./_components/BlogHeading";
-import { PostItem, PostItemProps } from "./_components/PostList/PostItem";
+import { PostItem, PostItemProps } from "./_components/PostItem";
 import posts from "@lib/posts";
 
 const sorts = {

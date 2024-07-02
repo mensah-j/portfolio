@@ -1,3 +1,3 @@
-import { PostItem } from "./PostItem";
+import { PostItem, PostItemProps } from "./PostItem";
 
-export { PostItem };
+export { PostItem, type PostItemProps };
