@@ -1,6 +1,7 @@
 import React from "react";
 import { TechnologyTag, TechnologyTagProps } from "./TechnologyTag";
 import mix from "classnames";
+import Image from "next/image";
 
 export interface ProjectItemProps {
   name: string;
@@ -15,21 +16,23 @@ export interface ProjectItemProps {
 
 export function ProjectItem(props: ProjectItemProps) {
   return (
-    <div className="flex flex-col sm:flex-row items-stretch gap-4">
+    <div className="flex flex-col gap-4 items-stretch sm:flex-row">
       <a
         href={props.path}
         target="_blank"
         rel="noopener noreferrer"
-        className="shrink-0 contents"
+        className="relative w-full sm:w-auto sm:h-36 md:h-48 shrink-0 aspect-video"
       >
-        <img
+        <Image
           src={props.image}
           alt={props.name}
-          className="shrink-0 rounded-[4px] shadow sm:h-36 md:h-48 sm:w-auto w-full aspect-video shadow-gray-600"
+          fill
+          sizes={"100%"}
+          className="shadow shrink-0 rounded-[4px] shadow-gray-600"
         />
       </a>
       <div className="flex flex-col justify-between">
-        <div className="flex flex-col items-start gap-2">
+        <div className="flex flex-col gap-2 items-start">
           <span>
             <a
               href={props.path}
@@ -37,7 +40,7 @@ export function ProjectItem(props: ProjectItemProps) {
               rel="noopener noreferrer"
               className={mix(
                 { "hover:border-black": !props.inProgress },
-                "pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none"
+                "pb-px font-extrabold transition border-b border-transparent text-md motion-reduce:transition-none",
               )}
             >
               {props.name}
@@ -48,11 +51,11 @@ export function ProjectItem(props: ProjectItemProps) {
               </span>
             )}
           </span>
-          <div className="text-[15px] overflow-ellipsis overflow-hidden">
+          <div className="overflow-hidden text-[15px] overflow-ellipsis">
             {props.description}
           </div>
         </div>
-        <div className="flex flex-row flex-wrap items-center justify-start gap-3 pt-3">
+        <div className="flex flex-row flex-wrap gap-3 justify-start items-center pt-3">
           {props.technologies?.map((technology) => (
             <TechnologyTag key={technology.name} {...technology} />
           ))}

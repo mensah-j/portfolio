@@ -11,6 +11,15 @@
   background-color: #454a4d;
 }
 
+mark {
+  background: inherit;
+  color: #00916c;
+}
+
+code {
+  font-family: var(--font-code);
+}
+
 @media (prefers-color-scheme: dark) {
 }
 
