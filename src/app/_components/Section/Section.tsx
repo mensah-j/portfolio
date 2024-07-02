@@ -8,12 +8,13 @@ export interface SectionProps {
   background?: string;
 
   className?: string;
+  last?: boolean;
 }
 
 export function Section(props: SectionProps) {
   return (
     <div
-      className="flex flex-col items-center w-full"
+      className={mix("flex flex-col items-center w-full", { grow: props.last })}
       style={{
         background: props.background ?? "transparent",
         color: props.foreground ?? "black",
