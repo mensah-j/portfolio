@@ -10,10 +10,7 @@ interface PageProps {
   };
 }
 
-export async function generateStaticParams() {
-  return Promise.resolve(music.ids);
-}
-
+export const dynamic = "force-dynamic";
 export default function Page(props: PageProps) {
   const currentMusic = music.get(props.params.id);
   if (!currentMusic) {
