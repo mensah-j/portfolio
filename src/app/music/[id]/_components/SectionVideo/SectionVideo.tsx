@@ -31,12 +31,16 @@ export function SectionVideo(props: SectionVideoProps) {
             </div>
             <div className="flex flex-row gap-2">
               <MusicOptionShare />
-              <MusicOptionScore id={props.music.id} />
+              {props.music.type === "composition" && (
+                <MusicOptionScore id={props.music.id} />
+              )}
               <MusicOptionYoutube video={props.music.video} />
             </div>
           </div>
         </div>
-        <MusicNotes description={props.music.description} />
+        {props.music.description && (
+          <MusicNotes description={props.music.description} />
+        )}
       </Section>
     </>
   );

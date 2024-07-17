@@ -9,7 +9,7 @@ const MusicSchema = z.object({
   type: z.union([z.literal("composition"), z.literal("improvisation")]),
   date: z.string(),
   title: z.string(),
-  video: z.string().optional(),
+  video: z.string(),
   description: z.string().optional(),
 });
 

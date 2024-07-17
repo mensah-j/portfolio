@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import * as Toast from "@radix-ui/react-toast";
-import * as Tooltip from "@radix-ui/react-tooltip";
 import { Manrope, Inconsolata } from "next/font/google";
 import { NavigationBar } from "./_components/NavigationBar";
 import "./globals.css";

@@ -3,7 +3,6 @@
 import { ShareDialog } from "@/app/_components/ShareDialog";
 import { Music } from "@lib/music";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaShareAlt, FaYoutube } from "react-icons/fa";
@@ -60,16 +59,18 @@ export function MusicItemOptions(props: MusicItemOptionsProps) {
               <span>share</span>
             </button>
           </MusicItemOption>
-          <MusicItemOption
-            onSelect={() =>
-              window.open(`/music/scores/${props.music.id}`, "_blank")
-            }
-          >
-            <div className="flex flex-row gap-2 pl-3 pr-3 pt-2 pb-2 items-center">
-              <MdLibraryMusic size={16} />
-              <span>view score</span>
-            </div>
-          </MusicItemOption>
+          {props.music.type === "composition" && (
+            <MusicItemOption
+              onSelect={() =>
+                window.open(`/music/scores/${props.music.id}`, "_blank")
+              }
+            >
+              <div className="flex flex-row gap-2 pl-3 pr-3 pt-2 pb-2 items-center">
+                <MdLibraryMusic size={16} />
+                <span>view score</span>
+              </div>
+            </MusicItemOption>
+          )}
 
           <MusicItemOption
             onSelect={() =>
