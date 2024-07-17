@@ -19,7 +19,7 @@ export function BaseDialog(props: BaseDialogProps) {
           <Dialog.Title>{props.title}</Dialog.Title>
         </VisuallyHidden.Root>
         <Dialog.Overlay
-          className={mix(styles["overlay"], "fixed inset-0 bg-black/50")}
+          className={mix(styles.overlay, "fixed inset-0 bg-black/50")}
           onClick={(e) => {
             e.stopPropagation();
             props.onClose && props.onClose();
@@ -28,7 +28,7 @@ export function BaseDialog(props: BaseDialogProps) {
         <Dialog.Content
           aria-describedby={undefined}
           className={mix(
-            styles["content"],
+            styles.content,
             props.className ??
               "overflow-hidden fixed shadow-lg shadow-[#575757] top-0 left-0 sm:left-1/2 sm:-translate-x-1/2 sm:translate-y-[100px] w-full sm:w-[600px] md:w-[700px] h-full sm:h-fit sm:rounded bg-gray-100",
           )}

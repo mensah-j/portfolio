@@ -9,7 +9,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 
 type TextMap = { node: ChildNode; index: number }[];
-type IntervalArray = Readonly<[number, number][]>;
+type IntervalArray = readonly [number, number][];
 
 function compileMarkdownToDOM(markdown: string) {
   const file = unified()

@@ -30,7 +30,7 @@ const music = (() => {
     if (!global.music) {
       global.music = createMusic();
     }
-    return global.music as ReturnType<typeof createMusic>;
+    return global.music;
   }
 })();
 

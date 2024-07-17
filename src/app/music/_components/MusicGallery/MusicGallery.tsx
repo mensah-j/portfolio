@@ -49,8 +49,8 @@ export function MusicGallery(props: MusicGalleryProps) {
           <div className="hidden sm:block">
             <SearchBarDefault
               onInputChange={debounce(
-                (query) =>
-                  search(query).then((r) =>
+                (query: string) =>
+                  void search(query).then((r) =>
                     setSearchResults(query ? r : props.music),
                   ),
                 200,
@@ -71,7 +71,9 @@ export function MusicGallery(props: MusicGalleryProps) {
                   return open;
                 },
               }}
-              search={(query) => search(query).then((r) => setSearchResults(r))}
+              search={(query: string) =>
+                void search(query).then((r) => setSearchResults(r))
+              }
             >
               <div className="p-4 pt-2 flex-col">
                 <MusicKindSelector

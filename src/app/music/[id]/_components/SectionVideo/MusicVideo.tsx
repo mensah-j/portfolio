@@ -14,6 +14,10 @@ export function MusicVideo(props: MusicVideoProps) {
   const videoContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!document) {
+      return;
+    }
+
     const player = new Plyr("#player", {
       keyboard: { focused: true, global: true },
       youtube: {
@@ -32,8 +36,15 @@ export function MusicVideo(props: MusicVideoProps) {
     document.querySelector(".plyr iframe")?.setAttribute("tabIndex", "-1");
 
     player.on("ready", () => {
-      player.play();
-      player.pause();
+      const playPromise = player.play();
+
+      if (playPromise instanceof Promise) {
+        void playPromise.then(() => {
+          player.pause();
+        });
+      } else {
+        player.pause();
+      }
 
       setInterval(() => {
         if (player.duration - player.currentTime < 0.1) {
@@ -45,7 +56,7 @@ export function MusicVideo(props: MusicVideoProps) {
     });
 
     player.on("statechange", (e) => {
-      if (e.detail.code === 1) {
+      if ((e.detail.code as number) === 1) {
         document
           .querySelector(".plyr progress")
           ?.classList.remove("plyr-progress-hidden");
@@ -53,6 +64,7 @@ export function MusicVideo(props: MusicVideoProps) {
     });
 
     player.on("enterfullscreen", () => {
+      // eslint-disable-next-line
       player.embed?.setPlaybackQuality("hd1080");
       document
         .querySelector(".plyr__video-wrapper")
@@ -72,6 +84,7 @@ export function MusicVideo(props: MusicVideoProps) {
     });
 
     player.on("qualitychange", () => {
+      // eslint-disable-next-line
       player.embed?.setPlaybackQuality("hd1080");
     });
   });

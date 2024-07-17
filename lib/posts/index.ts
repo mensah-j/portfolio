@@ -23,7 +23,7 @@ const posts = (() => {
     if (!global.posts) {
       global.posts = createPosts();
     }
-    return global.posts as ReturnType<typeof createPosts>;
+    return global.posts;
   }
 })();
 

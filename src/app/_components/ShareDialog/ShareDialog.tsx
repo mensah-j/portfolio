@@ -82,8 +82,14 @@ export function ShareDialog(props: ShareDialogProps) {
         </div>
         <div
           onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            setCopied(true);
+            navigator.clipboard
+              .writeText(window.location.href)
+              .then(() => {
+                setCopied(true);
+              })
+              .catch(() => {
+                setCopied(false);
+              });
           }}
           className="flex flex-row justify-between items-center w-full p-2 bg-gray-300 rounded cursor-pointer"
         >

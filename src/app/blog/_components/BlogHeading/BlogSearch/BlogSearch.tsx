@@ -29,7 +29,11 @@ export function BlogSearch() {
         </>
       }
       search={(query) => {
-        search(query).then((results) => setResults(results));
+        search(query)
+          .then((results) => setResults(results))
+          .catch(() => {
+            setResults([]);
+          });
       }}
       listener={{
         type: "keydown",

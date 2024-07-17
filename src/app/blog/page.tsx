@@ -16,7 +16,7 @@ const sorts = {
 export default function Page({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Record<string, string | string[] | undefined>;
 }) {
   const sortedPosts = (() => {
     const sort = searchParams.sort;
