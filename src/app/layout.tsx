@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import * as Toast from "@radix-ui/react-toast";
+import * as Tooltip from "@radix-ui/react-tooltip";
 import { Manrope, Inconsolata } from "next/font/google";
 import { NavigationBar } from "./_components/NavigationBar";
 import "./globals.css";
@@ -22,11 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={codeFont.variable}>
-      <body className={manrope.className}>
-        <div className="flex flex-col min-h-screen">
-          <NavigationBar />
-          {children}
-        </div>
+      <body id="body-hook" className={manrope.className}>
+        <Toast.Provider>
+          <div className="flex flex-col min-h-screen w-full">
+            <NavigationBar />
+            {children}
+          </div>
+
+          <Toast.Viewport className="fixed flex flex-col gap-2 z-50 bottom-0 right-0 p-6" />
+        </Toast.Provider>
       </body>
     </html>
   );

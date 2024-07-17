@@ -20,7 +20,7 @@
 @keyframes contentShow {
   from {
     opacity: 0;
-    transform: translate(-50%, 90px) scale(0.96);
+    transform: translate(-50%, 90px) scale(1);
   }
   to {
     opacity: 1;

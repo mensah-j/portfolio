@@ -40,7 +40,7 @@ export function SortOption(props: SortOptionProps) {
             "border-b-[15px] duration-500": active,
             "group-hover:border-b-[6px] duration-100": !active,
           },
-          "w-[115%] h-[15px] border-[#e9e9e9] transition-[border-width] duration-500",
+          "w-[115%] h-[15px] border-[#f0f0f0] transition-[border-width] duration-500",
         )}
       ></div>
     </div>

@@ -1,39 +1,43 @@
 "use client";
-import { SearchTrigger } from "./SearchTrigger";
 import { BaseDialog } from "../BaseDialog";
 import { SearchBar } from "./SearchBar";
 import debounce from "debounce";
 import { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import mix from "classnames";
 
 export interface SearchDialogProps {
   search: (query: string) => void;
+  listener?: {
+    type: keyof DocumentEventMap;
+    action: (e: Event, open: boolean) => boolean;
+  };
 
+  className?: string;
+
+  trigger: React.ReactNode;
   children: React.ReactNode;
 }
 
 export function SearchDialog(props: SearchDialogProps) {
   const [open, setOpen] = useState(false);
-  const ctrlKListener = (e: KeyboardEvent) => {
-    if (e.key === "k" && e.ctrlKey) {
-      e.preventDefault();
-      setOpen(!open);
-    }
-  };
-
-  const escListener = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      e.preventDefault();
-      setOpen(false);
+  const dialogListener = (e: Event) => {
+    if (props.listener) {
+      setOpen(props.listener.action(e, open));
     }
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", ctrlKListener);
-    document.addEventListener("keydown", escListener);
+    if (!props.listener) {
+      return;
+    }
+
+    window.addEventListener(props.listener.type, dialogListener);
     return () => {
-      document.removeEventListener("keydown", ctrlKListener);
-      document.removeEventListener("keydown", escListener);
+      if (!props.listener) {
+        return;
+      }
+      window.removeEventListener(props.listener.type, dialogListener);
     };
   });
 
@@ -46,10 +50,10 @@ export function SearchDialog(props: SearchDialogProps) {
           setOpen(!open);
         }}
       >
-        <SearchTrigger />
+        {props.trigger}
       </button>
-      <BaseDialog open={open} onClose={() => setOpen(false)}>
-        <div className="flex flex-col h-full">
+      <BaseDialog title="Search" open={open} onClose={() => setOpen(false)}>
+        <div className={mix("flex flex-col h-full", props.className)}>
           <div className="flex flex-row items-center gap-4 p-4">
             <div className="sm:hidden">
               <FaArrowLeft

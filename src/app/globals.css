@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
 ::-webkit-scrollbar {
   background-color: #202324;
   color: #aba499;
@@ -9,6 +12,10 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: #454a4d;
+}
+
+#body-hook[data-scroll-locked] {
+  margin: 0 !important;
 }
 
 mark {

@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { search } from "./search";
-import { SearchDialog } from "@/app/_components/SearchDialog";
+import {
+  SearchDialog,
+  SearchTriggerCtrlK,
+  SearchTriggerIcon,
+} from "@/app/_components/SearchDialog";
 import { BlogSearchFooter } from "./BlogSearchFooter";
 import {
   BlogSearchResultList,
@@ -14,8 +18,35 @@ export function BlogSearch() {
 
   return (
     <SearchDialog
+      trigger={
+        <>
+          <div className="hidden sm:block">
+            <SearchTriggerCtrlK />
+          </div>
+          <div className="sm:hidden">
+            <SearchTriggerIcon />
+          </div>
+        </>
+      }
       search={(query) => {
         search(query).then((results) => setResults(results));
+      }}
+      listener={{
+        type: "keydown",
+        action: (e: Event, open: boolean) => {
+          const event = e as KeyboardEvent;
+          if (event.key === "k" && event.ctrlKey) {
+            event.preventDefault();
+            return !open;
+          }
+
+          if (event.key == "Escape") {
+            event.preventDefault();
+            return false;
+          }
+
+          return open;
+        },
       }}
     >
       <BlogSearchResultList results={results} />

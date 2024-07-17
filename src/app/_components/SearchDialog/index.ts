@@ -1,3 +1,5 @@
 import { SearchDialog } from "./SearchDialog";
+import { SearchTriggerCtrlK } from "./SearchTriggerCtrlK";
+import { SearchTriggerIcon } from "./SearchTriggerIcon";
 
-export { SearchDialog };
+export { SearchDialog, SearchTriggerCtrlK, SearchTriggerIcon };
