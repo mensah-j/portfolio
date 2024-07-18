@@ -21,7 +21,7 @@ export function ProjectItem(props: ProjectItemProps) {
       >
         <Image
           priority={true}
-          src={`/projects/thumb/${props.project.id}`}
+          src={`http://localhost:3000/projects/thumb/${props.project.id}`}
           alt={props.project.id}
           fill
           sizes={"100%"}

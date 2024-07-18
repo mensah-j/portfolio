@@ -88,6 +88,7 @@ export function ShareDialog(props: ShareDialogProps) {
               >
                 <div className="aspect-square">
                   <Image
+                    priority
                     width={48}
                     height={48}
                     alt={socialMedia.label}
