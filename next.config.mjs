@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: "img.youtube.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "127.0.0.1",
+        pathname: "**",
+      },
     ],
   },
   webpack: (config) => {
