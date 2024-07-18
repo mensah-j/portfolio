@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import * as Toast from "@radix-ui/react-toast";
 import { Manrope, Inconsolata } from "next/font/google";
 import { NavigationBar } from "./_components/NavigationBar";
@@ -13,7 +13,29 @@ const codeFont = Inconsolata({
 
 export const metadata: Metadata = {
   title: "Jeffery Mensah",
-  description: "Personal Website",
+  description:
+    "Recent MIT graduate (SB ‘24, Mathematics and Physics) passionate about solving problems with technology.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+      },
+    ],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
