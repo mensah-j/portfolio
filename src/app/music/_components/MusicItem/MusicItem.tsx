@@ -1,6 +1,8 @@
+"use client";
+
 import { Music } from "@lib/music";
 import { MusicItemOptions } from "./MusicItemOptions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,8 +14,13 @@ export interface MusicItemProps {
 }
 
 export function MusicItem(props: MusicItemProps) {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const thumbnails = [
-    `/music/thumb/${props.path}/thumb.png`,
+    `${isClient ? window.location.origin : ""}/music/thumb/${props.path}/thumb.png`,
     `https://img.youtube.com/vi/${props.music.video}/maxresdefault.jpg`,
     `https://img.youtube.com/vi/${props.music.video}/hqdefault.jpg`,
     `https://img.youtube.com/vi/${props.music.video}/mqdefault.jpg`,

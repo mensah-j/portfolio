@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { TechnologyTag } from "./TechnologyTag";
 import mix from "classnames";
 import Image from "next/image";
@@ -11,6 +13,12 @@ export interface ProjectItemProps {
 }
 
 export function ProjectItem(props: ProjectItemProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="flex flex-col gap-4 items-stretch sm:flex-row">
       <a
@@ -21,7 +29,7 @@ export function ProjectItem(props: ProjectItemProps) {
       >
         <Image
           priority={true}
-          src={`http://localhost:3000/projects/thumb/${props.project.id}`}
+          src={`${isClient ? window.location.origin : ""}/projects/thumb/${props.project.id}`}
           alt={props.project.id}
           fill
           sizes={"100%"}

@@ -3,7 +3,7 @@ import { Section } from "@/app/_components/Section";
 import { Music } from "@lib/music";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactShowMoreText from "react-show-more-text";
 
 export interface MusicLatestProps {
@@ -11,8 +11,13 @@ export interface MusicLatestProps {
 }
 
 export function MusicLatest(props: MusicLatestProps) {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const thumbnails = [
-    `/music/thumb/${props.latest.path}/thumb.png`,
+    `${isClient ? window.location.origin : ""}/music/thumb/${props.latest.path}/thumb.png`,
     `https://img.youtube.com/vi/${props.latest.video}/maxresdefault.jpg`,
     `https://img.youtube.com/vi/${props.latest.video}/hqdefault.jpg`,
     `https://img.youtube.com/vi/${props.latest.video}/mqdefault.jpg`,
