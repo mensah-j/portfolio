@@ -5,6 +5,10 @@ import { MusicLatest } from "./_components/MusicLatest";
 import { MusicAbout } from "./_components/MusicAbout";
 import { MusicGallery } from "./_components/MusicGallery/MusicGallery";
 
+export const metadata = {
+  title: "Jeffery Mensah | Music",
+};
+
 export default function Page() {
   return (
     <main className="flex flex-col items-center grow">

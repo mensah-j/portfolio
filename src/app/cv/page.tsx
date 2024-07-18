@@ -3,6 +3,10 @@ import { MarkdownGeneral } from "../_components/MarkdownGeneral/MarkdownGeneral"
 import { Section } from "../_components/Section";
 import cv from "./cv.md";
 
+export const metadata = {
+  title: "Jeffery Mensah | CV",
+};
+
 export default function Page() {
   return (
     <main className="flex flex-col items-center grow">

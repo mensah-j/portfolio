@@ -13,6 +13,10 @@ const sorts = {
   },
 };
 
+export const metadata = {
+  title: "Jeffery Mensah | Blog",
+};
+
 export default function Page({
   searchParams,
 }: {

@@ -2,6 +2,10 @@ import { Footer } from "../_components/Footer";
 import { Section } from "../_components/Section";
 import { SectionProjects } from "./_components/SectionProjects";
 
+export const metadata = {
+  title: "Jeffery Mensah | Projects",
+};
+
 export default function Page() {
   return (
     <main className="flex flex-col items-center grow">
