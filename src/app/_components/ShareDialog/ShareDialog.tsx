@@ -1,9 +1,10 @@
+"use client";
+
 import * as Toast from "@radix-ui/react-toast";
 import { MdClose } from "react-icons/md";
 import { BaseDialog } from "../BaseDialog";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PiCopyBold } from "react-icons/pi";
 import "./toast.css";
 import mix from "classnames";
@@ -11,17 +12,20 @@ import mix from "classnames";
 const socialMedias = [
   {
     label: "twitter",
-    url: "https://twitter.com/share?url=",
+    url: (link: string, title: string) =>
+      `https://x.com/intent/tweet?url=${link}&text=${title}`,
     icon: "/socials/twitter.svg",
   },
   {
     label: "facebook",
-    url: "https://www.facebook.com/sharer/sharer.php?u=",
+    url: (link: string) =>
+      `https://www.facebook.com/sharer/sharer.php?u=${link}`,
     icon: "/socials/facebook.svg",
   },
   {
     label: "reddit",
-    url: "https://reddit.com/submit?url=",
+    url: (link: string, title: string) =>
+      `https://reddit.com/submit?url=${link}&title=${title}`,
     icon: "/socials/reddit.svg",
   },
 ];
@@ -30,12 +34,24 @@ export interface ShareDialogProps {
   open: boolean;
   setOpen: (open: boolean) => void;
 
+  title?: string;
   link?: string;
 }
 
 export function ShareDialog(props: ShareDialogProps) {
-  const pathname = usePathname();
   const [copied, setCopied] = useState(false);
+
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const copyLink = () => {
+    if (isClient && window) {
+      return window.location.href;
+    }
+    return "";
+  };
 
   return (
     <BaseDialog
@@ -59,7 +75,10 @@ export function ShareDialog(props: ShareDialogProps) {
             {socialMedias.map((socialMedia) => (
               <a
                 key={socialMedia.label}
-                href={`${socialMedia.url}${pathname}`}
+                href={socialMedia.url(
+                  props.link ?? copyLink(),
+                  props.title ?? "",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={mix(
@@ -83,7 +102,7 @@ export function ShareDialog(props: ShareDialogProps) {
         <div
           onClick={() => {
             navigator.clipboard
-              .writeText(window.location.href)
+              .writeText(copyLink())
               .then(() => {
                 setCopied(true);
               })
@@ -94,7 +113,7 @@ export function ShareDialog(props: ShareDialogProps) {
           className="flex flex-row justify-between items-center w-full p-2 bg-gray-300 rounded cursor-pointer"
         >
           <span className="font-semibold text-sm line-clamp-1">
-            {props.link ?? window.location.href}
+            {props.link ?? copyLink()}
           </span>
           <PiCopyBold size={20} className="text-gray-700" />
         </div>
