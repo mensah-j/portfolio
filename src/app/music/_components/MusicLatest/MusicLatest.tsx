@@ -1,9 +1,9 @@
 "use client";
+
 import { Section } from "@/app/_components/Section";
 import { Music } from "@lib/music";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import ReactShowMoreText from "react-show-more-text";
 
 export interface MusicLatestProps {
@@ -11,20 +11,6 @@ export interface MusicLatestProps {
 }
 
 export function MusicLatest(props: MusicLatestProps) {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const thumbnails = [
-    `${isClient ? window.location.origin : ""}/music/thumb/${props.latest.path}/thumb.png`,
-    `https://img.youtube.com/vi/${props.latest.video}/maxresdefault.jpg`,
-    `https://img.youtube.com/vi/${props.latest.video}/hqdefault.jpg`,
-    `https://img.youtube.com/vi/${props.latest.video}/mqdefault.jpg`,
-    `https://img.youtube.com/vi/${props.latest.video}/sddefault.jpg`,
-  ];
-  const [thumbnailIndex, setThumbnailIndex] = useState(0);
-
   return (
     <Section name="latest" background="#f4f4f4" className="pb-10">
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-8 w-full p-2 sm:p-0">
@@ -35,13 +21,8 @@ export function MusicLatest(props: MusicLatestProps) {
           <Image
             className="object-cover"
             priority={true}
-            src={thumbnails[thumbnailIndex]}
+            src={`https://img.youtube.com/vi/${props.latest.video}/maxresdefault.jpg`}
             alt={props.latest.title}
-            onError={() => {
-              if (thumbnailIndex < thumbnails.length - 1) {
-                setThumbnailIndex(thumbnailIndex + 1);
-              }
-            }}
             fill
             sizes={"100%"}
           />

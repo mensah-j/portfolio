@@ -16,10 +16,6 @@ const nextConfig = {
         hostname: "img.youtube.com",
         pathname: "**",
       },
-      {
-        hostname: "**",
-        pathname: "**",
-      },
     ],
   },
   webpack: (config) => {
