@@ -17,7 +17,8 @@ const nextConfig = {
         pathname: "**",
       },
       {
-        hostname: "localhost",
+        protocol: "https",
+        hostname: "**",
         pathname: "**",
       },
     ],
