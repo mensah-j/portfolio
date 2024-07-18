@@ -14,7 +14,7 @@ export interface PostHeadingProps {
 
 export function PostHeading(props: PostHeadingProps) {
   return (
-    <div className="flex flex-col gap-4 pt-5 w-full">
+    <div className="flex flex-col gap-2 pt-5 w-full">
       <h1 className="text-4xl font-extrabold pt-5">
         <Markdown
           remarkPlugins={[remarkMath]}
