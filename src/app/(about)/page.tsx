@@ -6,7 +6,7 @@ import { Footer } from "../_components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center grow">
       <SectionHero />
       <SectionAbout />
       <SectionProjects />

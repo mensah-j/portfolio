@@ -1,9 +1,6 @@
 import { formatDate, parseISO } from "date-fns";
-import Markdown from "react-markdown";
-import rehypeKatex from "rehype-katex";
-import rehypeRaw from "rehype-raw";
-import remarkMath from "remark-math";
 import { PostOptions } from "./PostOptions";
+import { MarkdownGeneral } from "@/app/_components/MarkdownGeneral/MarkdownGeneral";
 
 export interface PostHeadingProps {
   title: string;
@@ -16,20 +13,7 @@ export function PostHeading(props: PostHeadingProps) {
   return (
     <div className="flex flex-col gap-2 pt-5 w-full">
       <h1 className="text-4xl font-extrabold pt-5">
-        <Markdown
-          remarkPlugins={[remarkMath]}
-          rehypePlugins={[
-            () =>
-              rehypeKatex({
-                macros: {
-                  "\\abs": "|#1|",
-                },
-              }),
-            rehypeRaw,
-          ]}
-        >
-          {props.title}
-        </Markdown>
+        <MarkdownGeneral>{props.title}</MarkdownGeneral>
       </h1>
       <div className="flex flex-row justify-between items-end border-b pb-3">
         <div className="flex flex-col shrink-0 font-semibold ">

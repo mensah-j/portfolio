@@ -29,6 +29,7 @@ export function MusicLatest(props: MusicLatestProps) {
         >
           <Image
             className="object-cover"
+            priority={true}
             src={thumbnails[thumbnailIndex]}
             alt={props.latest.title}
             onError={() => {
