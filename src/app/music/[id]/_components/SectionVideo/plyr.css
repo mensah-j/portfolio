@@ -1050,11 +1050,12 @@ a.plyr__control:before {
 .plyr__video-embed iframe,
 .plyr__video-wrapper--fixed-ratio video {
   border: 0;
-  height: 400%;
-  left: 0;
+  height: 1000%;
+  left: -200%;
   position: absolute;
-  top: -150%;
-  width: 100%;
+  top: -450%;
+  width: 500%;
+  transform: scale(0.2);
   pointer-events: none;
 }
 

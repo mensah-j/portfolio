@@ -11,6 +11,13 @@ interface PageProps {
   };
 }
 
+export function generateMetadata({ params }: PageProps) {
+  const currentPost = posts.get(params.id);
+  return {
+    title: currentPost?.title,
+  };
+}
+
 export function generateStaticParams() {
   return posts.all.map((post) => ({
     id: post.id,

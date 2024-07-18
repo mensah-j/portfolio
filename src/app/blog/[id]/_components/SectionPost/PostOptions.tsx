@@ -13,7 +13,8 @@ export function PostOptions() {
         className="flex flex-row items-center justify-center gap-2 text-gray-800 cursor-pointer hover:bg-[#bfd6d0] p-2 sm:pr-[9px] sm:pl-[9px] sm:pt-[5px] sm:pb-[5px] rounded-full"
       >
         <FaShareAlt size={16} />
-        share
+
+        <span className="hidden sm:inline">share</span>
       </button>
       <a
         href="https://github.com/mensah-j/portfolio/discussions/new?category=general"
@@ -22,7 +23,7 @@ export function PostOptions() {
         className="flex flex-row items-center gap-2 text-gray-800 cursor-pointer hover:bg-[#bfd6d0] p-2 sm:pr-[9px] sm:pl-[9px] sm:pt-[5px] sm:pb-[5px] rounded-full"
       >
         <FaGithub size={19} />
-        make a suggestion
+        <span className="hidden sm:inline">discuss</span>
       </a>
 
       <ShareDialog open={open} setOpen={setOpen} />

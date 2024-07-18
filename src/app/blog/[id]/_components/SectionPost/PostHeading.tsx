@@ -11,16 +11,16 @@ export interface PostHeadingProps {
 
 export function PostHeading(props: PostHeadingProps) {
   return (
-    <div className="flex flex-col gap-2 pt-5 w-full">
-      <h1 className="text-4xl font-extrabold pt-5">
+    <div className="flex flex-col gap-2 sm:pt-5 w-full">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold pt-3 sm:pt-5">
         <MarkdownGeneral>{props.title}</MarkdownGeneral>
       </h1>
       <div className="flex flex-row justify-between items-end border-b pb-3">
         <div className="flex flex-col shrink-0 font-semibold ">
-          <span>
+          <span className="text-sm sm:text-base">
             {props.author} • {formatDate(parseISO(props.date), "MMMM d, yyyy")}
           </span>
-          <span className="text-sm text-gray-800 font-semibold">
+          <span className="text-xs sm:text-sm text-gray-800 font-semibold">
             {props.length} read
           </span>
         </div>

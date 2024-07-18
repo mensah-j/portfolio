@@ -47,6 +47,9 @@ export function MusicVideo(props: MusicVideoProps) {
         player.pause();
       }
 
+      // eslint-disable-next-line
+      player.embed?.setSize(1920, 1080);
+
       setInterval(() => {
         if (player.duration - player.currentTime < 0.1) {
           player.currentTime = 0;
