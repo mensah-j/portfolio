@@ -3,6 +3,7 @@ import music from "@lib/music";
 import { MusicGallery } from "../_components/MusicGallery";
 import { SectionVideo } from "./_components/SectionVideo";
 import { notFound } from "next/navigation";
+import { Footer } from "@/app/_components/Footer";
 
 interface PageProps {
   params: {
@@ -21,6 +22,7 @@ export default function Page(props: PageProps) {
     <>
       <SectionVideo music={currentMusic} />
       <MusicGallery removeLabel music={music.all} />
+      <Footer className="bg-[#f4f4f4]" />
     </>
   );
 }
