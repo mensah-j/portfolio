@@ -25,6 +25,7 @@ export function MusicVideo(props: MusicVideoProps) {
         rel: 0,
         loop: true,
         playlist: props.video,
+        quality: "high",
       },
       settings: ["quality", "speed"],
     });
@@ -64,34 +65,20 @@ export function MusicVideo(props: MusicVideoProps) {
     });
 
     player.on("enterfullscreen", () => {
-      // eslint-disable-next-line
-      player.embed?.setPlaybackQuality("hd1080");
       document
         .querySelector(".plyr__video-wrapper")
         ?.setAttribute("data-fullscreen", "true");
-      if (videoContainer.current) {
-        videoContainer.current.style.maxHeight = "100vh";
-      }
     });
 
     player.on("exitfullscreen", () => {
       document
         .querySelector(".plyr__video-wrapper")
         ?.setAttribute("data-fullscreen", "false");
-      if (videoContainer.current) {
-        videoContainer.current.style.maxHeight = "";
-      }
-    });
-
-    player.on("qualitychange", () => {
-      // eslint-disable-next-line
-      player.embed?.setPlaybackQuality("hd1080");
     });
   });
 
   return (
     <div
-      ref={videoContainer}
       className={mix(
         "w-screen sm:w-full aspect-video bg-gray-900 shadow-gray-400",
         {
@@ -105,6 +92,7 @@ export function MusicVideo(props: MusicVideoProps) {
         }
       >
         <div
+          ref={videoContainer}
           id="player"
           data-plyr-provider="youtube"
           data-plyr-embed-id={props.video}
