@@ -1,8 +1,11 @@
-import { parsePosts } from "./parse";
+import { parsePosts, Post } from "./parse";
 import { createPostsIndex } from "./search";
 
 export function createPosts() {
   const allPosts = parsePosts();
+  const postMap = new Map<string, Post>(
+    allPosts.map((post) => [post.id, post]),
+  );
 
   const previewPosts = allPosts.map((post) => {
     return { ...post, content: undefined };
@@ -13,7 +16,13 @@ export function createPosts() {
     return (query: string) => index.search(query);
   })();
 
-  return { all: allPosts, preview: previewPosts, search: searchPosts };
+  return {
+    all: allPosts,
+    ids: allPosts.map((post) => post.id),
+    get: (id: string) => postMap.get(id),
+    preview: previewPosts,
+    search: searchPosts,
+  };
 }
 
 const posts = (() => {

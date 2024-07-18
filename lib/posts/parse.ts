@@ -39,7 +39,6 @@ export function parsePosts() {
         id,
         ...matterResult.data,
         excerpt: matterResult.excerpt,
-        content: matterResult.content,
       };
     })
     .map((post) => {
