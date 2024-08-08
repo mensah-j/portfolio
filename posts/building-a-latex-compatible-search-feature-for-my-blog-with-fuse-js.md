@@ -11,29 +11,27 @@ When a user searches for a post, the matching text is marked by being either hig
 
 Fuzzy search engines work by finding substrings in a given text string which _approximately_ match a given query. Fuse.js offers the ability to return the indices of each matching substring, which can then be used to visually indicate which portions of the text match the query.
 
-<p>
-  <div class="flex flex-row justify-center items-baseline gap-4 text-2xl font-semibold">
-    <span class="relative">
-    fuse
-      <div class="absolute top-full pt-1 left-0 text-sm w-full">
-        <span class="flex w-full justify-center text-gray-600">
-          query
-        </span>
-      </div>
-    </span>
-    <span class="text-3xl font-normal">
-    →
-    </span>
-    <span class="relative">
-      <u>fu</u>zzy <u>se</u>arch
-      <div class="absolute top-full pt-1 left-0 text-sm w-full">
-        <span class="flex w-full justify-center text-gray-600">
-          result
-        </span>
-      </div>
-    </span>
-  </div>
-</p>
+<div class="flex flex-row justify-center items-baseline gap-4 text-2xl font-semibold mb-8">
+  <span class="relative">
+  fuse
+    <div class="absolute top-full left-0 text-sm w-full">
+      <span class="flex w-full justify-center text-gray-600">
+        query
+      </span>
+    </div>
+  </span>
+  <span class="text-3xl font-normal">
+  →
+  </span>
+  <span class="relative">
+    <u>fu</u>zzy <u>se</u>arch
+    <div class="absolute top-full left-0 text-sm w-full">
+      <span class="flex w-full justify-center text-gray-600">
+        result
+      </span>
+    </div>
+  </span>
+</div>
 
 Each post is written in mostly a mixture of Markdown and LaTeX, both of which are compiled into raw HTML. This means what the user sees is not necessarily what is written in the underlying code. As a result, searching the source code for each post is a bad idea, since there is no reliable way to make sense of matches (searching for "`div`" would yield many meaningless hits). The solution is to search the _textual content_ of the post, which corresponds to what the user visually sees.
 
