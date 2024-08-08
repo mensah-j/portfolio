@@ -13,20 +13,28 @@ import {
   PostSearchResultProps,
 } from "./BlogSearchResultList";
 
-export function BlogSearch() {
+export interface BlogSearchProps {
+  visible?: boolean;
+}
+
+export function BlogSearch(props: BlogSearchProps) {
   const [results, setResults] = useState<PostSearchResultProps[]>([]);
 
   return (
     <SearchDialog
       trigger={
-        <>
-          <div className="hidden sm:block">
-            <SearchTriggerCtrlK />
-          </div>
-          <div className="sm:hidden">
-            <SearchTriggerIcon />
-          </div>
-        </>
+        props.visible ? (
+          <>
+            <div className="hidden sm:block">
+              <SearchTriggerCtrlK />
+            </div>
+            <div className="sm:hidden">
+              <SearchTriggerIcon />
+            </div>
+          </>
+        ) : (
+          <></>
+        )
       }
       search={(query) => {
         search(query)
