@@ -13,7 +13,7 @@
 }
 
 .markdown pre {
-  @apply mb-4 !important;
+  @apply mb-8 !important;
 }
 
 .markdown a {
