@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import * as Toast from "@radix-ui/react-toast";
-import { Manrope, Inconsolata } from "next/font/google";
+import { Manrope, DM_Mono } from "next/font/google";
 import { NavigationBar } from "./_components/NavigationBar";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-jjio" });
-const codeFont = Inconsolata({
+const codeFont = DM_Mono({
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   variable: "--font-code",
 });
 

@@ -25,7 +25,13 @@ mark {
 }
 
 code {
-  font-family: var(--font-code);
+  font-family: var(--font-code) !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+inline {
+  font-size: 18px !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +43,14 @@ code {
   }
 
   .w-content {
-    width: min(100%, 1000px);
+    width: min(100%, 950px);
   }
+}
+
+.katex-display {
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  padding-top: 10px;
 }
