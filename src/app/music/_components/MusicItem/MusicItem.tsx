@@ -23,7 +23,7 @@ export function MusicItem(props: MusicItemProps) {
             sizes={"100%"}
           />
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-between w-full">
           <div className="flex flex-col gap-1">
             <p className="text-lg line-clamp-2 sm:text-base font-bold text-gray-800">
               {props.music.title}
