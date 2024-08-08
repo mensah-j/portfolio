@@ -1,0 +1,38 @@
+/* css-disable */
+
+.markdown h2 {
+  @apply text-xl font-bold mt-4 mb-2 indent-0;
+}
+
+.markdown h3 {
+  @apply text-lg font-bold mt-4 mb-2 indent-0;
+}
+
+.markdown p:not(:last-child) {
+  @apply mb-4  text-justify hyphens-manual;
+}
+
+.markdown pre {
+  @apply mb-4 !important;
+}
+
+.markdown a {
+  @apply font-bold hover:underline;
+}
+
+.markdown ol {
+  @apply mb-4;
+
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.markdown ol > li::marker {
+  @apply font-semibold;
+}
+
+.markdown ol > li::before {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+}

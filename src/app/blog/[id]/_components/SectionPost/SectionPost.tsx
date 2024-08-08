@@ -12,10 +12,10 @@ export interface SectionPostProps {
 
 export function SectionPost(props: SectionPostProps) {
   return (
-    <Section background="#f9f9f9" className="sm:!pl-10 sm:!pr-10" last>
+    <Section background="#f9f9f9" className="" last>
       <PostHeading {...props} />
-      <div className="sm:pt-5">
-        <MarkdownGeneral>{props.content}</MarkdownGeneral>
+      <div className="pl-1 pr-1 sm:pt-5 sm:text-lg w-full">
+        <MarkdownGeneral className="leading-8">{props.content}</MarkdownGeneral>
       </div>
     </Section>
   );
