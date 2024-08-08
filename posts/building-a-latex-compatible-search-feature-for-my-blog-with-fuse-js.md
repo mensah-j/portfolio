@@ -37,20 +37,6 @@ Each post is written in mostly a mixture of Markdown and LaTeX, both of which ar
 
 For example, the $\LaTeX$ expression <inline lang="latex">\mathbb{Z}^2</inline> maps to the textual content <inline>Z2</inline>. Therefore, the query "`mathbb`" will not return a match, but "`Z`" or "`Z2`" will. Once a match is found, each of the matching indices must be mapped back to their corresponding HTML text nodes, which are then highlighted by injecting `<mark>` tags with appropriate styling.
 
-```typescript
-export function createPostsIndex(posts: Post[]) {
-  const options: IFuseOptions<Post> = {
-    keys: ["id", "title"],
-    includeMatches: true,
-    minMatchCharLength: 2,
-    threshold: 0.5,
-    distance: 300,
-  };
-
-  return new Fuse(posts, options, Fuse.parseIndex(postsIndex));
-}
-```
-
 ## Identifying Textual and Visual Content
 
 I used [remark](https://remark.js.org/) to render markdown into HTML on the server, and [JSDOM](https://github.com/jsdom/jsdom) to extract the textual content, traverse DOM nodes, and inject `<mark>` tags into the final HTML. The basic algorithm for building the mapping between a HTML and its textual content is as follows:
