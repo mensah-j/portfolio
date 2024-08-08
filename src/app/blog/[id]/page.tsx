@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getPost } from "./post";
 import { SectionPost } from "./_components/SectionPost";
 import { Footer } from "@/app/_components/Footer";
+import { BlogSearch } from "../_components/BlogHeading/BlogSearch";
 
 interface PageProps {
   params: {
@@ -32,6 +33,7 @@ export default async function Page(props: PageProps) {
 
   return (
     <main className="flex flex-col items-center grow">
+      <BlogSearch visible={false} />
       <SectionPost
         title={currentPost.title}
         author="Jeffery Mensah"
