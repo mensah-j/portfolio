@@ -37,7 +37,7 @@ export function PostItem(props: PostItemProps) {
       </div>
 
       <MarkdownGeneral className={`text-[${props.bodyColor ?? "black"}]`}>
-        {props.excerpt ?? ""}
+        {props.excerpt ? `${props.excerpt}...` : ""}
       </MarkdownGeneral>
     </div>
   );
