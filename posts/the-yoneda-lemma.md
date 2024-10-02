@@ -4,7 +4,7 @@ date: 2024-09-30
 length: "30 min"
 ---
 
-The Yoneda lemma, according to Vakil in his _Foundations of Algebraic Geometry_ is an "important exercise you should do once in your life." This fundamental result is often said to be difficult to conceptualize, for its proof is as easy as it is unenlightening<!--more-->. In this post, we present a variant of the usual proof and explain in a plain and visual manner the idea behind the lemma.
+The Yoneda lemma, according to Ravil Vakil in _Foundations of Algebraic Geometry_, is an "important exercise you should do once in your life." This fundamental result is often said to be difficult to conceptualize, for its proof is as easy as it is unenlightening<!--more-->. In this post, we present a variant of the usual proof and explain in a plain and visual manner the idea behind the lemma.
 
 ## Presheaves
 
