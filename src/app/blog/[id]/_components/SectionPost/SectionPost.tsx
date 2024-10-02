@@ -15,7 +15,9 @@ export function SectionPost(props: SectionPostProps) {
     <Section background="#f9f9f9" className="" last>
       <PostHeading {...props} />
       <div className="pl-1 pr-1 sm:pt-5 sm:text-lg w-full">
-        <MarkdownGeneral className="leading-8">{props.content}</MarkdownGeneral>
+        <MarkdownGeneral className="leading-[1.55rem] sm:leading-[1.88rem]">
+          {props.content}
+        </MarkdownGeneral>
       </div>
     </Section>
   );
