@@ -12,7 +12,7 @@ In category theory, a _presheaf_ is a mild generalization of the usual geometric
 
 It is instructive to examine the prototypical case, where $\mathscr{C} = \mathbf{Open}(X)$ for some topological space $X$. Here, the objects of $\mathscr{C}$ are the open sets of $X$ and the morphisms are given by the inclusions of open sets. We can view $\mathbf{Open}(X)$ as a subcategory of $\mathbf{Top}$ by corresponding each inclusion $V \subseteq U$ to its associated embedding $\iota_{V, U} \colon V \to U$. In this setting, a presheaf $\mathscr{F}$ on $X$ attaches to each open subset $U \subseteq X$ a set of _sections_ $\mathscr{F}(U)$; furthermore, for each inclusion $\iota_{V, U}$, there is a corresponding _restriction_ map $\operatorname{res}_{U, V}$ which takes a section in $\mathscr{F}(U)$ and restricts it to obtain a section in $\mathscr{F}(V)$. Any presheaf or sheaf on a topological space can be interpreted as arising from the sheaf of continuous sections to a larger space sitting above $X$, known as the étale space, $\operatorname{Et}(\mathscr{F})$. Here, sections in $\mathscr{F}(U)$ correspond to subspaces $\operatorname{Et}(\mathscr{F})$ which lie over $U$, and $\operatorname{res}_{V, U}(s)$ is just the set-theoretic restriction, which may also be written as the pullback $\iota_{V, U}^* s$.
 
-In the general case, we can think of $\operatorname{Hom}_{\mathscr{C}}(V, U)$ as comprising all of ways in which the structure of $V$ can "fit inside" the structure of $U$, and the set of sections $\mathscr{F}(U)$ can be thought as representing all the ways the data of $U$ fits inside of $\mathscr{F}$, much like in the étale space point-of-view; this is the viewpoint suggested on the [nLab article on presheaves](https://ncatlab.org/nlab/show/presheaf). Given a morphism $f \in \operatorname{Hom}(V, U)$, the analog of the restriction map is the morphism $\mathscr{F}(f) \colon \mathscr{F}(U) \to \mathscr{F}(V)$. In this article, we will call this map the _pullback_ by $f$ and denote it by $f^*$ when the presheaf $\mathscr{F}$ is understood.
+In the general case, we can think of $\operatorname{Hom}_{\mathscr{C}}(V, U)$ as comprising all of the ways in which the structure of $V$ can "fit inside" the structure of $U$, and the set of sections $\mathscr{F}(U)$ can be thought as representing all the ways the data of $U$ fits inside of $\mathscr{F}$, much like in the étale space point-of-view; this is the viewpoint suggested on the [nLab article on presheaves](https://ncatlab.org/nlab/show/presheaf). Given a morphism $f \in \operatorname{Hom}(V, U)$, the analog of the restriction map is the morphism $\mathscr{F}(f) \colon \mathscr{F}(U) \to \mathscr{F}(V)$. In this article, we will call this map the _pullback_ by $f$ and denote it by $f^*$ when the presheaf $\mathscr{F}$ is understood.
 
 ### Representable Presheaves
 
@@ -112,7 +112,7 @@ $$
 \big[\mathscr{B}_{\rm pairing}(f, \operatorname{id}_\mathscr{F})\big] \big(\mathrm{ev}_{U, \,\mathscr{F}} (\phi)\big) = \big[\mathscr{B}_{\rm pairing}(f, \operatorname{id}_\mathscr{F})\big] \big(\phi_U(\operatorname{id}_U)\big) = f^*\phi_U(\operatorname{id}_U) = \phi_V(f).
 $$
 
-Therefore the bifunctor isomorphism is natural in the first factor. For the second factor, consider a presheaf morphism $\psi \colon \mathscr{F} \Rightarrow \mathscr{G}$. Then for all presheaf morphisms $\phi \in \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, \mathscr{F})$, we have
+Therefore, the bifunctor isomorphism is natural in the first factor. For the second factor, consider a presheaf morphism $\psi \colon \mathscr{F} \Rightarrow \mathscr{G}$. Then for all presheaf morphisms $\phi \in \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, \mathscr{F})$, we have
 
 $$
   \mathrm{ev}_{U,\,\mathscr{G}} \Big( \big[\mathscr{B}_{\rm yoneda}(\operatorname{id}_{U}, \psi)\big] (\phi) \Big) = \mathrm{ev}_{U,\,\mathscr{G}} \big(\psi \circ \phi) = \big(\psi_U \circ \phi_U\big)(\operatorname{id}_U) .
@@ -125,7 +125,7 @@ $$
 .
 $$
 
-Therefore the bifunctor isomorphism is also natural in the second factor. It follows that the evaluation bifunctor $\mathrm{ev}$ is natural, which concludes the argument.
+Therefore, the bifunctor isomorphism is also natural in the second factor. It follows that the evaluation bifunctor $\mathrm{ev}$ is natural, which concludes the argument.
 
 <div class="w-full flex mt-[-20px] mb-[15px] justify-end">
 
@@ -147,3 +147,7 @@ $$
 $$
 
 which implies that the Yoneda embedding functor is fully faithful. In particular, an isomorphism of representable presheaves in $\mathbf{PSh}(\mathscr{C})$ must be induced by an isomorphism of the underlying objects in $\mathscr{C}$. In other words, to understand an object in a category, it suffices to understand the presheaf of morphisms to that object.
+
+<blockquote>
+If it looks like a duck, swims like a duck, and quacks like a duck, then it's <strike>probably</strike> a duck.
+</blockquote>

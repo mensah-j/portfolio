@@ -40,3 +40,25 @@
 .markdown ol > li:not(:last-child) {
   @apply mb-4;
 }
+
+.markdown blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-style: italic;
+}
+
+.markdown blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 5em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.markdown blockquote p {
+  display: inline;
+}
