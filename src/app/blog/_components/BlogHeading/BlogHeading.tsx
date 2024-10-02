@@ -27,7 +27,7 @@ export function BlogHeading() {
           ))}
         </div>
         <div className="pb-4">
-          <BlogSearch />
+          <BlogSearch visible={true} />
         </div>
       </div>
     </Section>

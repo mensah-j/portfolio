@@ -17,11 +17,11 @@
 }
 
 .markdown a {
-  @apply font-bold hover:underline;
+  @apply font-bold hover:underline text-green-700;
 }
 
 .markdown ol {
-  @apply mb-4;
+  @apply mb-4 pl-4;
 
   list-style-type: decimal;
   list-style-position: inside;
@@ -35,4 +35,8 @@
   content: "";
   display: inline-block;
   margin-left: 0.5em;
+}
+
+.markdown ol > li:not(:last-child) {
+  @apply mb-4;
 }

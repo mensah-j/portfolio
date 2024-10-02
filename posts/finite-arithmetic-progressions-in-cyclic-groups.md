@@ -4,7 +4,7 @@ date: 2024-07-08
 length: "15 min"
 ---
 
-Here are two puzzles of my own invention concerning finite arithmetic progressions in cyclic groups. An example this is a sequence of regularly scheduled meetings spread throughout the mutiple years (e.g. 10 meetings occuring once every 60 days)<!--more-->. Both questions involve determining when it is possible to find a progression disjoint from a given set of points (e.g. holidays). One of these problems is in a "discrete" setting while the other one is in a "continuous" setting.
+Here are two puzzles of my own invention concerning finite arithmetic progressions in cyclic (or monothetic) groups. An example this is a sequence of regularly scheduled meetings spread throughout multiple years (e.g. 10 meetings occuring once every 60 days)<!--more-->. Both questions involve determining when it is possible to find a progression disjoint from a given set of points (e.g. holidays). One of these problems is in a "discrete" setting while the other one is in a "continuous" setting.
 
 <div class="border border-black pl-4 pr-4 pb-4 mb-8">
 
