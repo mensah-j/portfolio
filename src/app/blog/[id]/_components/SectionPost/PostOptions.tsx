@@ -2,7 +2,7 @@
 
 import { ShareDialog } from "@/app/_components/ShareDialog";
 import { useState } from "react";
-import { FaGithub, FaShareAlt } from "react-icons/fa";
+import { FaShareAlt } from "react-icons/fa";
 
 export function PostOptions() {
   const [open, setOpen] = useState(false);
@@ -16,6 +16,7 @@ export function PostOptions() {
 
         <span className="hidden sm:inline">share</span>
       </button>
+      {/*
       <a
         href="https://github.com/mensah-j/portfolio/discussions/new?category=general"
         target="_blank"
@@ -24,7 +25,7 @@ export function PostOptions() {
       >
         <FaGithub size={19} />
         <span className="hidden sm:inline">discuss</span>
-      </a>
+      </a>*/}
 
       <ShareDialog open={open} setOpen={setOpen} />
     </div>
