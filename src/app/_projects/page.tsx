@@ -15,8 +15,7 @@ export default function Page() {
         </h1>
       </Section>
       <Section name="about">
-        My interests in software are mainly centered around web development,
-        graphics programming, and mathematical modeling.
+        My interests in software are mainly centered around web development.
       </Section>
       <SectionProjects />
       <Footer className="bg-[#f9f9f9]" />

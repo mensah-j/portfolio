@@ -1,15 +1,13 @@
 "use client";
 
 import { HeroMessage } from "./HeroMessage";
-import { SocialsList } from "./SocialsList";
-import arrayShuffle from "array-shuffle";
 
 export function SectionHero() {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="flex flex-col gap-6 items-start p-5 pt-10 w-content">
         <HeroMessage
-          activities={[
+        /*activities={[
             "build websites.",
             "write code.",
             ...arrayShuffle([
@@ -30,8 +28,9 @@ export function SectionHero() {
               "write bash scripts.",
             ]),
             "use arch, btw.",
-          ]}
+          ]}*/
         />
+        {/*
         <SocialsList
           socials={[
             {
@@ -48,6 +47,7 @@ export function SectionHero() {
             },
           ]}
         />
+        */}
       </div>
     </div>
   );

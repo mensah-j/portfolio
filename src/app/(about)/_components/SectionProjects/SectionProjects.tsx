@@ -1,6 +1,6 @@
 import { Section } from "../../../_components/Section";
 import { ArrowLink } from "@/app/_components/ArrowLink";
-import { ProjectItem } from "../../../projects/_components/ProjectItem";
+import { ProjectItem } from "../../../_projects/_components/ProjectItem";
 import projects from "@lib/projects";
 
 export function SectionProjects() {

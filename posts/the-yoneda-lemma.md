@@ -4,7 +4,7 @@ date: 2024-09-30
 length: "30 min"
 ---
 
-The Yoneda lemma, according to Ravil Vakil in _Foundations of Algebraic Geometry_, is an "important exercise you should do once in your life." This fundamental result is often said to be difficult to conceptualize, for its proof is as easy as it is unenlightening<!--more-->. In this post, we present a variant of the usual proof and explain in a plain and visual manner the idea behind the lemma.
+The Yoneda lemma, according to Ravil Vakil in _Foundations of Algebraic Geometry_, is an "important exercise you should do once in your life." This fundamental result is often said to be difficult to conceptualize<!--more-->. In this post, we present a variant of the usual proof and explain in a plain manner the idea behind the lemma.
 
 ## Presheaves
 
@@ -71,7 +71,7 @@ We call the initial object $\operatorname{Hom}(-, U)$ of $\mathbf{PSh}^{\bullet}
 _Proof_. Let $W \overset{g}{\to} V \overset{f}{\to} U$ be a sequence of morphisms. Then
 
 $$
-\mathrm{id}_W \overset{\text{よ}(g)_W}{\longmapsto} g = g^*\operatorname{id}_V \overset{\text{よ}(f)_V}{\longmapsto} g^*f = f \circ g.
+\mathrm{id}_W \overset{\text{よ}(g)_W}{\longmapsto} (g = g^*\operatorname{id}_V) \overset{\text{よ}(f)_V}{\longmapsto} (g^*f = f \circ g).
 $$
 
 By uniqueness, it follows that $\text{よ}(f \circ g) = \text{よ}(f) \circ \text{よ}(g)$ <small> (this can also be proved directly, of course).</small>
@@ -140,14 +140,10 @@ Intuitively, the Yoneda lemma states that a morphism from a presheaf represented
 
 ## The Yoneda Embedding
 
-The Yoneda lemma automatically implies that there is an isomorphism
+The Yoneda lemma implies that there is an isomorphism
 
 $$
 \mathrm{ev}_{U,\, V}\colon \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, H_V) \xrightarrow{\sim} \operatorname{Hom}(U, V)
 $$
 
 which implies that the Yoneda embedding functor is fully faithful. In particular, an isomorphism of representable presheaves in $\mathbf{PSh}(\mathscr{C})$ must be induced by an isomorphism of the underlying objects in $\mathscr{C}$. In other words, to understand an object in a category, it suffices to understand the presheaf of morphisms to that object.
-
-<blockquote>
-If it looks like a duck, swims like a duck, and quacks like a duck, then it's <strike>probably</strike> a duck.
-</blockquote>

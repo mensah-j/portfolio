@@ -62,7 +62,7 @@ For each Fibonacci number $k$, determine whether or not there exists an arithmet
 
 The answer is **no.**
 
-Let $F_n$ denote the $n$th Fibonacci number, and $I = B_{2/F_n}(x)$ be an arbitrary open ball of radius $\frac{1}{F_n}$. We show that any arithmetic progression with length $F_n$ and common difference $\phi$ must intersect $I$ at some point.
+Let $F_n$ denote the $n$th Fibonacci number, and $I = B_{1/F_n}(x)$ be an arbitrary open ball of radius $\frac{1}{F_n}$. We show that any arithmetic progression with length $F_n$ and common difference $\phi$ must intersect $I$ at some point.
 
 Given such a progression $(a_j)_{j=0}^{F_n-1}$, consider the progression $(b_j)_{j=0}^{F_n-1}$ given by $b_j = a_0 + j \cdot \frac{F_{n+1}}{F_n}$. Since $F_{n}$ and $F_{n+1}$ are relatively prime, we have
 

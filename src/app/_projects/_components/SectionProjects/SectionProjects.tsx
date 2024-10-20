@@ -1,5 +1,5 @@
 import { Section } from "../../../_components/Section";
-import { ProjectItem } from "../../../projects/_components/ProjectItem";
+import { ProjectItem } from "../ProjectItem";
 import projects from "@lib/projects";
 
 export function SectionProjects() {

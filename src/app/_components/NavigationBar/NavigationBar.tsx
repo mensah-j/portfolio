@@ -11,8 +11,8 @@ export function NavigationBar() {
       path: "/",
     },
     {
-      name: "projects",
-      path: "/projects",
+      name: "math",
+      path: "/math",
     },
     {
       name: "blog",

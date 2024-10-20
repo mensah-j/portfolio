@@ -5,15 +5,13 @@ import posts from "@lib/posts";
 
 export function SectionPosts() {
   return (
-    <Section name="recent posts" background="#352323" foreground="#f7f4f0" last>
+    <Section name="recent posts" background="#edeaea" foreground="#161616" last>
       <div className="flex flex-col gap-12 pt-4 pb-4" data-nosnippet>
         {posts.preview.slice(0, 3).map((post) => (
-          <PostItem key={post.id} {...post} titleColor="#e5d6ba" />
+          <PostItem key={post.id} {...post} titleColor="#181818" />
         ))}
       </div>
-      <ArrowLink dark={true} href="/blog">
-        see all posts
-      </ArrowLink>
+      <ArrowLink href="/blog">see all posts</ArrowLink>
     </Section>
   );
 }
