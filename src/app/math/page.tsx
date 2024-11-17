@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export default function Page() {
-  async function compileTikz(text: string) {
+  async function compileTikz() {
     "use server";
     return await tex2svg(
       "\\begin{tikzpicture} \\node (a) at (0,0) {}; \\end{tikzpicture}",
