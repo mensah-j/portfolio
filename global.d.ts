@@ -10,6 +10,13 @@ declare global {
     var music: ReturnType<typeof createMusic>;
     var projects: ReturnType<typeof parseProjects>;
   }
+
+  namespace JSX {
+    // this merges with the existing intrinsic elements, adding 'my-custom-tag' and its props
+    interface IntrinsicElements {
+      tikz: { node: unknown };
+    }
+  }
 }
 
 export {};

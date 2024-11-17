@@ -7,6 +7,7 @@ import mix from "classnames";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialOceanic } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import styles from "./MarkdownGeneral.module.css";
+import { TikzDiagram } from "../TikzDiagram";
 
 interface PreNode {
   children: {
@@ -35,8 +36,10 @@ export function MarkdownGeneral(props: MarkdownGeneralProps) {
         pre({ node }) {
           const preNode = node as unknown as PreNode;
           const language = preNode?.children[0]?.properties.className[0];
-
-          return (
+          // pretty gross but it works
+          return language === "language-tex" ? (
+            <TikzDiagram source={preNode.children[0].children[0].value} />
+          ) : (
             <SyntaxHighlighter
               language={language.match(/language-(\w+)/)?.[1]}
               // eslint-disable-next-line
