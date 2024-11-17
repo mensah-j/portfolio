@@ -10,6 +10,9 @@ export default function Page() {
     "use server";
     return await tex2svg(
       `\\begin{document}\\begin{tikzpicture}\\draw (0,0) circle (1in);\\end{tikzpicture}\\end{document}`,
+      {
+        showConsole: true,
+      },
     );
   }
   return (
