@@ -1,5 +1,5 @@
 import { UnderConstruction } from "../_components/UnderConstruction";
-import tex2svg from "node-tikzjax";
+import tex2svg from "@lib/tikzjax/dist/index";
 
 export const metadata = {
   title: "Jeffery Mensah | Math",
@@ -9,7 +9,7 @@ export default function Page() {
   async function compileTikz() {
     "use server";
     return await tex2svg(
-      "\\begin{tikzpicture} \\node (a) at (0,0) {}; \\end{tikzpicture}",
+      `\\begin{document}\\begin{tikzpicture}\\draw (0,0) circle (1in);\\end{tikzpicture}\\end{document}`,
     );
   }
   return (

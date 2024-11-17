@@ -28,6 +28,7 @@ export default tseslint.config(
       "prettier.config.cjs",
       "postcss.config.mjs",
       "eslint.config.mjs",
+      "lib/tikzjax/**",
     ],
   },
   eslint.configs.recommended,
