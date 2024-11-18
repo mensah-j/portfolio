@@ -5,6 +5,7 @@ import { getPost } from "./post";
 import { SectionPost } from "./_components/SectionPost";
 import { Footer } from "@/app/_components/Footer";
 import { BlogSearch } from "../_components/BlogHeading/BlogSearch";
+import path from "path";
 
 interface PageProps {
   params: {
@@ -40,6 +41,7 @@ export default async function Page(props: PageProps) {
         date={currentPost.date}
         length={currentPost.length}
         content={await getPost(props.params.id)}
+        source={path.join(process.cwd(), "posts", props.params.id)}
       />
       <Footer className="bg-[#f9f9f9]" />
     </main>

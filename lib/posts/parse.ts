@@ -19,11 +19,11 @@ export function parsePosts() {
   const postsDirectory = path.join(process.cwd(), "posts");
 
   return fs
-    .readdirSync(postsDirectory)
-    .map((fileName) => {
-      const id = fileName.replace(/\.md$/, "");
-
-      const fullPath = path.join(postsDirectory, fileName);
+    .readdirSync(postsDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name)
+    .map((id) => {
+      const fullPath = path.join(postsDirectory, id, "post.md");
       const fileContents = fs.readFileSync(fullPath, "utf8");
 
       const matterResult = matter(fileContents, {

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "prettier --check . && eslint . --cache",
     "format": "prettier --write . && rustywind --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "tikzc": "ROOT=$(pwd); cd $INIT_CWD/; $ROOT/bin/tikzc.sh"
   },
   "dependencies": {
     "@eslint/compat": "^1.1.0",
