@@ -41,6 +41,10 @@
   @apply mb-3;
 }
 
+.markdown ol > li > p {
+  display: inline;
+}
+
 .markdown blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;

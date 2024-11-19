@@ -7,11 +7,11 @@ interface TikzDiagramProps {
 
 export async function TikzDiagram(props: TikzDiagramProps) {
   return (
-    <main className="flex flex-col items-center grow p-2">
+    <div className="flex flex-col items-center grow p-2">
       <div
         style={{ zoom: props.zoom ?? 1.5 }}
         dangerouslySetInnerHTML={{ __html: await readTikz(props.source) }}
       ></div>
-    </main>
+    </div>
   );
 }

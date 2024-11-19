@@ -47,9 +47,9 @@
 <use x='54.921699' y='27.138845' xlink:href='#g0-83'/>
 <use x='62.891832' y='21.932736' xlink:href='#g3-49'/>
 </g>
-<path d='M108.8711 171.0898V-62.4531' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-dasharray='2.98883,2.98883'/>
-<path d='M106.48047-60.57813C107.917968-60.95703 108.593749-61.800784 108.871093-62.652347C109.152343-61.800784 109.828124-60.95703 111.26562-60.57813' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<g transform='matrix(1 0 0 1 60.4603 -85.048)'>
+<path d='M108.8711 171.0898V-63.0117' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-dasharray='2.98883,2.98883'/>
+<path d='M106.48047-61.13671C107.917968-61.51561 108.593749-62.359364 108.871093-63.210927C109.152343-62.359364 109.828124-61.51561 111.26562-61.13671' stroke='#000' fill='none' stroke-width='.3985' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
+<g transform='matrix(1 0 0 1 60.4603 -85.606)'>
 <use x='54.921699' y='27.138845' xlink:href='#g0-90'/>
 </g>
 </g>

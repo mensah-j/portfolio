@@ -4,11 +4,7 @@ date: 2024-11-17
 length: "30 min"
 ---
 
-The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, is nothing more than a diagram chase<!--more-->. Although simple, the act of diagram chasing does not immediately give any insight into _why_ the snake lemma must be true. This can be remedied by Bergman's [Salamander Lemma](https://arxiv.org/abs/1108.0958), which is also discussed by Anton Geraschenko on the [Secret Blogging Seminar](https://sbseminar.wordpress.com/2007/11/13/anton-geraschenko-the-salamander-lemma/). In the introduction, Bergman states
-
-> Diagram-chasing arguments frequently lead to “magical” relations between distant points of diagrams: exactness implications, connecting morphisms, etc. These long connections are usually composites of short “unmagical” connections, but the latter, and the objects they join, are not visible in the proofs...
-
-Although the Salamander Lemma can be used to prove the Snake Lemma and a plethora of similar results, we will not focus on it here. As Geraschenko states, applying the lemma doesn't _completely_ get rid of the mechanical nature of chasing arguments&mdash;you have to now chase "salamanders" around, instead of individual elements. In this post, we aim to make the Snake Lemma more apparent and clarify its application to the long exact sequence.
+The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, amounts to a diagram chase<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the Snake Lemma more apparent and clarify its application to the long exact sequence.
 
 ## Preliminaries
 
@@ -102,12 +98,84 @@ If the rows are exact, then the diagram extends to a commutative diagram
 
 <tikz path="snake_lemma" zoom="1.5"></tikz>
 
-where $\overline{\vphantom{+}\iota_1}$ and $\overline{\vphantom{+}\iota_1}$ are the maps induced by $\iota$, and $\overline{\vphantom{+}\pi_1}$, and $\overline{\vphantom{+}\pi_2}$ are the maps induced by $\pi$. Moreover, there exists a natural _connecting homomorphism_ $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$ such that the sequence
+where $\overline{\vphantom{+}\iota_1}$ and $\overline{\vphantom{+}\iota_2}$ are the maps induced by $\iota$, and $\overline{\vphantom{+}\pi_1}$, and $\overline{\vphantom{+}\pi_2}$ are the maps induced by $\pi$. Moreover, there exists a natural _connecting homomorphism_ $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$ such that
 
 $$
 \ker \alpha \overset{\overline{\vphantom{+}\iota_1}}{\longrightarrow} \ker \beta \overset{\overline{\vphantom{+}\pi_1}}{\longrightarrow} \ker \gamma \overset{\delta}{\longrightarrow} \operatorname{coker} \alpha \overset{\overline{\vphantom{+}\iota_2}}{\longrightarrow} \operatorname{coker} \beta \overset{\overline{\vphantom{+}\pi_2}}{\longrightarrow} \operatorname{coker} \gamma
+\tag{$\star$}
 $$
 
-is exact. Furthermore, if $\iota_1$ is injective, then $\overline{\vphantom{+}\pi_2}$ is surjective, and if $\pi_2$ is surjective, then $\overline{\vphantom{+}\iota_1}$ is injective.
+is an exact sequence.
 
 </div>
+
+_Proof_. It is more or less straightforward to show that $\ker \alpha \overset{\overline{\vphantom{+}\iota_1}}{\longrightarrow} \ker \beta \overset{\overline{\vphantom{+}\pi_1}}{\longrightarrow} \ker \gamma$ and $\operatorname{coker} \alpha \overset{\overline{\vphantom{+}\iota_2}}{\longrightarrow} \operatorname{coker} \beta \overset{\overline{\vphantom{+}\pi_2}}{\longrightarrow} \operatorname{coker} \gamma$ are chain complexes, so we will show that these are both exact.
+
+<ol>
+<li>
+
+To show that the first complex is exact at $\ker \beta$, note that we may write $\ker \overline{\vphantom{+}\pi_1} = \ker \pi_1 \cap \ker \beta$. However, by exactness, we have $\ker \pi_1 = \operatorname{im} \iota_1$, which implies
+
+$$
+\operatorname{im} \iota_1 \cap \ker \beta = \iota_1 (\iota_1^{-1} (\ker \beta)) =\iota_1\big((\beta \circ\iota_1)^{-1} \{0\}\big) = \iota_1\big((\iota_2 \circ \alpha)^{-1}\{0\}\big) = \iota_1(\ker\alpha),
+$$
+
+so $\ker \overline{\vphantom{+}\pi_1} = \operatorname{im} \overline{\vphantom{+}\iota_1}$.
+
+</li>
+
+<li>
+
+To show that the second complex is exact at $\operatorname{coker} \beta$, note that by exactness, we have $\ker \pi_2 = \operatorname{im} \iota_2$, which implies
+
+$$
+\ker \overline{\vphantom{+}\pi_2} = \frac{\pi_2^{-1} (\operatorname{im} \gamma)}{\operatorname{im} \beta} = \frac{\pi_2^{-1} (\operatorname{im} (\gamma \circ \pi_1))}{\operatorname{im} \beta} = \frac{\pi_2^{-1} (\operatorname{im} (\pi_2 \circ \beta))}{\operatorname{im} \beta} = \frac{\operatorname{im} \beta + \ker \pi_2}{\operatorname{im} \beta} = \frac{\operatorname{im} \beta + \operatorname{im} \iota_2}{\operatorname{im} \beta}  = \operatorname{im}  \overline{\vphantom{+}\iota_2}.
+$$
+
+</li>
+</ol>
+
+We now construct the connecting homomorphism $\delta$ and show that $(\star)$ is exact (we omit the proof of naturality). Since $\pi_1$ is surjective, the image of $\gamma$ is contained in the image of $\pi_2$, which means we may as well replace $C_2$ with $B_2/A_2$ without disturbing $\ker \gamma$. Therefore, we may apply the previous lemma to the diagram
+
+$$
+\begin{CD}
+ @. A_1 @>>> B_1 @>>> B_1/\iota_1(A_1) @>>> 0 \\
+@. @VVV @VVV @VVV @. \\
+0 @>>> A_2 @>>> B_2 @>>> B_2/A_2
+\end{CD}\quad,
+$$
+
+which yields $\ker \gamma = \beta^{-1}(A_2)/\iota_1(A_1)$, viewing $A_2$ as a subgroup of $B_2$. Furthermore, the map $\beta^{-1}(A_2) \to A_2$ takes $\iota_1(A_1)$ to $A_2$, which yields the connecting homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$. We now show that $(\star)$ is exact.
+
+<ol>
+<li>
+
+To show that $(\star)$ is exact at $\ker \gamma$, we use the lemma once more and write
+
+$$
+\ker \delta =  \frac{\beta^{-1}\big(\!\operatorname{im} (\iota_2 \circ \alpha)\big)}{\operatorname{im} \iota_1} = \frac{\beta^{-1}\big(\!\operatorname{im} (\beta \circ \iota_1)\big)}{\operatorname{im} \iota_1} = \frac{\operatorname{im}\iota_1 + \ker \beta}{\operatorname{im} \iota_1} = \operatorname{im}\overline{\vphantom{+}\pi_1}.
+$$
+
+</li>
+
+<li>
+
+To show that $(\star)$ is exact at $\operatorname{coker} \alpha$, we apply the lemma again, which yields
+
+$$
+\operatorname{im} \delta = \frac{\operatorname{im}\alpha + \beta(\beta^{-1} (A_2))}{\operatorname{im}\alpha} = \frac{\operatorname{im} \beta \cap A_2}{\operatorname{im} \alpha}= \frac{\iota_2^{-1}(\operatorname{im} \beta)}{\operatorname{im} \alpha} = \ker \overline{\vphantom{+}\iota_2}.
+$$
+
+</li>
+
+</ol>
+
+<div class="w-full flex mt-[-20px] mb-[25px] justify-end">
+
+$\blacksquare$
+
+</div>
+
+## The Homology Long Exact Sequence
+
+The most well-known application of the snake lemma is in the construction of the homology long exact sequence. We give a brief overview of its construction and give a visual description of what the connecting morphism $\delta$ does in this scenario.
