@@ -1,0 +1,31 @@
+\nofiles
+\documentclass[crop,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{3d}
+
+\begin{document}
+\usetikzlibrary{perspective}
+\begin{tikzpicture}[3d view={25}{10}]
+  \draw[color=blue, very thick] (0,0) circle [radius=2];
+  \foreach \i in {-2, 0, 2}
+    \draw [thin, gray!80] (\i, -4) -- (\i, 4);
+
+  \foreach \i in {-2, 0, 2}
+    \draw [thin, gray!80] (-4, \i) -- (4, \i);
+
+  \draw[color=red, very thick, domain=-720:650, samples=300, variable=\theta] plot ({2*cos(\theta)+0.06}, {2*sin(\theta)}, \theta/180) node[black, font=\Large, right=3] {$\mathbb{R}$};
+
+  \foreach \i in {-2, -1, +1}
+    \node[fill=black,circle,inner sep=1.5pt,right=0.5,label=right:{\Large $\i$}] at (2, 0, {2*\i}){};
+
+  \node[fill=black,circle,inner sep=1.5pt,right=0.5,label=right:{\Large $\hphantom{+}0$}] at (2, 0, 0){};
+
+  \node at (-2.5, 0, 0) {\Large $\mathbb{S}^1$};
+
+  \draw[->, dashed] (2.1, 0, -5) -- (2.1, 0, 3.38) node[black, font=\Large, right=3] {$\mathbb{Z}$};
+
+\end{tikzpicture}
+\end{document}
