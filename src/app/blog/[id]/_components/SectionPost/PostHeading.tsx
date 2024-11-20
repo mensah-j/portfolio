@@ -21,7 +21,7 @@ export function PostHeading(props: PostHeadingProps) {
             {props.author} • {formatDate(parseISO(props.date), "MMMM d, yyyy")}
           </span>
           <span className="text-xs sm:text-sm text-gray-800 font-semibold">
-            {props.length} read
+            {props.length}
           </span>
         </div>
 

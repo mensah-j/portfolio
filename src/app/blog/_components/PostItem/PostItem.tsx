@@ -32,7 +32,7 @@ export function PostItem(props: PostItemProps) {
           <MarkdownGeneral>{props.title}</MarkdownGeneral>
         </Link>
         <span className="text-sm font-semibold">
-          {format(parseISO(props.date), "MMMM d, yyyy")} • {props.length} read
+          {format(parseISO(props.date), "MMMM d, yyyy")} • {props.length}
         </span>
       </div>
 
