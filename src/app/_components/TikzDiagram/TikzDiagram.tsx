@@ -2,16 +2,30 @@ import { readTikz } from "./tikz";
 
 interface TikzDiagramProps {
   source: string;
-  zoom?: number;
+  zoom: {
+    mobile: number;
+    desktop: number;
+  };
 }
 
 export async function TikzDiagram(props: TikzDiagramProps) {
   return (
-    <div className="flex flex-col items-center grow p-2">
+    <div className="flex justify-center">
       <div
-        style={{ zoom: props.zoom ?? 1.5 }}
-        dangerouslySetInnerHTML={{ __html: await readTikz(props.source) }}
-      ></div>
+        style={{ scrollbarWidth: "thin" }}
+        className="w-fit pt-2 pb-4 overflow-y-hidden overflow-x-auto"
+      >
+        <div
+          className="w-fit hidden sm:flex"
+          style={{ zoom: props.zoom.desktop }}
+          dangerouslySetInnerHTML={{ __html: await readTikz(props.source) }}
+        ></div>
+        <div
+          className="w-fit sm:hidden"
+          style={{ zoom: props.zoom.mobile }}
+          dangerouslySetInnerHTML={{ __html: await readTikz(props.source) }}
+        ></div>
+      </div>
     </div>
   );
 }

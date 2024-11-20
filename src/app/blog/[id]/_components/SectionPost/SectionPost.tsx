@@ -18,7 +18,7 @@ export function SectionPost(props: SectionPostProps) {
       <div className="pl-1 pr-1 sm:pt-5 sm:text-lg w-full">
         <MarkdownGeneral
           source={props.source}
-          className="leading-[1.55rem] sm:leading-[1.88rem] text-base"
+          className="leading-[1.43rem] sm:leading-[1.88rem] text-sm sm:text-base"
         >
           {props.content}
         </MarkdownGeneral>

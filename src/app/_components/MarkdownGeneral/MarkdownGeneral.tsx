@@ -11,7 +11,11 @@ import { TikzDiagram } from "../TikzDiagram";
 import path from "path";
 
 interface TikzNode {
-  properties: { path: string; zoom?: number };
+  properties: {
+    path: string;
+    mobile: number;
+    desktop: number;
+  };
 }
 
 interface PreNode {
@@ -47,7 +51,13 @@ export function MarkdownGeneral(props: MarkdownGeneralProps) {
           );
 
           return (
-            <TikzDiagram source={tikzPath} zoom={tikzNode.properties.zoom} />
+            <TikzDiagram
+              source={tikzPath}
+              zoom={{
+                mobile: tikzNode.properties.mobile,
+                desktop: tikzNode.properties.desktop,
+              }}
+            />
           );
         },
 

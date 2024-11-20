@@ -21,7 +21,9 @@ of abelian groups and morphisms such that the composition of consecutive morphis
 
 In other words, a short exact sequence is really just a way to "decompose" $B$ into two related pieces. A simple example of this that we will use to build intuition is the sequence $0 \to \mathbb{Z} \to \mathbb{R} \to \mathbb{S}^{1} \to \mathbb{0}$, illustrated below.
 
-<tikz path="covering_map"></tikz>
+<div>
+  <tikz path="covering_map" desktop="1.5" mobile="1"></tikz>
+</div>
 
 ## The Snake Morphism
 
@@ -96,7 +98,9 @@ $$
 
 If the rows are exact, then the diagram extends to a commutative diagram
 
-<tikz path="snake_lemma" zoom="1.5"></tikz>
+<div>
+  <tikz path="snake_lemma" desktop="1.5" mobile="1.2"></tikz>
+</div>
 
 where $\overline{\vphantom{+}\iota_1}$ and $\overline{\vphantom{+}\iota_2}$ are the maps induced by $\iota$, and $\overline{\vphantom{+}\pi_1}$, and $\overline{\vphantom{+}\pi_2}$ are the maps induced by $\pi$. Moreover, there exists a natural _connecting homomorphism_ $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$ such that
 
