@@ -1,10 +1,10 @@
 ---
 title: "The Snake Morphism and Long Exact Sequences"
-date: 2024-11-17
+date: 2024-11-20
 length: "∼2000 words"
 ---
 
-The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, amounts to a diagram chase<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the snake lemma more apparent and clarify its application to the long exact sequence.
+The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, is an exercise in diagram chasing<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the snake lemma more apparent and clarify its application to the long exact sequence.
 
 ## Preliminaries
 
@@ -43,7 +43,7 @@ $$
 \quad.
 $$
 
-A natural question is to ask how these three multiplication maps relate to each other. Note that while the middle map is an isomorphism, the left map is only injective and the right map is only surjective. The deviation from being an isomorphism is can therefore measured by the cokernel $\operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$ and the kernel $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1)$. Note that we may relabel the top sequence, replacing the left mutliplication map by an inclusion $\iota$ as follows:
+A natural question is to ask how these three multiplication maps relate to each other. Note that while the middle map is an isomorphism, the left map is only injective and the right map is only surjective. The deviation from being an isomorphism is can therefore measured by the cokernel $\operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$ and the kernel $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1)$. We may relabel the top sequence, replacing the left multiplication map by an inclusion $\iota$ as follows:
 
 $$
 \begin{CD}
@@ -54,7 +54,7 @@ $$
 \quad.
 $$
 
-Since $\mathbb{Z}$ corresponds to the zero subgroup in $\mathbb{R}/\mathbb{Z}$, the kernel of $\pi$ is what you get if you _pull back_ (since the middle map is the identity, this isn't strictly necessary) the "larger" group $\mathbb{Z}$ up into $\mathbb{R}$ and then quotient by the "smaller" group $n\mathbb{Z}$. It's clear this does not depend on the ambient group; for example, we obtain the same kernel if we replace $\mathbb{R}$ by $\mathbb{Z}$ in the above diagram. To summarize, $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1) \cong \operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$, which means the deviations of the left and right maps from being isomorphism are in some sense "the same". One of the assertions of the Snake Lemma is that in such a situation, there is always a connection between the cokernel and kernel, given by a map known as the _snake morphism_.
+Since $\mathbb{Z}$ corresponds to the zero subgroup in $\mathbb{R}/\mathbb{Z}$, the kernel of $\pi$ is what you get if you _pull back_ (since the middle map is the identity, this isn't strictly necessary) the "larger" group $\mathbb{Z}$ up into $\mathbb{R}$ and then quotient by the "smaller" group $n\mathbb{Z}$. It's clear this does not depend on the ambient group; for example, we obtain the same kernel if we replace $\mathbb{R}$ by $\mathbb{Z}$ in the above diagram. To summarize, $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1) \cong \operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$, which means the deviations of the left and right maps from being isomorphisms are in some sense "the same". One of the assertions of the Snake Lemma is that in such a situation, there is always a connection between the cokernel and kernel, given by a map known as the _snake morphism_.
 
 To show how this arises, we state a lemma which captures the ideas discussed for the example given earlier.
 
@@ -80,7 +80,7 @@ $$
 \delta \colon \ker(B_1/A_1 \to B_2/A_2) \to \operatorname{coker}(A_1 \to A_2); \quad \quad [b]_{A_1} \longmapsto [\phi(b)]_{\phi(A_1)},
 $$
 
-where the notation $[\cdot]_H$ means the equivaluence class of an element in the quotient by a subgroup $H$. Note that $\delta$ is _not_ just the restriction of the induced map on the right, which would take $[b]_{A_1} \to [\phi(b)]_{A_2}$. This is just the zero map!
+where the notation $[\cdot]_H$ means the equivalence class of an element in the quotient by a subgroup $H$. Note that $\delta$ is _not_ just the restriction of the induced map on the right, which would take $[b]_{A_1} \to [\phi(b)]_{A_2}$. This is just the zero map!
 
 In other words, $\delta$ is much like the map induced by $\phi$, but in some sense "preserves" as much information as the original map $\phi$ will allow. For example, if $\phi$ is an isomorphism, then $\delta$ is also an isomorphism, whereas the induced map on the quotients may not be. This notion is formalized by the second assertion of the Snake Lemma, which states that the kernels and cokernels of the maps induced by $\phi$ join to form an exact sequence.
 
