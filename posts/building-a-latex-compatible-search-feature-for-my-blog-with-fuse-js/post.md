@@ -1,7 +1,7 @@
 ---
 title: "Building a $\\LaTeX$-compatible search feature for my blog using Fuse.js"
 date: 2024-07-07
-length: "5 min"
+length: "∼750 words"
 ---
 
 If you press <span className="border font-bold text-sm border-gray-400 shadow-[0_2px_0px_0px] shadow-[#6e8b84] rounded pl-1 pr-1">ctrl</span> + <span className="border font-bold text-sm border-gray-400 shadow-[0_2px_0px_0px] shadow-[#6e8b84] rounded pl-1 pr-1">K</span> on the blog page of this site, you'll be greeted by a search dialog modeled after the one on the [Vue.js](https://vuejs.org) website.

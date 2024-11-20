@@ -1,7 +1,7 @@
 ---
 title: "The Yoneda Lemma"
 date: 2024-09-30
-length: "30 min"
+length: "∼1750 words"
 ---
 
 The Yoneda lemma, according to Ravil Vakil in _Foundations of Algebraic Geometry_, is an "important exercise you should do once in your life." This fundamental result is often said to be difficult to conceptualize<!--more-->. In this post, we present a variant of the usual proof and explain in a plain manner the idea behind the lemma.

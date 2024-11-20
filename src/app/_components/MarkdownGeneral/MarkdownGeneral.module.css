@@ -45,6 +45,21 @@
   display: inline;
 }
 
+.markdown ul {
+  @apply mb-4 pl-4;
+
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.markdown ul > li:not(:last-child) {
+  @apply mb-3;
+}
+
+.markdown ul > li > p {
+  display: inline;
+}
+
 .markdown blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;

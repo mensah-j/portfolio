@@ -22,7 +22,7 @@ for filename in "$@"; do
         rm -f "$basename.log"
 
         # Run dvisvgm to convert the .dvi file to SVG
-        dvisvgm --no-fonts "$basename.dvi"
+        dvisvgm --no-fonts=1 "$basename.dvi"
 
         # Delete the .dvi file
         rm -f "$basename.dvi"

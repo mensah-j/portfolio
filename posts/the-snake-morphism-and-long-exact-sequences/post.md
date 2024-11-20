@@ -1,10 +1,10 @@
 ---
 title: "The Snake Morphism and Long Exact Sequences"
 date: 2024-11-17
-length: "30 min"
+length: "∼2000 words"
 ---
 
-The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, amounts to a diagram chase<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the Snake Lemma more apparent and clarify its application to the long exact sequence.
+The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, amounts to a diagram chase<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the snake lemma more apparent and clarify its application to the long exact sequence.
 
 ## Preliminaries
 
@@ -24,6 +24,11 @@ In other words, a short exact sequence is really just a way to "decompose" $B$ i
 <div>
   <tikz path="covering_map" desktop="1.5" mobile="1"></tikz>
 </div>
+
+Throughout this post, we will be making use of "extension and contraction" identities to avoid dealing with chasing individual elements. In particular, let $\phi \colon G \to H$ be a homomorphism of abelian groups. Then
+
+- $\phi(\phi^{-1}(T)) = \operatorname{im} \phi \cap T$ for any subgroup $T \leq H$, and
+- $\phi^{-1}(\phi(S))= S + \ker \phi$ for any subgroup $S \leq G$.
 
 ## The Snake Morphism
 
@@ -102,26 +107,25 @@ If the rows are exact, then the diagram extends to a commutative diagram
   <tikz path="snake_lemma" desktop="1.5" mobile="1.2"></tikz>
 </div>
 
-where $\overline{\vphantom{+}\iota_1}$ and $\overline{\vphantom{+}\iota_2}$ are the maps induced by $\iota$, and $\overline{\vphantom{+}\pi_1}$, and $\overline{\vphantom{+}\pi_2}$ are the maps induced by $\pi$. Moreover, there exists a natural _connecting homomorphism_ $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$ such that
+where $\overline{\vphantom{+}\iota_1}$ and $\overline{\vphantom{+}\iota_2}$ are the maps induced by $\iota$, and $\overline{\vphantom{+}\pi_1}$, and $\overline{\vphantom{+}\pi_2}$ are the maps induced by $\pi$. Moreover, there exists a natural homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$ such that
 
 $$
 \ker \alpha \overset{\overline{\vphantom{+}\iota_1}}{\longrightarrow} \ker \beta \overset{\overline{\vphantom{+}\pi_1}}{\longrightarrow} \ker \gamma \overset{\delta}{\longrightarrow} \operatorname{coker} \alpha \overset{\overline{\vphantom{+}\iota_2}}{\longrightarrow} \operatorname{coker} \beta \overset{\overline{\vphantom{+}\pi_2}}{\longrightarrow} \operatorname{coker} \gamma
-\tag{$\star$}
 $$
 
 is an exact sequence.
 
 </div>
 
-_Proof_. It is more or less straightforward to show that $\ker \alpha \overset{\overline{\vphantom{+}\iota_1}}{\longrightarrow} \ker \beta \overset{\overline{\vphantom{+}\pi_1}}{\longrightarrow} \ker \gamma$ and $\operatorname{coker} \alpha \overset{\overline{\vphantom{+}\iota_2}}{\longrightarrow} \operatorname{coker} \beta \overset{\overline{\vphantom{+}\pi_2}}{\longrightarrow} \operatorname{coker} \gamma$ are chain complexes, so we will show that these are both exact.
+_Proof_. We first show that the sequence is exact at the kernel and cokernel of $\beta$.
 
 <ol>
 <li>
 
-To show that the first complex is exact at $\ker \beta$, note that we may write $\ker \overline{\vphantom{+}\pi_1} = \ker \pi_1 \cap \ker \beta$. However, by exactness, we have $\ker \pi_1 = \operatorname{im} \iota_1$, which implies
+To show exactness at $\ker \beta$, note that we may write $\ker \overline{\vphantom{+}\pi_1} = \ker \pi_1 \cap \ker \beta$. However, by exactness, we have $\ker \pi_1 = \operatorname{im} \iota_1$, which implies
 
 $$
-\operatorname{im} \iota_1 \cap \ker \beta = \iota_1 (\iota_1^{-1} (\ker \beta)) =\iota_1\big((\beta \circ\iota_1)^{-1} \{0\}\big) = \iota_1\big((\iota_2 \circ \alpha)^{-1}\{0\}\big) = \iota_1(\ker\alpha),
+\operatorname{im} \iota_1 \cap \ker \beta = \iota_1 (\iota_1^{-1} (\ker \beta)) =\iota_1(\ker (\beta \circ\iota_1)) = \iota_1(\ker (\iota_2 \circ \alpha)) = \iota_1(\ker\alpha),
 $$
 
 so $\ker \overline{\vphantom{+}\pi_1} = \operatorname{im} \overline{\vphantom{+}\iota_1}$.
@@ -130,7 +134,7 @@ so $\ker \overline{\vphantom{+}\pi_1} = \operatorname{im} \overline{\vphantom{+}
 
 <li>
 
-To show that the second complex is exact at $\operatorname{coker} \beta$, note that by exactness, we have $\ker \pi_2 = \operatorname{im} \iota_2$, which implies
+To show exactness at $\operatorname{coker} \beta$, note that $\ker \pi_2 = \operatorname{im} \iota_2$, which implies
 
 $$
 \ker \overline{\vphantom{+}\pi_2} = \frac{\pi_2^{-1} (\operatorname{im} \gamma)}{\operatorname{im} \beta} = \frac{\pi_2^{-1} (\operatorname{im} (\gamma \circ \pi_1))}{\operatorname{im} \beta} = \frac{\pi_2^{-1} (\operatorname{im} (\pi_2 \circ \beta))}{\operatorname{im} \beta} = \frac{\operatorname{im} \beta + \ker \pi_2}{\operatorname{im} \beta} = \frac{\operatorname{im} \beta + \operatorname{im} \iota_2}{\operatorname{im} \beta}  = \operatorname{im}  \overline{\vphantom{+}\iota_2}.
@@ -139,7 +143,7 @@ $$
 </li>
 </ol>
 
-We now construct the connecting homomorphism $\delta$ and show that $(\star)$ is exact (we omit the proof of naturality). Since $\pi_1$ is surjective, the image of $\gamma$ is contained in the image of $\pi_2$, which means we may as well replace $C_2$ with $B_2/A_2$ without disturbing $\ker \gamma$. Therefore, we may apply the previous lemma to the diagram
+We now construct the connecting homomorphism $\delta$. Since $\pi_1$ is surjective, the image of $\gamma$ is contained in the image of $\pi_2$, which means we may as well replace $C_2$ with $B_2/A_2$ without disturbing $\ker \gamma$. Therefore, we may apply the previous lemma to the diagram
 
 $$
 \begin{CD}
@@ -149,12 +153,12 @@ $$
 \end{CD}\quad,
 $$
 
-which yields $\ker \gamma = \beta^{-1}(A_2)/\iota_1(A_1)$, viewing $A_2$ as a subgroup of $B_2$. Furthermore, the map $\beta^{-1}(A_2) \to A_2$ takes $\iota_1(A_1)$ to $A_2$, which yields the connecting homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$. We now show that $(\star)$ is exact.
+which yields $\ker \gamma = \beta^{-1}(A_2)/\iota_1(A_1)$, viewing $A_2$ as a subgroup of $B_2$. Furthermore, the map $\beta^{-1}(A_2) \to A_2$ takes $\iota_1(A_1)$ to $A_2$, which yields the connecting homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$. We now show that the sequence is exact at $\ker \gamma$ and $\operatorname{coker} \alpha$.
 
 <ol>
 <li>
 
-To show that $(\star)$ is exact at $\ker \gamma$, we use the lemma once more and write
+To show the sequence is exact at $\ker \gamma$, we use the lemma once more and write
 
 $$
 \ker \delta =  \frac{\beta^{-1}\big(\!\operatorname{im} (\iota_2 \circ \alpha)\big)}{\operatorname{im} \iota_1} = \frac{\beta^{-1}\big(\!\operatorname{im} (\beta \circ \iota_1)\big)}{\operatorname{im} \iota_1} = \frac{\operatorname{im}\iota_1 + \ker \beta}{\operatorname{im} \iota_1} = \operatorname{im}\overline{\vphantom{+}\pi_1}.
@@ -164,10 +168,10 @@ $$
 
 <li>
 
-To show that $(\star)$ is exact at $\operatorname{coker} \alpha$, we apply the lemma again, which yields
+To show that the sequence is exact at $\operatorname{coker} \alpha$, we apply the lemma again, which yields
 
 $$
-\operatorname{im} \delta = \frac{\operatorname{im}\alpha + \beta(\beta^{-1} (A_2))}{\operatorname{im}\alpha} = \frac{\operatorname{im} \beta \cap A_2}{\operatorname{im} \alpha}= \frac{\iota_2^{-1}(\operatorname{im} \beta)}{\operatorname{im} \alpha} = \ker \overline{\vphantom{+}\iota_2}.
+\ker \overline{\vphantom{+}\iota_2} = \frac{\iota_2^{-1}(\operatorname{im} \beta)}{\operatorname{im} \alpha} = \frac{\operatorname{im} \beta \cap A_2}{\operatorname{im} \alpha} = \frac{\beta(\beta^{-1} (A_2))}{\operatorname{im}\alpha} = \operatorname{im} \delta.
 $$
 
 </li>
@@ -182,4 +186,49 @@ $\blacksquare$
 
 ## The Homology Long Exact Sequence
 
-The most well-known application of the snake lemma is in the construction of the homology long exact sequence. We give a brief overview of its construction and give a visual description of what the connecting morphism $\delta$ does in this scenario.
+The most well-known application of the snake lemma is in the construction of the homology long exact sequence. We will demonstrate how the long exact sequence arises and give a explicit description of the connecting homomorphism for one such example, the Mayer-Vietoris sequence.
+
+Let $0 \to \mathcal{A}_\bullet \to \mathcal{B}_\bullet \to \mathcal{C}_\bullet \to 0$ be a short exact sequence of chain complexes. Taking classes of homologous chains (not just cycles) and considering the boundary operator yields the diagram
+
+$$
+\begin{CD}
+0 @>>> \frac{\mathcal{A}_{n}}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{B}_n}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{C}_n}{\operatorname{im} \partial_{n+1}} @>>> 0 \\
+@. @V\partial^\mathcal{A}_nVV @V\partial^\mathcal{B}_nVV @V\partial^\mathcal{C}_nVV @. \\
+0 @>>> \ker\, \partial^\mathcal{A}_n @>>>  \ker\, \partial^\mathcal{B}_n @>>> \ker\, \partial^\mathcal{C}_n @>>> 0
+\end{CD}
+\quad.
+$$
+
+Applying the snake lemma yields the desired long exact sequence:
+
+<div>
+<tikz path="long_exact_sequence" desktop="1.75" mobile="1"></tikz>
+</div>
+
+The interpretation of the connecting homomorphism depends on the specific long exact sequence. For example, in the relative homology long exact sequence associated to a pair $(X, A) \in \mathbf{Top}_2$, the connecting homomorphism is the normal boundary map, but not viewed "relative" to $A$ (for this would be too "destructive" and result in the zero map).
+
+<div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
+
+**Example** (The Mayer-Vietoris sequence).
+
+Let $X$ be a topological space, and let $U$ and $V$ be subsets whose interiors cover $X$. Then we obtain a short exact sequence
+
+$$
+0 \longrightarrow \mathcal{S}_\bullet(U \cap V) \longrightarrow \mathcal{S}_\bullet(U) \oplus \mathcal{S}_\bullet(V) \to \mathcal{S}^{\{U, V\}}_\bullet(X) \longrightarrow 0,
+$$
+
+where $\mathcal{S}_\bullet$ is the singular chain complex functor and $\mathcal{S}^{\{U, V\}}_\bullet(X)$ are the chains of simplices inhabiting either $U$ or $V$. Then we may apply the lemma to obtain
+
+$$
+\mathrm{H}_{n}^{\{U, V\}} (X) \cong \frac{\big\langle [a] \oplus [b] \mid \partial [a] = \partial [b] \big\rangle}{\big\langle [c] \oplus [c] \big\rangle},
+$$
+
+where $[\cdot]$ denotes the homology class of a chain (not necessarily a cycle) in $\mathcal{S}_n(U \cap V)$. In other words, an element of the homology group is represented by a chain in $U$ and a chain in $V$ such that their boundaries agree and reside in the intersection. In particular, this implies that the difference of the two chains is a cycle. The connecting homomorphism is given by
+
+$$
+\delta_n \colon \mathrm{H}^{\{U, V\}}_n(X) \to \mathrm{H}_{n-1}(U \cap V); \quad \quad \big[[a] \oplus [b]\big] \longmapsto \big[\partial[a]\big],
+$$
+
+which takes the boundary of either chain, which is a cycle in $U \cap V$.
+
+</div>
