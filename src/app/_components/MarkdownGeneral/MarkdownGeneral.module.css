@@ -9,7 +9,11 @@
 }
 
 .markdown p:not(:last-child) {
-  @apply mb-4 text-justify hyphens-manual;
+  @apply mb-4 hyphens-manual;
+}
+
+.markdown p {
+  @apply text-justify;
 }
 
 .markdown pre {

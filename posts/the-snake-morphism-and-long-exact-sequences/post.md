@@ -1,5 +1,5 @@
 ---
-title: "The Snake Morphism and Long Exact Sequences"
+title: "The snake morphism and long exact sequences"
 date: 2024-11-20
 length: "∼2000 words"
 ---

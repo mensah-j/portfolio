@@ -15,14 +15,16 @@ for filename in "$@"; do
         
         echo "Processing file: $filename"
 
-        # Run latex to generate the .dvi file
-        latex "$filename"
+        # Run latex to generate the .pdf file
+        lualatex --output-format=dvi "$filename"
 
         # Delete the .log file
         rm -f "$basename.log"
 
         # Run dvisvgm to convert the .dvi file to SVG
         dvisvgm --no-fonts=1 "$basename.dvi"
+
+        mv "$basename-1.svg" "$basename.svg"
 
         # Delete the .dvi file
         rm -f "$basename.dvi"
