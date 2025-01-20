@@ -25,10 +25,10 @@
 }
 
 .markdown ol {
-  @apply mb-4 pl-4;
+  @apply mb-4 pl-6;
 
   list-style-type: decimal;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 .markdown ol > li::marker {
@@ -38,11 +38,14 @@
 .markdown ol > li::before {
   content: "";
   display: inline-block;
-  margin-left: 0.5em;
 }
 
 .markdown ol > li:not(:last-child) {
   @apply mb-3;
+}
+
+.markdown ol > li {
+  padding-left: 0.5em;
 }
 
 .markdown ol > li > p {
