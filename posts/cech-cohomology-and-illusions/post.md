@@ -122,7 +122,7 @@ $$
 \mathscr{A}(U) = \Big\{ \log_2 \alpha - \log_2 \beta \bigm| \alpha \text{ and } \beta \text{ are lifts of } \gamma|_{U} \Big\}.
 $$
 
-For example, if $U$ is the disjoint union of two intervals, then $\mathscr{A}(U) \cong \mathbb{Z} \times \mathbb{Z}$, since a lift is determined by a single point in each interval. If a lift exists over $U$, then $\mathscr{A}(U)$ is the set of locally constant functions $U \to \mathbb{Z}$. Assigning the zero group for $U = X$, this forms a sheaf of abelian groups on $\mathbb{S}^1$.
+For example, if $U$ is the disjoint union of two intervals, then $\mathscr{A}(U) \cong \mathbb{Z} \times \mathbb{Z}$, since a lift is determined by a single point in each interval. If a lift exists over $U$, then $\mathscr{A}(U)$ is the set of locally constant functions $U \to \mathbb{Z}$. Assigning the zero group for $U = X$, this forms a presheaf of abelian groups on $\mathbb{S}^1$.
 
 ### Cocycles and coboundaries
 
