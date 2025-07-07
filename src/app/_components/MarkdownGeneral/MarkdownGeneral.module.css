@@ -48,15 +48,15 @@
   padding-left: 0.5em;
 }
 
-.markdown ol > li > p {
+.markdown ol > li > p:first-of-type {
   display: inline;
 }
 
 .markdown ul {
-  @apply mb-4 pl-4;
+  @apply mb-4 pl-6;
 
   list-style-type: disc;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 .markdown ul > li:not(:last-child) {
@@ -87,4 +87,28 @@
 
 .markdown blockquote p {
   display: inline;
+}
+
+/* CSS */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95rem;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.markdown tr:nth-child(even) {
+  background-color: #f9f9f9;
 }

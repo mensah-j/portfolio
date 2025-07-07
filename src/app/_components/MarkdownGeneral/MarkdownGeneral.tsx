@@ -2,6 +2,7 @@ import Markdown from "react-markdown";
 import rehypeKatex from "rehype-katex";
 import rehypeRaw from "rehype-raw";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import { macros } from "./macros";
 import mix from "classnames";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -34,7 +35,7 @@ export interface MarkdownGeneralProps {
 export function MarkdownGeneral(props: MarkdownGeneralProps) {
   return (
     <Markdown
-      remarkPlugins={[remarkMath]}
+      remarkPlugins={[remarkMath, remarkGfm]}
       rehypePlugins={[
         () =>
           rehypeKatex({
