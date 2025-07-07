@@ -215,7 +215,7 @@ $$
 
 To descend from a complex representation $V$ to a real representation, the data needed is an equivariant semilinear action of $\mathrm{Gal}(\mathbb{R}/\mathbb{C})$, which has group presentation $\inner{\sigma \mid \sigma^2 = 1}$. Therefore, the data of a real structure on $V$ is equivalent to the existence of an equivariant map $\sigma \colon V \to V$ such that $\sigma^2 = \mathrm{id}$ and $\sigma(zv) = \overline{z}\sigma(v)$ for all $z \in \mathbb{C}$ and $v \in V$ (this is known as $\mathbb{C}$-_antilinearity_), so we also call such a map a _real structure_. If such a map exists, then $V$ is isomorphic to the complexification of some real representation, and we say that $V$ (or its character $\chi_V$) is _defined over_ $\mathbb{R}$ and is a _real type_ representation.
 
-To ascend from a complex representation $V$ to a quaternionic representation, one needs to equip $V$ with an left $\mathbb{H}$-action which extends the $\mathbb{C}$-action, while remaining compatible with the group action. Denote the ring of $G$-equivariant endomorphisms of $V$ (as an abelian group) by $\mathrm{End}_G(V)$. Then one seeks a ring homomorphism
+To ascend from a complex representation $V$ to a quaternionic representation, one needs to equip $V$ with a left $\mathbb{H}$-action which extends the $\mathbb{C}$-action, while remaining compatible with the group action. Denote the ring of $G$-equivariant endomorphisms of $V$ (as an abelian group) by $\mathrm{End}_G(V)$. Then one seeks a ring homomorphism
 
 $$
 \mathbb{H} \cong \mathbb{C}\inner{j}/\Big(j^2 + 1, jz - \overline{z}j \text{ (for all $z \in \mathbb{C}$)}\Big) \to \mathrm{End}_G(V)
