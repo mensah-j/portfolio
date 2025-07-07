@@ -4,7 +4,7 @@ date: 2025-07-06
 length: "~5000 words"
 ---
 
-In this post, we discuss an invariant of a complex representation of a finite group, and show how this yields a connection between irreducible real and complex representations<!--more-->. The story begins with trying to determine whether or not an irreducible complex representation admits an equivariant bilinear form; in trying to solve this problem, we arrive at an invariant of a complex representation know as the _Frobenius-Schur indicator_. Surprisingly, however, this invariant reveals a lot more about the structure of an irreducible complex representation, and ultimately allows us to classify both real and complex irreducible representations.
+In this post, we discuss an invariant of a complex representation of a finite group, and show how this yields a connection between irreducible real and complex representations<!--more-->. The story begins with trying to determine whether or not an irreducible complex representation admits an equivariant bilinear form; in trying to solve this problem, we arrive at an invariant of a complex representation known as the _Frobenius-Schur indicator_. Surprisingly, however, this invariant reveals a lot more about the structure of an irreducible complex representation, and ultimately allows us to classify both real and complex irreducible representations.
 
 Throughout this post, let $G$ be a finite group.
 
