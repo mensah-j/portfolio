@@ -205,11 +205,13 @@ Suitable descent data is described by the following proposition.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
-**Proposition.** Let $k \subseteq k'$ be a Galois field extension. If $V$ is a $k'G$-representation, define a $k$-structure on $V$ to be a equivariant _semilinear_ action of $\mathrm{Gal}(k'/k)$ on $V$; that is, an equivariant action satisfying $\sigma(\alpha v) = \sigma(\alpha)\sigma(v)$ for all $\sigma \in \mathrm{Gal}(k'/k)$, $\alpha \in k$, and $v \in V$. Then the following categories are equivalent:
+**Proposition.** Let $k \subseteq k'$ be a Galois field extension. If $V$ is a $k'G$-representation, define a $k$-structure on $V$ to be a equivariant _semilinear_ action of $\Gamma = \mathrm{Gal}(k'/k)$ on $V$; that is, an equivariant action satisfying $\sigma(\alpha v) = \sigma(\alpha)\sigma(v)$ for all $\sigma \in \mathrm{Gal}(k'/k)$, $\alpha \in k$, and $v \in V$. Then the following categories are equivalent:
 
 $$
 \{ \text{$kG$-representations} \} \cong \{\text{$k'G$-representations with a $k$-structure}\}.
 $$
+
+In particular, given a $k'G$-representation $V$ with a $k$-structure, there is a natural isomorphism $V^\Gamma \otimes_{k} k' \cong V$ given by $v \otimes \lambda \mapsto \lambda v$, where $V^\Gamma$ is the invariant subspace of $V$ under the action of the Galois group.
 
 </div>
 
@@ -233,7 +235,7 @@ $$
 \rho_V(g)(e_j \otimes 1) = \rho_W(g)e_j \otimes 1 = \sum_{i = 1}^{n} [\rho_W(g)]_{ij} e_i \otimes 1,
 $$
 
-and the matrix elements of $\rho_W(g) \colon W \to W$ are all real. In particular, the character of a complex representation defined over $\mathbb{R}$ will be real-valued. However, it is not the case that every real-valued character is defined over $\mathbb{R}$. As we will shortly see, complex representations with a quaternionic structure also have real-valued characters despite not being defined over $\mathbb{R}$; for this reason we also call such representations _pseudoreal_. <span class="bg-yellow-100">To distinguish between these types of representations, we can use the Frobenius-Schur indicator to determine when a complex representation $V$ has a real-valued character, and if it arises from a real or quaternionic structure on $V$</span>.
+and the matrix elements of $\rho_W(g) \colon W \to W$ are all real. In particular, the character of a complex representation defined over $\mathbb{R}$ will be real-valued. However, it is not the case that every real-valued character is defined over $\mathbb{R}$. As we will shortly see, complex representations with a quaternionic structure also have real-valued characters despite not being defined over $\mathbb{R}$; for this reason we also call such representations _pseudoreal_. To distinguish between these types of representations, we can use the Frobenius-Schur indicator to determine when a complex representation $V$ has a real-valued character, and if it arises from a real or quaternionic structure on $V$.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
@@ -302,11 +304,15 @@ $\blacksquare$
 
 We summarize this consequences of this theorem in the following table.
 
+<div class="relative w-full overflow-auto" style="scrollbar-width: thin;">
+
 | $\mathrm{FS}(\chi_V)$ | Representation type | What nonzero equivariant bilinear forms exist on $V$? |
 | --------------------- | ------------------- | ----------------------------------------------------- |
 | $+1$                  | real                | nondegenerate symmetric forms unique up to scaling    |
 | $-1$                  | quaternionic        | nondegenerate alternating forms unique up to scaling  |
 | $\hphantom{+}0$       | complex             | none                                                  |
+
+</div>
 
 ## Classifying irreducible representations
 
@@ -335,7 +341,7 @@ For the second step, let $W$ be an irreducible real representation and let $V \s
 <ol>
 <li>
 
-Suppose $V \cap \sigma(V) = V$. Then $\sigma$ corestricts to an map $\sigma \in \mathrm{End}_G(V)$ such that $\sigma^2 = \mathrm{id}$ and $\sigma(zv) = \overline{z}\sigma(v)$ for all $z \in \mathbb{C}$ and $v \in V$. It follows that $V$ is defined over $\mathbb{R}$ via the same real structure that defines $W^\mathbb{C}$ over $\mathbb{R}$. In particular, there are isomorphisms
+Suppose $V \cap \sigma(V) = V$. Then $\sigma$ corestricts to a map $\sigma \in \mathrm{End}_G(V)$ such that $\sigma^2 = \mathrm{id}$ and $\sigma(zv) = \overline{z}\sigma(v)$ for all $z \in \mathbb{C}$ and $v \in V$. It follows that $V$ is defined over $\mathbb{R}$ via the same real structure that defines $W^\mathbb{C}$ over $\mathbb{R}$. In particular, there are isomorphisms
 
 $$
 \Phi \colon V^{\sigma} \otimes_{\mathbb{R}} \mathbb{C} \overset{\cong}{\longrightarrow} V; \quad \Psi \colon (W^\mathbb{C})^{\sigma} \otimes_{\mathbb{R}} \mathbb{C} \overset{\cong}{\longrightarrow} W^\mathbb{C}
@@ -404,11 +410,15 @@ Furthermore, since $V \cong \overline{V}$, the character $\chi_V$ is real-valued
 
 We now relate the character of $W$ to the character of $V$. For a real type representation, $V \cong W^\mathbb{C}$, so the character $\chi_W$ is equal to the character on the complexification $\chi_V$. On the other hand, for complex and quaternionic type representations, $\chi_{W^\mathbb{C}} \cong \chi_{V} + \chi_{\overline{V}} = 2\Re \chi_V$ (in the quaternionic case, this is just $2\chi_V$, since $\chi_V$ is real-valued). To summarize, we may build a dictionary between real and complex representations, where $W$ is an irreducible real representation and $V$ is any irreducible real subrepresentation of $W^{\mathbb{C}}$:
 
+<div class="relative w-full overflow-auto" style="scrollbar-width: thin;">
+
 | $\mathrm{End}_{\mathbb{R}G}(W)$ | $\mathrm{End}_{\mathbb{C}G}(V)$          | $W^\mathbb{C}$          | $\chi_W$      | Is $\chi_V$ real? | Is $V$ defined over $\mathbb{R}$? | $\mathrm{FS}(\chi_V)$ |
 | ------------------------------- | ---------------------------------------- | ----------------------- | ------------- | ----------------- | --------------------------------- | --------------------- |
 | $\mathbb{R}$                    | $\mathbb{C}$                             | $V$                     | $\chi_V$      | **yes**           | **yes**                           | $+1$                  |
 | $\mathbb{C}$                    | $\mathbb{C} \times \mathbb{C}$           | $V \oplus \overline{V}$ | $2\Re \chi_V$ | **no**            | **no**                            | $\hphantom{+}0$       |
 | $\mathbb{H}$                    | $\mathrm{Mat}_{2 \times 2} (\mathbb{C})$ | $V \oplus V$            | $2\chi_V$     | **yes**           | **no**                            | $-1$                  |
+
+</div>
 
 ### Realifying complex representations
 
@@ -479,8 +489,12 @@ $$
 
 It follows that the real character is $\chi_W = 2 \Re \chi_V$ (in the quaternionic case, this is just $2\chi_V$, since $\chi_V$ is real-valued). To summarize, we may build another dictionary between complex and real representations, where $V$ is an irreducible complex representation and $W$ is any irreducible real subrepresentation of $V_{\mathbb{R}}$:
 
+<div class="relative w-full overflow-auto" style="scrollbar-width: thin;">
+
 | $\mathrm{End}_{\mathbb{R}G}(W)$ | $\mathrm{End}_{\mathbb{R}G}(V)$         | $V_\mathbb{R}$ | $\chi_W$      | Is $\chi_V$ real? | Is $V$ defined over $\mathbb{R}$? | $\mathrm{FS}(\chi_V)$ |
 | ------------------------------- | --------------------------------------- | -------------- | ------------- | ----------------- | --------------------------------- | --------------------- |
 | $\mathbb{R}$                    | $\mathrm{Mat}_{2 \times 2}(\mathbb{R})$ | $W \oplus iW$  | $\chi_V$      | **yes**           | **yes**                           | $+1$                  |
 | $\mathbb{C}$                    | $\mathbb{C}$                            | $W$            | $2\Re \chi_V$ | **no**            | **no**                            | $\hphantom{+}0$       |
 | $\mathbb{H}$                    | $\mathbb{H}$                            | $W$            | $2\chi_V$     | **yes**           | **no**                            | $-1$                  |
+
+</div>
