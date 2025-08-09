@@ -76,21 +76,21 @@ $\blacksquare$
 
 Note that the hypothesis that $A$ is closed is automatically satisfied if $X$ is Hausdorff. Indeed, $(X \times \{0\}) \cup (A \times I)$ must be a closed subspace of $X \times I$, since it is equal to the equalizer $\mathrm{eq}(\mathrm{id}, r) = \{(x, t) = r(x, t)\}$ and the product $X \times I$ is also Hausdorff. Taking a slice (say, $t = 1$) shows that $A$ must be closed.
 
-In the "pathological" case in where $A$ is not closed, $X$ cannot be Hausdorff, so there exists a pair of points in $X$ which are not Hausdorff-separable. As it turns out, the boundary of $A$ solely consists of such points, which yields a necessary condition for a retract $r \colon X \times I \to (X \times \{0\}) \cup A \times I$ to exist.
+In the "pathological" case in where $A$ is not closed, $X$ cannot be Hausdorff, so there exists a pair of points in $X$ which are not Hausdorff-separable. As it turns out, the "frontier" $\mathrm{fr}_X(A) \overset{\text{def}}{=} \mathrm{cl}_X(A) - A$ solely consists of such points, which yields a necessary condition for a retract to exist.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
-**Proposition**. Let $(X, A) \in \mathbf{Top}_2$ and $T = (X \times \{0\}) \cup A \times I$. If there exists a retract $r \colon X \times I \to T$, then every point $b \in \mathrm{bd}_X(A)$ is Hausdorff-inseparable from some point in $a \in A$ (depending on $b$).
+**Proposition**. Let $(X, A) \in \mathbf{Top}_2$ and $T = (X \times \{0\}) \cup A \times I$. If there exists a retract $r \colon X \times I \to T$, then every point $b \in \mathrm{fr}_X(A)$ is Hausdorff-inseparable from some point in $a \in A$ (depending on $b$).
 
 </div>
 
 _Proof_. Let $\pi_X \colon X \times I \to X$ be the projection onto $X$ and let $\widetilde{r} = \pi_X \circ r$. Fix some $t \in (0, 1]$ and define $\widetilde{r}_t \colon X \to X$ by $x \mapsto \widetilde{r}(x, t)$. Since $r|_{A \times I}$ is the identity, $\widetilde{r}_{t}|_{A} = \mathrm{id}$ as well. Furthermore,
 
 $$
-r\big(\mathrm{bd}_X(A) \times \{t\}\big) \subseteq \mathrm{cl}_{X \times I}\big(A \times \{t\}\big) \cap T = \big(\mathrm{cl}_{X}(A) \times \{t\}\big) \cap T = A \times \{t\},
+r\big(\mathrm{fr}_X(A) \times \{t\}\big) \subseteq \mathrm{cl}_{X \times I}\big(A \times \{t\}\big) \cap T = \big(\mathrm{cl}_{X}(A) \times \{t\}\big) \cap T = A \times \{t\},
 $$
 
-so $\widetilde{r}_t$ sends the boundary $\mathrm{bd}_X(A)$ into $A$. Let $b \in \mathrm{bd}_X(A)$, and $a = \widetilde{r}_t(b) \in A$; we show that $a$ and $b$ are inseparable. To this end, let $U$ and $V$ be open sets containing $a$ and $b$ respectively. Then $W = V \cap \widetilde{r}_t^{-1}(U)$ is a nonempty open set containing $b$, which implies $W \cap A \neq \varnothing$, as $b$ is a boundary point of $A$. Thus,
+so $\widetilde{r}_t$ sends the frontier $\mathrm{fr}_X(A)$ into $A$. Let $b \in \mathrm{fr}_X(A)$, and $a = \widetilde{r}_t(b) \in A$; we show that $a$ and $b$ are inseparable. To this end, let $U$ and $V$ be open sets containing $a$ and $b$ respectively. Then $W = V \cap \widetilde{r}_t^{-1}(U)$ is a nonempty open set containing $b$, which implies $W \cap A \neq \varnothing$, since $b$ is a limit point of $A$. Thus,
 
 $$
 \varnothing \subsetneq W \cap A = V \cap \big(\widetilde{r}_t^{-1}(U) \cap A\big) = V \cap \widetilde{r}_t|_{A}^{-1}(U) \subseteq V \cap U,
@@ -104,7 +104,7 @@ $\blacksquare$
 
 </div>
 
-For the sake of visualization, we give an example of a pair $(X, A)$ satisfying the hypotheses of the previous proposition, where $A$ is _not_ closed. Before doing so, we make some qualitative remarks on the pair which will motivate the subsequent construction. Note that if $x$ is a boundary point, then the path $\alpha(s) = \widetilde{r}(x, s)$ lies in $A$ for $s \in (0, 1]$. Fix some $t \in (0, 1]$ and let $\beta = \widetilde{r}_t \circ \alpha$. Then $\alpha|_{(0, 1]} = \beta|_{(0, 1]}$, but $\beta(0) = \alpha(t)$. If the path $\alpha$ were _injective_, this would imply the image of the path could be set-theoretically identified with the unit interval. Transporting the subspace topology on the path to the interval therefore yields a topology $\tau$ on $[0,1]$ with the property that the maps
+For the sake of visualization, we give an example of a pair $(X, A)$ satisfying the hypotheses of the previous proposition, where $A$ is _not_ closed. Before doing so, we make some qualitative remarks on the pair which will motivate the subsequent construction. Note that if $x$ is a frontier point, then the path $\alpha(s) = \widetilde{r}(x, s)$ lies in $A$ for $s \in (0, 1]$. Fix some $t \in (0, 1]$ and let $\beta = \widetilde{r}_t \circ \alpha$. Then $\alpha|_{(0, 1]} = \beta|_{(0, 1]}$, but $\beta(0) = \alpha(t)$. If the path $\alpha$ were _injective_, this would imply the image of the path could be set-theoretically identified with the unit interval. Transporting the subspace topology on the path to the interval therefore yields a topology $\tau$ on $[0,1]$ with the property that the maps
 
 $$
 p_t \colon ([0, 1], \tau_{\rm standard}) \to ([0, 1], \tau); \quad \quad \quad p_t(s) =
@@ -198,7 +198,7 @@ is contained in $D$.
 
    Thus $Z \subseteq D$, so the entire term $\mathrm{cl}_{X \times I}(D_A) \cap T$ lies in $D$.
 
-It follows that $D$ is closed in $X \times I$, so the subspace topology is at least as fine the pushout topology. Thus, the two topologies are equal, and the rest of the argument is carried out as before.
+It follows that $D$ is closed in $T$, so the subspace topology is at least as fine the pushout topology. Thus, the two topologies are equal, and the rest of the argument is carried out as before.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
