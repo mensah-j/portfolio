@@ -66,7 +66,7 @@ $$
 (X \times \{0\}) \cup (A \times I) \cong (X \times \{0\}) \cup_{A \times \{0\}} (A \times I) \cong X \cup_{A} (A \times I),
 $$
 
-where the first isomorphism is set-theoretically the identity and the second is via the map $(x, 0) \mapsto x$. Post-composing these isomorphism with the retract $r$ yields a left inverse to $j \colon X \cup_{A} (A \times I) \to X \times I$. Thus, the homotopy extension property holds.
+where the first isomorphism is set-theoretically the identity and the second is via the map $(x, 0) \mapsto x$. Post-composing these isomorphisms with the retract $r$ yields a left inverse to $j \colon X \cup_{A} (A \times I) \to X \times I$. Thus, the homotopy extension property holds.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
@@ -134,7 +134,7 @@ Continuity only needs to be checked for each point on $\{0\} \times I$. Given a 
 <tikz path="example" desktop="2" mobile="1"></tikz>
 </div>
 
-One easily checks that $r(U) \subseteq V$, so $r$ is indeed continuous. Furthermore, one can explicitly verify the statement of the previous proposition: the point $0 \in \mathrm{bd}_X(A)$ is Hausdorff-inseparable from every point of $A$.
+One easily checks that $r(U) \subseteq V$, so $r$ is indeed continuous. Furthermore, one can explicitly verify the statement of the previous proposition: the point $0 \in \mathrm{bd}_X(A)$ is Hausdorff-inseparable from every point in $A$.
 
 </div>
 
