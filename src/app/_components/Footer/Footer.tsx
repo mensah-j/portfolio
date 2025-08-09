@@ -12,7 +12,7 @@ export function Footer(props: FooterProps) {
       >
         <div className="flex flex-row justify-end items-center p-2 font-semibold w-content">
           <p className="text-xs sm:text-sm text-center">
-            © 2024 Jeffery Mensah. All rights reserved.
+            © 2025 Jeffery Mensah. All rights reserved.
           </p>
         </div>
       </div>
