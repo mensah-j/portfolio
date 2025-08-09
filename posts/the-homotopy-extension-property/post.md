@@ -1,6 +1,6 @@
 ---
 title: "The homotopy extension property"
-date: 2025-07-06
+date: 2025-08-09
 length: "~2500 words"
 ---
 
