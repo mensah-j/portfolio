@@ -167,16 +167,16 @@ is contained in $D$.
    Since $D_A$ is closed in $A \times I$, we have $\mathrm{cl}_{X \times I}(D_A) \cap (A \times I) = D_A$, so the second term lies in $D$. The first term is more difficult to handle; this is where the retract mentioned in the hypotheses is finally used. To begin, note that
 
    $$
-   \mathrm{cl}_{X \times I}(D_A) \cap (X \times \{0\}) \subseteq \mathrm{cl}_{X \times I}(A \times I) \cap (X \times \{0\}) = \mathrm{cl}_{X}(A) \times \{0\},
+   Z = \mathrm{cl}_{X \times I}(D_A) \cap (X \times \{0\}) \subseteq \mathrm{cl}_{X \times I}(A \times I) \cap (X \times \{0\}) = \mathrm{cl}_{X}(A) \times \{0\},
    $$
 
-   which implies $Z \subseteq \mathrm{cl}_X(A) \times \{0\}$. Furthermore,
+   Furthermore, we also have the inclusion
 
    $$
-   Z \cap (A \times \{0\}) = \mathrm{cl}_{X \times I}(D_A) \cap (A \times \{0\}) = \mathrm{cl}_{X \times I}(D_A) \cap (A \times I) \cap (X \times \{0\}) = D_A \cap (X \times \{0\}),
+   Z \cap (A \times \{0\}) = \mathrm{cl}_{X \times I}(D_A) \cap (A \times \{0\}) = \mathrm{cl}_{X \times I}(D_A) \cap (A \times I) \cap (X \times \{0\}) = D_A \cap (X \times \{0\}) \subseteq D_0.
    $$
 
-   which implies $Z \cap (A \times \{0\}) \subseteq D_0$. Now, let $\pi_X \colon X \times I \to X$ be the projection onto $X$ and define $\widetilde{r} = \pi_X \circ r$. To use the retract, we define an auxiliary map which "extends" each of the maps $x \mapsto \widetilde{r}(x, s)$ to all of $X \times I$. Specifically, define $\rho \colon X \times I \times I \to X \times I$ by $\rho\big((x, t), s\big) = \big(\widetilde{r}(x, s), t\big)$.
+   As before, let $\pi_X \colon X \times I \to X$ be the projection onto $X$ and define $\widetilde{r} = \pi_X \circ r$. To use the retract, we define an auxiliary map which "extends" each map $x \mapsto \widetilde{r}(x, s)$ to all of $X \times I$. Specifically, define $\rho \colon X \times I \times I \to X \times I$ by $\rho\big((x, t), s\big) = \big(\widetilde{r}(x, s), t\big)$. Using $\rho$ and the inclusions above, we show that $Z \subseteq D$.
 
    Note that $\rho|_{D_A \times I}$ is just the projection onto the first factor, so $\rho(\mathrm{cl}_{X \times I}(D_A) \times [0,1]) \subseteq \mathrm{cl}_{X \times I}(D_A)$. Applying the definition, we also obtain $\rho\big((X \times \{0\}) \times [0, 1]\big) \subseteq X \times \{0\}$. Thus, by taking the intersection and using the fact that $Z \subseteq \mathrm{cl}_X(A) \times \{0\}$, we find
 
