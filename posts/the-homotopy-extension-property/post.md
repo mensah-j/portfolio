@@ -4,7 +4,7 @@ date: 2025-08-09
 length: "~2500 words"
 ---
 
-In this post, we discuss equivalent characterizations of the homotopy extension property of a topological pair $(X, A)$, which roughly states that a partially-defined homotopy<!--more--> on a subspace $A$ can be extended to the entire space. In the preliminary chapter of Hatcher's _Algebraic Topology_, a brief discussion of the property is had, and a characterization is given for pairs where $A$ is closed in terms of the existence of a certain retract. In the appendix, a more general proof of this characterization due to Strøm is given which removes this restriction on the pair.
+In this post, we discuss equivalent characterizations of the homotopy extension property of a topological pair $(X, A)$, which states that a homotopy<!--more--> on a subspace $A$ can be extended to the entire space given prescribed "initial data" on $X$. In the preliminary chapter of Hatcher's _Algebraic Topology_, a brief discussion of the property is had, and a characterization is given for pairs where $A$ is closed in terms of the existence of a certain retract. In the appendix, a more general proof of this characterization due to Strøm is given which removes this restriction on the pair.
 
 We provide a similar proof of this characterization for pairs $(X, A)$ where $A$ is either closed or not closed, and specifically investigate the nonclosed case, determining an additional necessary condition on the pair for the homotopy extension property to hold. To begin, we give the definition of the property.
 
