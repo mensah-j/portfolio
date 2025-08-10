@@ -14,7 +14,7 @@ We provide a similar proof of this characterization and specifically investigate
 
 </div>
 
-The data given in the above definition consists two pieces: a map $f \colon X \to Y$ and a homotopy $H \colon A \times [0, 1] \to Y$ which "agrees" with $f$ after making the identification $A \cong A \times \{0\}$. By forming the pushout, we may combine this data to obtain a _single_ continuous map $X \cup_A (A \times I) \to Y$. Similarly, the inclusion $X \to X \times I$ given by $x \mapsto (x, 0)$ and the inclusion $A \times I \to X \times I$ make the diagram
+The data given in the above definition consists two pieces: a map $f \colon X \to Y$ and a homotopy $H \colon A \times [0, 1] \to Y$ which agrees with $f$ after making the identification $A \cong A \times \{0\}$. By forming the pushout, we may combine this data to obtain a _single_ continuous map $X \cup_A (A \times I) \to Y$. Similarly, the inclusion $X \to X \times I$ given by $x \mapsto (x, 0)$ and the inclusion $A \times I \to X \times I$ make the diagram
 
 <div>
 <tikz path="pushout_xi" desktop="1.75" mobile="1"></tikz>
