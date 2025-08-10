@@ -80,7 +80,7 @@ In the "pathological" case in where $A$ is not closed, $X$ cannot be Hausdorff, 
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
-**Proposition**. Let $(X, A) \in \mathbf{Top}_2$ and $T = (X \times \{0\}) \cup A \times I$. If there exists a retract $r \colon X \times I \to T$, then every point $b \in \mathrm{fr}_X(A)$ is Hausdorff-inseparable from some point in $a \in A$ (depending on $b$).
+**Proposition**. Let $(X, A) \in \mathbf{Top}_2$ and $T = (X \times \{0\}) \cup A \times I$. If there exists a retract $r \colon X \times I \to T$, then every point $b \in \mathrm{fr}_X(A)$ is Hausdorff-inseparable from some point $a \in A$ (depending on $b$).
 
 </div>
 
