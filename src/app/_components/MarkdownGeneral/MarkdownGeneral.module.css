@@ -1,5 +1,9 @@
 /* css-disable */
 
+.markdown h1 {
+  @apply text-2xl sm:text-3xl md:text-4xl font-extrabold pt-3 sm:pt-5;
+}
+
 .markdown h2 {
   @apply text-xl font-bold mt-4 mb-2 indent-0;
 }

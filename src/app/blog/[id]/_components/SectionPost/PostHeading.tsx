@@ -12,7 +12,7 @@ export interface PostHeadingProps {
 export function PostHeading(props: PostHeadingProps) {
   return (
     <div className="flex flex-col gap-2 sm:pt-5 w-full">
-      <MarkdownGeneral>{`<h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold pt-3 sm:pt-5">${props.title}</h1>`}</MarkdownGeneral>
+      <MarkdownGeneral>{`# ${props.title}`}</MarkdownGeneral>
 
       <div className="flex flex-row justify-between items-end border-b pb-3">
         <div className="flex flex-col shrink-0 font-semibold ">
