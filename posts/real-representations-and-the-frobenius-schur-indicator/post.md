@@ -186,7 +186,7 @@ Thus, if $W$ is an irreducible real representation, then $\mathrm{End}_{\mathbb{
 
 ### Real and quaternionic structures
 
-In the previous section, we showed how a real representation $W$ can "ascend" into either a complex or quaternionic representation by means of a isomorphism $\mathbb{C} \to \mathrm{End}_{\mathbb{R}G}(W)$ or $\mathbb{H} \to \mathrm{End}_{\mathbb{R}G}(W)$.
+In the previous section, we showed how a real representation $W$ can "ascend" into either a complex or quaternionic representation by means of an isomorphism $\mathbb{C} \to \mathrm{End}_{\mathbb{R}G}(W)$ or $\mathbb{H} \to \mathrm{End}_{\mathbb{R}G}(W)$.
 
 Similarly, a complex representation $V$ can "ascend" to a quaternionic representation or "descend" to a real representation under certain circumstances. We will call the necessary ascent data a _quaternionic structure_ and the necessary descent data a _real structure_ on $V$. To make the situation clearer, we first work in a bit more generality.
 
@@ -334,7 +334,7 @@ $$
 
 $$
 
-is a isomorphism of complex representations with an inverse given by $v \oplus w \mapsto \tfrac{1}{2} (v + w) \otimes 1 + \tfrac{1}{2i}(v - w) \otimes i$. Let $V_{\mathbb{R}} \cong U_1 \oplus \cdots \oplus U_n$ be the decomposition of the realifcation into irreducible real represenations. Then $V$ occurs as a subrepresentation of $(V_{\mathbb{R}})^{\mathbb{C}} \cong (U_1)^{\mathbb{C}} \oplus \cdots \oplus (U_n)^{\mathbb{C}}$. By irreducibility of $V$, it belongs entirely to one summand $(U_i)^{\mathbb{C}}$, so $V$ occurs in the complexification of some irreducible real representation.
+is an isomorphism of complex representations with an inverse given by $v \oplus w \mapsto \tfrac{1}{2} (v + w) \otimes 1 + \tfrac{1}{2i}(v - w) \otimes i$. Let $V_{\mathbb{R}} \cong U_1 \oplus \cdots \oplus U_n$ be the decomposition of the realifcation into irreducible real represenations. Then $V$ occurs as a subrepresentation of $(V_{\mathbb{R}})^{\mathbb{C}} \cong (U_1)^{\mathbb{C}} \oplus \cdots \oplus (U_n)^{\mathbb{C}}$. By irreducibility of $V$, it belongs entirely to one summand $(U_i)^{\mathbb{C}}$, so $V$ occurs in the complexification of some irreducible real representation.
 
 For the second step, let $W$ be an irreducible real representation and let $V \subseteq W^{\mathbb{C}}$ be an irreducible complex subrepresenation. There exists an equivariant complex conjugation map $\sigma \in \mathrm{End}_{\mathbb{C}G} (W^\mathbb{C})$ given by $\sigma(w \otimes z) = w \otimes \overline{z}$; the existence of this just says the complexification is defined over $\mathbb{R}$. Since this map is an automorphism, it follows that $\sigma(V)$ is also an irreducible subrepresentation of $W^\mathbb{C}$, so $V \cap \sigma(V)$ is either $V$ or $\{0\}$. Note that $\sigma(V)$ is isomorphic to the conjugate representation $\overline{V}$, via the map $\sigma(v) \mapsto v$. Indeed, $z\sigma(v) = \sigma(\overline{z}v) \mapsto \overline{z}v$. We now analyze both cases:
 
