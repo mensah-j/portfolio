@@ -148,7 +148,7 @@ With this picture in mind, we finally remove the condition that $A$ has to be cl
 
 _Proof_. In order to use the previous argument, we show that $(X \times \{0\}) \cup (A \times I) \cong (X \times \{0\}) \cup_{A \times \{0\}} (A \times I)$ via the identity map. Since $j$ is continuous, the pushout topology is at least as fine as the subspace topology. Thus, we only have to show that the subspace topology is at least as fine as the pushout topology.
 
-Let $D \subseteq T$ be closed in the pushout topology; we need to show that it is also closed in the subspace topology. To begin, decompose $D$ into the subsets $D_0 = D \cap (X \cap \{0\})$ and $D_A = D \cap (A \cap I)$, which are closed in $X \times \{0\}$ and $A \times I$ respectively. We show that each term of the closure
+Let $D \subseteq T$ be closed in the pushout topology; we need to show that it is also closed in the subspace topology. To begin, decompose $D$ into the subsets $D_0 = D \cap (X \cap \{0\})$ and $D_A = D \cap (A \times I)$, which are closed in $X \times \{0\}$ and $A \times I$ respectively. We show that each term of the closure
 
 $$
 \mathrm{cl}_{T}(D) = \mathrm{cl}_{X \times I}(D) \cap T = \big(\mathrm{cl}_{X \times I}(D_0) \cap T \big) \cup \big(\mathrm{cl}_{X \times I}(D_A) \cap T \big)
