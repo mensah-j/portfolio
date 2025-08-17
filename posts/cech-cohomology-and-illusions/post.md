@@ -4,7 +4,7 @@ date: 2025-01-19
 length: "∼2500 words"
 ---
 
-This post builds off of Roger Penrose's article _On the Cohomology of Impossible Figures_, in which he shows a remarkable connection betweeen impossible drawings, such as the [Penrose triangle](https://en.wikipedia.org/wiki/Penrose_triangle), and nontrivial cohomology groups<!--more-->. In simple terms, the fact these perceptual illusions work is due to an obstruction preventing one from synthesizing the local information in the figure into a consistent global construct; this is precisely what cohomology measures. We give a brief introduction to Čech cohomology and show how a well-known auditory illusion, the [Shepard tone](https://en.wikipedia.org/wiki/Shepard_tone), works by the same principles discussed by Penrose.
+This post builds off of Roger Penrose's article _On the Cohomology of Impossible Figures_, in which he shows a remarkable connection between impossible drawings, such as the [Penrose triangle](https://en.wikipedia.org/wiki/Penrose_triangle), and nontrivial cohomology groups<!--more-->. In simple terms, the fact these perceptual illusions work is due to an obstruction preventing one from synthesizing the local information in the figure into a consistent global construct; this is precisely what cohomology measures. We give a brief introduction to Čech cohomology and show how a well-known auditory illusion, the [Shepard tone](https://en.wikipedia.org/wiki/Shepard_tone), works by the same principles discussed by Penrose.
 
 ## Čech cohomology
 
