@@ -192,14 +192,14 @@ Let $0 \to \mathcal{A}_\bullet \to \mathcal{B}_\bullet \to \mathcal{C}_\bullet \
 
 $$
 \begin{CD}
-0 @>>> \frac{\mathcal{A}_{n}}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{B}_n}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{C}_n}{\operatorname{im} \partial_{n+1}} @>>> 0 \\
+ @. \frac{\mathcal{A}_{n}}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{B}_n}{\operatorname{im} \partial_{n+1}} @>>> \frac{\mathcal{C}_n}{\operatorname{im} \partial_{n+1}} @>>> 0 \\
 @. @V\partial^\mathcal{A}_nVV @V\partial^\mathcal{B}_nVV @V\partial^\mathcal{C}_nVV @. \\
-0 @>>> \ker\, \partial^\mathcal{A}_n @>>>  \ker\, \partial^\mathcal{B}_n @>>> \ker\, \partial^\mathcal{C}_n @>>> 0
+0 @>>> \ker\, \partial^\mathcal{A}_n @>>>  \ker\, \partial^\mathcal{B}_n @>>> \ker\, \partial^\mathcal{C}_n @.
 \end{CD}
 \quad.
 $$
 
-Applying the snake lemma yields the desired long exact sequence:
+Two applications of the snake lemma shows that the top row (cokernels) and bottom row (kernels) are exact. Applying the lemma again to the diagram yields the desired long exact sequence:
 
 <div>
 <tikz path="long_exact_sequence" desktop="1.75" mobile="1"></tikz>
