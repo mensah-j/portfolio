@@ -22,7 +22,13 @@ M &\text{if } i = 0 \\
 \end{cases}
 $$
 
-and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexes have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees.
+and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexes have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees. To obtain a sequence which exact at every term, we may _augment_ $\mathscr{P}_\bullet(M)$ by replacing the $-1$st degree with $M$ and defining an _augmentation map_ $\mathrm{d}_0 \colon \mathscr{P}_0(M) \to M$ (typically denoted by $\epsilon$) using the quasi-isomorphism as follows:
+
+$$
+\mathrm{d}_0 = \mathscr{P}_0(M) \twoheadrightarrow \mathrm{H}_0(\mathscr{P}_\bullet(M)) \overset{\cong}{\to} \mathrm{H}_0(M_\bullet) \cong M
+$$
+
+By construction, $\ker \mathrm{d}_0 = \operatorname{im} \mathrm{d}_1$, so the augmented complex $\mathscr{P}_\bullet(M) \twoheadrightarrow M \to 0$, which we now denote by $\widehat{\mathscr{P}}_\bullet(M)$, is exact at each degree.
 
 Given an $R$-module $N$, we define $\mathrm{Tor}_{i}(M, N) = \mathrm{H}_{i}(\mathscr{P}_{\bullet}(M) \otimes_R N)$ to be the homology of the tensored complex (which is no longer necessarily exact). It is a fundamental result of homological algebra that this process does _not_ depend on the specific choice of projective resolutions: any two choices result in naturally isomorphic functors. Furthermore, since $- \otimes_R -$ is symmetric, one obtains a naturally isomorphic functor if one chooses to use the left tensor product $N \otimes_R -$ instead.
 
@@ -80,7 +86,7 @@ $$
 \mathrm{Tor}_0^R(M, N) \cong M \otimes_R N \cong N \otimes_R M \cong \mathrm{Tor}_0^R(N, M).
 $$
 
-For $i > 0$, we take projective resolutions of both arguments. Let $P_\bullet \simeq M$ and $Q_\bullet \simeq N$ be projective resolutions of $M$ and $N$; we show that ${\mathrm{H}_i(P_\bullet \otimes_R N) \cong \mathrm{H}_i(M \otimes_R Q_\bullet)}$. By the previous proposition, for all $i > 0$ we have
+For $i > 0$, it suffices to show that $\mathrm{H}_i(\mathscr{P}_\bullet(M) \otimes_R N)$ is naturally isomorphic $\mathrm{H}_i(M \otimes_R \widehat{\mathscr{P}}_\bullet(N))$, since $- \otimes_R -$ is symmetric, and any complex is identical to its augmentation for positive degrees. For brevity, denote the chosen projective resolution of $M$ by $P_\bullet$ and the augmented projective resolution of $N$ by $Q_\bullet$. By the previous proposition, for all $i > 0$ we have
 
 $$
 \mathrm{H}_i(M \otimes_R Q_\bullet) \cong \ker \big(M \otimes_R \mathrm{d}Q_i \to M \otimes_R Q_{i-1}\big).
