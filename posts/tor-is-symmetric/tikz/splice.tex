@@ -1,0 +1,38 @@
+\nofiles
+\documentclass[crop,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{calc, babel, patterns, patterns.meta}
+
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+\begin{document}
+
+\begin{tikzcd}
+	& 0 \\
+	&& {\mathrm{d} A_{i+1}} \\
+	\cdots & {A_{i+1}} && {A_i} && {A_{i-1}} & \cdots \\
+	&&&& {\mathrm{d}A_i} \\
+	&&&&& 0
+	\arrow[from=1-2, to=2-3]
+	\arrow[from=2-3, to=3-4]
+	\arrow[from=3-1, to=3-2]
+	\arrow[two heads, from=3-2, to=2-3]
+	\arrow[from=3-2, to=3-4]
+	\arrow[from=3-4, to=3-6]
+	\arrow[from=3-4, to=4-5]
+	\arrow[from=3-6, to=3-7]
+	\arrow[from=4-5, to=3-6]
+	\arrow[from=4-5, to=5-6]
+\end{tikzcd}
+
+\end{document}
