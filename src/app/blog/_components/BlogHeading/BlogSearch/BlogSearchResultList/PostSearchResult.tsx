@@ -40,7 +40,7 @@ export function PostSearchResult(props: PostSearchResultProps) {
           dangerouslySetInnerHTML={{ __html: props.title }}
         />
         <span className="text-xs font-semibold">
-          {format(parseISO(props.date), "MMMM d, yyyy")} • {props.length} read
+          {format(parseISO(props.date), "MMMM d, yyyy")} • {props.length}
         </span>
       </div>
     </Link>
