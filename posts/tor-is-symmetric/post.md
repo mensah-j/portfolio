@@ -86,7 +86,7 @@ $$
 \mathrm{Tor}_0^R(M, N) \cong M \otimes_R N \cong N \otimes_R M \cong \mathrm{Tor}_0^R(N, M).
 $$
 
-For $i > 0$, it suffices to show that $\mathrm{H}_i(\mathscr{P}_\bullet(M) \otimes_R N)$ is naturally isomorphic $\mathrm{H}_i(M \otimes_R \widehat{\mathscr{P}}_\bullet(N))$, since $- \otimes_R -$ is symmetric, and any complex is identical to its augmentation for positive degrees. For brevity, denote the chosen projective resolution of $M$ by $P_\bullet$ and the augmented projective resolution of $N$ by $Q_\bullet$. By the previous proposition, for all $i > 0$ we have
+For $i > 0$, it suffices to show that $\mathrm{H}_i(\mathscr{P}_\bullet(M) \otimes_R N)$ is naturally isomorphic to $\mathrm{H}_i(M \otimes_R \widehat{\mathscr{P}}_\bullet(N))$, since $- \otimes_R -$ is symmetric, and any complex is identical to its augmentation for positive degrees. For brevity, denote the projective resolution of $M$ by $P_\bullet$ and the augmented projective resolution of $N$ by $Q_\bullet$. By the previous proposition, for all $i > 0$ we have
 
 $$
 \mathrm{H}_i(M \otimes_R Q_\bullet) \cong \ker \big(M \otimes_R \mathrm{d}Q_i \to M \otimes_R Q_{i-1}\big).
