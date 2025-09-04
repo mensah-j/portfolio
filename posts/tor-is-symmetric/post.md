@@ -5,14 +5,14 @@ date: 2025-09-03
 length: "∼1000 words"
 ---
 
-The $\mathrm{Tor}$ functors, which are ubiquitous in algebraic topology and more generally homological algebra, encode the failure of the tensor product to be an exact functor. As a derived functor, one typically defines<!--more--> $\mathrm{Tor}_i^R(M, N)$ by taking a projective resolution of the first argument $M$ and computing the homology of the tensored chain complex. Surprisingly, this seemingly asymmetric process produces a _symmetric_ bifunctor; in this short note we give a short explanation of why this is so and describe the natural isomorphism $\mathrm{Tor}_i^R(M, N) \cong \mathrm{Tor}_i^R(N, M)$.
+The $\mathrm{Tor}$ functors, which are ubiquitous in algebraic topology and more generally homological algebra, encode the failure of the tensor product to be an exact functor. As a derived functor, one typically defines<!--more--> $\mathrm{Tor}_i^R(M, N)$ by taking a projective resolution of the first argument $M$ and computing the homology of the tensored chain complex. Surprisingly, this seemingly asymmetric process produces a _symmetric_ bifunctor; in this short note we give a short explanation of why this is so and construct the natural isomorphism $\mathrm{Tor}_i^R(M, N) \cong \mathrm{Tor}_i^R(N, M)$.
 
-For what follows, we let $R$ be a commutative ring.
+For what follows, let $R$ be a commutative ring.
 
 ## Projective resolutions and $\mathrm{Tor}$ functors
 
 In order to define the $\mathrm{Tor}$ functors, we first need to fix a _projective resolution_ $\mathscr{P}_{\bullet}(M)$ for every $R$-module $M$. For the unacquainted, this means we first regard
-$L$ as the chain complex $L_{\bullet}$ given by
+$M$ as the chain complex $M_{\bullet}$ given by
 
 $$
 M_{i} =
@@ -22,11 +22,11 @@ M &\text{if } i = 0 \\
 \end{cases}
 $$
 
-and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexs have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees except possibly $0$.
+and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexes have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees.
 
-Finally, given an $R$-module $N$, we define $\mathrm{Tor}_{i}(M, N) = \mathrm{H}_{i}(\mathscr{P}_{\bullet}(M) \otimes_R N)$ to be the homology of the tensored complex (which is no longer necessarily exact). It is a fundamental result of homological algebra that this process does _not_ depend on the specific choice of projective resolutions: any two choices result in naturally isomorphic functors. Furthermore, since $- \otimes_R -$ is symmetric, one obtains a naturally isomorphic functor if one chooses to use the left tensor product $N \otimes_R -$ instead.
+Given an $R$-module $N$, we define $\mathrm{Tor}_{i}(M, N) = \mathrm{H}_{i}(\mathscr{P}_{\bullet}(M) \otimes_R N)$ to be the homology of the tensored complex (which is no longer necessarily exact). It is a fundamental result of homological algebra that this process does _not_ depend on the specific choice of projective resolutions: any two choices result in naturally isomorphic functors. Furthermore, since $- \otimes_R -$ is symmetric, one obtains a naturally isomorphic functor if one chooses to use the left tensor product $N \otimes_R -$ instead.
 
-The failure for $\mathscr{P}_{\bullet}(M) \otimes_R N$ to be exact is because $- \otimes_R N$ is typically only _right_ exact. As it is both instructive and useful for later arguments, we highlight the specific obstruction to a right exact functor preserving long exact sequences.
+The failure for $\mathscr{P}_{\bullet}(M) \otimes_R N$ to be exact is due to the fact that $- \otimes_R N$ is typically only _right_ exact. As it is both instructive and useful for later arguments, we highlight the specific obstruction to a right exact functor preserving long exact sequences.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
@@ -36,7 +36,7 @@ $$
 \mathrm{H}_i(F(A_\bullet)) \cong \ker(F(\mathrm{d} A_i \hookrightarrow A_{i-1})),
 $$
 
-where $\mathrm{d} A_i = \operatorname{im} \mathrm{d}_i$ is the image of the $i$th differential.
+where $\mathrm{d} A_i \overset{\text{def}}{=} \operatorname{im} \mathrm{d}_i$ is the image of the $i$th differential.
 
 </div>
 
@@ -46,7 +46,7 @@ _Proof_. By inserting the images of each differential, we obtain a short exact s
 <tikz path="splice" desktop="1.45" mobile="1"></tikz>
 </div>
 
-Since $F$ is right exact, $F(A_{i+1}) \twoheadrightarrow F(\mathrm{d}A_{i+1})$ is surjective, and $F(\mathrm{d}A_{i+1}) \to F(A_i) \to F(\mathrm{d}A_i) \to 0$ is exact. Consider the diagram
+Since $F$ is right exact, $F(A_{i+1}) \twoheadrightarrow F(\mathrm{d}A_{i+1})$ is still surjective, and $F(\mathrm{d}A_{i+1}) \to F(A_i) \to F(\mathrm{d}A_i) \to 0$ is exact. Consider the diagram
 
 <div>
 <tikz path="splice_functor" desktop="1.45" mobile="1"></tikz>
@@ -71,7 +71,7 @@ In other words, for all $i > 0$, the preceding proposition says that $\mathrm{To
 To show that $\mathrm{Tor}_i$ is symmetric, we split into cases based on whether or not $i$ is positive or not. For $i = 0$, note that by right-exactness, we have
 
 $$
-\mathrm{Tor}_0^R(M, N) = \operatorname{coker}(\mathscr{P}_1(M) \otimes_R N \to \mathscr{P}_1(M) \otimes_R N) = \operatorname{coker}(\mathscr{P}_1(M) \to \mathscr{P}_0(M)) \otimes_R N \cong M \otimes_R N,
+\mathrm{Tor}_0^R(M, N) = \operatorname{coker}(\mathscr{P}_1(M) \otimes_R N \to \mathscr{P}_0(M) \otimes_R N) = \operatorname{coker}(\mathscr{P}_1(M) \to \mathscr{P}_0(M)) \otimes_R N \cong M \otimes_R N,
 $$
 
 since $\mathscr{P}_\bullet(M) \sim M$. Since the tensor product is symmetric, it follows that
@@ -110,7 +110,7 @@ _Proof._ The connecting homomorphism of the zig-zag lemma provides a natural iso
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
-$\blacksquare$
+$\square$
 
 </div>
 
