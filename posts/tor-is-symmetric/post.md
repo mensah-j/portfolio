@@ -22,10 +22,10 @@ M &\text{if } i = 0 \\
 \end{cases}
 $$
 
-and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexes have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees. To obtain a sequence which exact at every term, we may _augment_ $\mathscr{P}_\bullet(M)$ by replacing the $-1$st degree with $M$ and defining an _augmentation map_ $\mathrm{d}_0 \colon \mathscr{P}_0(M) \to M$ (typically denoted by $\epsilon$) using the quasi-isomorphism as follows:
+and choose a complex of projective modules $\mathscr{P}_{\bullet}(M)$ _quasi-isomorphic_ to $M_{\bullet}$ (which we denote using $\sim$). By quasi-isomorphic, we mean that both complexes have isomorphic homology, which in particular implies that $\mathscr{P}_\bullet(M)$ is exact at all positive degrees. To obtain a sequence which is exact at every term, we may _augment_ $\mathscr{P}_\bullet(M)$ by replacing the $-1$st degree with $M$ and defining an _augmentation map_ $\mathrm{d}_0 \colon \mathscr{P}_0(M) \to M$ (typically denoted by $\epsilon$) using the quasi-isomorphism as follows:
 
 $$
-\mathrm{d}_0 = \mathscr{P}_0(M) \twoheadrightarrow \mathrm{H}_0(\mathscr{P}_\bullet(M)) \overset{\cong}{\to} \mathrm{H}_0(M_\bullet) \cong M
+\mathscr{P}_0(M) \twoheadrightarrow \mathrm{H}_0(\mathscr{P}_\bullet(M)) \overset{\cong}{\to} \mathrm{H}_0(M_\bullet) \cong M
 $$
 
 By construction, $\ker \mathrm{d}_0 = \operatorname{im} \mathrm{d}_1$, so the augmented complex $\mathscr{P}_\bullet(M) \twoheadrightarrow M \to 0$, which we now denote by $\widehat{\mathscr{P}}_\bullet(M)$, is exact at each degree.
