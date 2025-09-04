@@ -9,6 +9,7 @@ const PostSchema = z.object({
   date: z.string(),
   title: z.string(),
   length: z.string(),
+  displayTitle: z.string().optional(),
   excerpt: z.string().optional(),
   content: z.string().optional(),
 });

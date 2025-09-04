@@ -16,7 +16,7 @@ interface PageProps {
 export function generateMetadata({ params }: PageProps) {
   const currentPost = posts.get(params.id);
   return {
-    title: currentPost?.title,
+    title: currentPost?.displayTitle ?? currentPost?.title,
   };
 }
 
