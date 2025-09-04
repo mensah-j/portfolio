@@ -14,8 +14,7 @@ const codeFont = DM_Mono({
 
 export const metadata: Metadata = {
   title: "Jeffery Mensah",
-  description:
-    "I am a recent MIT graduate ('24) with a BS in Mathematics and Physics.",
+  description: "Personal website and blog of Jeffery Mensah.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16" },
