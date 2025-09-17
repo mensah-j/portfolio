@@ -129,7 +129,7 @@ $$
 Finally, taking the $i$th homology of the first and $(i-1)$th term yields
 
 $$
-\mathrm{H}_i(P_\bullet \otimes_R N) \cong \mathrm{H}_1(P_\bullet \otimes \mathrm{d}Q_{i - 1}) = \mathrm{Tor}_1^{R}(M, \mathrm{d}Q_{i-1}) \cong  \ker \big(M \otimes_R \mathrm{d}Q_i \to M \otimes_R Q_{i-1}\big) \cong \mathrm{H}_i(M \otimes_R Q),
+\mathrm{H}_i(P_\bullet \otimes_R N) \cong \mathrm{H}_1(P_\bullet \otimes_R \mathrm{d}Q_{i - 1}) = \mathrm{Tor}_1^{R}(M, \mathrm{d}Q_{i-1}) \cong  \ker \big(M \otimes_R \mathrm{d}Q_i \to M \otimes_R Q_{i-1}\big) \cong \mathrm{H}_i(M \otimes_R Q_\bullet),
 $$
 
 so $\mathrm{Tor}_i^R(-, -)$ is symmetric for all $i > 0$.
