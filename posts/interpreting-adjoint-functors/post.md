@@ -10,7 +10,7 @@ To start, we give the "standard" definition of adjunction.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
-**Definition I.** Let $F \colon \mathscr{C} \to \mathscr{D}$ and $G \colon \mathscr{D} \to \mathscr{C}$ be a pair of functors. If there exists a natural isomorphism
+**Definition**. Let $F \colon \mathscr{C} \to \mathscr{D}$ and $G \colon \mathscr{D} \to \mathscr{C}$ be a pair of functors. If there exists a natural isomorphism
 
 $$
 \mathrm{Hom}_{\mathscr{D}}(F[-], -) \cong \mathrm{Hom}_{\mathscr{C}}(-, G[-]),
