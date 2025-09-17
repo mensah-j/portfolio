@@ -4,7 +4,7 @@ date: 2025-09-17
 length: "∼4000 words"
 ---
 
-The notion of an adjunction between categories is a fundamental idea in category theory whose utility is so great that it appears in virtually every field of mathematics. Roughly speaking, an <!--more--> adjunction is a weaker form of equivalence between two categories, often allowing one to translate problems in one category to problems in another category. In this post, we provide multiple equivalent interpretations of adjunctions, and demonstrate how they are all interrelated.
+The notion of an adjunction between categories is a fundamental idea in category theory whose utility is so great that it appears in virtually every field of mathematics. Roughly speaking, an adjunction is<!--more--> a weaker form of equivalence between two categories, often allowing one to translate problems in one category to problems in another category. In this post, we provide multiple equivalent interpretations of adjunctions, and demonstrate how they are all interrelated.
 
 To start, we give the "standard" definition of adjunction.
 
