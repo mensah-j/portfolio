@@ -5,7 +5,7 @@ date: 2025-09-03
 length: "∼1000 words"
 ---
 
-The $\mathrm{Tor}$ functors, which are ubiquitous in algebraic topology and more generally homological algebra, encode the failure of the tensor product to be an exact functor. As a derived functor, one typically defines<!--more--> $\mathrm{Tor}_i^R(M, N)$ by taking a projective resolution of the first argument $M$ and computing the homology of the tensored chain complex. Surprisingly, this seemingly asymmetric process produces a _symmetric_ bifunctor; in this short note we give a short explanation of why this is so and construct a natural isomorphism $\mathrm{Tor}_i^R(M, N) \cong \mathrm{Tor}_i^R(N, M)$.
+The $\mathrm{Tor}$ functors, which are ubiquitous in algebraic topology and more generally homological algebra, encode the failure of the tensor product to be an exact functor. As a derived functor, one typically defines<!--more--> $\mathrm{Tor}_i^R(M, N)$ by taking a projective resolution of the first argument $M$ and computing the homology of the tensored chain complex. Surprisingly, this seemingly asymmetric process produces a _symmetric_ bifunctor; in this short note we explain why this is so and construct a natural isomorphism $\mathrm{Tor}_i^R(M, N) \cong \mathrm{Tor}_i^R(N, M)$.
 
 For what follows, let $R$ be a commutative ring.
 
