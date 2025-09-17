@@ -1,0 +1,21 @@
+%! TeX program = xelatex
+\documentclass[crop]{standalone}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+
+\usepackage{fontspec}
+
+\begin{document}
+\begin{tikzcd}
+	&& {G(Y)} & Y \\
+	X \\
+	&& {G(Y')} & {Y'}
+	\arrow[from=1-3, to=3-3]
+	\arrow[from=1-4, to=3-4]
+	\arrow["\psi", from=2-1, to=1-3]
+	\arrow["{\psi'}"', from=2-1, to=3-3]
+\end{tikzcd}
+
+\end{document}

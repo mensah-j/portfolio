@@ -29,7 +29,7 @@
 }
 
 .markdown ol {
-  @apply mb-4 pl-6;
+  @apply mb-4 pl-6 text-justify;
 
   list-style-type: decimal;
   list-style-position: outside;
@@ -37,11 +37,6 @@
 
 .markdown ol > li::marker {
   @apply font-semibold;
-}
-
-.markdown ol > li::before {
-  content: "";
-  display: inline-block;
 }
 
 .markdown ol > li:not(:last-child) {

@@ -1,0 +1,36 @@
+%! TeX program = xelatex
+\documentclass[crop]{standalone}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% Define Japanese font + macro for よ
+\newfontfamily\japanesefont{Noto Serif CJK JP}
+\newcommand{\yo}{\text{\japanesefont よ}}
+
+\begin{document}
+
+\begin{tikzcd}
+    {\mathrm{Hom}_{\mathscr{D}}(F[-], Y)} 
+        && {\mathrm{Hom}_\mathscr{C}(-, G_{Y})} \\
+    \\
+    {\mathrm{Hom}_{\mathscr{D}}(F[-], Y')} 
+        && {\mathrm{Hom}_{\mathscr{C}}(-, G_{Y'})} \\
+    \\
+    {\mathrm{Hom}_\mathscr{D}(F[-], Y'')} 
+        && {\mathrm{Hom}_{\mathscr{C}}(-, G_{Y''})}
+    %
+    \arrow["{\theta_Y}", from=1-1, to=1-3]
+    \arrow["{\yo(g)}"', from=1-1, to=3-1]
+    \arrow["{\yo(G_\Theta(g))}", from=1-3, to=3-3]
+    \arrow["{\theta_{Y'}}"{description}, from=3-1, to=3-3]
+    \arrow["{\yo(h)}"', from=3-1, to=5-1]
+    \arrow["{\yo(G_\Theta(h))}", from=3-3, to=5-3]
+    \arrow["{\theta_{Y''}}"', from=5-1, to=5-3]
+\end{tikzcd}.
+
+\end{document}
