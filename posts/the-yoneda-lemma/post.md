@@ -8,7 +8,7 @@ The Yoneda lemma, according to Ravil Vakil in _Foundations of Algebraic Geometry
 
 ## Presheaves
 
-In category theory, a _presheaf_ is a mild generalization of the usual geometric notion of a presheaf. Instead of attaching data to each open set of a topological space, we attach data to each object in a category. More precisely, a **presheaf** on a category $\mathscr{C}$ is a functor $\mathcal{F} \colon \mathscr{C}^{\rm op} \to \mathbf{Set}$. Morphisms between presheaves are defined to be natural transformations of these functors. Together, these form the category of presheaves on $\mathscr{C}$, denoted by $\mathbf{PSh}(\mathscr{C})$.
+In category theory, a _presheaf_ is a mild generalization of the usual geometric notion of a presheaf. Instead of attaching data to each open set of a topological space, we attach data to each object in a category. More precisely, a _presheaf_ on a category $\mathscr{C}$ is a functor $\mathcal{F} \colon \mathscr{C}^{\rm op} \to \mathbf{Set}$. Morphisms between presheaves are defined to be natural transformations of these functors. Together, these form the category of presheaves on $\mathscr{C}$, denoted by $\mathbf{PSh}(\mathscr{C})$.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
