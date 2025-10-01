@@ -176,7 +176,7 @@ $\blacksquare$
 The Yoneda lemma implies that there is an isomorphism
 
 $$
-\mathrm{ev}_{U,\, V}\colon \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, H_V) \xrightarrow{\sim} \operatorname{Hom}(U, V)
+\mathrm{ev}_{U,\, V}\colon \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, H_V) \overset{\cong}{\longrightarrow} \operatorname{Hom}(U, V)
 $$
 
 which implies that the Yoneda embedding functor is fully faithful. In particular, an isomorphism of representable presheaves in $\mathbf{PSh}(\mathscr{C})$ must be induced by an isomorphism of their representing objects in $\mathscr{C}$. This can expressed as the following principle, whose importance cannot be understated:

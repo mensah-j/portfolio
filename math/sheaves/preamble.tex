@@ -1,0 +1,54 @@
+% ================ Packages ==================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amsmath,amssymb,amsthm,amscd}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{geometry}[margin=1in]
+
+% =============== Environments ================ 
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+
+
+% ================= Commands ==================
+
+% Blackboard bold
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+
+% Identity
+\newcommand{\id}{\mathrm{id}}
+
+% Functors and operators
+\DeclareMathOperator{\sHom}{\mathscr{Hom}}
+\DeclareMathOperator{\uHom}{\underline{Hom}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\colim}{colim}
