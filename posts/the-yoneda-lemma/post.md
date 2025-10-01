@@ -92,21 +92,21 @@ $\blacksquare$
 
 </div>
 
-We call the initial object $\operatorname{Hom}(-, U)$ of $\mathbf{PSh}_{\bullet}(\mathscr{C}, U)$ the _presheaf represented by_ $\,U$ and denote it by $H_U$. In a sense, this is the "least specific" presheaf on $\mathscr{C}$ which contains a section over $U$. The map taking an object to the presheaf it represents is known as the _Yoneda embedding_, which we denote by $\text{よ}$.
+We call the initial object $\operatorname{Hom}(-, U)$ of $\mathbf{PSh}_{\bullet}(\mathscr{C}, U)$ the _presheaf represented by_ $\,U$ and denote it by $H_U$. In a sense, this is the "least specific" presheaf on $\mathscr{C}$ which contains a section over $U$. The map taking an object to the presheaf it represents is known as the _Yoneda embedding_, which we denote by $\!\text{よ}$.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-8">
 
-**Proposition**. The Yoneda embedding defines a functor as follows: given $f \in \mathrm{Hom}_{\mathscr{C}}(V, U)$ define $\text{よ}(f)$ to be the underlying map of the unique map $(H_V, \mathrm{id}_V) \to (H_U, f)$ in $\mathbf{PSh}_\bullet(\mathscr{C}, V)$.
+**Proposition**. The Yoneda embedding defines a functor as follows: given $f \in \mathrm{Hom}_{\mathscr{C}}(V, U)$ define $\!\text{よ}(f)$ to be the underlying map of the unique map $(H_V, \mathrm{id}_V) \to (H_U, f)$ in $\mathbf{PSh}_\bullet(\mathscr{C}, V)$.
 
 </div>
 
 _Proof_. Let $W \overset{g}{\to} V \overset{f}{\to} U$ be a sequence of morphisms. Then
 
 $$
-\mathrm{id}_W \overset{\text{よ}(g)_W}{\longmapsto} (g = g^*\operatorname{id}_V) \overset{\text{よ}(f)_V}{\longmapsto} (g^*f = f \circ g).
+\mathrm{id}_W \overset{\!\text{よ}(g)_W}{\longmapsto} (g = g^*\operatorname{id}_V) \overset{\!\text{よ}(f)_V}{\longmapsto} (g^*f = f \circ g).
 $$
 
-By uniqueness of maps from initial objects, it follows that $\text{よ}(f \circ g) = \text{よ}(f) \circ \text{よ}(g)$.
+By uniqueness of maps from initial objects, it follows that $\!\text{よ}(f \circ g) = \!\text{よ}(f) \circ \!\text{よ}(g)$.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
@@ -114,7 +114,7 @@ $\blacksquare$
 
 </div>
 
-Explicitly, $\text{よ}(f)$ is the pushforward along $f$, taking $s \in \mathrm{Hom}(W, V)$ and mapping it to $f_*s = f \circ s \in \mathrm{Hom}(W, U)$. Indeed, the pushforward commutes with pullbacks, making it into a morphism of presheaves mapping the identity section over $V$ to $f$; by definition, this must be the Yoneda embedding.
+Explicitly, $\!\text{よ}(f)$ is the pushforward along $f$, taking $s \in \mathrm{Hom}(W, V)$ and mapping it to $f_*s = f \circ s \in \mathrm{Hom}(W, U)$. Indeed, the pushforward commutes with pullbacks, making it into a morphism of presheaves mapping the identity section over $V$ to $f$; by definition, this must be the Yoneda embedding.
 
 ## The Yoneda Lemma
 
@@ -141,7 +141,7 @@ On the other hand, the Yoneda embedding $U \mapsto H_U$ is a functor, and $\oper
 It remains to show that the two bifunctors are naturally isomorphic. For this, it suffices to check that they are natural on each factor. So, let $f \in \operatorname{Hom}(V, U)$. Then for all presheaf morphisms $\phi \in \operatorname{Hom}_{\mathbf{PSh}(\mathscr{C})}(H_U, \mathcal{F})$, we have
 
 $$
-\mathrm{ev}_{V,\,\mathcal{F}} \Big( \big[\mathscr{B}_{\rm yoneda}(f, \operatorname{id}_{\mathcal{F}})\big] (\phi) \Big) = \mathrm{ev}_{V,\,\mathcal{F}}\big(\phi \circ \text{よ}(f)\big) = \phi_V\Big([\text{よ}(f)]_V (\operatorname{id}_V)\Big) = \phi_V(f).
+\mathrm{ev}_{V,\,\mathcal{F}} \Big( \big[\mathscr{B}_{\rm yoneda}(f, \operatorname{id}_{\mathcal{F}})\big] (\phi) \Big) = \mathrm{ev}_{V,\,\mathcal{F}}\big(\phi \circ \!\text{よ}(f)\big) = \phi_V\Big([\!\text{よ}(f)]_V (\operatorname{id}_V)\Big) = \phi_V(f).
 $$
 
 At the same time, we have
