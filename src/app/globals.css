@@ -55,3 +55,11 @@ inline {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.katex-display > .katex > .katex-html > .tag {
+  right: 0.5% !important;
+}
+
+.cjk_fallback {
+  font-family: var(--font-noto-serif-jp) !important;
+}

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import * as Toast from "@radix-ui/react-toast";
-import { Manrope, DM_Mono } from "next/font/google";
+import { Manrope, DM_Mono, Noto_Serif_JP } from "next/font/google";
 import { NavigationBar } from "./_components/NavigationBar";
 import "./globals.css";
 import "katex/dist/katex.min.css";
@@ -10,6 +10,11 @@ const codeFont = DM_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-code",
+});
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-noto-serif-jp",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={codeFont.variable}>
+    <html lang="en" className={`${codeFont.variable} ${notoSerifJP.variable}`}>
       <body id="body-hook" className={manrope.className}>
         <Toast.Provider>
           <div className="flex flex-col min-h-screen w-full">
