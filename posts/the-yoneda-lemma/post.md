@@ -28,7 +28,7 @@ In fact, any presheaf or sheaf on $\mathbf{Open}(X)$ can be interpreted as arisi
 
 </div>
 
-In the above example, $\mathrm{Hom}_{\mathbf{Open}(X)}(V, U)$ as at most one morphism, determining whether or not $V$ is contained in $U$. Using this as intuition for a general category $\mathscr{C}$, we similarly think of $\operatorname{Hom}_{\mathscr{C}}(V, U)$ as comprising all of the ways in which the structure of $V$ can "fit inside" the structure of $U$.
+In the above example, $\mathrm{Hom}_{\mathbf{Open}(X)}(V\!, U)$ has at most one morphism, determining whether or not $V$ is contained in $U$. Using this as intuition for a general category $\mathscr{C}$, we similarly think of $\operatorname{Hom}_{\mathscr{C}}(V, U)$ as comprising all of the ways in which the structure of $V$ can "fit inside" the structure of $U$.
 
 Given a presheaf $\mathcal{F}$ on $\mathscr{C}$, we think of each section over $U$ as a way of fitting the data of $U$ inside of $\mathcal{F}$, much like in the étale space viewpoint. Then for $f \in \operatorname{Hom}(V, U)$, the map $\mathcal{F}(f) \colon \mathcal{F}(U) \to \mathcal{F}(V)$ takes each occurrence of $U$ in $\mathcal{F}$ and "restricts" it to obtain a suboccurrence of $V$ in $\mathcal{F}$ (this is also the intuition suggested in [nLab article on presheaves](https://ncatlab.org/nlab/show/presheaf)).
 
