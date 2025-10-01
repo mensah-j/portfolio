@@ -80,7 +80,16 @@ for which $F \dashv G_\Theta$. For any other collection of isomorphisms $\hspace
 
 </div>
 
-_Proof._ We first check that $G_{\Theta}$ is functorial. Denote the Yoneda embedding by $\text{よ} \colon \mathscr{C} \to [\mathscr{C}^{\text{op}}, \mathbf{Set}]$. Given a morphism $g \colon Y \to Y'$, consider the square (to be shown commutative)
+_Proof._ We check that $G_{\Theta}$ is functorial. Define
+
+$$
+\begin{align*}
+\!\text{よ} &\colon \mathscr{C} \to [\mathscr{C}^{\text{op}}, \mathbf{Set}]; \quad \quad X \longmapsto \mathrm{Hom}_{\mathscr{C}}(-, X), \\
+\!\text{よ}_F &\colon \mathscr{D} \to [\mathscr{C}^{\text{op}}, \mathbf{Set}]; \quad \quad Y \longmapsto \mathrm{Hom}_{\mathscr{D}}(F[-], Y).
+\end{align*}
+$$
+
+Given a morphism $g \colon Y \to Y'$, consider the square (to be shown commutative)
 
 <div><tikz path="g-functoriality-square" desktop="1.5" mobile="1">
 </tikz></div>
@@ -88,7 +97,7 @@ _Proof._ We first check that $G_{\Theta}$ is functorial. Denote the Yoneda embed
 consisting of natural transformations. By the Yoneda lemma, a morphism of presheaves $\mathrm{Hom}(-, G_Y) \Rightarrow \mathrm{Hom}(-, G_{Y'})$ is determined by where the identity section $\mathrm{id}_{G_Y}$ is mapped. But by definition,
 
 $$
-[\text{よ}(G_\Theta(g))]_{\mathrm{id}_{G_Y}} = G_\Theta(g) \circ \mathrm{id}_{G_Y} = G_\Theta(g) = \theta_{Y', G_Y}  \Big( g \circ \theta_{Y, G_Y}^{\,-1} (\mathrm{id}_{G_Y}) \Big) = \big[(\theta_{Y'} \circ \text{よ}(g) \circ \theta_Y^{-1})\big]_{\mathrm{id}_{G_Y}},
+[\!\text{よ}(G_\Theta(g))]_{\mathrm{id}_{G_Y}} = G_\Theta(g) \circ \mathrm{id}_{G_Y} = G_\Theta(g) = \theta_{Y', G_Y}  \Big( g \circ \theta_{Y, G_Y}^{\,-1} (\mathrm{id}_{G_Y}) \Big) = \big[(\theta_{Y'} \circ \!\text{よ}_F(g) \circ \theta_Y^{-1})\big]_{\mathrm{id}_{G_Y}},
 $$
 
 so the above square commutes. Thus, if $h \colon Y' \to Y''$ is another morphism, we may paste together the corresponding squares to obtain the commutative diagram
@@ -96,7 +105,7 @@ so the above square commutes. Thus, if $h \colon Y' \to Y''$ is another morphism
 <div><tikz path="g-functoriality-square-pasted" desktop="1.5" mobile="1">
 </tikz></div>
 
-Taking the component at $\mathrm{id}_{G_Y}$ and using the fact that $\text{よ}$ is functorial implies that $G_\Theta(h \circ g) = G_\Theta(h) \circ G_\Theta(g)$. To show that $F$ and $G_{\Theta}$ are adjoints, consider the map
+Taking the component at $\mathrm{id}_{G_Y}$ and using the fact that $\!\text{よ}$ is functorial implies that $G_\Theta(h \circ g) = G_\Theta(h) \circ G_\Theta(g)$. To show that $F$ and $G_{\Theta}$ are adjoints, consider the map
 
 $$
 \Psi \colon \mathrm{Hom}_\mathscr{D}(F[-], -) \to \mathrm{Hom}_{\mathscr{C}}(-, G[-]); \quad \quad \Psi_{X\hspace{-1pt},\,Y}(\phi) = \theta_{Y\!,\, X}(\phi).
@@ -115,7 +124,7 @@ $$
 \widetilde{\theta}_{Y} \circ \theta_Y^{-1} \colon \mathrm{Hom}_\mathscr{C}(-, G_{\hspace{4.5pt}\widetilde{\hspace{-5pt}\Theta}} Y) \overset{\cong}{\longrightarrow}  \mathrm{Hom}_\mathscr{C}(-, G_{\hspace{1pt}\widetilde{\hspace{-1pt}\Theta\hspace{-1pt}}\hspace{1pt}} Y)
 $$
 
-is induced by a unique isomorphism $\tau_Y \colon G_{\hspace{4.5pt}\widetilde{\hspace{-5pt}\Theta}}(Y) \to G_{\hspace{1pt}\widetilde{\hspace{-1pt}\Theta\hspace{-1pt}}\hspace{1pt}}(Y)$ via the Yoneda embedding $\text{よ} \colon \mathscr{C} \mapsto [\mathscr{C}^{\text{op}}, \mathbf{Set}]$. It follows that the diagram
+is induced by a unique isomorphism $\tau_Y \colon G_{\hspace{4.5pt}\widetilde{\hspace{-5pt}\Theta}}(Y) \to G_{\hspace{1pt}\widetilde{\hspace{-1pt}\Theta\hspace{-1pt}}\hspace{1pt}}(Y)$ via the Yoneda embedding. It follows that the diagram
 
 <div><tikz path="g-isomorphism-collection-square" desktop="1.55" mobile="1">
 </tikz></div>
@@ -224,7 +233,7 @@ To show that $\theta$ is a presheaf morphism, let $f \colon X' \to X$ and $\phi 
 
 <div><tikz path="theta-natural-isomorphism" desktop="1.5" mobile="1"></tikz></div>
 
-It follows that $\theta_{X'}(f^* \phi) = \theta_X(\phi) \circ f = f_* \theta_X(\phi)$, so $\theta$ respects pullbacks. Thus, $\theta$ is an presheaf isomorphism.
+It follows that $\theta_{X'}(f^* \phi) = \theta_X(\phi) \circ f = f_* \theta_X(\phi)$, so $\theta$ respects pullbacks. Thus, $\theta$ is a presheaf isomorphism.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
