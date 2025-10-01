@@ -16,7 +16,7 @@ $$
 
 to $F$. If a limit exists for each diagram, then they may be assembled into a right adjoint $\lim_I^{\mathscr{D}} \colon [I, \mathscr{D}] \to \mathscr{D}$ to $\Delta$. This functor takes a diagram to the apex of its limiting cone in a _functorial_ way. The rest of the cone can be recovered from the counit $\epsilon$ of the adjunction $\Delta \dashv \lim_I$: for each diagram $F$, its limiting cone is $(\lim_I F, \epsilon_F)$. We call such a functor a _limit_ functor, which is unique up to natural isomorphism if it exists.
 
-To compute the limit or colimit of a diagram of presheaves, we make use the fact that a diagram of presheaves is the equivalence as a presheaf of diagrams, and then compute limits objectwise. This equivalence is a consequence of general fact related to currying, which we state without proof.
+To compute the limit or colimit of a diagram of presheaves, we make use the fact that a diagram of presheaves is equivalent to a presheaf of diagrams, and then compute limits objectwise. This equivalence is a consequence of general fact related to currying, which we state without proof.
 
 <div class="border border-black pt-4 pl-4 pr-4 pb-4 mb-4">
 
@@ -106,7 +106,7 @@ $$
 \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]}(\!\text{よ}[-], \mathcal{F}) \cong \mathcal{F},
 $$
 
-where $\hspace{-1pt}\text{よ} \colon \mathscr{C} \to [\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]$ is the Yoneda embedding. In particular, morphisms from $\hspace{-1pt}\text{よ}$ to $\mathcal{F}$ correspond to sections of $\mathcal{F}$. As such, we call the comma category $(\!\text{よ} \downarrow \mathcal{F})$ the _category of elements_ of $\mathcal{F}$ (often denoted by $\int_{\mathscr{C}} \mathcal{F}$). The category of elements comes equipped with a canonical projection
+where $\hspace{-1pt}\text{よ} \colon \mathscr{C} \to [\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]$ is the Yoneda embedding. In particular, morphisms from $\hspace{-1pt}\text{よ}$ to $\mathcal{F}$ correspond to sections of $\mathcal{F}$. As such, we call the comma category $(\!\text{よ} \downarrow \mathcal{F})$ the _category of elements_ of $\mathcal{F}$, which we also denote by $\int_{\mathscr{C}} \mathcal{F}$. The category of elements comes equipped with a canonical projection
 
 $$
 \pi \colon \int_{\mathscr{C}} \mathcal{F} \to \mathscr{C}; \quad \quad (X,\, \phi \colon \hspace{-3pt}\text{よ}(X) \to \mathcal{F}) \overset{\pi}{\longmapsto} X
@@ -132,7 +132,7 @@ $$
 \Theta \colon \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]}(\!\text{よ}[-], -) \cong \langle -, - \rangle,
 $$
 
-where $\langle -, - \rangle \colon \mathscr{C}^{\mathrm{op}} \hspace{-1pt} \times \hspace{-1pt} [\mathscr{C}^\mathrm{op}, \mathbf{Set}] \to \mathbf{Set}$ is the canonical pairing. A cocone $(\mathcal{G}, \sigma)$ under $\!\text{よ} \circ \pi$ defines, for $X \in \mathscr{C}$, a map
+where $\langle -, - \rangle \colon \mathscr{C}^{\mathrm{op}} \hspace{-1pt} \times \hspace{-1pt} [\mathscr{C}^\mathrm{op}, \mathbf{Set}] \to \mathbf{Set}$ is the canonical pairing. A cocone $(\mathcal{G}, \sigma)$ under $\!\text{よ} \circ \pi$ defines, for $X\hspace{-1pt} \in \hspace{-1pt} \mathscr{C}$, a map
 
 $$
 \sigma_X \colon \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]}(\!\text{よ}(X), \mathcal{F}) \to \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]}(\!\text{よ}(X), \mathcal{G}); \quad \quad \sigma_X(\phi) = \sigma_{X, \phi}.
@@ -158,7 +158,7 @@ $$
 \sigma_{Y}(\phi \circ \!\text{よ}(f)) = \sigma_{X}(\phi) \circ \text{よ}(f)
 $$
 
-as $(\mathcal{G}, \sigma)$ is a cocone under $\!\text{よ} \circ \pi$. It follows that $\sigma$ is natural, when viewed as a map $\mathrm{Hom}(\!\text{よ}[-], \mathcal{F}) \to \mathrm{Hom}(\!\text{よ}[-], \mathcal{G})$. Furthermore, $\Theta$ is already natural in the first argument, so the formula $(\star)$ indeed defines a morphism of presheaves.
+as $(\mathcal{G}, \sigma)$ is a cocone under $\!\text{よ} \circ \pi$. It follows that $\sigma$ is natural when viewed as a map $\mathrm{Hom}(\!\text{よ}[-], \mathcal{F}) \to \mathrm{Hom}(\!\text{よ}[-], \mathcal{G})$. Furthermore, $\Theta$ is already natural in the first argument, so the formula $(\star)$ indeed defines a morphism of presheaves.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
