@@ -100,7 +100,7 @@ $\blacksquare$
 
 ## The density theorem
 
-Let $\mathscr{C}$ be a category and let $\mathcal{F} \colon \mathscr{C}^\mathrm{op} \to \mathbf{Set}$ be a presheaf on $\mathscr{C}$. The Yoneda lemma implies that there exists an isomorphism of presheaves
+Let $\mathscr{C}$ be a category and let $\mathcal{F} \colon \mathscr{C}^\mathrm{op} \to \mathbf{Set}$ be a presheaf of sets on $\mathscr{C}$. The Yoneda lemma implies that there exists an isomorphism of presheaves
 
 $$
 \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]}(\!\text{よ}[-], \mathcal{F}) \cong \mathcal{F},
