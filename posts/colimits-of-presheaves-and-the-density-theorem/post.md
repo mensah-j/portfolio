@@ -56,19 +56,31 @@ $$
 \widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}} \colon \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, [I, \mathbf{Set}]]} (\Delta_*\mathcal{G}, \widetilde{\mathcal{F}}) \longrightarrow \mathrm{Hom}_{[\mathscr{C}^{\mathrm{op}}, \mathbf{Set}]} (\mathcal{G}, ({\lim}_I^{\mathbf{Set}})_*\widetilde{\mathcal{F}}); \quad \quad \widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X = \Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}(X)}(\phi_X).
 $$
 
-These assemble into a natural isomorphism by naturality of $\Theta$. Indeed, given $g \colon \mathcal{G}' \to \mathcal{G}$, we have
+This map is well-defined: if $\phi \in \mathrm{Hom}_{[\mathscr{C}^\mathrm{op}, [I, \mathbf{Set}]]}(\Delta_* \mathcal{G}, \widetilde{\mathcal{F}})$ and $\psi \colon X \to Y$ is a morphism in $\mathscr{C}$, then the diagram
+
+<div>
+<tikz path="well-defined-square" mobile="1" desktop="1.5"></tikz>
+</div>
+
+commutes, so by naturality of $\Theta$, we have
 
 $$
-\widehat{\Theta}_{\mathcal{G}', \widetilde{\mathcal{F}}}(g^* \phi)_X = \widehat{\Theta}_{\mathcal{G}', \widetilde{\mathcal{F}}}(\phi \circ \Delta_* g)_X = \Theta_{\mathcal{G}'(X), \widetilde{\mathcal{F}}(X)}(\phi_X \circ \Delta g_X) = (g_X)^*\big[\Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}(X)}(\phi_X)\big] = (g_X)^* \big[\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X\big],
+\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X \circ \mathcal{G} (\psi) =  \Theta_{\mathcal{G}(Y), \widetilde{\mathcal{F}}(X)}(\phi_X \circ [\Delta_* \mathcal{G}](\psi))  = \Theta_{\mathcal{G}(Y), \widetilde{\mathcal{F}}(X)}(\widetilde{\mathcal{F}}(\psi) \circ \phi_Y) = \widetilde{\mathcal{F}}(\psi) \circ \widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_Y.
 $$
 
-and given $f \colon \widetilde{\mathcal{F}} \to \widetilde{\mathcal{F}}'$, we have
+Furthermore, these isomorphisms assemble into a natural isomorphism. Indeed, given $f \colon \widetilde{\mathcal{F}} \to \widetilde{\mathcal{F}}'$, we have
 
 $$
-\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}'}(f_* \phi)_X = \widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}'}(f \circ \phi)_X = \Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}'(X)}(f_X \circ \phi_X) = (f_X)_* \big[\Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}(X)}(\phi_X)\big] = (f_X)_*\big[\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X\big].
+\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}'}(f_* \phi)_X = \widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}'}(f \circ \phi)_X = \Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}'(X)}(f_X \circ \phi_X) = (f_X)_* \big[\Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}(X)}(\phi_X)\big] = (f_X)_*\big[\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X\big],
 $$
 
-It follows that there exists an adjunction $\Delta' \dashv \lim_I^{[\mathscr{C}^\mathrm{op}, \mathbf{Set}]}$.
+and given $g \colon \mathcal{G}' \to \mathcal{G}$, we have
+
+$$
+\widehat{\Theta}_{\mathcal{G}', \widetilde{\mathcal{F}}}(g^* \phi)_X = \widehat{\Theta}_{\mathcal{G}', \widetilde{\mathcal{F}}}(\phi \circ \Delta_* g)_X = \Theta_{\mathcal{G}'(X), \widetilde{\mathcal{F}}(X)}(\phi_X \circ \Delta g_X) = (g_X)^*\big[\Theta_{\mathcal{G}(X), \widetilde{\mathcal{F}}(X)}(\phi_X)\big] = (g_X)^* \big[\widehat{\Theta}_{\mathcal{G}, \widetilde{\mathcal{F}}}(\phi)_X\big].
+$$
+
+It follows that there is an adjunction $\Delta' \dashv \lim_I^{[\mathscr{C}^\mathrm{op}, \mathbf{Set}]}$.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 

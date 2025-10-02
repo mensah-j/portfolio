@@ -1,0 +1,26 @@
+%! TeX program = xelatex
+\documentclass[crop]{standalone}
+\usepackage{amsmath,amssymb,mathrsfs}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% Define Japanese font + macro for よ
+\newfontfamily\japanesefont{Noto Serif CJK JP}
+\newcommand{\yo}{\text{\japanesefont よ}}
+
+\begin{document}
+\begin{tikzcd}
+	{[\Delta_* \mathcal{G}](Y)} && {\widetilde{\mathcal{F}}(Y)} \\
+	\\
+	{[\Delta_*\mathcal{G}](X)} && {\widetilde{\mathcal{F}}(X)}
+	\arrow["{\phi_Y}", from=1-1, to=1-3]
+	\arrow["{[\Delta_*\mathcal{G}](\psi)}"', from=1-1, to=3-1]
+	\arrow["{\widetilde{\mathcal{F}}(\psi)}", from=1-3, to=3-3]
+	\arrow["{\phi_X}"', from=3-1, to=3-3]
+\end{tikzcd}
+
+\end{document}
