@@ -1,0 +1,91 @@
+% ==============================
+% Paired delimiters
+% ==============================
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+
+\let\oldinner\inner
+\def\inner{\@ifstar{\oldinner}{\oldinner*}}
+
+\let\oldfloor\floor
+\def\floor{\@ifstar{\oldfloor}{\oldfloor*}}
+
+\let\oldceil\ceil
+\def\ceil{\@ifstar{\oldceil}{\oldceil*}}
+\makeatother
+
+% ==============================
+% Derivatives
+% ==============================
+\newcommand{\der}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dpder}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\cpder}[3]{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}
+\newcommand{\cdpder}[3]{\left(\dfrac{\partial #1}{\partial #2}\right)_{#3}}
+
+% ==============================
+% Overbars / miscellaneous formatting
+% ==============================
+\renewcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\renewcommand{\d}{{\rm d}}
+\renewcommand{\triangledown}{\rotatebox[y=4px]{180}{$\triangle$}}
+\newcommand{\bydef}{\mathbin{\overset{\rm def}{=}}}
+
+% ==============================
+% Blackboard bold
+% ==============================
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\renewcommand{\P}{\mathbb{P}}
+
+% ==============================
+% Miscellaneous operators
+% ==============================
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Specmax}{Specmax}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\cl}{{\rm cl}}
+\DeclareMathOperator{\disc}{{\rm disc}}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Sin}{Sin}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\uHom}{\underline{Hom}}
+\DeclareMathOperator{\sHom}{\mathscr{Hom}}
+\DeclareMathOperator{\colim}{colim}
