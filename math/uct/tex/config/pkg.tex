@@ -36,14 +36,25 @@
 % Hyperlinks / Colors
 % ==============================
 \usepackage{xcolor}
-\usepackage{hyperref}
-\hypersetup{
+\definecolor{darkred}{RGB}{128,0,0} % or {HTML}{800000}
+
+\usepackage[
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    citecolor=blue
-}
+    linkcolor=darkred,   % affects internal links (sections, eqs, etc.)
+    citecolor=darkred,   % citation links
+    urlcolor=darkred     % URLs
+]{hyperref}
+
+% turn off link color *inside the TOC only*
+\usepackage{etoolbox}
+\makeatletter
+\pretocmd{\tableofcontents}{%
+  \hypersetup{linkcolor=black}%
+}{}{}
+\apptocmd{\tableofcontents}{%
+  \hypersetup{linkcolor=darkred}%
+}{}{}
+\makeatother
 
 % ==============================
 % Lists & formatting

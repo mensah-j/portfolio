@@ -40,3 +40,13 @@ next-env.d.ts
 
 # eslint
 .eslintcache
+
+# latex
+*.log
+*.out
+*.bbl
+*.aux
+*.fdb_latexmk
+*.xdv
+*.fls
+*.toc
