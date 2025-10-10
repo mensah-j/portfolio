@@ -27,8 +27,8 @@ be the corestriction of $\phi$ to the $n$-cycles in $C_\bullet$.
 
 \begin{theorem}[Universal Coefficient Theorem for Homology]
     Let $R$ be a PID, and let $(C_\bullet, \partial_\bullet)$ be a chain complex of free $R$-modules. Then for any $R$-module $M$, there exists a short exact sequence of $R$-modules 
-    \begin{equation*}
-        0 \to \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M) \to \mathrm{Tor}_1^R(\mathrm{H}_{n-1}(C_\bullet), M) \to 0
+    \begin{equation*}\label{eq:uct-homology}
+        0 \to \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M) \to \mathrm{Tor}_1^R(\mathrm{H}_{n-1}(C_\bullet), M) \to 0 \tag{$\star$}
     \end{equation*}
     for each $n \in \mathbb{Z}$, which is natural in both $C_\bullet$ and $M$. Furthermore, this sequence splits, but not naturally.
 \end{theorem}
@@ -36,27 +36,48 @@ be the corestriction of $\phi$ to the $n$-cycles in $C_\bullet$.
 \begin{proof}
 Let $\iota \colon \ker \partial_n \hookrightarrow C_n$ be the inclusion map. Then $\partial_{n+1} = \iota \circ \partial_{n+1}^{\mathrm{Z}}$, which implies that 
 \begin{equation*}
-(\partial_{n+1} \otimes_R 1_M)^\mathrm{Z} = \widetilde{\iota} \circ (\partial^{\mathrm{Z}}_{n+1} \otimes_R 1_M)
+(\partial_{n+1} \otimes_R 1_M)^\mathrm{Z} = (\iota \otimes 1_M)^{\mathrm{Z}} \circ (\partial^{\mathrm{Z}}_{n+1} \otimes_R 1_M).
 \end{equation*}
-where $\widetilde{\iota}$ is the corestriction of $\iota \otimes 1_M$ to $\ker (\partial_n \otimes 1_M)$.
-
-Since $R$ is a PID, and $C_{n-1}$ is a free $R$-module, it follows that $\im \partial_n \subseteq C_{n-1}$ is also free. Thus, the short exact sequence
-\begin{equation*}
-    0 \to \ker \partial_n \xrightarrow{\iota} C_n \xrightarrow{\partial_n} \mathrm{im}\, \partial_n \to 0
-\end{equation*}
-splits, which implies $\iota \otimes 1_M$ is a split monomorphism. The bottom right object in the commutative triangle
+In other words, the diagram
 \begin{equation*}
   \begin{tikzcd}
-    {C_{n+1} \otimes_R M} && {\ker(\partial_n) \otimes_R M} \\
-    \\
-    {C_{n+1} \otimes_R M} && {C_n\otimes1_M}
-    \arrow["{\partial_{n+1}^{\mathrm{Z}} \otimes1_M}", from=1-1, to=1-3]
-    \arrow[equals, from=1-1, to=3-1]
-    \arrow["{\iota \otimes 1_M}", from=1-3, to=3-3]
-    \arrow["{\partial_{n+1}\otimes1_M}"', from=3-1, to=3-3]
-  \end{tikzcd}
+	{C_{n+1} \otimes_R M} && {\ker(\partial_n) \otimes_R M} \\
+	\\
+	{C_{n+1} \otimes_R M} && {\ker(\partial_n \otimes1_M)}
+	\arrow["{\partial_{n+1}^{\mathrm{Z}} \otimes1_M}", from=1-1, to=1-3]
+	\arrow[equals, from=1-1, to=3-1]
+	\arrow["{(\iota \otimes 1_M)^{\mathrm{Z}}}", from=1-3, to=3-3]
+	\arrow["{(\partial_{n+1}\otimes1_M)^{\mathrm{Z}}}"', from=3-1, to=3-3]
+\end{tikzcd}
 \end{equation*}
-may be replaced with $\ker (\partial_n \otimes 1_M)$, since $\im (\partial_{n+1} \otimes 1_M) \subseteq \ker (\partial_n \otimes 1_M)$. Takin
+commutes, so forming cokernels and using the fact that $- \otimes_R M$ preserves cokernels yields a map
+\begin{equation*}
+    j \colon \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M); \quad \quad ([c] \otimes m) \overset{j}{\longmapsto} [c \otimes m]
+\end{equation*}
+Since $R$ is a PID, and $C_{n-1}$ is a free $R$-module, it follows that $\im \partial_n \subseteq C_{n-1}$ is also free. Thus, the short exact sequence
+\begin{equation*}
+    0 \to \ker \partial_n \xrightarrow{\iota} C_n \to \mathrm{im}\, \partial_n \to 0
+\end{equation*}
+splits. By functoriality, $\iota \otimes 1_M$ is a split monomorphism, and so is its corestriction $(\iota \otimes 1_M)^{\mathrm{Z}}$. Taking cokernels is once again functorial, so $j$ is also a split monomorphism. This yields the first half of the sequence \eqref{eq:uct-homology}; it remains to determine the cokernel of $j$.
+
+To this end, observe that the short exact sequence
+\begin{equation*}
+    0 \to \mathrm{im}\, \partial_{n+1} \to \ker \partial_n \to \mathrm{H}_n(C_\bullet) \to 0
+\end{equation*}
+is a free resolution of $\mathrm{H}_n(C_\bullet)$, since $\mathrm{im}\, \partial_{n+1}$ and $\ker \partial_n$ are submodules of the free $R$-module $C_n$, and $R$ is a PID. Tensoring this sequence with $M$ yields the long exact sequence
+
+---
+
+Since $R$ is a PID, and $C_{n-1}$ is a free $R$-module, it follows that $\im \partial_n \subseteq C_{n-1}$ is also free. Thus, the short exact sequence of chain complexes
+\begin{equation*}
+    0 \to \ker \partial_\bullet \to C_\bullet \to \im \partial_\bullet \to 0
+\end{equation*}
+splits, where the subcomplexes $\ker \partial_\bullet$ and $\mathrm{im}\, \partial_\bullet$ are defined by taking kernels and images degree-wise. The boundary maps on these subcomplexes are all zero. Since this sequence is split, we may apply $- \otimes_R M$ to obtain a new short exact sequence of chain complexes
+\begin{equation*}
+    0 \to \ker \partial_\bullet \otimes_R M \to C_\bullet \otimes_R M \to \im \partial_\bullet \otimes_R M \to 0.
+\end{equation*}
+
+
 \end{proof}
 
 \subsection{Cohomology}
