@@ -4,22 +4,22 @@ date: 2024-11-20
 length: "∼2000 words"
 ---
 
-The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, is an exercise in diagram chasing<!--more-->. Although simple, the act of diagram chasing does not immediately give insight into why the snake lemma must be true. In this post, we aim to make the snake lemma more apparent and clarify its application to the long exact sequence.
+The snake lemma is a fundamental tool of homological algebra which is primarily used in the construction of the homology long exact sequence. It's proof, like many others in homological algebra, is an exercise in diagram chasing<!--more-->. Although simple, the act of diagram chasing may not give insight into why the snake lemma must be true. In this post, we aim to make the snake lemma more apparent and demonstrate how it can be used to construct long exact sequences.
 
 ## Preliminaries
 
-For simplicity, we will work in the category $\mathbf{Ab}$ of abelian groups, although the result holds more generally for any abelian category. Recall that a (finite) **chain complex** is a sequence
+For simplicity, we will work in the category $\mathbf{Ab}$ of abelian groups, although the result holds more generally for any abelian category. Recall that a (finite) _chain complex_ is a sequence
 
 $$
 A_0 \overset{\phi_0}{\longrightarrow} A_1 \overset{\phi_1}{\longrightarrow} \cdots \overset{\phi_{n-2}}{\longrightarrow} A_{n-1} \overset{\phi_{n-1}}{\longrightarrow} A_n
 $$
 
-of abelian groups and morphisms such that the composition of consecutive morphisms is zero. In particular, this implies that the image of one morphism is contained in the kernel of the subsequent morphism. The sequence is called **exact** if for each $k$, we have $\operatorname{im} \phi_k = \ker \phi_{k+1}$. A **short exact sequence** is an exact sequence of the form $0 \to A \to B \to C \to 0$, the data of which is equivalent to stating that
+of abelian groups and morphisms such that the composition of consecutive morphisms is zero. In particular, this implies that the image of one morphism is contained in the kernel of the subsequent morphism. The sequence is called _exact_ if for each $k$, we have $\operatorname{im} \phi_k = \ker \phi_{k+1}$. A **short exact sequence** is an exact sequence of the form $0 \to A \to B \to C \to 0$, the data of which is equivalent to stating that
 
 1.  $A$ is a subobject of $B$ and
 2.  $C$ is the corresponding quotient object of $B$, that is, $C \cong B/A$.
 
-In other words, a short exact sequence is really just a way to "decompose" $B$ into two related pieces. A simple example of this that we will use to build intuition is the sequence $0 \to \mathbb{Z} \to \mathbb{R} \to \mathbb{S}^{1} \to \mathbb{0}$, illustrated below.
+In other words, a short exact sequence is just a way to decompose $B$ into two related pieces. A simple example of this that we will use to build intuition is the sequence $0 \to \mathbb{Z} \to \mathbb{R} \to \mathbb{S}^{1} \to \mathbb{0}$, illustrated below.
 
 <div>
   <tikz path="covering_map" desktop="1.5" mobile="1"></tikz>
@@ -32,7 +32,7 @@ Throughout this post, we will be making use of "extension and contraction" ident
 
 ## The Snake Morphism
 
-Let $B_1$ and $B_2$ be abelian groups. For each $i \in \{1, 2\}$, let $A_i \leq B_i$ be a subobject of $B_i$, and $C_i = B_i / A_i$ be the corresponding quotient object. Suppose that $\psi \colon B_1 \to B_2$ is a morphism which "respects the decomposition" of each $B_i$, meaning that $\psi$ maps $A_1$ to $A_2$, so that it also induces a map between $C_1$ and $C_2$. In our example, we may take $B_i = \mathbb{R}$ and consider the "multiplication-by-$n$" map $n_{\times} \colon \mathbb{R} \to \mathbb{R}$. This gives us a commutative diagram
+Let $B_1$ and $B_2$ be abelian groups. For each $i \in \{1, 2\}$, let $A_i \leq B_i$ be a subgroup of $B_i$, and $C_i = B_i / A_i$ be the corresponding quotient group. Suppose that $\psi \colon B_1 \to B_2$ is a morphism which "respects the decomposition" of each $B_i$, meaning that $\psi$ maps $A_1$ to $A_2$, so that it also induces a map between $C_1$ and $C_2$. In our example, we may take $B_i = \mathbb{R}$ and consider the "multiplication-by-$n$" map $n_{\times} \colon \mathbb{R} \to \mathbb{R}$. This gives us a commutative diagram
 
 $$
 \begin{CD}
@@ -43,7 +43,7 @@ $$
 \quad.
 $$
 
-A natural question is to ask how these three multiplication maps relate to each other. Note that while the middle map is an isomorphism, the left map is only injective and the right map is only surjective. The deviation from being an isomorphism is can therefore measured by the cokernel $\operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$ and the kernel $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1)$. We may relabel the top sequence, replacing the left multiplication map by an inclusion $\iota$ as follows:
+A natural question is to ask how these three multiplication maps relate to each other. Note that while the middle map is an isomorphism, the left map is only injective and the right map is only surjective. The deviation from being an isomorphism is therefore measured by the cokernel $\operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$ and the kernel $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1)$. We may relabel the top sequence, replacing the left multiplication map by an inclusion $\iota$ as follows:
 
 $$
 \begin{CD}
@@ -54,7 +54,7 @@ $$
 \quad.
 $$
 
-Since $\mathbb{Z}$ corresponds to the zero subgroup in $\mathbb{R}/\mathbb{Z}$, the kernel of $\pi$ is what you get if you _pull back_ (since the middle map is the identity, this isn't strictly necessary) the "larger" group $\mathbb{Z}$ up into $\mathbb{R}$ and then quotient by the "smaller" group $n\mathbb{Z}$. It's clear this does not depend on the ambient group; for example, we obtain the same kernel if we replace $\mathbb{R}$ by $\mathbb{Z}$ in the above diagram. To summarize, $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1) \cong \operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$, which means the deviations of the left and right maps from being isomorphisms are in some sense "the same". One of the assertions of the Snake Lemma is that in such a situation, there is always a connection between the cokernel and kernel, given by a map known as the _snake morphism_.
+Since $\mathbb{Z}$ corresponds to the zero subgroup in $\mathbb{R}/\mathbb{Z}$, the kernel of $\pi$ is what you get if take the "larger" group $\mathbb{Z}$ and quotient by the "smaller" group $n\mathbb{Z}$. It's clear this does not depend on the ambient group; for example, we obtain the same kernel if we replace $\mathbb{R}$ by $\mathbb{Z}$ in the above diagram. To summarize, $\ker(n_\times \colon \mathbb{S}^1 \to \mathbb{S}^1) \cong \operatorname{coker} (n_\times \colon \mathbb{Z} \to \mathbb{Z})$, which means the deviations of the left and right maps from being isomorphisms are in some sense "the same". One of the assertions of the Snake Lemma is that in such a situation, there is always a connection between the cokernel and kernel, given by a map known as the _snake morphism_.
 
 To show how this arises, we state a lemma which captures the ideas discussed for the example given earlier.
 
@@ -80,9 +80,14 @@ $$
 \delta \colon \ker(B_1/A_1 \to B_2/A_2) \to \operatorname{coker}(A_1 \to A_2); \quad \quad [b]_{A_1} \longmapsto [\phi(b)]_{\phi(A_1)},
 $$
 
-where the notation $[\cdot]_H$ means the equivalence class of an element in the quotient by a subgroup $H$. Note that $\delta$ is _not_ just the restriction of the induced map on the right, which would take $[b]_{A_1} \to [\phi(b)]_{A_2}$. This is just the zero map!
+where the notation $[\cdot]_H$ means the equivalence class of an element in the quotient by a subgroup $H$. Note that $\delta$ is _not_ just the restriction of the induced map on the right, which would take $[b]_{A_1} \to [\phi(b)]_{A_2}$. That's just the zero map!
 
-In other words, $\delta$ is much like the map induced by $\phi$, but in some sense "preserves" as much information as the original map $\phi$ will allow. For example, if $\phi$ is an isomorphism, then $\delta$ is also an isomorphism, whereas the induced map on the quotients may not be. This notion is formalized by the second assertion of the Snake Lemma, which states that the kernels and cokernels of the maps induced by $\phi$ join to form an exact sequence.
+In other words, $\delta$ is much like the map induced by $\phi$, but in some sense preserves as much information as the original map $\phi$ will allow. As we will later show, this means that
+
+1. The kernel of $\delta$ is the kernel of $\phi$ after quotienting by $A_1$
+2. The image of $\delta$ is consists
+
+For example, if $\phi$ is an isomorphism, then $\delta$ is also an isomorphism, whereas the induced map on the quotients may not be. This notion is formalized by the second assertion of the Snake Lemma, which states that the kernels and cokernels of the maps induced by $\phi$ join to form an exact sequence.
 
 ## The Snake Lemma
 
@@ -125,10 +130,8 @@ _Proof_. We first show that the sequence is exact at the kernel and cokernel of 
 To show exactness at $\ker \beta$, note that we may write $\ker \overline{\vphantom{+}\pi_1} = \ker \pi_1 \cap \ker \beta$. However, by exactness, we have $\ker \pi_1 = \operatorname{im} \iota_1$, which implies
 
 $$
-\operatorname{im} \iota_1 \cap \ker \beta = \iota_1 (\iota_1^{-1} (\ker \beta)) =\iota_1(\ker (\beta \circ\iota_1)) = \iota_1(\ker (\iota_2 \circ \alpha)) = \iota_1(\ker\alpha),
+\ker \overline{\vphantom{+}\pi_1} =  \operatorname{im} \iota_1 \cap \ker \beta = \iota_1 (\iota_1^{-1} (\ker \beta)) =\iota_1(\ker (\beta \circ\iota_1)) = \iota_1(\ker (\iota_2 \circ \alpha)) = \iota_1(\ker\alpha) = \operatorname{im} \overline{\vphantom{+}\iota_1}.
 $$
-
-so $\ker \overline{\vphantom{+}\pi_1} = \operatorname{im} \overline{\vphantom{+}\iota_1}$.
 
 </li>
 
@@ -153,7 +156,7 @@ $$
 \end{CD}\quad,
 $$
 
-which yields $\ker \gamma = \beta^{-1}(A_2)/\iota_1(A_1)$, viewing $A_2$ as a subgroup of $B_2$. Furthermore, the map $\beta^{-1}(A_2) \to A_2$ takes $\iota_1(A_1)$ to $A_2$, which yields the connecting homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$. We now show that the sequence is exact at $\ker \gamma$ and $\operatorname{coker} \alpha$.
+which yields $\ker \gamma = \beta^{-1}(\operatorname{im} \iota_2)/\operatorname{im} \iota_1$. Furthermore, the map $\beta^{-1}(\operatorname{im} \iota_2) \to \operatorname{im} \iota_2$ takes $\operatorname{im} \iota_1$ to $\operatorname{im} \alpha$, which yields the connecting homomorphism $\delta \colon \ker \gamma \to \operatorname{coker} \alpha$. We now show that the sequence is exact at $\ker \gamma$ and $\operatorname{coker} \alpha$.
 
 <ol>
 <li>
