@@ -12,85 +12,78 @@ of $R$-modules, denoted by $C_\bullet \otimes_R M$. Each chain $c \in C_n \otime
 \begin{equation*}
     c = \sum_{i \in I} c_i \otimes m_i
 \end{equation*}
-where $c_i \in C_n$ and $m_i \in M$. Note that $M$ is not required to have a ring structure, so after adding coefficients one should still regard $C_n \otimes_R M$ as an $R$-module.  The purpose of the universal coefficient theorem for homology is to relate the homology of $C_\bullet \otimes_R M$ to the homology of $C_\bullet$.
-
-Before stating the theorem, we make a few important notational remarks. Let $\phi \colon A \to B$  be a map of $R$-modules and let $B_0$ be a subspace containing the image of $\phi$.  Typically, one denotes the corestriction $\phi|^{B_0} \colon A \to B_0$ by the symbol \say{$\phi$} again. However, this abuse of notation can lead to confusion when dealing with tensor products: the map
-\begin{align*}
-    \phi|^{B_0} \otimes 1_M &\colon A \otimes_R M \to B_0 \otimes_R M
-\end{align*}
-is \emph{not} a corestriction of $\phi \otimes 1_M$, unless one can identify $B_0 \otimes_R M$ with a submodule of $B \otimes_R M$ via the inclusion map $\iota \colon B_0 \hookrightarrow B$. In general, this is not possible, since $- \otimes_R M$ fails to preserve monomorphisms. Thus, to avoid confusion, we explicitly denote corestrictions in the proceeding argument as follows: given a chain complex $(C_\bullet, \partial_\bullet)$ and a map $\phi \colon A \to C_{n+1}$ such that $\im \phi \subset \ker \partial_{n}$, let
+where $c_i \in C_n$ and $m_i \in M$. Note that $M$ is not required to have a ring structure, so after adding coefficients one should still regard $C_n \otimes_R M$ as an $R$-module.  The purpose of the universal coefficient theorem for homology is to relate the homology of $C_\bullet \otimes_R M$ to the homology of $C_\bullet$. Note that there is a map
 \begin{equation*}
-  \phi^{\mathrm{Z}} = \phi|^{\ker \partial_{n}} \colon A \to \ker \partial_{n}
+    \delta' \colon \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M) \quad \quad ([c] \otimes m) \overset{\delta'}{\mapsto} [c \otimes m].
 \end{equation*}
-be the corestriction of $\phi$ to the $n$-cycles in $C_\bullet$. 
-
+which should be thought of as an approximation of the structure of $\mathrm{H}_n(C_\bullet \otimes_R M)$; the universal coefficient theorem tells us how well this estimate works.
 
 \begin{theorem}[Universal Coefficient Theorem for Homology]
     Let $R$ be a PID, and let $(C_\bullet, \partial_\bullet)$ be a chain complex of free $R$-modules. Then for any $R$-module $M$, there exists a short exact sequence of $R$-modules 
     \begin{equation*}\label{eq:uct-homology}
-        0 \to \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M) \to \mathrm{Tor}_1^R(\mathrm{H}_{n-1}(C_\bullet), M) \to 0 \tag{$\star$}
+        0 \to \mathrm{H}_n(C_\bullet) \otimes_R M \overset{\delta'}{\to} \mathrm{H}_n(C_\bullet \otimes_R M) \to \mathrm{Tor}_1^R(\mathrm{H}_{n-1}(C_\bullet), M) \to 0 \tag{$\star$}
     \end{equation*}
     for each $n \in \mathbb{Z}$, which is natural in both $C_\bullet$ and $M$. Furthermore, this sequence splits, but not naturally.
 \end{theorem}
 
 \begin{proof}
-Let $\iota \colon \ker \partial_n \hookrightarrow C_n$ be the inclusion map. Then $\partial_{n+1} = \iota \circ \partial_{n+1}^{\mathrm{Z}}$, which implies that 
-\begin{equation*}
-(\partial_{n+1} \otimes_R 1_M)^\mathrm{Z} = (\iota \otimes 1_M)^{\mathrm{Z}} \circ (\partial^{\mathrm{Z}}_{n+1} \otimes_R 1_M).
-\end{equation*}
-In other words, the diagram
-\begin{equation*}
-  \begin{tikzcd}
-	{C_{n+1} \otimes_R M} && {\ker(\partial_n) \otimes_R M} \\
-	\\
-	{C_{n+1} \otimes_R M} && {\ker(\partial_n \otimes1_M)}
-	\arrow["{\partial_{n+1}^{\mathrm{Z}} \otimes1_M}", from=1-1, to=1-3]
-	\arrow[equals, from=1-1, to=3-1]
-	\arrow["{(\iota \otimes 1_M)^{\mathrm{Z}}}", from=1-3, to=3-3]
-	\arrow["{(\partial_{n+1}\otimes1_M)^{\mathrm{Z}}}"', from=3-1, to=3-3]
-\end{tikzcd}
-\end{equation*}
-commutes, so forming cokernels and using the fact that $- \otimes_R M$ preserves cokernels yields a map
-\begin{equation*}
-    j \colon \mathrm{H}_n(C_\bullet) \otimes_R M \to \mathrm{H}_n(C_\bullet \otimes_R M); \quad \quad ([c] \otimes m) \overset{j}{\longmapsto} [c \otimes m]
-\end{equation*}
-Since $R$ is a PID, and $C_{n-1}$ is a free $R$-module, it follows that $\im \partial_n \subseteq C_{n-1}$ is also free. Thus, the short exact sequence
-\begin{equation*}
-    0 \to \ker \partial_n \xrightarrow{\iota} C_n \to \mathrm{im}\, \partial_n \to 0
-\end{equation*}
-splits. By functoriality, $\iota \otimes 1_M$ is a split monomorphism, and so is its corestriction $(\iota \otimes 1_M)^{\mathrm{Z}}$. Taking cokernels is once again functorial, so $j$ is also a split monomorphism. This yields the first half of the sequence \eqref{eq:uct-homology}; it remains to determine the cokernel of $j$.
-
-To this end, observe that the short exact sequence
-\begin{equation*}
-    0 \to \mathrm{im}\, \partial_{n+1} \to \ker \partial_n \to \mathrm{H}_n(C_\bullet) \to 0
-\end{equation*}
-is a free resolution of $\mathrm{H}_n(C_\bullet)$, since $\mathrm{im}\, \partial_{n+1}$ and $\ker \partial_n$ are submodules of the free $R$-module $C_n$, and $R$ is a PID. Tensoring this sequence with $M$ yields the long exact sequence
-
----
-
 Since $R$ is a PID, and $C_{n-1}$ is a free $R$-module, it follows that $\im \partial_n \subseteq C_{n-1}$ is also free. Thus, the short exact sequence of chain complexes
 \begin{equation*}
     0 \to \ker \partial_\bullet \to C_\bullet \to \im \partial_\bullet \to 0
 \end{equation*}
-splits, where the subcomplexes $\ker \partial_\bullet$ and $\mathrm{im}\, \partial_\bullet$ are defined by taking kernels and images degree-wise. The boundary maps on these subcomplexes are all zero. Since this sequence is split, we may apply $- \otimes_R M$ to obtain a new short exact sequence of chain complexes
+splits, where the subcomplexes $\ker \partial_\bullet$ and $\mathrm{im}\, \partial_\bullet$ are defined by taking kernels and images degree-wise. Since this sequence is split, we may apply $- \otimes_R M$ to obtain a new short exact sequence of chain complexes
 \begin{equation*}
     0 \to \ker \partial_\bullet \otimes_R M \to C_\bullet \otimes_R M \to \im \partial_\bullet \otimes_R M \to 0.
 \end{equation*}
+For a chain complex with trivial boundary maps, the homology groups coincide with the chain groups in each degree, so the associated long exact sequence in homology may be written as
 
-
+\begin{equation*}
+    \begin{tikzcd}
+	& \cdots & {\im \partial_{n+1} \otimes_R M} \\
+	{\ker \partial_n \otimes_R M} & {\mathrm{H}_n(C_\bullet \otimes_R M)} & {\im \partial_{n} \otimes_R M} \\
+	{\ker \partial_{n-1} \otimes_R M} & \cdots
+	\arrow[from=1-2, to=1-3]
+	\arrow["{\l\delta_{n+1}}"{description}, from=1-3, to=2-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow["{\delta_n}"{description}, from=2-3, to=3-1]
+	\arrow[from=3-1, to=3-2]
+\end{tikzcd}
+\end{equation*}
+where $\delta_n = \iota_n \otimes_R 1_M$ for the inclusion $\iota_n \colon \im \partial_n \hookrightarrow \ker \partial_{n-1}$. The weaving lemma yields short exact sequences
+\begin{equation*}
+    0 \to \coker (\iota_{n+1} \otimes_R 1_M) \xrightarrow{\delta'_{n+1}} \mathrm{H}_n(C_\bullet \otimes_R M) \xrightarrow{\partial'_n} \ker(\iota_{n} \otimes_R 1_M) \to 0.
+\end{equation*}
+where $\delta'_{n+1}$ and $\partial'_n$ are the maps induced by $\delta_{n+1}$ and $\partial_n$, respectively. Since the tensor product preserves cokernels, the cokernel may be expressed as
+\begin{equation*}
+    \coker (\iota_{n+1} \otimes_R 1_M) \cong \coker \iota_{n+1} \otimes_R M \cong \mathrm{H}_n(C_\bullet) \otimes_R M.
+\end{equation*}
+Under this identification, $\delta'_{n+1}$ takes $([c] \otimes m) \mapsto [c \otimes m]$. Since the failure of the tensor product to preserve kernels is measured by the first torsion group, the kernel may be expressed as
+\begin{equation*}
+    \ker(\iota_n \otimes_R 1_M) \cong \mathrm{Tor}_1^R(\coker \iota_n, M) \cong \mathrm{Tor}_1^R(\mathrm{H}_{n-1}(C_\bullet), M).
+\end{equation*}
+Substituting these isomorphisms into the short exact sequence above yields the desired result. Since the connecting homomorphism and isomorphisms used were all natural, the entire sequence is natural in both $C_\bullet$ and $M$.
 \end{proof}
+
+\begin{remark}
+    In the above proof, we implicitly used the fact that $\mathrm{Tor}$ was defined by taking a projective resolution of the first argument when computing the kernel of $\iota_n \otimes 1_M$. Since $\mathrm{Tor}$ is symmetric, one may also prove the theorem by taking a free resolution of the second argument $M$ instead: given a free resolution
+    \begin{equation*}
+        0 \to F_1 \to F_0 \to M \to 0
+    \end{equation*}
+    tensoring with $C_\bullet$ and applying the weaving lemma to the associated long exact sequence also yields the desired result.
+\end{remark}
 
 \subsection{Cohomology}
 
 Let $R$ be a commutative ring and let $(C_\bullet, \partial_\bullet)$ be a chain complex of $R$-modules. The dual cochain complex $(C^\bullet, \delta^\bullet)$ is formed by taking the dual of each $C_n$, yielding the sequence of $R$-modules
 \begin{equation*}
-    \cdots \to \mathrm{Hom}_R(C_{n-1}, R) \xrightarrow{\delta^{n-1}} \mathrm{Hom}_R(C_n, R) \xrightarrow{\delta^n} \mathrm{Hom}_R(C_{n+1}, R) \to \cdots
+    \cdots \to \mathrm{Hom}_R(C_{n-1}, R) \xrightarrow{d^{n-1}} \mathrm{Hom}_R(C_n, R) \xrightarrow{d^n} \mathrm{Hom}_R(C_{n+1}, R) \to \cdots
 \end{equation*}
-where $\delta^n = \partial_{n+1}^*$ is the pullback along $\partial_{n+1}$. More generally, one may bake coefficients into the cochain complex by instead taking the $R$-module of homomorphisms $\mathrm{Hom}_R(C_n, M)$ for a fixed $R$-module $M$. This yields a new cochain complex
+where $d^n = (\partial_{n+1})^*$ is the pullback along $\partial_{n+1}$. More generally, one may bake coefficients into the cochain complex by instead taking the $R$-module of homomorphisms $\mathrm{Hom}_R(C_n, M)$ for a fixed $R$-module $M$. This yields a new cochain complex
 \begin{equation*}
-    \cdots \to \mathrm{Hom}_R(C_{n-1}, M) \xrightarrow{\delta^{n-1}} \mathrm{Hom}_R(C_n, M) \xrightarrow{\delta^n} \mathrm{Hom}_R(C_{n+1}, M) \to \cdots
+    \cdots \to \mathrm{Hom}_R(C_{n-1}, M) \xrightarrow{d^{n-1}} \mathrm{Hom}_R(C_n, M) \xrightarrow{d^n} \mathrm{Hom}_R(C_{n+1}, M) \to \cdots
 \end{equation*}
-of $R$-modules, denoted by $\mathrm{Hom}_R(C_\bullet, M)$. Note that this is a fundamentally different process than \emph{adding} coefficients by tensoring the dual chain complex with $M$, since $\mathrm{Hom}_R(C_n, M)$ is not generally isomorphic to $\mathrm{Hom}_R(C_n, R) \otimes_R M$. The purpose of the universal coefficient theorem for cohomology is to relate the cohomology of $\mathrm{Hom}_R(C_\bullet, M)$ to the cohomology of the dual complex $C^\bullet$.
+of $R$-modules, denoted by $\mathrm{Hom}_R(C_\bullet, M)$. Note that this is a fundamentally different process than \emph{adding} coefficients by tensoring the dual chain complex with $M$. The purpose of the universal coefficient theorem for cohomology is to relate the cohomology of $\mathrm{Hom}_R(C_\bullet, M)$ to the cohomology of the dual complex $C^\bullet$.
 
 \begin{theorem}[Universal Coefficient Theorem for Cohomology]
     Let $R$ be a PID, and let $(C_\bullet, \partial_\bullet)$ be a chain complex of free $R$-modules. Then for any $R$-module $M$, there exists a short exact sequence of $R$-modules 
@@ -99,3 +92,6 @@ of $R$-modules, denoted by $\mathrm{Hom}_R(C_\bullet, M)$. Note that this is a f
     \end{equation*}
     for each $n \in \mathbb{Z}$, which is natural in both $C_\bullet$ and $M$. Furthermore, this sequence splits, but not naturally.
 \end{theorem}
+
+\begin{proof}
+\end{proof}
