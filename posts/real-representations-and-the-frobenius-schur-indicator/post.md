@@ -243,7 +243,7 @@ and the matrix elements of $\rho_W(g) \colon W \to W$ are all real. In particula
 
 </div>
 
-<!--_Proof._ First, suppose that that a nondegenerate equivariant bilinear form $b$ exists on $V$. For each $g \in G$, let $e_1(g), \ldots, e_n(g)$ be an eigenbasis of $V$ for $g$ with eigenvalues $\lambda_1(g), \ldots, \lambda_n(g)$. By nondegeneracy, for each each $e_i$, there must exist some $e_j$ such that $b(e_i, e_j) \neq 0$. Since $b$ must either be symmetric or alternating, this also implies $b(e_j, e_i) \neq 0$. Thus, we may partition the set of eigenvectors into "anisotropic" singletons $\{e_i\}$ with $b(e_i, e_i) \neq 0$ and "isotropic" pairs $\{e_i, e_j\}$ with $b(e_i, e_j) \neq 0$ and $b(e_j, e_i) \neq 0$. By equivariance, each anisotropic eigenvector $e_i$ satsifies
+_Proof._ First, suppose that that a nondegenerate equivariant bilinear form $b$ exists on $V$. For each $g \in G$, let $e_1(g), \ldots, e_n(g)$ be an eigenbasis of $V$ for $g$ with eigenvalues $\lambda_1(g), \ldots, \lambda_n(g)$. By nondegeneracy, for each each $e_i$, there must exist some $e_j$ such that $b(e_i, e_j) \neq 0$. Since $b$ must either be symmetric or alternating, this also implies $b(e_j, e_i) \neq 0$. Thus, we may partition the set of eigenvectors into "anisotropic" singletons $\{e_i\}$ with $b(e_i, e_i) \neq 0$ and "isotropic" pairs $\{e_i, e_j\}$ with $b(e_i, e_j) \neq 0$ and $b(e_j, e_i) \neq 0$. By equivariance, each anisotropic eigenvector $e_i$ satsifies
 
 $$
 b(e_i, e_i) = b(g^{-1}e_i, g^{-1}e_i) = \lambda_i^{-2} \cdot b(e_i, e_i),
@@ -267,7 +267,7 @@ $$
 \dim \mathrm{T}^2(V^\vee)^G = \inner{\chi_{\mathrm{triv}}, \chi_{\mathrm{T}^2(V^\vee)}} = \frac{1}{\abs{G}}\sum_{g \in G} \chi_V(g)^2 = \frac{1}{\abs{G}} \left[\chi_V(1_G)^2 + \sum_{g \neq 1_G} \chi(g)^2 \right] > 0,
 $$
 
-since $\chi_V(1_G) = \dim V > 0$ and $\chi_V(g)^2 \geq 0$. Thus, there must exist some equivariant bilinear form on $V$. !-->
+since $\chi_V(1_G) = \dim V > 0$ and $\chi_V(g)^2 \geq 0$. Thus, there must exist some equivariant bilinear form on $V$.
 
 <div class="w-full flex mt-[-20px] mb-[25px] justify-end">
 
