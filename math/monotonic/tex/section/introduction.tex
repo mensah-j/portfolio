@@ -1,0 +1,23 @@
+
+\section{Introduction}
+
+Let $\Omega$ be an open polygon in the plane, and let $\theta \in \mathbb{S}^1$ be a direction vector. We say that $\Omega$ is \emph{monotone} with respect to $\theta$ if its intersection with every line $\ell$ orthogonal to $\theta$ is either empty or an interval in $\ell$. Intuitively, this means one can completely \say{hatch} the region with a pen without having to lift the pen for any hatch line, as shown in Figure \ref{}. Monotonicity is a kind of generalization of convexity: if $\Omega$ is convex, then it is automatically monotone with respect to all directions. Typically, this notion is defined for polygons in terms of the number of crossings of a line with the boundary of the polygon, as done in \cite{} and \cite{}. The name is derived from the following fact: if $\Gamma$ is polygon monotone with respect to a direction $\theta$, then the edges of $\Gamma$ may be split into two continguous chains of vertices $v_1, \ldots, v_n$ and $w_1, \ldots, w_m$ such that $\inner*{v_i, \theta}$ and $\inner*{w_j, \theta}$ are monotone in $i$ and $j$ respectively.
+
+The definition of monotonicity may be extended to higher-dimensional domains (open sets) as follows. If  $\Omega \subseteq \mathbb{R}^n$ is a bounded domain and $\theta  \in \mathbb{S}^{n-1}$, we say that $\Omega$ is \emph{monotone} with respect to $\theta$ if its intersection with every hyperplane $H$ orthogonal to $\theta$ is either empty or a homeomorphic to the $(n-1)$-ball $\mathbb{B}^n$. In this note, we establish criteria involving the boundary of a domain $\Omega$ which imply that it is monotone with respect to some direction.
+
+\subsection{Preliminaries and Conventions}
+
+We establish some usual notation, terminology, and conventions. Let $\mathbb{RP}^{n-1}$ be the quotient of $\mathbb{S}^{n-1}$ under the involution map $x \mapsto -x$ for all $x \in \mathbb{S}^{n-1}$. Since a domain $\Omega \subseteq \mathbb{R}^n$ is monotonic with respect to a direction $\theta \in \mathbb{S}^{n-1}$ if and only if it is monotonic with respect to $-\theta$, we may say that $\Omega$ is monotonic with respect to the direction $[\theta] \in \mathbb{RP}^{n-1}$. The involution map on the sphere is an isometry, so the quotient carries an induced Riemannian metric. Denote the quotient map by $\rho \colon \mathbb{S}^{n-1} \to \mathbb{RP}^{n-1}$, which is a double cover and a local isometry.
+
+
+For an oriented smooth hypersurface $M \subseteq \mathbb{R}^n$, the Gauss map is a smooth map $n \colon M \to \mathbb{S}^{n-1}$ which maps a point $p \in M$ to the normal vector (defined by its orientation) at $p$. By composing with the double cover, we obtain a map $\nu \colon M \to \mathbb{RP}^{n-1}$ which we refer to as the \textit{projectivized} Gauss map. The Gauss-Kronecker curvature of $M$ is the unique real function $K$ such that 
+\begin{equation}
+  n^*\omega_{\,\mathbb{S}^{n-1}} = K \cdot \omega_M,
+\end{equation}
+where $\omega_{\,\mathbb{S}^{n-1}}$ and $\omega_M$ are the volume forms of $\mathbb{S}^{n-1}$ and $M$, respectively. The absolute Gauss-Kronecker curvature is given by
+\begin{equation}
+  |K(p)| = \sqrt{\det(\d n_p^{*} \circ \d n_p)},
+\end{equation}
+where $[\cdot]^*$ is the adjoint of a linear map between inner product spaces.
+
+Finally, if $\Gamma$ is a nondegenerate polygon, we use the convention that all exterior angles are given in the range $(-\pi, \pi)$.
