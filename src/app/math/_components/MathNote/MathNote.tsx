@@ -15,7 +15,7 @@ export function MathNote(props: MathNoteProps) {
               href={props.math.url ?? props.math.path}
               target="_blank"
               rel="noopener noreferrer"
-              className="pb-px font-extrabold transition border-b hover:border-black border-transparent text-md motion-reduce:transition-none"
+              className="pb-px font-extrabold transition border-b hover:border-black border-transparent text-lg motion-reduce:transition-none"
             >
               {props.math.title}
             </a>{" "}

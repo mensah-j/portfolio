@@ -26,7 +26,7 @@ export function PostItem(props: PostItemProps) {
       <div className="flex flex-col items-start">
         <Link
           href={props.path}
-          className="sm:h-8 text-xl sm:text-2xl font-extrabold"
+          className="sm:h-8 text-lg sm:text-xl font-extrabold"
           style={{ color: props.titleColor ?? "black" }}
         >
           <MarkdownGeneral>{props.title}</MarkdownGeneral>
@@ -36,7 +36,9 @@ export function PostItem(props: PostItemProps) {
         </span>
       </div>
 
-      <MarkdownGeneral className={`text-[${props.bodyColor ?? "black"}]`}>
+      <MarkdownGeneral
+        className={`text-[${props.bodyColor ?? "black"}] text-[15px]`}
+      >
         {props.excerpt ? `${props.excerpt}...` : ""}
       </MarkdownGeneral>
     </div>
