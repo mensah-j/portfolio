@@ -16,6 +16,7 @@ const MathSchema = z.object({
   url: z.string().optional(),
   date: z.string(),
   title: z.string(),
+  finished: z.boolean().optional(),
   description: z.string().optional(),
 });
 

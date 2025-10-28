@@ -19,7 +19,7 @@ export function MathNote(props: MathNoteProps) {
             >
               {props.math.title}
             </a>{" "}
-            {props.math && (
+            {!props.math.finished && (
               <span className="inline-block text-sm font-bold text-gray-600">
                 (in progress)
               </span>
