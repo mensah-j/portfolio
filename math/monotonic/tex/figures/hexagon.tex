@@ -1,0 +1,55 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=3]
+
+% Coordinates of triangle
+\coordinate (A) at (0,1);            
+\coordinate (B) at (-0.866,-0.5);    
+\coordinate (C) at (0.866,-0.5);     
+
+% Centroid
+\coordinate (G) at (0, 0); % point q
+
+% Split vertices
+\coordinate (A1) at (-0.03,1);
+\coordinate (A2) at (0.03,1);
+
+\coordinate (B1) at (-0.886,-0.50);
+\coordinate (B2) at ($ (B)!0.15!(G) $);
+
+\coordinate (C1) at (0.886,-0.50);
+\coordinate (C2) at ($ (C)!0.15!(G) $);
+
+% Hexagon points (snake around)
+\coordinate (P1) at (A1);
+\coordinate (P2) at (B1);
+\coordinate (P3) at (C1);
+\coordinate (P4) at (A2);
+\coordinate (P5) at (C2);
+\coordinate (P6) at (B2);
+
+% Draw and fill hexagon
+\fill[gray!30] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- cycle;
+\draw[thick] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- cycle;
+
+% ===== Add point q with label southeast =====
+\node[fill=black, circle, inner sep=1.5pt, label=below right:$q$] at (G) {};
+
+% ===== Red line through q, slope 1/5 =====
+\draw[red, thick] ($ (G)+(-1,-0.2) $) -- ($ (G)+(1,0.2) $);
+
+% ===== Blue solid vertical line through q to midpoint of A1-A2 =====
+\draw[blue, thick] (0,-0.7) -- (0,1.2);
+
+% ===== Blue dashed line: parallel translate to the left =====
+\draw[blue, thick, dash pattern=on 3pt off 2pt] (-0.25,-0.7) -- (-0.25,1.2);
+
+\draw[->, >=latex, blue, thick] (0,1.1) -- (-0.25,1.1);
+\draw[->, >=latex, blue, thick] (0,-0.6) -- (-0.25,-0.6);
+
+
+\end{tikzpicture}
+\captionsetup{width=0.85\textwidth}
+\caption{A hexagon which is not monotonic with respect to any direction. Lines through the centroid $q$ may be shifted to intersect the boundary in more than two points.}
+\label{fig:hexagon}
+\end{figure}

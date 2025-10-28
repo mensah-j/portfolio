@@ -1,0 +1,53 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=9]
+
+  % ==== First baby: vertical hatching ====
+  \begin{scope}
+    \fill[pattern=vertical lines, pattern color=blue!50] 
+      plot [smooth cycle, tension=1] coordinates {
+        (0, -0.2)
+        (-0.2,0)
+        (-0.1, 0.1)
+        (0, -0.05)
+        (0.1,0.1)
+        (0.2,0)
+      };
+    \draw[thick,blue!70]
+      plot [smooth cycle, tension=1] coordinates {
+        (0, -0.2)
+        (-0.2,0)
+        (-0.1, 0.1)
+        (0, -0.05)
+        (0.1,0.1)
+        (0.2,0)
+      };
+  \end{scope}
+
+  % ==== Second baby: horizontal hatching, shifted right ====
+  \begin{scope}[xshift=0.6cm]
+    \fill[pattern=horizontal lines, pattern color=red!50] 
+      plot [smooth cycle, tension=1] coordinates {
+        (0, -0.2)
+        (-0.2,0)
+        (-0.1, 0.1)
+        (0, -0.05)
+        (0.1,0.1)
+        (0.2,0)
+      };
+    \draw[thick,red!70]
+      plot [smooth cycle, tension=1] coordinates {
+        (0, -0.2)
+        (-0.2,0)
+        (-0.1, 0.1)
+        (0, -0.05)
+        (0.1,0.1)
+        (0.2,0)
+      };
+  \end{scope}
+
+\end{tikzpicture}
+\captionsetup{width=0.85\textwidth}
+\caption{The V-shaped domain above is monotonic horizontally (blue, vertical hatch lines), but not vertically (red, horizonal hatch lines).}
+\label{fig:hatch}
+\end{figure}

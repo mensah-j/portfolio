@@ -1,35 +1,35 @@
 \section{Monotone Domains}
 
-The main theorems of this paper rely on the following lemma which is analogous to \cite{}, which concerns polygons in the plane. However, the result we give fails to be a complete characterization of monotonicity in a given direction, though it is enough for our purposes.
+The main theorems of this paper rely on the following lemma which is analogous to \cite[Theorem 1]{preparata1981}, which concerns polygons in the plane. Although the result we give fails to be a complete characterization of monotonicity in a given direction, it is enough for the purposes of later arguments.
 
-\begin{proposition}
+\begin{lemma}\label{lem:headphones}
   Let $\Omega \subseteq \mathbb{R}^n$ be a bounded domain with smooth boundary $\Gamma$, and let ${\nu \colon \Gamma \to \mathbb{RP}^n}$ be the projectivized Gauss map. If $\abs{\nu^{-1}\{[\theta]\}\hspace{-1.5pt}} = 2$ for some $[\theta] \in \mathbb{RP}^{n-1}$, then $\Omega$ is monotone with respect to $[\theta]$.
-\end{proposition}
+\end{lemma}
 \begin{proof}
   Consider the projection $\pi \colon 
   \mathbb{R}^n \to \mathbb{R}$ defined by $\pi(x) = \langle x, \theta \rangle$ and let $h = \pi|_\Gamma$. At a critical point $p$ of $h$, we have 
   \begin{equation*}
     \mathrm{d}h_p(v) = \inner{v, \theta} = 0
   \end{equation*}
-  for all $v \in \mathrm{T}_p \Gamma$, which occurs if and only if $\nu(p) = [\theta]$. Since $\Gamma$ is compact and not contained in a line, $h$ attains a maximum and minimum at distinct points $p_{+}, p_{-} \in \Gamma$. By hypothesis, the preimage of $[\theta]$ under $\nu$ contains two elements, so there are no other critical values in $(\min h, \max h)$. By \cite[Theorem A]{}, $h^{-1}\{t\}$ is homeomorphic to $\mathbb{S}^{n-2}$ whenever $t$ is not an extreme value of $h$. Therefore, by the generalized Schoenflies theorem (see \cite{}), each slice $\Omega \cap \pi^{-1}\{t\}$ is homeomorphic to $\mathbb{B}^{n-1}$ whenever it is nonempty. The conclusion follows.
+  for all $v \in \mathrm{T}_p \Gamma$, which occurs if and only if $\nu(p) = [\theta]$. Since $\Gamma$ is compact and not contained in a line, $h$ attains a maximum and minimum at distinct points $p_{+}, p_{-} \in \Gamma$. By hypothesis, the preimage of $[\theta]$ under $\nu$ contains two elements, so there are no other critical values in $(\min h, \max h)$. By \cite[Theorem A]{yasuhiko2015}, $h^{-1}\{t\}$ is homeomorphic to $\mathbb{S}^{n-2}$ whenever $t$ is not an extreme value of $h$. Therefore, by the generalized Schoenflies theorem (see \cite{putman2025}), each slice $\Omega \cap \pi^{-1}\{t\}$ is homeomorphic to $\mathbb{B}^{n-1}$ whenever it is nonempty. The conclusion follows.
 \end{proof}
 
 We now prove the main theorems of the paper.
 
-\begin{theorem}
-    Let $\Omega \subseteq \mathbb{R}^n$ be a bounded domain with smooth boundary $\Gamma$. If the total absolute Gauss curvature satisfies $\int_{\Gamma} |K| \, \mathrm{d}\Gamma < 2\operatorname{vol}(\mathbb{S}^{n-1})$, then $\Omega$ is monotone with respect to some direction.
+\begin{theorem}\label{thm:curvature}
+    Let $\Omega \subseteq \mathbb{R}^n$ be a bounded domain with smooth boundary $\Gamma$. If the total absolute Gauss-Kronecker curvature satisfies $\int_{\Gamma} |K| \, \mathrm{d}\Gamma < 2\operatorname{vol}(\mathbb{S}^{n-1})$, then $\Omega$ is monotone with respect to some direction.
 \end{theorem}
 
 \begin{proof}
-  Let $n \colon \Gamma \to \mathbb{S}^{n-1}$ be the Gauss map and $\nu = \rho \circ n$, where $\rho \colon \mathbb{S}^{n-1} \to \mathbb{RP}^{n-1}$ is the projection map. Since $\rho$ is a local isometry, the absolute Gauss-Kronecker curvature at a point $p \in \Gamma$ is given by the normal Jacobian
-  \begin{equation}
+  Let $n \colon \Gamma \to \mathbb{S}^{n-1}$ be the Gauss map and $\nu = \rho \circ n$, where $\rho \colon \mathbb{S}^{n-1} \to \mathbb{RP}^{n-1}$ is the projection map. Since $\rho$ is a local isometry, the absolute Gauss-Kronecker curvature at a point $p \in \Gamma$ is given by the Jacobian
+  \begin{equation}\label{eq:normal}
     |K(p)| = \sqrt{ \det (\d n_p^{*} \circ \d n_p)} = \sqrt{ \det (\d \nu_p^{*} \circ \d \nu_p)} = |\mathrm{J}_p\nu|.
   \end{equation}
-  Define $\mu \colon \mathbb{RP}^{n-1} \to \mathbb{N}_{> 0}$ by $\mu([\theta]) = |\nu^{-1}\{[\theta]\}|$ and let $P \subseteq \mathbb{RP}^{n-1}$ be the set of regular values of $\nu$. Since $\rho$ is a double cover and $P$ has full measure by Sard's theorem, its volume is given by $\operatorname{vol}(P) =  \frac{1}{2}\operatorname{vol}(\mathbb{S}^{n-1})$. Then by \eqref{} and the smooth coarea formula \cite{}, we have
+  Define $\mu \colon \mathbb{RP}^{n-1} \to \mathbb{N}_{> 0}$ by $\mu([\theta]) = |\nu^{-1}\{[\theta]\}|$. Then by \eqref{eq:normal} and the smooth coarea formula \cite{chavel2006}, we have
   \begin{equation}
-    \frac{1}{\operatorname{vol}(P)} \int_{P} \mu \, \d P = \frac{1}{\frac{1}{2}\operatorname{vol}(\mathbb{S}^{n-1})}\int_{\Gamma} |K| \, \d \Gamma < 4.
+    \frac{1}{\operatorname{vol}(\mathbb{RP}^{n-1})} \int_{\mathbb{RP}^{n-1}} \mu \, \d \mathbb{RP}^{n-1} = \frac{1}{\frac{1}{2}\operatorname{vol}(\mathbb{S}^{n-1})}\int_{\Gamma} |K| \, \d \Gamma < 4,
   \end{equation}
-  Thus, the average multiplicity of a direction $[\theta] \in \mathbb{RP}^{n-1}$ is strictly bounded above by $4$. Furthermore, $\deg_2 (\nu) =  0$ since it factors through a double cover. It follows that $\mu$ only takes on positive even values, so such an average can attained only if $\mu([\theta]) = 2$ for some $\theta \in \mathbb{S}^{n-1}$. The conclusion follows from Proposition \ref{}.
+  so the average multiplicity of a direction $[\theta] \in \mathbb{RP}^{n-1}$ is strictly bounded above by $4$. Note that $\deg_2 (\nu) =  0$ since $\nu$ factors through a double cover. It follows that $\mu$ takes on positive even values almost everywhere, so such an average is attained only if $\mu([\theta]) = 2$ for some $\theta \in \mathbb{S}^{n-1}$. The conclusion follows from Lemma \ref{lem:headphones}.
 \end{proof}
 
 By applying a standard smoothing argument, one may obtain an analogous result for polygons in the plane.
@@ -39,14 +39,15 @@ Let $\Omega \subseteq \mathbb{R}^2$ be a domain with polygonal boundary $\Gamma$
 \end{theorem}
 
 \begin{proof}
-Let $\theta_1, \ldots, \theta_n$ be the exterior angles of $\Gamma$. By \say{rounding} each of the corners of $\Omega$, one may obtain a sequence $\Omega_i \to \Omega$ of domains with smooth boundaries $\Gamma_i$ such that the multiplicities of the projective Gauss maps $\mu_i \colon \mathbb{RP}^{1} \to \mathbb{N}_{> 0}$ remain constant, and
+Let $\phi_1, \ldots, \phi_n$ be the exterior angles of $\Gamma$. By \say{rounding} each of the corners of $\Omega$, one may obtain a sequence $\Omega_i \to \Omega$ of domains with smooth boundaries $\Gamma_i$ such that the multiplicities $\mu_i \colon \mathbb{RP}^{1} \to \mathbb{N}_{> 0}$ of the projectivized Gauss maps do not vary with $i$, and
 \begin{equation}
-  \int_{\Gamma_i} |K| \, \d \Gamma_i = \sum_{k = 1}^{n} \theta_k.
+  \int_{\Gamma_i} |K| \, \d \Gamma_i = \sum_{k = 1}^{n} \,\abs{\phi_k}.
 \end{equation}
-It follows from the proof of Theorem \ref{} that there exists a consistent direction $[\theta]$ for which each $\Omega_i$ is monotone. Thus, for a line $\ell$ normal to $[\theta]$, the slices $\Omega_i \cap \ell$ are intervals which converge to $\Omega \cap \ell$. Since the limit of a sequence of intervals is also an interval, and $\Omega \cap \ell$ is open in $\ell$, it must either be empty or homeomorphic to $\mathbb{B}^1$. The conclusion follows.
+It follows from the proof of Theorem \ref{thm:curvature} that there exists a consistent direction $[\theta]$ for which each $\Omega_i$ is monotone. Then for a line $\ell$ normal to $[\theta]$, the slices $\Omega_i \cap \ell$ are intervals which converge to $\Omega \cap \ell$. Since the limit of a sequence of intervals is also an interval and $\Omega \cap \ell$ is open in $\ell$, it must either be empty or homeomorphic to $\mathbb{B}^1$. The conclusion follows.
 \end{proof}
 
-As a corollary, we obtain a resolution of the question posed in \cite{} concerning monotone polygons. 
+As a corollary, one may show that every polygon with five or fewer sides is monotone in at least one direction.
+
 \begin{corollary}
 Let $\Omega \subseteq \mathbb{R}^2$ be a domain with $n$-sided polygonal boundary. If $n \leq 5$, then $\Omega$ is monotone with respect to some direction.
 \end{corollary}
@@ -57,3 +58,7 @@ Let $\Omega \subseteq \mathbb{R}^2$ be a domain with $n$-sided polygonal boundar
   \end{equation}
   so $\Omega$ is monotone with respect to some direction.
 \end{proof}
+
+\input{figures/hexagon}
+
+This result is sharp. For example, the hexagon in Figure \ref{fig:hexagon} is not monotone with respect to any direction. Indeed, any line through $q$ not passing through the \protect\say{slit} must intersect the boundary in four points. On the other hand, any line through $q$ passing through the slit may be translated left or right to achieve the same result.

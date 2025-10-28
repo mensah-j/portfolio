@@ -22,10 +22,6 @@ export function NavigationBar() {
       name: "music",
       path: "/music",
     },
-    {
-      name: "cv",
-      path: "/cv",
-    },
   ];
 
   return (
