@@ -1,0 +1,91 @@
+\section{Torsion}
+
+\begin{theorem}
+Let $\nabla$ be an affine connection on $\mathbb{R}^n$, and 
+\end{theorem}
+
+\begin{proposition}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\gamma$ is a piecewise-smooth path, then 
+  \begin{equation}
+    \tau_\nabla(\overline{\gamma}) = -\Gamma(\gamma) \tau_\nabla(\gamma).
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  The accumulated torsion of the reverse path $\gamma$ is given by
+  \begin{equation}
+    \tau_\nabla (\overline{\gamma}) = \int_{0}^{t(\overline{\gamma})} \Gamma(\overline{\gamma})_{\hspace{0.5pt}t}^{0} \Big[ \overline{\gamma}\hspace{0.5pt}'(t) \Big] \, \d t = -\int_{0}^{t(\gamma)} \Gamma(\overline{\gamma})_{t(\overline{\gamma})}^{0} \Gamma(\overline{\gamma})_t^{t(\overline{\gamma})}\Big[\gamma'\big(t(\gamma) - t\big)\Big] \, \d t.
+  \end{equation}
+  Performing the substitution $t' = t(\gamma) - t$ and applying Proposition \ref{} yields
+  \begin{equation}
+    \tau_\nabla (\overline{\gamma}) = -  \Gamma(\gamma) \int_{0}^{t(\gamma)} \Gamma(\gamma)_{t'}^{0}\Big[\gamma'(t')\Big] \, \d t'.
+  \end{equation}
+  The conclusion follows.
+\end{proof}
+
+\begin{proposition}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\alpha \colon y \rightsquigarrow z$ and $\beta \colon x \rightsquigarrow y$ are smooth paths, then
+  \begin{equation}
+    \tau_\nabla (\alpha \beta) = \Gamma\big(\raisebox{-1pt}{$\overline{\beta}$}\big) \big[ \tau_\nabla (\alpha) \big] + \tau_\nabla(\raisebox{-1pt}{$\beta$}). 
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  The endpoint of the development of $\alpha \beta$ is given by
+  \begin{equation}
+    \tau_\nabla(\alpha\beta) = \int_{t(\beta)}^{t(\alpha) + t(\beta)} \Gamma(\alpha \beta)_{\hspace{0.5pt}t}^0 \Big[ (\alpha \beta)'(t)\Big] \, \d t  + \int_{0}^{t(\beta)} \Gamma(\alpha \beta)_{\hspace{0.5pt}t}^0 \Big[ (\alpha \beta)'(t)\Big] \, \d t.
+  \end{equation}
+  Applying Proposition \ref{} yields
+  \begin{align}
+    \tau_\nabla(\alpha\beta) &= \,\int_{0}^{t(\alpha)} \Gamma\big(\raisebox{-1pt}{$\overline{\beta}$}\big)\Gamma(\alpha)_{\hspace{0.5pt}t}^0 \Big[ \alpha'(t)\Big] \, \d t + \int_{0}^{t(\beta)} \Gamma(\beta)_{\hspace{0.5pt}t}^0 \Big[ \beta'(t)\Big] \, \d t \\
+    &= \Gamma\big(\raisebox{-1pt}{$\overline{\beta}$}\big) \int_{0}^{t(\alpha)} \Gamma(\alpha)_{\hspace{0.5pt}t}^0 \Big[ \alpha'(t)\Big] \, \d t + \int_{0}^{t(\beta)} \Gamma(\beta)_{\hspace{0.5pt}t}^0 \Big[ \beta'(t)\Big] \, \d t.
+  \end{align}
+  The conclusion follows.
+\end{proof}
+
+Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$: $\tau_\nabla(\alpha \beta) = \tau_\nabla(\alpha' \beta)$ if and only if $\tau_\nabla(\alpha) = \tau_\nabla(\alpha')$. Left cancellation does not immediately hold, due to the prescence of the parallel transport term. However, if $\beta$ is a loop such that $\Gamma(\beta)$ is the identity, then the torsion satisfies $\tau_\nabla(\alpha\beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta)$. In this sense, the accumulated torsion around loops is \say{additive} when a connection has trivial holonomy. 
+ 
+
+\begin{proposition}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\alpha_1, \alpha_2 \colon x \rightsquigarrow y$ are piecewise smooth paths and $\gamma \colon x \rightsquigarrow y$ is another such path, then
+
+  \begin{equation}
+    \tau_\nabla(\overline{\alpha}_2 \alpha_1) = \tau_\nabla( \overline{\alpha}_2 \gamma \cdot \overline{\gamma}\alpha_1).
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  By Proposition \ref{}, it suffies to show that $\tau_\nabla(\overline{\alpha}_2) = \tau_\nabla(\overline{\alpha}_2 \cdot \gamma \overline{\gamma})$. But $\gamma \overline{\gamma}$ has trivial parallel transport, so by Proposition \ref{} again we have
+  \begin{equation}
+    \tau_\nabla( \overline{\alpha}_2 \cdot \gamma \overline{\gamma}) = \tau_\nabla( \overline{\alpha}_2) + \tau_\nabla(\gamma \overline{\gamma}).
+  \end{equation}
+  Finally, by Proposition \ref{} and \ref{}, we have
+  \begin{equation*}
+    \tau_\nabla(\gamma \overline{\gamma}) = \Gamma(\gamma)\big[\tau_\nabla(\gamma)\big] + \tau_\nabla(\overline{\gamma}) = \Gamma(\gamma)\big[\tau_\nabla(\gamma)\big] - \Gamma(\gamma)\big[\tau_\nabla(\gamma)\big] = 0.
+  \end{equation*}
+  The conclusion follows.
+\end{proof}
+
+By using the laws we have just established, we may express the accumulated torsion over a contractible loop in terms of an integral of the infinitesimal torsion within the region bounded by the loop.
+
+\begin{theorem}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\gamma \colon x \rightsquigarrow x$ is contractible via the homotopy\footnote{ooga booga} $H \colon [0, 1] \times [0, t(\gamma)] \to M$ with $H_1 = \gamma$, then 
+  \begin{equation}
+    \tau_\nabla (\gamma) = \iint_{[0, 1] \times [0, t(\gamma)]} \, \d s\, \d t 
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  We adopt the following notation to describe paths in an interval $I \subseteq \mathbb{R}$: given $a, b \in I$, define $a \to b$ to be the straight-line path
+  \begin{equation}
+    [a \to b] \colon a \rightsquigarrow b; \quad \quad [\hspace{-0.25pt}a \to b](t) = (1-t) \cdot a + t \cdot b
+  \end{equation} 
+  from $a$ to $b$. Given $s \in [0, 1]$ or $t \in [0, t(\gamma)]$, we also view the maps $H(s, -)$ and $H(-, t)$ as functors between path categories; when applied to straight-line paths in their respective domains, these yield \say{vertical} or \say{horizontal} paths in $M$.
+
+
+  For an integer $n > 0$, we divide the rectangle $[0, 1] \times [0, t(\gamma)]$ into $n \times n$ subrectangles. By Proposition \ref{}, the fact that the homotopy fixes endpoints, and Proposition \ref{}, the torsion accumulated over $\gamma = H_1$ is equal to 
+  \begin{align}
+  \tau_\nabla \big(\hspace{-0.5pt}H(1, 0 \to 1)\hspace{-0.5pt}\big) 
+  &= \tau_\nabla \left[\prod_{k = 0}^{n-1} H\big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\big)\right] \\
+  &= \tau_\nabla \left[\prod_{k = 0}^{n-1} H\Big(1 \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to 1, \tfrac{k}{n}\Big)\right] \\
+  &= \sum_{k=0}^{n- 1} \,\tau_\nabla \! \left[\vphantom{\prod^{n-1}}H\Big(1 \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to 1, \tfrac{k}{n}\Big)\right].
+  \end{align}
+  For each \say{wedge} in the sum \ref{}, we 
+\end{proof}
