@@ -41,17 +41,7 @@ Let $\nabla$ be an affine connection on $\mathbb{R}^n$, and
   The conclusion follows.
 \end{proof}
 
-Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$: $\tau_\nabla(\alpha \beta) = \tau_\nabla(\alpha' \beta)$ if and only if $\tau_\nabla(\alpha) = \tau_\nabla(\alpha')$. Left cancellation does not immediately hold, due to the prescence of the parallel transport term. However, if $\beta$ is a loop such that $\Gamma(\beta)$ is the identity, then the torsion satisfies $\tau_\nabla(\alpha\beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta)$. In this sense, the accumulated torsion around loops is \say{additive} when a connection has trivial holonomy. In fact, this additivity also holds for the grafted product, as we now show.
-\begin{proposition}
-  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\beta \colon x \rightsquigarrow x$ is a loop whic\kern0pt h factors through a point $y$, and $\alpha \colon y \rightsquigarrow y$ is a loop with trivial holonomy, then 
-  \begin{equation}
-    \tau_\nabla (\alpha \star_y \beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta).
-  \end{equation}
-\end{proposition}
-\begin{proof}
-  
-\end{proof}
- 
+Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$: $\tau_\nabla(\alpha \beta) = \tau_\nabla(\alpha' \beta)$ if and only if $\tau_\nabla(\alpha) = \tau_\nabla(\alpha')$. Left cancellation does not immediately hold, due to the prescence of the parallel transport term. However, if $\beta$ is a loop such that $\Gamma(\beta)$ is the identity, then the torsion satisfies $\tau_\nabla(\alpha\beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta)$. In this sense, the accumulated torsion around loops is \say{additive} when a connection has trivial holonomy.
 
 \begin{proposition}
   Let $M$ be a smooth manifold with affine connection $\nabla$. If $\alpha_1, \alpha_2 \colon x \rightsquigarrow y$ are piecewise smooth paths and $\gamma \colon x \rightsquigarrow y$ is another suc\kern0pt h path, then
@@ -73,23 +63,22 @@ Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$:
   The conclusion follows.
 \end{proof}
 
-By using the laws we have just established, we may express the accumulated torsion over a contractible loop in terms of an integral of the infinitesimal torsion within the region bounded by the loop.
+\newpage
+
+By using the laws we have just established, we may express the accumulated torsion over a contractible loop in terms of an integral of the infinitesimal torsion within the region bounded by the loop. We adopt the following notation to describe paths in an interval $I \subseteq \mathbb{R}$: given $a, b \in I$, define $a \to b$ to be the straight-line path
+\begin{equation}
+  [a \to b] \colon a \rightsquigarrow b; \quad \quad [\hspace{-0.25pt}a \to b](t) = (1-t) \cdot a + t \cdot b
+\end{equation} 
+from $a$ to $b$. 
 
 \begin{theorem}
-  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\gamma \colon x \rightsquigarrow x$ is contractible via the homotopy\footnote{ooga booga} $H \colon [0, 1] \times [0, t(\gamma)] \to M$ with $H_1 = \gamma$, then 
+  Let $M$ be a smooth manifold with flat affine connection $\nabla$. If $\gamma \colon x \rightsquigarrow x$ is contractible via the homotopy\footnote{ooga booga} $H \colon [0, 1] \times [0, t(\gamma)] \to M$ with $H_1 = \gamma$, then 
   \begin{equation}
-    \tau_\nabla (\gamma) = \iint_{[0, 1] \times [0, t(\gamma)]} \, \d s\, \d t 
+    \tau_\nabla (\gamma) = \iint_{[0, 1] \times [0, t(\gamma)]} \Gamma H (s \to 0, t) \left[ T_\nabla \left(\pder{H}{s}, \pder{H}{t}\right) \right] \, \d s\, \d t 
   \end{equation}
 \end{theorem}
 \begin{proof}
-  We adopt the following notation to describe paths in an interval $I \subseteq \mathbb{R}$: given $a, b \in I$, define $a \to b$ to be the straight-line path
-  \begin{equation}
-    [a \to b] \colon a \rightsquigarrow b; \quad \quad [\hspace{-0.25pt}a \to b](t) = (1-t) \cdot a + t \cdot b
-  \end{equation} 
-  from $a$ to $b$. Given $s \in [0, 1]$ or $t \in [0, t(\gamma)]$, we also view the maps $H(s, -)$ and $H(-, t)$ as functors between path categories; when applied to straight-line paths in their respective domains, these yield \say{vertical} or \say{horizontal} paths in $M$.
-
-
-  For an integer $n > 0$, we divide the rectangle $[0, 1] \times [0, t(\gamma)]$ into $n \times n$ subrectangles. By Proposition \ref{}, the fact that the homotopy fixes endpoints, and Proposition \ref{}, the torsion accumulated over $\gamma = H_1$ is equal to 
+  Given $s \in [0, 1]$ or $t \in [0, t(\gamma)]$, we view the maps $H(s, -)$ and $H(-, t)$ as functors between path categories; when applied to straight-line paths in their respective domains, these yield \say{vertical} or \say{horizontal} paths in $M$. Let $n > 0$ be an integer. By Proposition \ref{}, the fact that the homotopy fixes endpoints, and Proposition \ref{}, the torsion accumulated over $\gamma = H_1$ is equal to 
   \begin{align}
   \tau_\nabla \big(\hspace{-0.5pt}H(1, 0 \to 1)\hspace{-0.5pt}\big) 
   &= \tau_\nabla \left[\prod_{k = 0}^{n-1} H\big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\big)\right] \\
@@ -98,14 +87,22 @@ By using the laws we have just established, we may express the accumulated torsi
   \end{align}
   Each \say{wedge} in the sum \ref{} may be broken into individual rectangular units as follows. For integers $j \in [\![1, n]\!]$ and $k \in [\![0, n - 1]\!]$, define \say{subwedges} $ \omega_{j, k} \colon x \rightsquigarrow x$ by
   \begin{equation}
-   \omega_{j, k} = H\Big(\tfrac{j}{n} \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(\tfrac{j}{n}, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to \tfrac{j}{n}, \tfrac{k}{n}\Big),
+   \omega_{j, k} = \underbrace{H\Big(\tfrac{j}{n} \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(\tfrac{j}{n}, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big)}_{\alpha_{j, k}} \cdot \underbrace{H\Big(0 \to \tfrac{j}{n}, \tfrac{k}{n}\Big)}_{\beta_{j, k}},
   \end{equation}
   and \say{cells} $\rho_{j,k}$ by 
   \begin{equation}
    \rho_{j, k} = H\Big(\tfrac{j-1}{n}, \tfrac{k+1}{n} \to \tfrac{k}{n}\Big) \cdot H\Big(\tfrac{j}{n} \to \tfrac{j-1}{n}, \tfrac{k+1}{n}\Big) \cdot  H\Big(\tfrac{j}{n}, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(\tfrac{j-1}{n} \to \tfrac{j}{n}, \tfrac{k}{n}\Big).
   \end{equation}
-  Then we may decompose each subwedge as
+  Then by Proposition \ref{}, the accumulated torsion is
+  \begin{align}
+    \tau_\nabla(\omega_{j,k}) 
+    &= \; \Gamma\big(\raisebox{-1.5pt}{$\overline{\beta}_{j-1, k}$}\big) \big[ \tau_\nabla(\alpha_{j-1, k} \cdot  \rho_{j, k}) \big] + \tau_\nabla\big(\raisebox{-1.5pt}{$\beta_{j-1, k}$}\big) \\
+    &= \; \Gamma\big(\raisebox{-1.5pt}{$\overline{\beta}_{j-1, k}$}\big) \big[ \tau_\nabla(\alpha_{j-1, k}) + \tau_\nabla(\rho_{j, k}) \big] + \tau_\nabla\big(\raisebox{-1.5pt}{$\beta_{j-1, k}$}\big) \\
+    &=\!\Big[\! \underbrace{\Gamma\big(\raisebox{-1.5pt}{$\overline{\beta}_{j-1, k}$}\big) \big[ \tau_\nabla(\alpha_{j-1, k}) \big] + \tau_\nabla\big(\raisebox{-1.5pt}{$\beta_{j-1, k}$}\big)}_{\tau_\nabla(\omega_{j-1, k})}\Big] + \Gamma\big(\raisebox{-1.5pt}{$\overline{\beta}_{j-1, k}$}\big) \big[\tau_\nabla(\rho_{j, k})\big]
+  \end{align}
+  It follows that 
   \begin{equation}
-    \omega_{j, k} = H \Big(\tfrac{j-1}{n}, \tfrac{k}{n} \to \tfrac{k+1}{n}\Big) \cdot \rho_{j, k} \cdot H\Big(0 \to \tfrac{j-1}{n}, \tfrac{k}{n}\Big)
+    \tau_\nabla(\gamma) = \sum_{k=0}^{n-1}\sum_{j = 0}^{n-1} \left[ \Gamma H\Big(\tfrac{j}{n} \to 0, \tfrac{k}{n}\Big)\hspace{-1pt} \right] \tau_\nabla(\rho_{j, k}).
   \end{equation}
+  By Theorem \ref{}, one recovers the desired expression as $n \to \infty$.
 \end{proof}
