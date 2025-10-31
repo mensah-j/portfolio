@@ -41,11 +41,20 @@ Let $\nabla$ be an affine connection on $\mathbb{R}^n$, and
   The conclusion follows.
 \end{proof}
 
-Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$: $\tau_\nabla(\alpha \beta) = \tau_\nabla(\alpha' \beta)$ if and only if $\tau_\nabla(\alpha) = \tau_\nabla(\alpha')$. Left cancellation does not immediately hold, due to the prescence of the parallel transport term. However, if $\beta$ is a loop such that $\Gamma(\beta)$ is the identity, then the torsion satisfies $\tau_\nabla(\alpha\beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta)$. In this sense, the accumulated torsion around loops is \say{additive} when a connection has trivial holonomy. 
+Note that this implies a kind of \say{right cancellation} law for $\tau_\nabla$: $\tau_\nabla(\alpha \beta) = \tau_\nabla(\alpha' \beta)$ if and only if $\tau_\nabla(\alpha) = \tau_\nabla(\alpha')$. Left cancellation does not immediately hold, due to the prescence of the parallel transport term. However, if $\beta$ is a loop such that $\Gamma(\beta)$ is the identity, then the torsion satisfies $\tau_\nabla(\alpha\beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta)$. In this sense, the accumulated torsion around loops is \say{additive} when a connection has trivial holonomy. In fact, this additivity also holds for the grafted product, as we now show.
+\begin{proposition}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\beta \colon x \rightsquigarrow x$ is a loop whic\kern0pt h factors through a point $y$, and $\alpha \colon y \rightsquigarrow y$ is a loop with trivial holonomy, then 
+  \begin{equation}
+    \tau_\nabla (\alpha \star_y \beta) = \tau_\nabla(\alpha) + \tau_\nabla(\beta).
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  
+\end{proof}
  
 
 \begin{proposition}
-  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\alpha_1, \alpha_2 \colon x \rightsquigarrow y$ are piecewise smooth paths and $\gamma \colon x \rightsquigarrow y$ is another such path, then
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $\alpha_1, \alpha_2 \colon x \rightsquigarrow y$ are piecewise smooth paths and $\gamma \colon x \rightsquigarrow y$ is another suc\kern0pt h path, then
 
   \begin{equation}
     \tau_\nabla(\overline{\alpha}_2 \alpha_1) = \tau_\nabla( \overline{\alpha}_2 \gamma \cdot \overline{\gamma}\alpha_1).
@@ -87,5 +96,16 @@ By using the laws we have just established, we may express the accumulated torsi
   &= \tau_\nabla \left[\prod_{k = 0}^{n-1} H\Big(1 \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to 1, \tfrac{k}{n}\Big)\right] \\
   &= \sum_{k=0}^{n- 1} \,\tau_\nabla \! \left[\vphantom{\prod^{n-1}}H\Big(1 \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(1, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to 1, \tfrac{k}{n}\Big)\right].
   \end{align}
-  For each \say{wedge} in the sum \ref{}, we 
+  Each \say{wedge} in the sum \ref{} may be broken into individual rectangular units as follows. For integers $j \in [\![1, n]\!]$ and $k \in [\![0, n - 1]\!]$, define \say{subwedges} $ \omega_{j, k} \colon x \rightsquigarrow x$ by
+  \begin{equation}
+   \omega_{j, k} = H\Big(\tfrac{j}{n} \to 0, \tfrac{k+1}{n}\Big) \cdot  H\Big(\tfrac{j}{n}, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(0 \to \tfrac{j}{n}, \tfrac{k}{n}\Big),
+  \end{equation}
+  and \say{cells} $\rho_{j,k}$ by 
+  \begin{equation}
+   \rho_{j, k} = H\Big(\tfrac{j-1}{n}, \tfrac{k+1}{n} \to \tfrac{k}{n}\Big) \cdot H\Big(\tfrac{j}{n} \to \tfrac{j-1}{n}, \tfrac{k+1}{n}\Big) \cdot  H\Big(\tfrac{j}{n}, \tfrac{k}{n} \to \tfrac{k + 1}{n}\Big) \cdot H\Big(\tfrac{j-1}{n} \to \tfrac{j}{n}, \tfrac{k}{n}\Big).
+  \end{equation}
+  Then we may decompose each subwedge as
+  \begin{equation}
+    \omega_{j, k} = H \Big(\tfrac{j-1}{n}, \tfrac{k}{n} \to \tfrac{k+1}{n}\Big) \cdot \rho_{j, k} \cdot H\Big(0 \to \tfrac{j-1}{n}, \tfrac{k}{n}\Big)
+  \end{equation}
 \end{proof}
