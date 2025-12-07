@@ -33,7 +33,7 @@ The pitches in a scale may be obtained by starting at a initial note called the 
 <tikz path="major" mobile="1" desktop="1.25"></tikz>
 </div>
 
-When listening to tonal music, the brain subconsciously tries determines the tonic of the underlying scale currently used, which is the basis of solmization. This raises the following natural question:
+When listening to tonal music, the brain subconsciously tries determines the tonic of the underlying scale currently used; this process forms the basis of [solmization](https://en.wikipedia.org/wiki/Solmization). This raises the following natural question:
 
 - When can one determine the tonic of a known scale type only by hearing the notes in its pitch collection?
 
