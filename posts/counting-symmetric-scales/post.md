@@ -4,7 +4,7 @@ date: 2025-12-07
 length: "∼1250 words"
 ---
 
-In this post, we give two puzzles related to a concept in music theory referred to as scale symmetry. Roughly speaking, a symmetric scale is a musical scale which does not give a strong impression of tonality. Before stating the two problems, we give a brief overview of the relevant theory and establish some terminology.
+In this post, we give two puzzles related to a concept in music theory referred to as scale symmetry. Roughly speaking, a symmetric scale is a musical scale which does not give a strong impression<!--more--> of tonality. Before stating the two problems, we give a brief overview of the relevant theory and establish some terminology.
 
 ## Equal-temperament
 
