@@ -13,7 +13,7 @@ A musical note is an abstract label that represents a sound with a particular pi
 1. a _letter_ name from $\mathrm{A}$ to $\mathrm{G}$, and
 2. optional _accidentals_ attached to the letter, represented by the flat symbol $\flat$ and the sharp symbol $\sharp$.
 
-Within an octave, the notes rise in pitch from $\mathrm{A}$ to $\mathrm{G}$. The $\flat$ symbol slightly lowers the pitch of a note, and the $\sharp$ symbol slightly raises the pitch of a note. To distinguish notes in the same pitch class, a subscript may be used to distinguish the octave (for historical reasons, octaves start at $\mathrm{C}$ instead of $\mathrm{A}$).
+Within an octave, the notes rise in pitch from $\mathrm{A}$ to $\mathrm{G}$. The $\flat$ symbol slightly lowers the pitch of a note, and the $\sharp$ symbol slightly raises the pitch of a note. To distinguish notes in the same pitch class, a subscript may be used to distinguish the octave.
 
 The actual mapping between note labels to frequencies is only determined by general guidelines (which we omit for brevity), and is otherwise unspecified. The two main degrees of freedom in this mapping are a choice of _pitch standard_, which specifies the frequency of a single note, and a choice of _temperament_, which specifies the distances between each pair of notes.
 
