@@ -8,14 +8,12 @@ In this post, we give two puzzles related to a concept in music theory referred 
 
 ## Equal-temperament
 
-A musical note is an abstract label that represents a sound with a particular pitch. The current labeling system for pitch classes in Western music involves two components:
+A musical note name is an abstract label that represents a sound with a particular pitch. The current labeling system for pitch classes in Western music involves two components:
 
 1. a _letter_ name from $\mathrm{A}$ to $\mathrm{G}$, and
 2. optional _accidentals_ attached to the letter, represented by the flat symbol $\flat$ and the sharp symbol $\sharp$.
 
-Within an octave, the notes rise in pitch from $\mathrm{A}$ to $\mathrm{G}$. The $\flat$ symbol slightly lowers the pitch of a note, and the $\sharp$ symbol slightly raises the pitch of a note. To distinguish notes in the same pitch class, a subscript may be used to distinguish the octave.
-
-The actual mapping between note labels to frequencies is only determined by general guidelines (which we omit for brevity), and is otherwise unspecified. The two main degrees of freedom in this mapping are a choice of _pitch standard_, which specifies the frequency of a single note, and a choice of _temperament_, which specifies the distances between each pair of notes.
+The actual mapping between note labels to frequencies is somwhat unspecified. The main degrees of freedom in this mapping are a choice of _pitch standard_, which specifies the frequency of a single reference note, and a choice of _temperament_, which determines the distances between each pair of notes.
 
 In modern music, the typical pitch standard is $\mathrm{A}_4 = 440 \, \text{Hz}$, and the most common choice of temperament is _twelve-tone equal temperament_, which, as the name suggests, possesses only twelve pitch classes. The pitches in this system may each be labeled with a unique integer $k \in \mathbb{Z}$, and the pitch class that a pitch $k$ belongs to is represented by its residue class $[k]$ modulo $12$.
 
@@ -33,7 +31,7 @@ The pitches in a scale may be obtained by starting at a initial note called the 
 <tikz path="major" mobile="1" desktop="1.25"></tikz>
 </div>
 
-When listening to tonal music, the brain subconsciously tries determines the tonic of the underlying scale currently used; this process forms the basis of [solmization](https://en.wikipedia.org/wiki/Solmization). This raises the following natural question:
+When listening to tonal music, the brain subconsciously tries to determine the tonic of the underlying scale currently used; this process forms the basis of [solmization](https://en.wikipedia.org/wiki/Solmization). This raises the following natural question:
 
 - When can one determine the tonic of a known scale type only by hearing the notes in its pitch collection?
 
