@@ -1,0 +1,85 @@
+\begin{lemma}
+  Let $M$ be a smooth manifold with affine connection $\nabla$. If $h \colon \mathbb{R} \to M$ is a smooth curve, then
+  \begin{equation}
+    e
+  \end{equation}
+\end{lemma}
+\begin{proof}
+Let $p \in \mathbb{R}$. There exists an open set $U \subseteq M$  containing $h(p)$ on which there exists a moving frame $E_1, \ldots, E_n \colon U \to \mathrm{T}M|_U$. In this frame, the connection is expressible in terms of a linear operator. Explicitly, let $I = h^{-1}(U)$ and $\gamma = h|_I$, and suppose that $V \colon I \to \gamma^*(\mathrm{T}M|_U) \cong I \times \mathbb{R}^n$ is a vector field along $\gamma$. Then
+\begin{equation}
+(\gamma^* \nabla)_{\mathrm{d}/\mathrm{d}t} V = \der{V}{t} + \omega V
+\end{equation}
+where $\omega(t) \colon \mathrm{T}_{\gamma(t)}M \to \mathrm{T}_{\gamma(t)}M $ is the endomorphism defined by $\omega E_i = \nabla_{\mathrm{d}/\mathrm{d}t} E_i$. 
+
+\end{proof}
+
+\newpage
+
+\begin{lemma}
+  Let $U \subseteq \mathbb{R}^n$ be open, $\nabla$ be an affine connection on $U$, and $A$ be a smooth manifold. For a smooth family of smooth curves $\{\gamma_\alpha \colon I \to U\}_{\alpha \in A}$, we have
+  \begin{equation}
+    \tau_\nabla\Big[\gamma_\alpha(0 \to t)\Big] = t \cdot \gamma_\alpha'(0) + O_\alpha(t^2).
+  \end{equation}
+\end{lemma}
+\begin{proof}
+For each $\alpha \in A$, let $\omega^\alpha =  \omega^\alpha_1\, \d t \in \Omega^1(I, \mathfrak{gl}_n)$ be the connection $1$-form associated to $\gamma_\alpha^* \nabla$. Let $J \subseteq I$ be some bounded interval containing $0$. By Taylor's theorem, for all $t \in J$, we have 
+\begin{equation}
+  \Gamma(\gamma_\alpha)_{t}^{0} \left[\gamma_\alpha'(t)\right] = \Big[\mathbf{1} + \mathcal{E}_\alpha(t)\Big] \gamma_\alpha'(t),
+\end{equation}
+where $\lVert\mathcal{E}_\alpha(t)\rVert_{\max} \leq \sup_{J} \left\lVert \omega^\alpha_1 \right\rVert _{\max} \cdot t$. Integrating, we have for all $t \in J$,
+\begin{equation}
+  \tau_\nabla\Big[\gamma_\alpha(0 \to t)\Big] = \big[\gamma_\alpha(t) - \gamma_\alpha(0)\big] + \epsilon_\alpha(t),
+\end{equation}
+where 
+\begin{equation}
+|\epsilon_\alpha(t)|_{\max} \leq \int_{0}^{1} |\mathcal{E}_\alpha(t) \gamma_\alpha'(t)|_{\max} \, \d t \leq  n \cdot \sup_{J}{\lVert \omega^\alpha_1 \rVert_{\max}} \cdot \sup_{J} |\gamma_\alpha'| \cdot \tfrac{1}{2}t^2.
+\end{equation}
+Since $\omega_1$ and $\gamma'$ are smooth in $\alpha$, both supremums are continuous in $\alpha$, so $\epsilon_\alpha(t) = O_\alpha(t^2)$. Applying Taylor's theorem again, for all $t \in J$ we may write
+\begin{equation}
+  \gamma_\alpha(t) - \gamma_\alpha(0) = t \cdot \gamma_\alpha'(0) + \delta_\alpha(t),
+\end{equation}
+where $|\delta_\alpha(t)|_{\max} \leq \sup_J |\gamma_\alpha''| \cdot \tfrac{1}{2} t^2$. Since $\gamma''$ is smooth in $\alpha$, it follows that $\delta_\alpha(t) = O_\alpha(t^2)$ as well. The conclusion follows.
+\end{proof}
+
+
+
+
+\begin{theorem}
+Let $U \subseteq \mathbb{R}^n$ be open and $\nabla$ be an affine connection on $U$. Then for all points $p \in U$ and vectors $u, v \in \mathbb{R}^n$, we have
+\begin{equation}
+  \lim_{x,y \to 0}\, \mfrac{1}{xy} \cdot \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p  = T_p(u, v).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+  For brevity, we may write $\bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p = \gamma_4 \ast \gamma_3 \ast \gamma_2 \ast \gamma_1$, where $\gamma_i$ is the $i$th side of the parallelogram. Then by Proposition \ref{}, we have
+  \begin{equation}
+    \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p = \sum_{k \leq 4} \left[\prod_{i < k} \Gamma\big(\overline{\gamma_i}(x, y)\big) \right] \!\tau_\nabla(\gamma_k(x, y)).
+  \end{equation}
+  The accumulated torsion for each smooth family of curves is given by
+  \begin{align}
+    \tau_\nabla(\gamma^1_{x, y}(0 \to t)) &= +t \cdot u + O_{x, y}(t^2) \quad \quad \tau_\nabla(\gamma^2_{x, y}(0 \to t)) = +t \cdot v + O_{x, y}(t^2) \\
+    \tau_\nabla(\gamma^3_{x, y}(0 \to t)) &= -t \cdot u + O_{x, y}(t^2) \quad \quad \tau_\nabla(\gamma^4_{x, y}(0 \to t)) = -t \cdot v + O_{x, y}(t^2) 
+  \end{align}
+  Likewise, the parallel transport along each family of curves is given by
+  \begin{equation}
+    \Gamma (\gamma^i_{x, y}(t \to 0)) = \mathbf{1} + t \cdot \omega_{p^i_{x,y}}(e_i) + O_{x, y}(t^2)
+  \end{equation}
+  as $t \to 0$. Therefore, for $1 \leq k \leq 4$, we may write
+  \begin{equation}
+    \left[\prod_{i < k} \Gamma\big(\gamma^i_{x, y}(t_i \to 0)\big)\right] \tau_\nabla(\gamma^k_{x,y}(0 \to t_k)) = t_k e_k + \sum_{i < k} t_k t_i \big[ \omega_{p^i_{x,y}}(e_i)\big]e_k + \mathcal{E}^k_{x,y}(\mathbf{t}) \;
+  \end{equation}
+  where $\mathcal{E}^k \colon A \times I^k \to \mathbb{R}^n$ is $\sum_{i < k}O_{x,y}\big(t_i^2) + \sum_{i, j < k} O_{x,y}(t_i t_j t_k)$ as $\mathbf{t} \to 0$. Then
+  \begin{equation}
+    \sum_{k \leq 4}\left[\prod_{i < k} \Gamma\big(\gamma^i_{x, y}(t_i \to 0)\big)\right] \tau_\nabla(\gamma^k_{x,y}(0 \to t_k)) =  \sum_{k \leq 4} t_k e_k + \sum_{k \leq 4} \sum_{i < k} t_{k} t_i \big[ \omega_{p^i_{x,y}}(e_i)\big]e_k + \mathcal{E}_{x,y}(\mathbf{t}), \;
+  \end{equation}
+  where $\mathcal{E} \colon A \times I^4 \to \mathbb{R}^n$ is the sum of the individual error terms $\mathcal{E}^k$. Thus, there exists a neighborhood $U$ of the origin $\mathbf{0} \in I^4$ and a continuous map $K \colon A \to \mathbb{R}$ such that for all $\mathbf{t} \in U$, we have
+  \begin{equation}
+    |\mathcal{E}_{x,y}(\mathbf{t})|_{\max} \leq \tfrac{1}{4} K(x, y) \sum_{k \leq 4} \sum_{i, j < k} |t_i t_j t_k| \leq K(x,y) \sum_{i, j, k} |t_i t_j t_k|.
+  \end{equation}
+  Now, to connect each path, we take $\mathbf{t} = (x, y, x, y)$. Since $e_1 = -e_3$ and $e_2 = -e_4$, the first sum vanishes and the second sum partially cancels out, leaving us with
+  \begin{align}
+    \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p &= xy  \Big(\big[ \omega_{p^1_{x,y}}(u)\big]v - \big[ \omega_{p^2_{x,y}}(v)\big]u \Big) - x^2 \big[ \omega_{p^1_{x,y}}(u)\big]u - y^2 \big[ \omega_{p^1_{x,y}}(v)\big]v + \mathcal{E}_{x,y}(\mathbf{t})
+  \end{align}
+
+\end{proof}

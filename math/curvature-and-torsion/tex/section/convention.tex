@@ -1,0 +1,10 @@
+\section{Conventions}
+
+\subsection{Asymptotic notation}
+
+
+Let $A$ be a topological space, $f \colon A \times \mathbb{R}^n \to \mathbb{R}$, and $g \colon \mathbb{R}^n \to [0, \infty)$. For a point $x_0 \in \mathbb{R}^{n}$, we say that 
+\begin{equation}
+  f(\alpha, x) = O_\alpha(g(x)) \text{  as  } x \to x_0
+\end{equation}
+if there exists a neighborhood $U$ of $x_0$ and a continuous function  $C \colon \mathbb{R}^n \to [0, \infty)$ such that $|f(\alpha, x)| \leq C(\alpha) g(x)$ for all points $x \in U$ and $\alpha \in A$.

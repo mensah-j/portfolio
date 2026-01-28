@@ -1,0 +1,39 @@
+\section{The piecewise-smooth Moore path category}
+
+\begin{definition}
+  Let $M$ be a smooth manifold. The \textit{piecewise-smooth Moore path category} $\mathrm{P}(M)$ is the category defined as follows:
+  \begin{enumerate}
+    \item Objects of $\mathrm{P}(M)$ are given by points $p \in M$.
+
+    \item Given objects $x, y \in \mathrm{P}(M)$, a morphism $\gamma \colon x \rightsquigarrow y$ is given by a piecewise-smooth path $\gamma \colon [0, t] \to M$ of duration $t(\gamma) \geq 0$ such that $\gamma(0) = x$ and $\gamma(t) = y$. 
+    
+    \item Given objects $x, y, z \in \mathrm{P}(M)$ and morphisms $\alpha \colon y \rightsquigarrow z$ and $\beta \colon x \rightsquigarrow y$, their composition is the piecewise-smooth path $\alpha \ast \beta \colon x \rightsquigarrow z$ of duration $t(\alpha) + t(\beta)$ defined by 
+    \begin{equation}
+      (\beta \ast \alpha)(t) = 
+      \begin{cases}
+        \alpha(t) &\text{if } t \leq t(\alpha) \\
+        \beta(t- t(\alpha)) &\text{if } t > t(\alpha)
+      \end{cases}.
+    \end{equation}
+  \end{enumerate}
+\end{definition}
+
+At any point $x \in \mathrm{P}(M)$, the identity morphism $\mathrm{id}_x \colon x \rightsquigarrow x$ is the constant path of duration $0$ at $x$. Besides this morphism, no other morphisms in this category are invertible; however, we may define for each path $\gamma \colon x \rightsquigarrow y$ the \textit{reverse} morphism
+\begin{equation}
+  \overline{\gamma} \colon y \rightsquigarrow x; \quad \quad \overline{\gamma}(t) = \gamma(t(\gamma) - t)
+\end{equation}
+of the same duration. Taking reverses yields an isomorphism of categories $\mathrm{P}(M) \cong \mathrm{P}(M)^{\rm op}$. Also, if $M$ and $N$ are smooth manifolds and $f \colon M \to N$ is a smooth map, then $f$ may be regarded as a functor $f \colon \mathrm{P}(M) \to \mathrm{P}(N)$ between path categories whose action on paths is given by $f(\gamma) = f \circ \gamma$.
+
+\begin{definition}
+  Let $E$ be an affine space. Given points $p, q \in E$, define the straight-line path $[p \to q] \colon p \rightsquigarrow q$ of duration $1$ by
+  \begin{equation}
+    [p \to q](t) = (q - p) \cdot t + p.
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+Let $E$ be an affine space associated to a vector space $V$. Given $p \in E$ and $v, w \in V$, define the \textit{parallelogram path} $[\![v, w]\!]_{p}$ based at $p$ to be the path
+\begin{equation}
+  [\![v, w]\!]_p = \big[(v \to 0) \ast (v + w \to v) \ast (w \to v + w) \ast (0 \to w)\big] + p.
+\end{equation}
+\end{definition}
