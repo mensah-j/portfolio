@@ -1,0 +1,80 @@
+\section{Geometric derivations of the Bianchi identities}
+
+\begin{theorem}[The first Bianchi identity]
+  Let $M$ be a smooth manifold and let $E$ be a smooth vector bundle over $M$ with linear connection $\nabla$ and curvature form $\Omega$. If $\eta$ is an $E$-valued $1$-form, then
+  \begin{equation}
+    (\mathrm{d}^{\mskip -3mu \nabla})^2 \mskip 2mu \eta = \Omega \wedge \eta.
+  \end{equation}
+  In particular, if $\eta$ is a differential form valued in a fixed vector space, then $\mathrm{d}^2 \eta = 0$.
+\end{theorem}
+\begin{proof}
+Let $p \in M$ and $X_1, \ldots, X_k \in \Gamma(\mathrm{T}M)$ be complete vector fields. For $t \in \mathbb{R}^k$, let $\mathcal{P}_t$ be the parallel transport for the pullback bundle $[\Pi^{tX}_p]^*E \cong E_p \times I^k$, and for a differential form $\xi$, define $\xi_t = [\Pi^{tX}_p]^* \xi$. Given $\epsilon, \delta \in \{0, 1\}$ and integers $1 \leq i \leq k$ and $1 \leq j \leq k - 1$, define the paths
+\begin{equation}
+  \alpha_i^\epsilon = \mathbf{0} \to \epsilon \cdot \mathbf{e}_i; \quad \quad \beta_{i, j}^{\epsilon, \delta} = \epsilon \cdot \mathbf{e}_i \to \epsilon \cdot \mathbf{e}_i + \delta \cdot \mathbf{e}_{\phi^i(j)}; \quad \quad \gamma_{i, j}^{\epsilon, \delta} = \alpha_i^\epsilon \ast \beta_{i, j}^{\epsilon, \delta},
+\end{equation}
+where $\phi^i \colon [k-1] \to [k]$ is the $i$th face map. Now, fix a homotopy $H \colon I^{k-2} \times I \to I^{k-2}$ from the constant map at the origin to the identity, and define
+\begin{equation}
+  A_{i,j}^{\epsilon, \delta}(t) = \mathcal{P}_t(\gamma_{i, j}^{\epsilon, \delta}) \int_{\partial_j^\delta \partial_i^\epsilon \iota_k} \mathcal{P}_t(H) \eta_t; \quad \quad A(t)= \sum_{\substack{i, \epsilon \\ j, \delta}} (-1)^{i+j+\epsilon+\delta} A_{i, j}^{\epsilon, \delta}(t).
+\end{equation}
+For $j < i$, we have $\partial_j^\delta \circ \partial_i^\epsilon = \partial_{i-1}^\epsilon \circ \partial_{j}^\delta$, so by Proposition \ref{} and \ref{},
+\begin{align}
+  \left.\frac{\partial^k A}{\partial t_1 \cdots \partial t_k}\right|_{t = 0} &= \sum_{\substack{\epsilon,\, \delta \\ i \, > \, j}} (-1)^{i+j+\epsilon+\delta} \Bigg[\frac{\partial^2}{\partial t_i \partial t_j} \Big(\mathcal{P}_t(\gamma_{i,j}^{\epsilon, \delta}) - \mathcal{P}_t(\gamma_{j, i-1}^{\epsilon, \delta})\Big) \nonumber \\[-3ex]
+  &\mskip 270mu \cdot \frac{\partial^{k-2}}{\partial t_1 \cdots \widehat{\partial t_j} \cdots \widehat{\partial t_i} \cdots \partial t_k} \int_{\partial_j^\delta \partial_i^\epsilon \iota_k} \mathcal{P}_t(H) \eta_t\Bigg]_{\!t = 0} \nonumber \\
+  &= \sum_{\substack{\epsilon,\, \delta \\ i \, > \, j}} \epsilon \delta \cdot (-1)^{i+j} \Big[\Omega( X_i, X_j) \eta\big(X_1, \ldots, \widehat{X_j}, \ldots, \widehat{X_i}, \ldots, X_k\big)\Big]_p \nonumber \\
+  &= (\Omega \wedge \eta) (X)|_p.
+\end{align}
+On the other hand, by Proposition \ref{} and \ref{}, 
+\begin{align}
+  \left.\frac{\partial^k A}{\partial t_1 \cdots \partial t_k}\right|_{t = 0} &= \left.\frac{\partial^k}{\partial t_1 \cdots \partial t_k}\sum_{i, \epsilon} (-1)^{i+\epsilon} \mathcal{P}_t(\alpha_i^\epsilon) \left[\sum_{j, \delta} (-1)^{j+\delta}\mathcal{P}_t(\beta_{i, j}^{\epsilon, \delta}) \int_{\partial_j^\delta \partial_i^\epsilon \iota_k} \mathcal{P}_t(H) \eta_t \right]\right|_{t = 0} \nonumber \\
+  &= \frac{\partial^k}{\partial t_1 \cdots \partial t_k}\left[\sum_{i, \epsilon} (-1)^{i+\epsilon} \mathcal{P}_t(\alpha_i^\epsilon) \int_{ \partial_i^\epsilon \iota_k} \mathcal{P}_t(H) (\mathrm{d}^{\! \nabla \!} \eta)_t \right]_{t = 0} \nonumber \\[1ex]
+  &= \big[\mskip -2mu (\mathrm{d}^{\mskip -3mu \nabla})^2  \eta\big] (X)|_p.
+\end{align}
+The conclusion follows.
+\end{proof}
+
+The above proof offers some insight into why the second exterior derivative necessarily vanishes, but the second exterior covariant deriative may not: taking the boundary of the boundary of a $k$-cube results in $(k-2)$-dimensional \say{ridges}, and $(\mathrm{d}^{\mskip -3mu \nabla})^2$ is the result of integrating $\eta$ over each ridge. The key observation here is that these come in \emph{pairs} with opposite orientations, but the contribution from each ridge does not immediately cancel out with its pair. Indeed, the integral over each ridge must be parallel transported to the basepoint across two different paths, which form the boundary of a (possibly degenerate) $2$-cube. This yields a final contribution equal to the holonomy defect
+\begin{equation}
+  \Omega(\text{square}) \eta(\text{ridge}).
+\end{equation}
+Summing these contributions yields the wedge product $\Omega \wedge \eta$. For the ordinary exterior derivative, no defect exists and the integral over the boundary of the boundary directly vanishes. 
+
+The same intuition may also be understood through the usual algebraic derivation of the first Bianchi identity, assuming that we do not take for granted the fact that $\mathrm{d}^2 = 0$. Starting from the invariant formula \eqref{} and taking two exterior covariant derivatives, one may intepret each term obtained as one of the expressions seen in above proof. Alternatively, if the fact that $\mathrm{d}^2 = 0$ is already established, then we may directly calculate
+\begin{equation}
+  (\mathrm{d}^{\mskip -3mu \nabla})^2 \eta = \mathrm{d}^{\mskip -3mu \nabla} (\mathrm{d}\eta + \omega \wedge \eta) = \mathrm{d}^2 \eta + \mathrm{d} \omega \wedge \eta - \omega \wedge \mathrm{d}\eta + \omega \wedge \mathrm{d}\eta +\omega \wedge \omega \wedge \eta = \Omega \wedge \eta,
+\end{equation}
+which, prima facie, has an arguably less clear geometric intepretation. 
+
+\begin{theorem}[The second Bianchi identity]
+Let $M$ be a smooth manifold and let $E$ be a smooth vector bundle over $M$ with linear connection $\nabla$ and curvature form $\Omega$. Then
+\begin{equation}
+  \mathrm{d}^{\mskip -3mu \nabla} \Omega = 0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+We repeat the proof of Theorem \ref{} up to \eqref{}, with $\omega_t$ being the connection form on the the pullback bundle $[\Pi_p^{tX}]^* E$. For $1 \leq i \leq 3$ and $1 \leq j \leq 2$, define paths
+\begin{equation}
+  \rho_{i, j}^{\epsilon, \delta} = \epsilon \cdot \mathbf{e}_i + \delta \cdot \mathbf{e}_{\phi^i(j)} \to  \epsilon \cdot \mathbf{e}_i + \delta \cdot \mathbf{e}_{\phi^i(j)} + \mathbf{e}_{\phi^i(\phi^j(1))}
+\end{equation}
+parameterizing the \say{ridges} $\partial_j^\delta \partial_i^\epsilon \iota_3$. Then for $j < i$,
+\begin{equation}
+  A_{i, j}^{\epsilon, \delta}(t) - A_{j, i-1}^{\epsilon, \delta}(t)  = \mathcal{P}_t(\rho_{i, j}^{\epsilon, \delta} \ast \gamma_{i,j}^{\epsilon, \delta}) - \mathcal{P}_t(\rho_{j, i-1}^{\epsilon, \delta} \ast \gamma_{j, i-1}^{\epsilon, \delta}),
+\end{equation}
+and $\rho_{i, j}^{\epsilon, \delta} = \rho_{j, i-1}^{\epsilon, \delta}$. To compute the derivative, we first \say{close} the loop, applying the Leibniz rule to obtain
+\begin{align}
+  \frac{\partial^3}{\partial t_1 \partial t_2 \partial t_3} \Big[ A_{i, j}^{\epsilon, \delta}(t) - A_{j, i-1}^{\epsilon, \delta}(t)\Big]_{t = 0} &= \frac{\partial^3}{\partial t_1 \partial t_2 \partial t_3} \left[\mathcal{P}_t\left(\rule{0pt}{14pt}\overline{\rule{0pt}{10pt}\smash{\rho_{j, i-1}^{\epsilon, \delta} \ast \gamma_{j,i - 1}^{\epsilon, \delta}}}\right) \!\Big( A_{i, j}^{\epsilon, \delta}(t) - A_{j, i-1}^{\epsilon, \delta}(t)\Big)\right]_{t = 0} \nonumber \\
+  &= \frac{\partial^3}{\partial t_1 \partial t_2 \partial t_3} \left[ 
+  \mathcal{P}_t\left(\rule{0pt}{14pt}\overline{\rule{0pt}{10pt}\smash{\gamma_{j,i - 1}^{\epsilon, \delta}}} \ast \overline{\rule{0pt}{10pt}\smash{\rho_{j, i-1}^{\epsilon, \delta}}} \ast \rho_{i, j}^{\epsilon, \delta} \ast \gamma_{i,j}^{\epsilon, \delta}\right)  - \mathbf{1}\right]_{t = 0} \nonumber \\
+  &= \frac{\partial^3}{\partial t_1 \partial t_2 \partial t_3} \left[ 
+  \mathcal{P}_t\left(\rule{0pt}{14pt}\overline{\rule{0pt}{10pt}\smash{\gamma_{j,i - 1}^{\epsilon, \delta}}} \ast \gamma_{i,j}^{\epsilon, \delta}\right)  - \mathbf{1}\right]_{t = 0} \nonumber \\[1ex]
+  &= 0,
+\end{align}
+since the final term only depends on $2$ coordinates. It follows from Theorem \ref{} and \eqref{} that $[\mathrm{d}^{\mskip -3mu \nabla}\Omega](X)|_p = (\Omega \wedge \omega)(X)|_p = 0$.
+\end{proof}
+
+The above proof demonstrates that the second Bianchi identity may be understood as a special case of the first Bianchi identity for the connection form $\omega$. To conclude, we give a brief explanation of the geometric picture behind the argument. Evaluating $\omega$ over a ridge gives the change due to parallel transport across the ridge. Applying the holonomy defect around the attached square, we find that these contributions do cancel out in pairs, as they form \say{degenerate} loops that may be pinched off. As a result, we have
+\begin{equation}
+  \Omega(\text{square}) \mskip 1mu \omega(\text{ridge}) = 0.
+\end{equation}
+It follows that $\Omega \wedge \omega = 0$, so the exterior covariant derivative of the curvature form vanishes. 
+
+

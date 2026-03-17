@@ -1,0 +1,53 @@
+\section{Holonomy and curvature}
+
+In the $2$-dimensional case, there are two useful forms of contraction data that we will make use of, each corresponding to a decomposition of the boundary of $I^2$ into paths. For the first type, define 
+\begin{align}
+x_2^0 &= 1 & \gamma_{\mskip 2mu 2}^{0} &= d_{\mskip 2mu 2}^{0} \\
+x_1^1 &= 1 &  \gamma_{\mskip 2mu 1}^{1} &= d_{\mskip 2mu 2}^{0} \ast d_{\mskip 1.5mu 1}^{1} \\
+x_2^1 &= 0 & \gamma_{\mskip 2mu 2}^{1} &= d_{\mskip 2mu 2}^{0} \ast d_{\mskip 1.5mu 1}^{1} \ast \overline{d_{\mskip 2mu 2}^{1}} \\
+x_1^0 &= 0 & \gamma_{\mskip 2mu 1}^{0} &= d_{\mskip 2mu 2}^{0} \ast d_{\mskip 1.5mu 1}^{1} \ast \overline{d_{\mskip 2mu 2}^{1}} \ast \overline{d_{\mskip 2mu 1}^{0}},
+\end{align}
+and let $H_i^\epsilon$ be any smooth homotopy from the constant map at $x_i^\epsilon$ to the identity. This contraction data corresponds to covering the boundary of a singular square $\pi \colon I^2 \to M$ by a single path
+\begin{equation}
+  \partial \pi \colon I \to M; \quad \quad \partial \pi = \partial_{\mskip 2mu 2}^{0} \pi \ast \partial_{\mskip 1.5mu  1}^{1} \pi \ast \overline{\partial_{\mskip 1.75mu 2}^{1}\pi} \ast \overline{\partial_{\mskip 2.5mu 1}^{0}\pi}.
+\end{equation}
+in the sense provided by the following proposition.
+\begin{proposition}
+  Let $M$ be a smooth manifold and $E$ be a smooth vector bundle over $M$ with linear connection $\nabla$. If $\pi \colon I^2 \to M$ is a singular square and $\eta \in \Omega^{1}(M, E)$, then
+  \begin{equation}
+    \mathcal{P}^\nabla \!\! \int_{\partial \pi} \eta = \sum_{i, \epsilon} (-1)^{i+\epsilon} \mathcal{P}^\nabla(\gamma_i^\epsilon) \left[\mathcal{P}^\nabla_{H_i^\epsilon} \!\! \int_{\partial_i^\epsilon \pi} \eta \right]
+  \end{equation} 
+  where $(H_i^\epsilon, \gamma_i^\epsilon)$ is the contraction data defined in \eqref{}--\,\eqref{}.
+\end{proposition}
+\begin{proof}
+  Omitted --- see Figure \ref{}.
+\end{proof}
+\noindent For the second type of contraction data, define 
+\begin{align}
+x_2^0 &= 1 & \gamma_{\mskip 2mu 2}^{0} &= d_{\mskip 2mu 2}^{0} \\
+x_1^1 &= 1 & \gamma_{\mskip 2mu 1}^{1} &= d_{\mskip 2mu 2}^{0} \ast d_{\mskip 1.5mu 1}^{1} \\
+x_2^1 &= 1 & \gamma_{\mskip 2mu 2}^{1} &= d_{\mskip 2mu 1}^{0} \ast d_{\mskip 1.5mu 2}^{1} \\
+x_1^0 &= 1 & \gamma_{\mskip 2mu 1}^{0} &= d_{\mskip 2mu 1}^{0} \hphantom{\ast d_{\mskip 1.5mu 1}^{1} \ast \overline{d_{\mskip 2mu 2}^{1}} \ast \overline{d_{\mskip 2mu 1}^{0}}},
+\end{align}
+and again let $H_i^\epsilon$ be any smooth homotopy from the constant map at $x_i^\epsilon$ to the identity. This contraction data corresponds to covering the boundary of a singular square $\pi \colon I^2 \to M$ by counterclockwise and clockwise paths
+\begin{align}
+\partial^+ \pi \colon I \to M; \quad \quad \partial^+ \pi &= \partial_{\mskip 2mu 2}^{0} \pi \ast \partial_{\mskip 1.5mu  1}^{1} \pi, \\
+\partial^- \pi \colon I \to M; \quad \quad \partial^- \pi &= \partial_{\mskip 1.75mu 2}^{1}\pi \ast \partial_{\mskip 2.5mu 1}^{0}\pi,
+\end{align}
+in the sense provided by the following proposition.
+\begin{proposition}
+  Let $M$ be a smooth manifold and $E$ be a smooth vector bundle over $M$ with linear connection $\nabla$. If $\pi \colon I^2 \to M$ is a singular square and $\eta \in \Omega^{1}(M, E)$, then
+  \begin{equation}
+    \mathcal{P}^\nabla \!\! \int_{\partial^+ \pi} \eta \,\, - \, \, \mathcal{P}^\nabla \!\! \int_{\partial^- \pi} \eta = \sum_{i, \epsilon} (-1)^{i+\epsilon} \mathcal{P}^\nabla(\gamma_i^\epsilon) \left[\mathcal{P}^\nabla_{H_i^\epsilon} \!\! \int_{\partial_i^\epsilon \pi} \eta \right],
+  \end{equation}
+  where $(H_i^\epsilon, \gamma_i^\epsilon)$ is the contraction data defined in \eqref{}--\,\eqref{}.
+\end{proposition}
+\begin{proof}
+  Omitted --- see Figure \ref{}.
+\end{proof}
+
+We can use this to once again show that curvature is infinitesimal holonomy? Well, I actually already knew that... So we are just showing that curvature is indeed the exterior derivative of the connection form. And this should bring us to the second description of curvature.
+
+Then, we can apply this to the development and the solder form. 
+
+The whole 

@@ -16,6 +16,27 @@ where $\omega(t) \colon \mathrm{T}_{\gamma(t)}M \to \mathrm{T}_{\gamma(t)}M $ is
 \newpage
 
 \begin{lemma}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$ and denote by $\omega$ its connection 1-form with respect to the standard frame. For any smooth family of curves $\gamma \colon A \times I \to \mathbb{R}^n$, there exists $\mathcal{E} \colon A \times \mathbb{R}^n \to \mathbb{R}^n$ such that
+  \begin{equation}
+    \Gamma_\nabla (\gamma_\alpha) = \Big[\mathbf{1} - \, \omega (\gamma'_\alpha(0))\Big] + \mathcal{E}_\alpha(\gamma_\alpha'(0))
+  \end{equation}
+  with $\mathcal{E}_\alpha(u) = O_\alpha(|u|^3)$ as $u \to 0$. 
+\end{lemma}
+
+
+\begin{lemma}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$ and denote by $\omega$ its connection 1-form with respect to the standard frame. For any smooth family of curves $\gamma \colon A \times I \to \mathbb{R}^n$, there exists $\mathcal{E} \colon A \times \mathbb{R}^n \to \mathbb{R}^n$ such that
+  \begin{equation}
+    \tau_\nabla (\gamma_\alpha) = \Big[\mathbf{1} + \tfrac{1}{2} \, \omega (\gamma'_\alpha(0))\Big]  \gamma'_\alpha(0) + \mathcal{E}_\alpha(\gamma_\alpha'(0))
+  \end{equation}
+  with $\mathcal{E}_\alpha(u) = O_\alpha(|u|^3)$ as $u \to 0$. 
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{lemma}
   Let $U \subseteq \mathbb{R}^n$ be open, $\nabla$ be an affine connection on $U$, and $A$ be a smooth manifold. For a smooth family of smooth curves $\{\gamma_\alpha \colon I \to U\}_{\alpha \in A}$, we have
   \begin{equation}
     \tau_\nabla\Big[\gamma_\alpha(0 \to t)\Big] = t \cdot \gamma_\alpha'(0) + O_\alpha(t^2).
@@ -42,44 +63,198 @@ where $|\delta_\alpha(t)|_{\max} \leq \sup_J |\gamma_\alpha''| \cdot \tfrac{1}{2
 \end{proof}
 
 
-
+\newpage
 
 \begin{theorem}
-Let $U \subseteq \mathbb{R}^n$ be open and $\nabla$ be an affine connection on $U$. Then for all points $p \in U$ and vectors $u, v \in \mathbb{R}^n$, we have
+Let $\nabla$ be an affine connection on $\mathbb{R}^n$. For all vectors $u, v \in \mathbb{R}^n$, we have
 \begin{equation}
   \lim_{x,y \to 0}\, \mfrac{1}{xy} \cdot \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p  = T_p(u, v).
 \end{equation}
+uniformly on compact subsets.
 \end{theorem}
 
 \begin{proof}
-  For brevity, we may write $\bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p = \gamma_4 \ast \gamma_3 \ast \gamma_2 \ast \gamma_1$, where $\gamma_i$ is the $i$th side of the parallelogram. Then by Proposition \ref{}, we have
-  \begin{equation}
-    \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p = \sum_{k \leq 4} \left[\prod_{i < k} \Gamma\big(\overline{\gamma_i}(x, y)\big) \right] \!\tau_\nabla(\gamma_k(x, y)).
-  \end{equation}
-  The accumulated torsion for each smooth family of curves is given by
+  For brevity, denote by $\pi_{p, x, y} = \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p$ the parallelogram path at $p$ with side lengths $x$ and $y$. Let $A \subset \mathbb{R}^n$ be a compact set and let $Q \subseteq \mathbb{R}^2$ be a compact neighborhood of the origin. Now, for integers $0 \leq k < 4$,  define 
   \begin{align}
-    \tau_\nabla(\gamma^1_{x, y}(0 \to t)) &= +t \cdot u + O_{x, y}(t^2) \quad \quad \tau_\nabla(\gamma^2_{x, y}(0 \to t)) = +t \cdot v + O_{x, y}(t^2) \\
-    \tau_\nabla(\gamma^3_{x, y}(0 \to t)) &= -t \cdot u + O_{x, y}(t^2) \quad \quad \tau_\nabla(\gamma^4_{x, y}(0 \to t)) = -t \cdot v + O_{x, y}(t^2) 
+    \gamma^{k}_{p, x, y} = \pi_{p, x, y}(k \to k + 1), \quad \quad q^{k}_{p, x,y} = \gamma^k_{p, x, y}(0), \quad \quad  e^k_{p, x, y} = {\gamma^k_{p, x, y}}{}'(0) 
   \end{align}
-  Likewise, the parallel transport along each family of curves is given by
+  to be the sides, vertices, and tangent vectors along $\pi$. Note that $e^k$ does not depend on $p$ as a vector in $\mathbb{R}^n$, so we may write $e^k_{p, x, y} = e^k_{x,y}$ when the tangent space the vector lies in is not relevant.
+  By Proposition \ref{}, $\tau_\nabla(\pi)$ is smooth as a function of $p$ and $(x,y)$. In particular, we have
   \begin{equation}
-    \Gamma (\gamma^i_{x, y}(t \to 0)) = \mathbf{1} + t \cdot \omega_{p^i_{x,y}}(e_i) + O_{x, y}(t^2)
+    \tau_\nabla(\pi_{p, x, y}) = xy \cdot \partial_{xy} \tau_{\nabla}(\pi)|_{p, 0, 0} + O_p(x^2y + xy^2).
   \end{equation}
-  as $t \to 0$. Therefore, for $1 \leq k \leq 4$, we may write
+  by Taylor's theorem, since $\tau_\nabla(\pi_{p,x,0}) = 0$ and $\tau_\nabla(\pi_{p,0,y}) = 0$
+
+  By Proposition \ref{}, the parallel transport along the reverse of each curve may be written as
   \begin{equation}
-    \left[\prod_{i < k} \Gamma\big(\gamma^i_{x, y}(t_i \to 0)\big)\right] \tau_\nabla(\gamma^k_{x,y}(0 \to t_k)) = t_k e_k + \sum_{i < k} t_k t_i \big[ \omega_{p^i_{x,y}}(e_i)\big]e_k + \mathcal{E}^k_{x,y}(\mathbf{t}) \;
+    \Gamma \left(\overline{\gamma}{}^k_{p,x,y}\right)  = \Big[\mathbf{1} + \omega(e^k_{p, x, y})\Big] + \mathcal{E}(q^k_{p,x,y},\, e^k_{p,x, y})
   \end{equation}
-  where $\mathcal{E}^k \colon A \times I^k \to \mathbb{R}^n$ is $\sum_{i < k}O_{x,y}\big(t_i^2) + \sum_{i, j < k} O_{x,y}(t_i t_j t_k)$ as $\mathbf{t} \to 0$. Then
-  \begin{equation}
-    \sum_{k \leq 4}\left[\prod_{i < k} \Gamma\big(\gamma^i_{x, y}(t_i \to 0)\big)\right] \tau_\nabla(\gamma^k_{x,y}(0 \to t_k)) =  \sum_{k \leq 4} t_k e_k + \sum_{k \leq 4} \sum_{i < k} t_{k} t_i \big[ \omega_{p^i_{x,y}}(e_i)\big]e_k + \mathcal{E}_{x,y}(\mathbf{t}), \;
-  \end{equation}
-  where $\mathcal{E} \colon A \times I^4 \to \mathbb{R}^n$ is the sum of the individual error terms $\mathcal{E}^k$. Thus, there exists a neighborhood $U$ of the origin $\mathbf{0} \in I^4$ and a continuous map $K \colon A \to \mathbb{R}$ such that for all $\mathbf{t} \in U$, we have
-  \begin{equation}
-    |\mathcal{E}_{x,y}(\mathbf{t})|_{\max} \leq \tfrac{1}{4} K(x, y) \sum_{k \leq 4} \sum_{i, j < k} |t_i t_j t_k| \leq K(x,y) \sum_{i, j, k} |t_i t_j t_k|.
-  \end{equation}
-  Now, to connect each path, we take $\mathbf{t} = (x, y, x, y)$. Since $e_1 = -e_3$ and $e_2 = -e_4$, the first sum vanishes and the second sum partially cancels out, leaving us with
+  where $\mathcal{E}(q, v) = O_q(v^2)$ as $v \to 0$. Likewise, by Proposition \ref{}, the accumulated torsion along each curve may be written as
   \begin{align}
-    \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p &= xy  \Big(\big[ \omega_{p^1_{x,y}}(u)\big]v - \big[ \omega_{p^2_{x,y}}(v)\big]u \Big) - x^2 \big[ \omega_{p^1_{x,y}}(u)\big]u - y^2 \big[ \omega_{p^1_{x,y}}(v)\big]v + \mathcal{E}_{x,y}(\mathbf{t})
+    \tau_\nabla(\gamma^k_{p, x, y}) = e^k_{x, y} + \epsilon_{p}(|e^k_{x, y}|),
+  \end{align} 
+  where $\epsilon_p(v) = O_p(v^2)$ as $t \to 0$. Therefore, for $1 \leq k \leq 4$, we may write
+  \begin{equation}
+    \left[\prod_{i < k} \Gamma^i_{x, y}(t_i)\right] \tau^k_{x,y}(t_k) = e^k_{x, y} +\sum_{i < k} \big[ \omega(e^i_{p, x, y})\big]e^k_{x, y} + \sum_{i,j,k} O_{p}(x^2y + xy^2). \;
+  \end{equation}
+  Thus,
+  \begin{equation}
+    \sum_{k \leq 4}\left[\prod_{i < k} \Gamma^i_{x, y}(t_i)\right] \tau^k_{x,y}(t_k) =  \sum_{k \leq 4} t_k e_k + \sum_{k \leq 4} \tfrac{1}{2} t_k^2 \big[\omega_{p^k_{x,y}}(e_k)\big]e_k + \sum_{\substack{k \mskip 1mu \leq \mskip 1mu 4 \\ i \mskip 2mu < \mskip 1mu k}} t_{k} t_i \big[ \omega_{p^i_{x,y}}(e_i)\big]e_k + \mathcal{E}_{x,y}(t), \;
+  \end{equation}
+  where $\mathcal{E} \colon \mathbb{R}^2 \times I^4 \to \mathbb{R}^n$ is the sum of the individual error terms. It follows that there exists a neighborhood $U$ of the origin $\mathbf{0} \in I^4$ and a continuous map $C \colon \mathbb{R}^2 \to \mathbb{R}$ such that for all $t \in U$, we have
+  \begin{equation}
+    |\mathcal{E}_{x,y}(t)|_{\max} \leq C(x,y)  \sum_{i, j, k} |t_i t_j t_k|.
+  \end{equation}
+  Take $t = (x, y, x, y)$. Since $e_1 = -e_3$ and $e_2 = -e_4$, the first sum vanishes and the second sum cancels out with part of the third, so
+  \begin{align}
+    \mfrac{1}{xy} \cdot \tau_{\nabla} \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p &= \Big(\big[ \omega_{p^1_{x,y}}(u)\big]v - \big[ \omega_{p^2_{x,y}}(v)\big]u \Big) + \widetilde{\mathcal{E}}(x,y),
   \end{align}
+  where $\widetilde{\mathcal{E}}(x,y) = \frac{1}{xy} \cdot \mathcal{E}_{x,y}(x,y,x,y) \leq C_2(x, y) (|x| + |y|)$
 
 \end{proof}
+
+\newpage 
+\begin{theorem}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$ and denote by $\omega$ its connection $1$-form in the standard frame. For all points $p \in \mathbb{R}^n$ and vectors $u, v \in \mathbb{R}^n$, we have 
+  \begin{equation}
+    \frac{\partial^2}{\partial x \partial y} \Big( \Gamma \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p \Big)_{(0, 0)} =  \big[\mathrm{d}\omega + \omega \wedge \omega\big]{}_p(u, v).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+For brevity, let $\pi_{x, y} = \bigl\llbracket x \cdot u, y \cdot v \bigr\rrbracket{}_p$. Consider the ideal 
+\begin{equation}
+J = \langle x^2, y^2\rangle \cdot \mathbf{1} \subseteq \mathscr{C}^\infty(\mathbb{R}^2, \mathrm{Mat}_{n \times n}(\mathbb{R})),
+\end{equation}
+which lies in the kernel of the differential operator $\partial_{xy}|_{0,0}$. For $0 \leq k < 4$,  define 
+  \begin{align}
+    \gamma^{k}_{x, y} = \pi_{x, y}(k \to k + 1), \quad \quad p^{k}_{x,y} = \gamma^k_{x, y}(0), \quad \quad  e^k_{x, y} = {\gamma^k_{x, y}}{}'(0) 
+  \end{align}
+  to be the sides, vertices, and tangent vectors along $\pi$. By Taylor's theorem, there exist smooth error terms $\mathcal{E}^k \colon \mathbb{R}^2 \to \mathrm{Mat}_{n \times n}(\mathbb{R})$ such that
+  \begin{align}
+    \Gamma(\gamma^{1}_{x,y}) &= \mathbf{1} - x \cdot \partial_x \Gamma(\gamma^{1}_{x,y})|_{(0, y)} + x^2 \cdot \mathcal{E}^1(x, y), \\
+    \Gamma(\gamma^{2}_{x,y}) &= \mathbf{1} - y \hspace{1pt} \cdot \partial_y \Gamma(\gamma^{2}_{x,y})|_{(x, 0)} + y^2 \cdot \mathcal{E}^2(x, y), \\
+    \Gamma(\gamma^{3}_{x,y}) &= \mathbf{1} + x \cdot \partial_x \Gamma(\gamma^{3}_{x,y})|_{(0, y)} + x^2 \cdot \mathcal{E}^3(x, y), \\
+    \Gamma(\gamma^{4}_{x,y}) &= \mathbf{1} + y \hspace{1pt} \cdot \partial_y \Gamma(\gamma^{4}_{x,y})|_{(x, 0)} + y^2 \cdot \mathcal{E}^4(x, y).
+  \end{align}
+  By Proposition \ref{}, the parallel transport around $\pi_{x,y}$ is
+  \begin{align}
+    \Gamma(\pi_{x, y}) &\equiv_J \Big(\mathbf{1} - x \cdot  \omega_{p^1_{x, y}}(u)\Big) \Big(\mathbf{1} - y \cdot  \omega_{p^2_{x, y}}(v)\Big) \Big(\mathbf{1} + x \cdot  \omega_{p^3_{x, y}}(u)\Big) \Big(\mathbf{1} + y \cdot  \omega_{p^4_{x, y}}(v)\Big)
+  \end{align}
+  Expanding modulo $J$, we obtain
+  \begin{align}
+    \Gamma(\pi_{x,y}) \equiv_J \mathbf{1} \mskip 3mu &+ \mskip 5mu x \mskip 3mu \cdot \Big(\omega_{p^3_{x,y}}(u) - \omega_{p^1_{x,y}}(u)\Big) + y \cdot \Big(\omega_{p^4_{x,y}}(v) - \omega_{p^2_{x,y}}(v)\Big) \nonumber \\
+    &+ xy \cdot \Big( \omega_{p^1_{x,y}}(u)  \omega_{p^2_{x,y}}(v) - \omega_{p^2_{x,y}}(v)  \omega_{p^3_{x,y}}(u) \Big) \nonumber \\
+    &- xy \cdot \Big(\omega_{p^1_{x,y}}(u)  - \omega_{p^3_{x,y}}(u) \Big) \omega_{p^{4}_{x,y}}(v).
+  \end{align}
+  It follows that
+  \begin{align}
+    \partial_{xy} \Gamma(\pi_{x,y})|_{0, 0} &= \lim_{y \to 0} \mfrac{1}{y} \cdot  \Big[ \omega_{p^3_{0,y}}(u) -  \omega_{p^1_{0,y}}(u) \Big] + \lim_{x \to 0} \mfrac{1}{x} \cdot \Big[ \omega_{p^4_{x,0}}(v) -  \omega_{p^2_{x,0}}(v) \Big] \nonumber \\
+    &+ \Big[ \omega_{p^{1}_{0,0}}(u)\omega_{p^{2}_{0,0}}(v) -  \omega_{p^{2}_{0,0}}(u)\omega_{p^{3}_{0,0}}(v) \Big],
+  \end{align}
+  Evaluating the limits yields $\partial_{xy} \Gamma(\pi_{x,y})|_{0, 0} = \big[\mathrm{d}\omega + \omega \wedge \omega\big]{}_p(u, v)$, as desired. 
+\end{proof}
+
+\newpage 
+\begin{theorem}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$. If $\gamma \colon I \to \mathbb{R}^n$ is a smooth curve and $Z \in \Gamma(\mathrm{T}\mathbb{R}^n)$ is a smooth vector field, then
+  \begin{equation}
+    \der{}{t} \Big[\Gamma_{0}^{t} (\gamma) Z_{\gamma(0)}\Big]_{t = 0} = \left.\der{Z}{t}\right|_{t = 0} - \nabla_{\gamma'(0)} Z.
+  \end{equation}
+\end{theorem}
+\begin{proof}
+By Proposition \ref{}, and the Leibniz rule, we have
+\begin{equation}
+  \nabla_{\gamma'(0)} Z = \der{}{t} \Big[\Gamma_t^0(\gamma) Z_{\gamma(t)} \Big]_{t = 0} = \der{}{t} \Big[\Gamma_t^0(\gamma)\Big]_{t = 0} Z_{\gamma(0)}  + \left.\der{Z}{t}\right|_{t = 0}.
+\end{equation}
+Since $\Gamma_0^0(\gamma) = \mathbf{1}$, we also have $\der{}{t}\big[\Gamma_t^0(\gamma)\big]_{t = 0} = -\der{}{t}\big[\Gamma_0^t(\gamma)\big]_{t = 0}$, implying the conclusion.
+\end{proof}
+
+This may also be rephrased in terms of linear operators on $\Gamma(T\mathbb{R}^n)$. Let $\nabla$ be an affine connection on a smooth manifold $M$, and $X \in \Gamma(\mathrm{T}M)$ be a vector field with flow $\Phi^X \colon I \times M \to M$. Then for each $s, t \in I$ we may define a vector bundle isomorphism
+\begin{equation}
+  \mathrm{P}(\Phi_X)_s^t \colon \mathrm{T}M \to \mathrm{T}M; \quad \quad \big[\mathrm{P}(\Phi_X)^{\mskip 0.5mu t}_{s}\big] \xi_{p} = \Big[\mathrm{P}(\Phi_X(-, p))_{0}^{t-s}\Big] \xi_{p}. 
+\end{equation}
+covering the flow diffeomorphism $\Phi_{X}^{\mskip 2mu t-s}$.
+By taking the induced map on global sections, we also obtain  $\mathbb{R}$-linear operators
+\begin{equation}
+\mathrm{P}_\ast(\Phi_X)_{s}^{\mskip 1mu t} \colon \Gamma(\mathrm{T}M) \to \Gamma(\mathrm{T}M); \quad \quad \big[\mathrm{P}_\ast(\Phi_X)_{s}^{\mskip 0.5mu t} Z\big]{}_{p} = \Big[ \mathrm{P}\big(\Phi_X (-, p)\big){}_{0}^{t - s} \Big] Z_{p}.
+\end{equation}
+The advantage here is that we may now parallel transport a vector field along an entire family of curves, and compose these operators without having to keep track of individual endpoints. Intuitively, the first map is \say{dynamic}, in the sense that it observes the result of translating a vector $\xi_p$ along $\Phi_X$, moving its basepoint along the flow lines. On the other hand, the second map operates on vector fields, which can always be evaluated at the same point in $M$. As such, it can observe the parallel transport along $\Phi_X$ in a \say{static} manner.
+
+
+\begin{theorem}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$ and denote  by $\omega$ its connection form in the standard frame. If $X \in \Gamma(\mathrm{T}\mathbb{R}^n)$ is a vector field with global flow $\Phi_X \colon I \times \mathbb{R}^n \to \mathbb{R}^n$, then
+  \begin{equation}
+    \der{}{t} \Big[ \mathrm{P}(\Phi_X)_{0}^{t}
+    \Big]_{t=0} = -\omega(X). 
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Let $v_p \in \mathrm{T}\mathbb{R}$ be a tangent vector based at $p \in \mathbb{R}$. Then $V(t) = \big[\mathrm{P}(\Phi_X)^t_0\big] v_p$ is a parallel vector field along the curve $\gamma(t) = \Phi_X(t, p)$, so it satisfies the differential equation $V' + \omega(\gamma')V = 0$. Since $\gamma'(0) = X_p$ by definition of $\Phi_X$, we have 
+  \begin{equation}
+    \left.\der{}{t} \Big[\mathrm{P}(\Phi_X)_{0}^{t}\Big]v_p\right|_{t=0} = -\omega(X_p)v_p.
+  \end{equation}
+  The conclusion follows.
+\end{proof}
+There is a similar result for the induced map on global sections. Roughly speaking, since $\omega(X) = \nabla_X - D_X$, and $P_\ast$ describes parallel transport in a \say{static} manner,  we expect differentiation to recover only the $\nabla$ term.
+
+\begin{theorem}
+  Let $\nabla$ be an affine connection on $\mathbb{R}^n$. If $X \in \Gamma(\mathrm{T}\mathbb{R}^n)$ is a vector field with global flow $\Phi_X \colon I \times \mathbb{R}^n \to \mathbb{R}^n$, then
+  \begin{equation}
+    \der{}{t} \Big[ \mathrm{P}_\ast(\Phi_X)_{0}^{t}
+    \Big]_{t=0} = -\nabla_X. 
+  \end{equation}
+\end{theorem}
+\begin{proof}
+Let $V \in \Gamma(\mathrm{T}\mathbb{R}^n)$ be a vector field and $p \in \mathbb{R}^n$. Then 
+\begin{equation}
+   \Big[\mathrm{P}_*(\Phi_X)_{0}^{t} V\Big]_{\Phi_X(t, p)} = \mathrm{P}(\Phi_X)_{0}^{t} V_p.
+\end{equation}
+which recovers the original \say{dynamic} description of parallel transport. Now, recall the following fact: for a smooth map $W \colon I \to \Gamma(\mathrm{T}\mathbb{R})$ and curve $\gamma \colon I \to \mathbb{R}^n$, we have
+\begin{equation}
+  \der{}{t} \Big[W(t)_{\gamma(t)}\Big] = W'(t)_{\gamma(t)} + \big[D_{\gamma'(t)} W(t)\big]{}_{\gamma(t)}.
+\end{equation}
+Thus, by the previous fact and Proposition \ref{},
+\begin{equation}
+  \left.\der{}{t}\Big[\mathrm{P}_*(\Phi_X)_{0}^{t} V\Big]_{\Phi_X(t, p)}\right|_{t = 0} = \left[\der{}{t} \mathrm{P}_*(\Phi_X)_{0}^{t} V\Big|_{t = 0} + D_{X} V \right]_{\raisebox{2pt}{$\scriptstyle p$}} = -\omega(X_p)V_p.
+\end{equation}
+Since $\omega = \nabla_X - D_X$, the conclusion follows.
+\end{proof}
+
+
+\section{Non-abelian Stokes theorems}
+
+The Stokes theorem describes a fundamental...
+
+
+In each case, we wish to study a certain \say{integral} quantity $A$ which may be defined on smooth oriented $1$-cells (i.e., paths) on a manifold. The Stokes' theorem roughly states that computing this quantity over the boundary of an \say{infinitesimal} oriented $2$-cell yields a differential $2$-form $\alpha$, which when integrated over the interior of a sufficiently nice $2$-cell $c$, reproduces the value of $A$ on the boundary $\partial c$. The main idea behind the theorem is that the $2$-cell $c$ may be decomposed into smaller cells whose boundaries \say{cancel} each other out.
+
+When $A$ lies in an abelian Lie group, this produces the usual Stokes theorem; for completeness, this is the first case we will discuss. However, in the other cases we wish to explore, $A$ is  
+
+\begin{center}
+\begin{tabular}{c|c|cc}
+$A$ & composition law  \\ \hline
+$I(\gamma) = \int_{\gamma} \alpha$ & $\delta f (\gamma_1 \ast \gamma_2) = \delta f(\gamma_1) + \delta f (\gamma_2)$ & \say{abelianizing} groupoid homomorphism  \\[1ex]
+$I(\gamma) = P ^\nabla(\gamma) = $ & $P^\nabla(\gamma_1 \ast \gamma_2) = P^\nabla (\gamma_1) P^\nabla (\gamma_2)$ &  groupoid homomorphism \\[1ex] $\tau^\nabla(\gamma)$ & $A(\gamma_1) + B(\gamma_1)A(\gamma_2)$ & crossed groupoid homomorphism
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+  \item The most basic data that can be integrated over a curve $\gamma \colon I \to M$ is a $1$-form $\alpha$ which produces an integral of a scalar quantity by \say{eating} each tangent vector. Specifically, we define
+  \begin{equation}
+    \int_{\gamma} \alpha = \int_{I} \alpha(\gamma'(t)) \, \d t.
+  \end{equation}
+  From this, we obtain the composition law $\int_{\gamma_1 \ast \gamma_2} \alpha = \int_{\gamma_1} \alpha + \int_{\gamma_2} \alpha$.
+
+  \item Given a connection $\nabla$ on $M$, we may identify nearby tangent spaces, providing another means of integrating data over a curve $\gamma \colon I \to M $. Indeed, let $\omega$ be the associated connection form with respect to some frame $E$. At each $t \in I$, the endomorphism $\omega(\gamma'(t))$ of $\mathrm{T}_{\gamma(t)} M$ measures the infinitesimal deviation of the frame from being parallel along the curve. These may be integrated to obtain the parallel transport map along $\gamma$; indeed, by Proposition \ref{}, we have
+  \begin{equation}
+    \big[P^\nabla(\gamma)\big]_{E} = -\int_I \Big[\omega(\gamma'(t)) \circ P^\nabla(\gamma)_{0}^{t}\Big]_E \, \d t.
+  \end{equation}
+  While this expresses the parallel transport as an integral, note that $P^\nabla(\gamma)$ appears on both sides, as the individual endomorphisms $\omega(\gamma'(u))$ can only be compared by using parallel transport.
+
+  \item Given a connection $\nabla$ on $M$, we may identify nearby tangent spaces, we may instead integrate the tangent vectors along a curve $\gamma \colon I \to M$, using parallel transport to identify different tangent spaces. This is just the development along $\gamma$, 
+  \begin{equation}
+    D^\nabla(\gamma) = \int_I \Big[ P^\nabla(\gamma)_{\mskip 1mu t}^{0} \Big]\gamma'(u) \, \d t.
+  \end{equation}
+  The development satisfies the \say{crossed homomorphism} law $D^\nabla(\gamma_1 \ast \gamma_2) = $.
+\end{enumerate}

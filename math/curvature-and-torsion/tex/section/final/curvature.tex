@@ -1,0 +1,67 @@
+\section{Principal and linear connections}
+
+\begin{definition}
+  Let $M$ be a smooth manifold and let $E$ be a smooth fiber bundle over $M$ with Ehresmann connection $H \oplus V = \mathrm{T}E$. The \emph{curvature} of the connection is the map $\Omega \colon \Gamma(\mathrm{T}E) \times \Gamma(\mathrm{T}E) \to \Gamma(\mathrm{T}E)$ defined by 
+  \begin{equation}
+    \Omega^E(X, Y) = [X_H, Y_H]_V.
+  \end{equation}
+\end{definition}
+
+The curvature defines a differential form; indeed, for a smooth function $f \in C^\infty(P)$, we have
+\begin{align}
+  \Omega^E(X, fY) = [X_H, fY_H]_V
+  &= f[X_H, Y_H]_V + \big[(X_H f) Y_H\big]_V \\
+  &= f[X_H, Y_H]_V + (X_H f) \big[Y_H\big]_V \\
+  &= f[X_H, Y_H]_V,
+\end{align}
+which is all that is needed to check by antisymmetry and additivity of the Lie bracket. In special cases, one may define a related curvature form on the base manifold $M$.
+
+\subsection{Curvature of principal connections}
+Given a principal $G$-bundle $\rho \colon P \to M$, define the \emph{adjoint bundle} to be the associated bundle $\operatorname{ad} P = P \times_{\mathrm{Ad}} \mathfrak{g}$, where $\mathrm{Ad}$ is the adjoint action of $G$ on $\mathfrak{g}$. Explicitly, we have
+\begin{equation}
+  \operatorname{ad} P = (P \times \mathfrak{g}) / {\sim}; \quad \quad [u, v] \sim [u \cdot g, \mathrm{Ad}_g(v)].
+\end{equation}
+We may identify the vertical tangent spaces of $P$ with the fibers of $\operatorname{ad} P$ 
+\begin{equation}
+  \Psi_{u} \colon (\operatorname{ad} P)_{\rho(u)} \to \ker \mathrm{d}\rho_u; \quad \quad [u, v] \longmapsto (\mathrm{d}\alpha_{u})_e(v).
+\end{equation}
+
+
+and $H \subseteq \mathrm{T}P$ is a principal Ehresmann connection, then the curvature form $\Omega^P$ is equivariant under the action of $G$ on $\mathrm{T}P$. That is, for all $g \in G$,
+\begin{equation}
+  \Omega^P(g_* X, g_* Y) = [g_* X_H, g_* Y_H]_V = g_*[X_H, Y_H]_V = g_*\Omega^P(X, Y),
+\end{equation}
+since $g_*$ preserves the decomposition $\mathrm{T}P = H \oplus V$ and the Lie bracket. Futhermore, the action $\alpha \colon P \times G \to P$ allows us to identify each vertical tangent space $V_u \subseteq \mathrm{T}_u P$ with $\mathfrak{g}$ via the isomorphism
+\begin{equation}
+  \mathrm{d}\alpha(u, -)_e \colon \mathfrak{g} \to V_u \subseteq \mathrm{T}_u P. 
+\end{equation}
+Together, these facts allow us to define a curvature form on $M$ by taking horizontal lifts.
+\begin{proposition}
+Let $\pi \colon P \to M$ be a principal $G$-bundle with principal Ehresmann connection $H \subseteq \mathrm{T}P$. Then $H$ defines a $\mathfrak{g}$-valued 2-form $\Omega$ on $M$ satisfying
+\begin{equation}
+  \mathrm{d}\alpha(u, -)_{e} \Big(\Omega_p(x, y)\Big) = \Omega_{u}^P(\widetilde{x}_u, \widetilde{y}_u)
+\end{equation}
+for all $u \in \rho^{-1}(p)$.
+\end{proposition}
+\begin{proof}
+  The only thing that needs to be shown is that $\mathrm{d}\alpha(u, -)_{e}^{-1} (\Omega_{u}^P(\widetilde{x}_u, \widetilde{y}_u))$ does not depend on the choice of $u$. If $u\in \pi^{-1}(p)$ and $g \in G$, then
+  \begin{equation}
+    (\mathrm{d}\alpha_{ug})_e =  (\mathrm{d}\alpha_u)_g \circ (\mathrm{d}L_g)_e = 
+  \end{equation}
+\end{proof}
+
+
+\subsection{Curvature of linear connections}
+If $\rho \colon E \to M$ is a smooth vector bundle, then for each $e \in E$, there exists an isomorphism
+\begin{equation}
+  \Psi_e \colon E \to \ker \mathrm{d}\rho_{e}; \quad \quad f \longmapsto  \frac{\mathrm{d}}{\mathrm{d}t} \Big[e + tf\Big]_{t=0},
+\end{equation}
+which may be assembled into a smooth vector bundle isomorphism $\rho^* E \cong \ker \mathrm{d}\rho$. Since $\Omega^E$ takes values in the vertical subbundle, this defines a map
+\begin{equation}
+  \Omega \colon \Gamma(\mathrm{T}M) \times \Gamma(\mathrm{T}M) \times \Gamma(E) \to \Gamma(E); \quad \quad [\Omega(X, Y)Z]_p = \Omega^{E}_{Z_p}\!\left(\widetilde{X}_{Z_p}, \widetilde{Y}_{Z_p}\right),
+\end{equation}
+where $\widetilde{u}_e$ denotes the horizontal lift of a vector $u \in \mathrm{T}_p M$ to $e \in \rho^{-1}(u)$. Now, if $H \subseteq \mathrm{T}E$ is a linear Ehresmann connection, then
+
+
+
+

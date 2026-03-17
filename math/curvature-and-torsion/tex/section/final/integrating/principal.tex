@@ -1,0 +1,31 @@
+\section{Integrating Lie algebra-valued forms}
+
+Let $G$ be a Lie group with Lie algebra $\mathfrak{g}$ and let $M$ be a smooth manifold. If there is a linear connection $\nabla$ on $\mathfrak{g} \times M$, then we may integrate a differential form $\eta \in \Omega^1(M, \mathfrak{g})$ along a curve $\gamma \colon I \to M$ to obtain
+\begin{equation}
+  \mathcal{P}^\nabla \! \! \int_\gamma \eta \; =  \int_{\gamma} \Big[\mathcal{P}^\nabla(\gamma)_{t}^{0}\Big] \eta(\gamma(t)) \, \mathrm{d}t.
+\end{equation}
+which lies in $\mathfrak{g}$. However, for our purposes, we wish to integrate a path of vectors in $\mathfrak{g}$ and obtain an element of $G$. To do this, define the  the \emph{time-ordered exponential} of a function $v \colon I \to \mathfrak{g}$, denoted by
+\begin{equation}
+  V(t) = \mathrm{T}\exp \int_{0}^{t} v(\tau) \, \mathrm{d} \tau,
+\end{equation}
+to be the unique solution to the differential equation $V'(t) = v(t)V(t)$ with initial value $V(0) = 1$. We may now define the \emph{standard path-ordered integral} of a $1$-form $\eta \in \Omega(M, \mathfrak{g})$ along a curve $\gamma$ to be
+\begin{equation}
+  \mathrm{P}\exp^\nabla \!\int_\gamma \eta = \mathrm{T}\exp \int_I [\mathcal{P}^\nabla(\gamma)_{t}^{0}\Big] \eta(\gamma(t)) \, \mathrm{d}t.
+\end{equation}
+This definition generalizes to higher dimensions by iteration: given a function $v \colon I^k \to \mathfrak{g}$, define
+\begin{equation}
+  \mathrm{T}\exp \int_{0}^{t_k} \! \cdots \int_{0}^{t_1} v(\tau) \, \mathrm{d}^k\tau = \mathrm{T}\exp \int_0^{t_k} \left[\mathrm{T}\exp \int_{0}^{t_{k-1}} \!\!\! \cdots \int_{0}^{t_1} v(\tau) \, \mathrm{d}\tau_1 \cdots \mathrm{d}\tau_{k-1} \right] \mathrm{d}\tau_{k}.
+\end{equation}
+Analogously, we may define the standard path-ordered integral of a $k$-form $\eta \in \Omega^k(M, \mathfrak{g})$ along a singular $k$-cube $\pi \colon I^k \to M$ by
+\begin{equation}
+  \mathrm{P}\exp^\nabla \! \int_\pi \eta = \mathrm{T}\exp \int_{I^k} \Big[\mathcal{P}^\nabla(\gamma_t)\Big]\eta(\pi(t)) \, \mathrm{d}^k t
+\end{equation}
+where $\gamma_t \colon I \to I^k$ is the path
+\begin{equation}
+  \gamma_t = \Big(\mathbf{0} \to t_1 \mathbf{e}_1\Big) \ast \cdots \ast \Big(\textstyle{\sum_{j < i} t_j \mathbf{e}_j \to \sum_{j \leq i} t_j \mathbf{e}_j}\Big) \ast \cdots \ast \Big(t - t_k\mathbf{e}_k \to t\Big).
+\end{equation}
+Alternatively, consider the homotopies $H_i \colon I^k \times I \to I^k$ given by $H_i(t, \tau) = t - (1 -\tau) t_i\mathbf{e}_i$, and let $H = H_1 \ast \cdots \ast H_k$, which is a piecewise-smooth homotopy from the constant map at the origin to the identity. Then we have
+\begin{equation}
+   \mathrm{P}\exp^\nabla \! \int_\pi \eta = \mathrm{T} \exp \int_{I^k} \Big[\mathcal{P}^\nabla(H)\Big] \pi^* \eta 
+\end{equation}
+and $\gamma_t = H(t, -)$. 

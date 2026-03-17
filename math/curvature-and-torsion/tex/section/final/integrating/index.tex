@@ -1,0 +1,93 @@
+\section{Integrating vector-valued forms}
+
+\begin{definition}
+  Let $M$ be a smooth manifold equipped with a smooth null-homotopy $H \colon M \times I \to M$ from a point $p \in M$, and let $E$ be a vector bundle over $M$ with linear connection $\nabla$. If $\omega \in \Omega^k(M, E)$, then we define 
+  \begin{equation}
+    \mathcal{P}^\nabla_{H}\!\!\int_{M} \omega = \int_{M} \mathcal{P}
+  \end{equation}
+  to be the integral of $\omega$ over $N$ with respect to $H$.
+\end{definition}
+
+\begin{definition}
+  Let $k > 0$ be an integer. For each integer $0 \leq i < k$ and $\epsilon \in \{0, 1\}$, let $\gamma_i^\epsilon \colon I \to I^k$ be a smooth path and $H_i^\epsilon \colon I^{k-1} \times I \to I^{k-1}$ be a smooth map such that  
+  \begin{enumerate}
+    \item $\gamma_i^\epsilon$ connects $\mathbf{0} \in I^k$ to some point $y_i^\epsilon = \partial_i^\epsilon\iota_k(x_i^\epsilon)$ in the $(i, \epsilon)$th face, and
+    \item $H_i^\epsilon$ is a homotopy from the constant map at $x_i^\epsilon$ to the standard $(k-1)$-cube $\iota_{k-1}$.
+  \end{enumerate}
+  Then the collection $(H_i^\epsilon, \gamma_i^\epsilon)$ is said to be \emph{smooth contraction data} for the $k$-cube.
+\end{definition}
+
+\begin{definition}
+  Let $M$ be a smooth manifold, and let $X = (X_1, \ldots, X_k)$ be a tuple of vector fields with global flows $\Phi_{X_i} \colon M \times I \to M$. The singular $k$-cube 
+  \begin{equation}
+    \pi_X \colon M \to \mathrm{Sing}_k^{\square} (M); \quad \quad  x \mapsto \left[\Phi_{X_1}(x_1) \circ \cdots \circ \Phi_{X_k}(x_k)\right]\!(p)
+  \end{equation}
+  is said to be the \emph{$k$-parallelotope spanned by $X_1, \ldots, X_k$ based at $p$}.
+\end{definition}
+
+\begin{theorem}
+Let $M$ be a smooth $n$-manifold and $E$ be a smooth vector bundle over $M$ with linear connection $\nabla$. Given fixed contraction data $(H_i^\epsilon, \gamma_i^\epsilon)$ for the $k$-cube, a differential form $\eta \in \Omega^{k-1}(M, E)$, and vector fields $X_1, \ldots, X_k$ with unit-time global flow, we have
+
+\begin{equation}
+  [\mathrm{d}\!^\nabla\!\eta](X)|_p = \lim_{t \to 0} \left[ \frac{1}{t_1 \cdots t_k} \cdot \sum_{i, \epsilon} (-1)^{i + \epsilon} \cdot  \mathcal{P}^{\nabla}\big(\Pi^{tX}_p \circ \gamma^i_{\epsilon}\big) \int_{\partial_i^\epsilon \Pi^{tX}_p} \mathcal{P}^\nabla(\partial_i^\epsilon\Pi^{tX}_p \circ H_i^\epsilon)\, \eta \right]\!\!.
+\end{equation}
+\end{theorem}
+
+
+\begin{proof}
+  Let $U \subseteq M$ be an open neighborhood of $p$ on which $E|_U \cong E_p \times U$, and let $\omega$ be the associated connection form in a given trivialization. By continuity, there exists an open neighborhood $W \subseteq \mathbb{R}^k$ of the origin such that $|\Pi^{tX}_p| \subseteq U$ for all $t \in W$. For such $t$, let 
+  \begin{equation}
+  J_i^\epsilon(t) = \mathcal{P}^\nabla (\Pi^{tX}_p \circ \gamma_i^\epsilon) \in \GL(E_p); \quad \quad K_i^\epsilon(t) = \int_{\partial_i^\epsilon \Pi^{tX}_p} \mathcal{P}^\nabla(\Pi^{tX}_p \circ H_i^\epsilon)\, \eta \in E_p,
+  \end{equation}
+  which define smooth functions by Proposition \ref{} and \ref{}. If $t = \tau \mathbf{e}_i$ for some $\tau \in I$, then $\Pi^{tX}_p(x) = \Phi^{X_i}(\tau x_i, p)$. Thus,
+  \begin{equation}
+    \Pi^{tX}_p \circ \gamma_i^\epsilon = \Phi^{\tau X_i}_p \circ  (\mathrm{proj}_i \circ \gamma_i^\epsilon),
+  \end{equation}
+  where $\mathrm{proj}_i \colon I^k \to I$ is the projection onto the $i$th factor. Since $\mathrm{proj}_i \circ \gamma_i^\epsilon$ starts at $0$ and ends at $\epsilon$, we have by Proposition \ref{} and \ref{},
+  \begin{equation}
+    \left. \frac{\partial J_i^\epsilon}{\partial t_i} \right|_{t = 0} = \left.\frac{\d}{\d \tau} \mathcal{P}^\nabla(\Phi_p^{\tau X_i})_\epsilon^0 \right|_{\tau = 0} = \left.\frac{\d}{\d \tau} \mathcal{P}^\nabla(\Phi_p^{\epsilon X_i})_{\tau}^0 \right|_{\tau = 0} = \epsilon \cdot \omega(X_i).
+  \end{equation}
+  Now, if $t \in W \cap I^k$, then we may write $\partial_i^\epsilon \Pi^{tX}_p = \sigma_i^{\epsilon t_i} \Pi^X_p \circ \operatorname{diag}(t_{\delta^i(j)})$, where $\sigma$ is the slice operator defined in \eqref{}. Let $\tau \in I$. For all $j < i$, we have
+  \begin{equation}
+    \frac{\partial }{\partial x_j} \Big[ \sigma_i^{\epsilon\tau} \Pi^X_p \Big]_{x = 0} = \frac{\partial}{\partial x_j} \Big[\Phi^{X_i}(\epsilon\tau) \circ \Phi^{X_j}(x_j)\Big] = [\Phi^{X_i}(\epsilon\tau)]_*(X_j),
+  \end{equation}
+  and for all $j \geq i$, we have  
+  \begin{equation}
+    \mskip 16mu \frac{\partial }{\partial x_j} \Big[ \sigma_i^{\epsilon\tau} \Pi^X_p \Big]_{x = 0} = \frac{\partial}{\partial x_{j+1}} \Big[\Phi^{X_{j+1}}(x_{j+1}) \circ \Phi^{X_i}(\epsilon\tau)\Big] = [\Phi^{X_i}(\epsilon\tau)]^*(X_{j+1}).
+  \end{equation}
+  It follows from Proposition \ref{} that 
+  \begin{align}
+    \left.\frac{\partial^{k-1} K_i^\epsilon}{\partial t_1 \cdots \widehat{\partial t_i} \cdots \partial t_{k}}\right|_{t\,=\,\tau \mathbf{e}_i} = \eta \Big( [\Phi^{X_i}(\epsilon\tau)]_*(X_1), &\ldots,\, [\Phi^{X_i}(\epsilon\tau)]_*(X_{i-1}), \\ 
+    &\left.[\Phi^{X_i}(\epsilon\tau)]^*(X_{i+1}), \ldots, [\Phi^{X_i}(\epsilon \tau)]^*(X_k) \Big)\right|_{\Phi^{X_i}(\epsilon\tau\!,\, p)} \nonumber
+  \end{align}
+  and $\partial^\beta K_i^\epsilon|_{t \, = \, \tau \mathbf{e}_i} = 0$ for all other multi-indices $\beta$ of degree less than $k$. In particular, setting $\tau = 0$ in \eqref{} yields
+  \begin{equation}
+  \left.\frac{\partial^{k-1} K_i^\epsilon}{\partial t_1 \cdots \widehat{\partial t_i} \cdots \partial t_k}\right|_{t = 0} = \eta(X_1, \ldots, \widehat{X_i}, \ldots, X_k)|_p
+  \end{equation}
+  and the chain rule applied to \eqref{} along the diagonal yields
+  \begin{align}
+    \left. \frac{\partial^k K_i^\epsilon}{\partial t_1 \cdots \partial t_k}\right|_{t = 0}
+    = \epsilon \cdot \Bigg[X_i \Big(\eta(X_1, \ldots, &\widehat{X_i}, \ldots, X_k)\Big)  \\ &- \sum_{j < i} \eta(X_1, \ldots, X_{j-1}, \mathcal{L}_{X_i} X_j, X_{j+1} \ldots, \widehat{X_i}, \ldots, X_k)\Bigg]_p.
+  \end{align}
+  Let $A_i^\epsilon = J_i^\epsilon K_i^\epsilon$ and $A = \sum_{i, \epsilon} (-1)^{i+\epsilon} A_i^\epsilon$. Then for all multi-indices $\alpha$ of degree less than or equal to $k$, the Leibniz rule yields
+  \begin{equation}
+    \partial^\alpha A_i^\epsilon |_{t = 0} = \left[J_i^\epsilon \cdot \frac{\partial^k K_i^\epsilon}{\partial t_1 \cdots \partial t_k} + \frac{\partial J_i^\epsilon}{\partial t_i} \cdot \frac{\partial^{k-1} K_i^\epsilon}{\partial t_1 \cdots \widehat{\partial t_i} \cdots \partial t_k}\right]_{t = 0},
+  \end{equation}
+  which by \eqref{} and \eqref{} implies $\partial^\alpha A_i^0|_{t = 0} = 0$ and
+  \begin{align}
+    \partial^\alpha A_i^1|_{t = 0}
+    = \Bigg[X_i\Big(\eta(X_1, \ldots, \widehat{X_i}, \ldots, X_k)\Big) &+ \omega(X_i) \, \eta(X_1, \ldots, \widehat{X_i}, \ldots, X_k) \\ &+ \sum_{j < i} (-1)^j  \,\eta\,(\mathcal{L}_{X_i} X_j, X_1, \ldots, \widehat{X_j}, \ldots, \widehat{X_i}, \ldots, X_k)\Bigg]_p \nonumber \\ 
+    = \Bigg[\nabla_{X_i} \Big(\eta(X_1, \ldots, \widehat{X_i}, \ldots, X_k)\Big) &+ \sum_{j < i} (-1)^j  \,\eta\,(\mathcal{L}_{X_i} X_j, X_1, \ldots, \widehat{X_j}, \ldots, \widehat{X_i}, \ldots, X_k)\Bigg]_p.
+  \end{align}
+  Summing \eqref{} over all $i$ with the appropriate sign coefficients, we obtain
+  \begin{equation}
+    \frac{\partial^k A}{\partial t_1 \cdots \partial t_k} = \mathrm{d}^\nabla \omega(X_1, \ldots, X_k)
+  \end{equation}
+  and $\partial^\alpha A = 0$ whenever $|\alpha| < k$. The conclusion follows from Taylor's theorem.
+\end{proof}
+
+Note that Theorem \ref{} also implies a separate formula for the exterior covariant derivative in terms of the connection form $\omega$ for a trivialization $E|_U \cong E^0 \times U$: by summing \eqref{} over each index, we obtain the identity
+\begin{equation}
+  \mathrm{d}^{\!\nabla}\!\eta = \mathrm{d} \eta + \omega \wedge \eta
+\end{equation}
+where $\mathrm{d}\eta$ is the exterior derivative of $\eta$ viewed as an $E^0$-valued differential form. Intuitively, this term tracks the \emph{absolute} change in $\eta$ across opposite faces of the parallelotope in the coordinates of the trivialization, and the term $\omega \wedge \eta$ is a correction which when added yields the change in $\eta$ across opposite faces discounting the \emph{intrinsic} change in $\eta$ due to parallel transport. By choosing appropriate contraction data, the preceeding theorem will eventually faciliate the proof of identities involving the exterior covariant derivative through visual, yet rigorous, arguments.
