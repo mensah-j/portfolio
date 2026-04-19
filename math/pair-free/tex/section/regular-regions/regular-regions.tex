@@ -51,11 +51,11 @@ Let $R \subseteq \mathbb{Z}^2$ be a regular region. If $e$ is an edge of $R$, th
 
     \item Otherwise, after a suitable reflection, we may assume $q_{i+2} = (0, 1)$. By hypothesis, there exists a subsquare containing $(0, 0)$. If this square already contains $q_{i+2}$, then we are done.
 
-    If not, then the square contains $(-1, 0)$. 
-    Since the boundary is a cycle, this cannot be another boundary point, so it must be an interior point, which implies $(0, -1) \in R$.
+    If not, then the square contains $(0, -1)$. 
+    Since the boundary is a cycle, this cannot be another boundary point, so it must be an interior point, which implies $(-1, 0) \in R$.
     For the same reason, this is also an interior point.
     
-    It follows that $e_{i+1} = \{q_{i+1}, q_{i+2}\} \subseteq B'(0, -1)$ is good.
+    It follows that $e_{i+1} = \{q_{i+1}, q_{i+2}\} \subseteq B'(-1, 0)$ is good.
   \end{enumerate}
   Therefore, every edge in $C$ is good, which is what we wanted to show.
 \end{proof}
@@ -66,11 +66,8 @@ Let $R \subseteq \mathbb{Z}^2$ be a regular region. If $e$ is an edge of $R$, th
 \begin{proof}
   Suppose, for the sake of contradiction, that $|C| \leq 4$. 
   Since $C$ is a cycle on the lattice graph, we must have $C \cong \{0,1\}^2$.
-  Let
-  \begin{equation}
-    H = \{p \in \mathbb{Z}^2 \setminus C \mid B'(p) \cap C \neq \varnothing \}.
-  \end{equation}
-  Note that $C$ must have an adjacent point $q \in R \setminus C$, which necessarily belongs to $H$. If this were not the case, then $C$ would be a connected component of $R$, implying $R = C$, which is impossible since $R$ must have nonempty interior. 
+  Note that $C$ must have an adjacent point $q \in R \setminus C$.
+  If this were not the case, then $C$ would be a connected component of $R$, implying $R = C$, which is impossible since $R$ must have nonempty interior. 
   Since $C$ is a connected component of the boundary, $q$ must also be an interior point. 
   
   By choosing a suitable isometry, we may assume that $C = \{0, 1\}^2$ and $q = (-1, 0)$. Then $B'(-1, 0) \subseteq R$; of these points, $(-1, 1)$ and $(0, -1)$ are neighbors of $C$, so these must also be interior points. Then
