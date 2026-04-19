@@ -5,4 +5,4 @@ date: 2026-04-20
 finished: false
 ---
 
-We investigate domino tilings in two dimensions and determine geometric and topological conditions which force tilings to contain specified substructures. In particular, for a special class of regions in the two-dimensional lattice, we derive a bound on the number of flippable pairs and "windmill-shaped" substructures a tiling must contain. Finally, we extend the result to three dimensions.
+We investigate domino tilings in two dimensions and determine geometric conditions that force tilings to contain certain substructures. In particular, for a special class of regions in the square lattice, we derive an inequality involving the number of flippable pairs and "windmills" contained in a tiling. Finally, we extend the result to the three-dimensional cubic lattice.
