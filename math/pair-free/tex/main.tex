@@ -1,0 +1,36 @@
+\documentclass[11pt]{article}
+
+\input{config/pkg.tex}
+\input{config/env.tex}
+\input{config/fmt.tex}
+\input{config/cmd.tex}
+
+\addbibresource{refs.bib}
+
+\DeclareEmphSequence{\itshape}
+
+\setstretch{1.15}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate domino tilings of regions in two and three dimensions and determine conditions for when tilings must contain specified substructures. In particular, we show that a special class of regions in the plane do not admit any tilings without a $2 \times 2$ subsquare of dominoes,  and extend this result to three-dimensional boxes.
+\end{abstract}
+
+% Introduction
+\import{section/introduction}{index.tex}
+
+% Regular regions
+\import{section/regular-regions}{index.tex}
+
+% Pair-free tilings of regular regions
+\import{section/main-result}{index.tex}
+
+% Domino tilings in three dimensions
+\import{section/three-dimensions}{index.tex}
+
+\newpage
+\printbibliography
+
+\end{document}

@@ -1,0 +1,73 @@
+\subsection{Geometric realizations of subgraphs of $\mathbb{Z}^d$}
+It is useful to view $\mathbb{R}^d$ as a cell complex as follows:
+given $0 \leq k \leq d$ and a lattice $k$-cube $Q \cong \{0,1\}^k \times \{0\}^{d-k}$, define the \emph{cubical $k$-cell associated to $Q$} to be the relative interior of its convex hull; that is,
+\begin{equation}
+  e^k_{Q} = \left\{ \sum_{q \in Q} \lambda_q q \,\Biggm|\, \lambda_q > 0,\; \sum_{q \in Q} \lambda_q = 1 \right\}.
+\end{equation}
+These cells form a partition of $\mathbb{R}^d$ providing it with the structure of a cell complex. 
+For a subset $S \subseteq \mathbb{Z}^d$, we may define its \emph{geometric realization} $\lVert S \rVert \subseteq \mathbb{R}^d$  to be the union of all cells contained within $S$.
+Specifically, let $\mathcal{Q}_k(S)$ be the set of $k$-subcubes contained in $S$, and define
+\begin{equation}
+  \lVert S \rVert = \bigcup_{0 \leq k \leq d}\left(\bigcup_{Q \,\in \, \mathcal{Q}_k(S)} \mskip -10mu e^k_Q \right).
+\end{equation}
+Note that the realization of a subset $S \subseteq \mathbb{Z}^d$ automatically contains $S$, so two subsets of $\mathbb{Z}^d$ are disjoint if their realizations are. Furthermore, the converse also holds, since the cells partition $\mathbb{R}^d$.
+\begin{proposition}\label{prop:real-disjoint}
+Let $S_1, S_2 \subseteq \mathbb{Z}^d$. If $S_1 \cap S_2 = \varnothing$, then $\lVert S_1 \rVert \cap \lVert S_2 \rVert = \varnothing$.
+\end{proposition}
+\begin{proof}
+  If $\lVert S_1 \rVert \cap \lVert S_2 \rVert \neq \varnothing$, then they share a common point $p$ and a unique cell $e^k_Q$ which contains $p$. It follows that $Q \subseteq S_1 \cap S_2$, so $S_1 \cap S_2 \neq \varnothing$.
+\end{proof}
+\begin{proposition}\label{prop:real-connected}
+  Let $S \subseteq \mathbb{Z}^d$.
+  If the subgraph induced by $S$ is connected, then $\lVert S \rVert$ is connected as a topological space.
+\end{proposition}
+\begin{proof}
+  Let $p, p' \in \lVert S \rVert$.
+  There exist unique cells $e^{k}_{Q}$ and $e^{k'}_{Q'}$ containing $p$ and $p'$ respectively.
+  Since both cells are connected, {$p$~(resp.~$p'$)} belongs to the same connected component as {$Q$~(resp.~$Q'$)}. 
+  It suffices to show that these lattice subcubes also belong to the same connected component.
+
+  Since $S$ is connected as a graph, there exists a path of adjacent points $q_1, \ldots, q_n$ in $S$ starting at $Q$ and ending at $Q'$.
+  Then $e^1_{\{q_i, q_{i+1}\}} \subseteq \lVert S \rVert$ is a cell whose boundary contains $q_i, q_{i+1}$, which therefore lie in the same connected component. By induction, all points in the path lie in the same connected component, which proves the claim. 
+\end{proof}
+\begin{proposition}\label{prop:real-boundary}
+  Let $R \subseteq \mathbb{Z}^2$ be a regular region. Then $\operatorname{bd} (\lVert R \rVert) = \lVert \operatorname{bd}(R) \rVert$.
+\end{proposition}
+\begin{proof}
+  Let $p \in \operatorname{bd} (\lVert R \rVert)$. There exists a unique cell $e^k_Q \subseteq \lVert R \rVert$ containing $p$. If some point $q \in Q$ was an interior point of $R$, then
+  \begin{equation}
+    p \in e^k_Q \subseteq  B(q) \subseteq \lVert R \rVert,
+  \end{equation}
+  which contradicts the fact that $p$ lies in the topological boundary of $\lVert R \rVert$. It follows that each point of $Q$ must be a boundary point, so $p \in \lVert \operatorname{bd} (R) \rVert$.
+
+  Conversely, let $p \in \lVert \operatorname{bd} (R) \rVert$. Then there exists a $k$-subcube $Q \subseteq \operatorname{bd}(R)$ such that $p \in e^k_Q$.
+  By Proposition \ref{prop:big-cycles}, we have $k < 2$.
+  There are two cases:
+  \begin{enumerate}
+    \item If $k = 0$, then by applying a suitable isometry we may assume that $Q = \{p\} = \{(0,0)\}$.
+    Suppose, for the sake of contradiction, that $p$ was in the topological interior of $\lVert R \rVert$.
+    Then there exists some $\epsilon$ with $0 < \epsilon < 1$ such that $\{-\epsilon, +\epsilon\}^2 \in \lVert R \rVert$, which implies that the lattice neighborhood of the origin is contained in $R$. Hence $(0, 0)$ is an interior point of $R$, which is a contradiction.
+
+    Therefore, $p$ must be lie in the topological boundary of $\lVert R \rVert$.
+
+    \item If $k = 1$, then by applying a suitable isometry we may assume that $Q = \{(0, 0), (1, 0)\}$ and write $p = (x, 0)$ for some $x$ satisfying $0 < x < 1$. Suppose, for the sake of contradiction, that $p$ was in the topological interior of $\lVert R \rVert$. Then there exists some $\epsilon$ with $0 < \epsilon < 1$ such that $(x, \pm \epsilon) \in \lVert R \rVert$, which implies that
+    \begin{equation}
+      \{ (0, 1), (0, -1), (1, 1), (1, -1) \} \subseteq R.
+    \end{equation}
+    Since each boundary point of $R$ has exactly two neighboring boundary points, at least one of $(0, \pm 1)$ must be an interior point. In either case, we must have $(-1, 0) \in R$. We have two subcases:
+    \begin{enumerate}
+      \item If $(-1, 0) \in \operatorname{int}(R)$, then $(-1, \pm 1) \in R$. 
+      \item If $(-1, 0) \not\in \operatorname{int}(R)$, then $(0, \pm 1)$ must both be interior points, so $(-1, \pm 1) \in R$.
+    \end{enumerate}
+    In both cases, the lattice neighborhood of the origin in contained in $R$, so $(0,0)$ is an interior point of $R$, which is a contradiction. 
+    
+    Therefore, $p$ must be lie in the topological boundary of $\lVert R \rVert$.
+  \end{enumerate}
+  It follows that $\lVert \operatorname{bd}(R) \rVert = \operatorname{bd} (\lVert R \rVert)$.
+\end{proof}
+
+The previous propositions imply the following corollary relating the boundary of a regular region to the boundary of its geometric realization.
+
+\begin{corollary}\label{cor:real-components}
+  Let $R$ be a regular region. Then the number of connected components of $\operatorname{bd}(R)$ is equal to the number of connected components of $\operatorname{bd}(\lVert R \rVert)$.
+\end{corollary}

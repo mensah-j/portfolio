@@ -1,0 +1,96 @@
+\subsection{Normal vector fields of cycles}
+
+In order to apply the claimed Stokes-type argument, we first develop a notion of normal vector fields for cycles in $\mathbb{Z}^2$. 
+
+\begin{definition}
+  Let $\gamma \colon \mathbb{Z}/\ell\mathbb{Z} \to \mathbb{Z}^2$ be a cycle. For $i \in \mathbb{Z}/\ell\mathbb{Z}$, define
+  \begin{align}
+    [\mathcal{N}_+\gamma](i) &= -J\big(\gamma (i+1) - \gamma(i)\big) \\
+    [\mathcal{N}_-\gamma](i) &= +J\big(\gamma (i-1) - \gamma(i)\big)
+  \end{align}
+  to be the \emph{outward left/right normal vectors} at $\gamma(i)$.
+\end{definition}
+The two vector fields correspond to using the forward and backward finite differences of the cycle $\gamma$ as tangent vectors. At corner points, these give different results, so we consider both fields to capture all normal directions. Given an isometry $\phi \colon \mathbb{Z}^2 \to \mathbb{Z}^2$, we have 
+\begin{equation}
+  \mathcal{N}_{\pm} (\phi \circ \gamma) = \det(\phi) \cdot (\phi \circ \mathcal{N}_{\pm} \gamma).
+\end{equation}
+Furthermore, under time reversal, we have 
+\begin{equation}
+  \mathcal{N}_{\pm} \overline{\gamma} = - \mathcal{N}_{\mp} \overline{\gamma}.
+\end{equation}
+As one might expect, for a positively-oriented cycle bounding a simple region, the outward normal vector fields point \say{away} from the region.
+
+\begin{proposition}
+  If $R \subseteq \mathbb{Z}^2$ is a simple region, then there exists a traversal $\gamma \colon \mathbb{Z}/\ell\mathbb{Z} \to \mathbb{Z}^2$ of the boundary such that 
+  \begin{equation}
+    \gamma(i) + [\mathcal{N}_+\gamma](i) \not\in \operatorname{int}(R).
+  \end{equation}
+  for each $i \in \mathbb{Z}/\ell\mathbb{Z}$.
+\end{proposition}
+\begin{proof}
+  Define a \emph{simple pair} to be a tuple $(\alpha, S)$ consisting of a cycle $\alpha \colon \mathbb{Z}/m\mathbb{Z} \to \mathbb{Z}^2$ and a simple region $S \subseteq \mathbb{Z}^2$ such that $\alpha$ traverses the boundary of $S$.
+  For such pairs, define
+  \begin{equation}
+    \mathcal{I}_{\pm}(\alpha, S) = \Big\{i \in \mathbb{Z}/m\mathbb{Z} \Bigm| \alpha(i) + [\mathcal{N}_{\pm}\alpha](i) \not\in \operatorname{int}(S) \Big\}.
+  \end{equation}
+  We wish to find a cycle $\gamma \colon \mathbb{Z}/\ell\mathbb{Z} \to \mathbb{Z}^2$ traversing $\operatorname{bd}(R)$ such that $\mathcal{I}_{\pm}(\gamma, R) = \mathbb{Z}/\ell\mathbb{Z}$.
+  To this end, consider the product partial order $\preceq$ on $\mathbb{Z}^2$ defined by
+  \begin{equation}
+    (x_1, x_2) \preceq (y_1, y_2) \iff x_1 \leq x_2 \text{ and } y_1 \leq y_2.
+  \end{equation}
+  Since $R$ is finite, there exists a maximal element $(x_0, y_0)$ in this partial order, which must lie on the boundary. 
+  By maximality, the two neighboring boundary points must be given by $(x_0 - 1, y_0)$ and $(x_0, y_0 - 1)$.
+  Now, let $\gamma \colon \mathbb{Z}/\ell \mathbb{Z} \to \mathbb{Z}^2$ be the unique traversal of $\operatorname{bd}(R)$ such that 
+  \begin{equation}
+    \gamma(-1) = (x_0, y_0 - 1), \quad \quad
+    \gamma(0)   = (x_0, y_0),     \quad \quad
+    \gamma(+1) = (x_0 - 1, y_0).
+  \end{equation}
+  We claim that $\gamma$ is our desired cycle. So far, \eqref{} implies that $0 \in \mathcal{I}_{\pm}(\gamma, R)$. To conclude the same for the rest of the indices, we make use of a symmetry argument and apply strong induction. Fix an orientation-reversing isometry $\phi \colon \mathbb{Z}^2 \to \mathbb{Z}^2$. By \eqref{} and \eqref{},
+  \begin{equation}
+    \mathcal{I}_{-}(\gamma, R) = -\mathcal{I}_{+}(\phi \circ \overline{\gamma}, \phi(R)).
+  \end{equation}
+  Furthermore, $\angle \gamma (0) = \angle (\phi \circ \overline{\gamma}) (0) = +\pi/2$. So, we finish by proving the following claim:
+  \begin{itemize}
+    \item[(\star)] \emph{If $(\alpha, S)$ is a simple pair such that $\angle \alpha (0) = +\pi/2$ and}
+    \begin{equation}
+      \{ 0, -1, \ldots, -i \} \subseteq \mathcal{I}_{+}(\alpha, S),
+    \end{equation}
+    \emph{then $-(i+1) \in \mathcal{I}_{+}(\alpha, S)$}.
+  \end{itemize}
+  Let $j = -i$ for convenience.
+  By choosing a suitable orientation-preserving isometry, we may assume that $\alpha(j-1) = (-1, 0)$ and $\alpha(j) = (0, 0)$. Then 
+  \begin{equation}
+    \alpha(j-1) + [\mathcal{N}_+\alpha](j-1) = (-1, -1),
+  \end{equation}
+  which we wish to show is not an interior point. There are three cases:
+  \begin{enumerate}
+    \item If $\angle \alpha (j) = 0$, then $\alpha(j) + [\mathcal{N}_+\alpha](j) = (0, -1)$, which is not an interior point by hypothesis.
+    It also cannot be another boundary point, since the boundary is a cycle.
+    Thus, it must lie in the exterior.
+    It follows that $(-1, -1) \not\in \operatorname{int}(S)$.
+
+    \item If $\angle \alpha (j) = +\pi/2$, then $\alpha(j) + [\mathcal{N}_+\alpha](i) = (1, 0)$, which is not an interior point by hypothesis.
+    By the same reasoning as before, it must lie in the exterior, so $(0, -1)$ is also not an interior point. 
+    Again, for the same reason, this point must also lie in the exterior.
+    It follows that $(-1, -1) \not\in \operatorname{int}(S)$.
+
+    \item If $\angle \alpha (j) = -\pi/2$, then $\alpha(j) + [\mathcal{N}_+\alpha](i) = (0, -1)$.
+    Since $\angle \alpha(0) = +\pi/2$, we have $j \neq 0$, so the inductive hypothesis must also hold for $j + 1$. 
+    There are three subcases:
+    \begin{enumerate}
+      \item If $\alpha(j+2) = (-1,-1)$, then $(-1, -1) \in \operatorname{bd}(S)$, so it cannot be an interior point.
+      \item If $\alpha(j+2) = (0, -2)$, then 
+      \begin{equation}
+        \alpha(j + 1) + [\mathcal{N}_+\alpha](j + 1) = (-1, -1),
+      \end{equation}
+      which cannot be an interior point by the induction hypothesis.
+      \item If $\alpha(j+2) = (1, -1)$, then
+      \begin{equation}
+        \alpha(j + 1) + [\mathcal{N}_+\alpha](j + 1) = (0, -2),
+      \end{equation}
+      which cannot be an interior the induction hypothesis. This forces $(0, -2)$ to be an exterior point, which in turn implies $(1, -1)$ cannot be an interior point.
+    \end{enumerate}
+  \end{enumerate}
+  In each case, $(-1, -1) \not\in \operatorname{int}(S)$, so the inductive step holds. The conclusion follows.
+\end{proof}

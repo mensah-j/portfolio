@@ -5,15 +5,8 @@
 \usepackage{setspace}         % line spacing
 \usepackage[bottom]{footmisc} % footnotes at bottom
 \usepackage{indentfirst}      % indent first paragraph
-\usepackage{titlesec}         % customize section titles
-\usepackage[center]{titlesec} % center titles
-
-% ==============================
-% Fonts
-% ==============================
-\usepackage[T1]{fontenc}
-\usepackage[mlmodern]{fontsetup}
-\usepackage{mathrsfs}         % math script fonts
+\usepackage{titlesec}
+\usepackage{fancyhdr}
 
 % ==============================
 % AMS / Math packages
@@ -22,27 +15,51 @@
 \usepackage{mathtools}        % extends amsmath
 \usepackage{nccmath}          % additional math environments
 \usepackage{nicefrac}         % for inline fractions
+\usepackage{stmaryrd}
+
+% ==============================
+% Fonts
+% ==============================
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{newcomputermodern}
+\usepackage{mathrsfs}         % math script fonts
+\usepackage[font=scriptsize,labelfont={bf, scriptsize}]{caption}
 
 % ==============================
 % Graphics & Diagrams
 % ==============================
+\usepackage{subcaption}
 \usepackage{graphicx}         % include graphics
 \usepackage{tikz}             % general TikZ
 \usepackage{tikz-cd}          % commutative diagrams
+\usepackage{tikz-3dplot}
 \usepackage{quiver}           % category-style diagrams
+\usetikzlibrary{patterns}
 
 % ==============================
 % Hyperlinks / Colors
 % ==============================
 \usepackage{xcolor}
-\usepackage{hyperref}
-\hypersetup{
+\definecolor{darkred}{RGB}{128,0,0} % or {HTML}{800000}
+
+\usepackage[
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    citecolor=blue
-}
+    linkcolor=darkred,   % affects internal links (sections, eqs, etc.)
+    citecolor=darkred,   % citation links
+    urlcolor=darkred     % URLs
+]{hyperref}
+
+% turn off link color *inside the TOC only*
+\usepackage{etoolbox}
+\makeatletter
+\pretocmd{\tableofcontents}{%
+  \hypersetup{linkcolor=black}%
+}{}{}
+\apptocmd{\tableofcontents}{%
+  \hypersetup{linkcolor=darkred}%
+}{}{}
+\makeatother
 
 % ==============================
 % Lists & formatting
@@ -51,6 +68,8 @@
 \usepackage{dirtytalk}        % quotations
 
 % ==============================
-% Patch / tweaks
+% Patch / tweaks 
 % ==============================
 \usepackage{xpatch}           % patch existing commands
+\usepackage{import}
+\usepackage[style=alphabetic]{biblatex}

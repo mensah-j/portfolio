@@ -1,0 +1,27 @@
+\begin{corollary}\label{cor:regular-pair}
+  If $R \subseteq \mathbb{Z}^2$ is simple, then $R$ does not admit any pair-free domino tilings.
+\end{corollary}
+
+\subsection{Divergence of a domino tiling}
+
+In general, for a subset $R \subseteq \mathbb{Z}^d$ and a tiling $T$ of $R$, we may  define $\delta_T \colon R \to T$ to be the map taking a point to the unique domino containing it, and define the \emph{divergence} of $T$ by
+\begin{equation}
+  (\operatorname{div} T)(Q) = \frac{1}{2^{d}}\sum_{q \in Q} \iota(\delta_T(q); Q).
+\end{equation}
+The quantity's name is justified as follows. First, define $\sigma_T \colon R \to R$ to be the map taking a point to the other point in its containing domino. Then, if one realizes $R$ as the union of closed cubes
+\begin{equation}
+\Omega_R = \bigcup_{q \in R} \overline{B_{1/2}(q)},
+\end{equation}
+and defines the vector field
+\begin{equation}
+X_T(p) = 
+\begin{cases}
+  \sigma_T(q) - q &\text{if } p \in B_{1/2}(q) \text{ for some } q \in R \\
+  0 &\text{otherwise}
+\end{cases},
+\end{equation}
+then the divergence at a lattice cube $Q \cong \{0,1\}^d$ centered at $p \in \frac{1}{2}\mathbb{Z}^d$ is given by
+\begin{equation}
+(\operatorname{div} T)(Q) = \lim_{s \to 1^{-}} \, \frac{1}{\operatorname{vol}_{d-1} (\partial B_{2s}(p))} \int_{\partial B_{2s}(p)} X_T \cdot \mathbf{n}
+\end{equation}
+This may be compared with divergence of a smooth vector field, in which case the limit is to be taken as $s \to 0$.

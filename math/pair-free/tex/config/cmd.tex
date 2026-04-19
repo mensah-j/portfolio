@@ -36,7 +36,6 @@
 % ==============================
 % Overbars / miscellaneous formatting
 % ==============================
-\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \renewcommand{\d}{{\rm d}}
 \renewcommand{\triangledown}{\rotatebox[y=4px]{180}{$\triangle$}}
 \newcommand{\bydef}{\mathbin{\overset{\rm def}{=}}}
@@ -58,6 +57,7 @@
 % Miscellaneous operators
 % ==============================
 \DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\trace}{trace}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Specmax}{Specmax}
@@ -89,3 +89,13 @@
 \DeclareMathOperator{\uHom}{\underline{Hom}}
 \DeclareMathOperator{\sHom}{\mathscr{Hom}}
 \DeclareMathOperator{\colim}{colim}
+
+\newcommand{\conv}{%
+  \mathop{\scalebox{2.5}{\raisebox{-0.2ex}{$\ast$}}
+  }
+}
+
+\AtBeginDocument{%
+  \let\varnothing\relax
+  \DeclareMathSymbol{\varnothing}{\mathord}{AMSb}{"3F}%
+}

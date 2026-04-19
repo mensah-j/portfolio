@@ -1,0 +1,26 @@
+\subsection{The polygon associated to a regular region}
+We define a polygonal region of $\mathbb{R}^2$ as a space locally modeled on \say{wedges}. In particular, let $\arg \colon \mathbb{R}^2 \to [0, 2\pi)$ be a branch of the argument function, and for $\theta \in (-\pi, \pi]$, define the \emph{closed sector with exterior angle $\theta$} to be the subset
+\begin{equation}
+  W_{\theta} = \{z \mid 0 \leq \arg(z) \leq \pi + \theta \} \subseteq \mathbb{R}^2
+\end{equation}
+For a subset $S \subseteq \mathbb{R}^2$ and $p \in S$, define a \emph{sector chart} at $p$ to be a tuple $(U, V, \phi)$ consisting of an open neighborhood $U$ of $p$, an open neighborhood $V$ of the origin, and an isometry
+\begin{equation}
+  \phi \colon U \cap S \to V \cap W_\theta
+\end{equation} 
+or some $\theta \in (-\pi, \pi]$ which takes $p$ to the origin.
+If such a chart exists, then $\theta = \theta_S(p)$ is uniquely determined, and is said to be the \emph{exterior angle} at $p$. With this, we define a \emph{polygonal region} to be a subset $P \subseteq \mathbb{R}^2$ which admits a sector chart at each point $p \in P$. The exterior angle function partitions the region into three sets:
+\begin{enumerate}
+  \item a set $\operatorname{int}(P)$ of  \emph{interior points}, whose exterior angles are all equal to $\pi$,
+  \item a set $\operatorname{bd}(P)$ of \emph{boundary points}, whose exterior angles are all equal to $0$, and
+  \item a set $\operatorname{cr}(P)$ of \emph{corner points} or \emph{vertices}, whose exterior angles are not equal to $\pi$ or $0$.
+\end{enumerate}
+Note that the interior and boundary of a polygonal region as defined above agree with the usual topological definitions. Within a sector chart, there must be at most one corner point, so $\operatorname{cr}(P)$ is isolated. Thus, for a bounded polygonal region, there exist finitely many corners. We reformulate a well-known special case of the Gauss-Bonnet theorem in terms of the exterior angle function.
+\begin{theorem}\label{thm:gauss-bonnet}
+  Let $P \subseteq \mathbb{R}^2$ be a connected, bounded, polygonal region with $b$ boundary components. Then
+  \begin{equation}
+    \sum_{p \, \in \, \operatorname{cr}(P)} \!\!\! \theta_P(p) = 2(2-b)\pi. 
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  See \cite{docarmo1976}.
+\end{proof}

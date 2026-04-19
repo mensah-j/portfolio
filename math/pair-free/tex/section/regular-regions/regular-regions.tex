@@ -1,0 +1,81 @@
+\section{Regular regions}\label{sec:basics}
+
+Unless otherwise stated, our preferred choice of norm on $\mathbb{R}^d$ and $\mathbb{Z}^d$ will the maximum norm defined by $|x|_{\rm max} = \max |x_i|$.
+Given $p \in \mathbb{R}^d$, define its \emph{box neighborhood} by
+\begin{equation}
+  B(p) = \{q \in \mathbb{R}^d \mid |q - p|_{\rm max} < 1 \},
+\end{equation}
+and given  $p \in \mathbb{Z}^d$, define its \emph{lattice neighborhood} by
+\begin{equation}
+  B'(p) = \{q \in \mathbb{Z}^d \mid |q - p|_{\rm max} \leq 1 \}.
+\end{equation}
+For a subset $R \subseteq \mathbb{Z}^d$, define its \emph{exterior} to be the complement $\operatorname{ext}(R) = \mathbb{Z}^d \setminus R$, its \emph{interior} to be
+\begin{equation}
+  \operatorname{int}(R) = \{p \in R \mid B'(p) \subseteq R \},
+\end{equation}
+and its \emph{boundary} $\operatorname{bd}(R)$ to be the complement of the interior in $R$.
+
+\begin{definition}
+  A subset $R \subseteq \mathbb{Z}^2$ is said to be a \emph{regular region} if $R$ is connected, $\operatorname{int}(R)$ is nonempty, and $\operatorname{bd}(R)$ is isomorphic to a disjoint union of cycle graphs.
+\end{definition}
+
+Regular regions serve as an analogue to $2$-manifolds with boundary in $\mathbb{R}^2$.
+If a regular region has only one boundary component, we say it is \emph{simple}.
+The condition that the interior be nonempty guarantees that a regular region locally resembles a two-dimensional grid, in the sense given by the following proposition.
+
+\begin{proposition}\label{prop:gridlike}
+Let $R \subseteq \mathbb{Z}^2$ be a regular region. If $e$ is an edge of $R$, then there exists a lattice square $Q \subseteq R$ containing $e$.
+\end{proposition}
+\begin{proof}
+  Let us say an edge $e \subseteq R$ is \emph{good} if there exists a square $Q \subseteq R$ containing $e$, and \emph{bad} otherwise.
+  Note that an edge contained in the lattice neighborhood of an interior point must already be good, so it suffices to show that edges in $\operatorname{bd}(R)$ are good.
+
+  We show that each boundary cycle contains at least one good edge.
+  Suppose, for the sake of contradiction, that there exists a cycle $C \subseteq \operatorname{bd}(R)$ consisting of only bad edges.
+  Each point in $C$ must have exactly two of its lattice neighbors in $C$, and the remaining two in the exterior of $R$.
+  It follows that $C$ is a connected component of $R$, so $R = C$, which is a contradiction since $R$ has nonempty interior.
+  Hence, there must exist a good edge in any given boundary cycle.
+
+  Now, take a traversal $(q_{i})_{i \in \mathbb{Z}/\ell\mathbb{Z}}$ of a boundary cycle $C$ and define $e_i = \{q_i, q_{i+1}\}$ to be its $i$th edge. 
+  We conclude by proving the following claim:
+  \begin{itemize}
+    \item[($\star$)] \emph{If $e_{i}$ is good, then $e_{i+1}$ is also good}.
+  \end{itemize}
+  By choosing a suitable isometry, we may assume that $q_{i} = (1, 0)$ and $q_{i+1} = (0, 0)$.
+  There are two cases: 
+  \begin{enumerate}
+    \item Suppose $q_{i+2} = (-1, 0)$. By hypothesis, there exists a subsquare containing $(0, 0)$, which after a suitable reflection, contains $(0, 1)$.
+    Since the boundary is a cycle, this cannot be another boundary point, so it must be an interior point.
+    
+    It follows that $e_{i+1} = \{q_{i+1}, q_{i+2}\} \subseteq B'(0, 1)$ is good.
+
+    \item Otherwise, after a suitable reflection, we may assume $q_{i+2} = (0, 1)$. By hypothesis, there exists a subsquare containing $(0, 0)$. If this square already contains $q_{i+2}$, then we are done.
+
+    If not, then the square contains $(-1, 0)$. 
+    Since the boundary is a cycle, this cannot be another boundary point, so it must be an interior point, which implies $(0, -1) \in R$.
+    For the same reason, this is also an interior point.
+    
+    It follows that $e_{i+1} = \{q_{i+1}, q_{i+2}\} \subseteq B'(0, -1)$ is good.
+  \end{enumerate}
+  Therefore, every edge in $C$ is good, which is what we wanted to show.
+\end{proof}
+
+\begin{proposition}\label{prop:big-cycles}
+  Let $R \subseteq \mathbb{Z}^2$ be a regular region and $C$ be a conneted component of $\operatorname{bd}(R)$. Then $|C| > 4$.
+\end{proposition}
+\begin{proof}
+  Suppose, for the sake of contradiction, that $|C| \leq 4$. 
+  Since $C$ is a cycle on the lattice graph, we must have $C \cong \{0,1\}^2$.
+  Let
+  \begin{equation}
+    H = \{p \in \mathbb{Z}^2 \setminus C \mid B'(p) \cap C \neq \varnothing \}.
+  \end{equation}
+  Note that $C$ must have an adjacent point $q \in R \setminus C$, which necessarily belongs to $H$. If this were not the case, then $C$ would be a connected component of $R$, implying $R = C$, which is impossible since $R$ must have nonempty interior. 
+  Since $C$ is a connected component of the boundary, $q$ must also be an interior point. 
+  
+  By choosing a suitable isometry, we may assume that $C = \{0, 1\}^2$ and $q = (-1, 0)$. Then $B'(-1, 0) \subseteq R$; of these points, $(-1, 1)$ and $(0, -1)$ are neighbors of $C$, so these must also be interior points. Then
+  \begin{equation}
+    B(0, 0) \subseteq B'(-1, 0) \cup B'(0, -1) \cup C \subseteq R,
+  \end{equation}
+  which is a contradiction, since the origin is a boundary point. The conclusion follows.
+\end{proof}

@@ -1,0 +1,91 @@
+\section{Pair-free tilings of regular regions}\label{sec:main}
+Before stating the main theorem, we first prove a lemma instrumental to our upcoming argument.
+To begin, define a \emph{domino indicator function} as follows: given a domino $\delta \subseteq \mathbb{Z}^d$ and a cube $Q \cong \{0,1\}^d$, let 
+\begin{equation}
+  \iota(\delta; Q) =
+  \begin{cases}
+    +1 &\text{if } \delta \not\subseteq Q \\
+    -1 &\text{if } \delta \subseteq Q  \\
+  \end{cases}.
+\end{equation}
+In other words, the indicator takes on the value $+1$ when a domino is \say{leaving} the cube, and $-1$ when the domino is fully inside the cube.
+\begin{lemma}\label{lem:exterior-angle}
+  Let $R \subseteq \mathbb{Z}^2$ be a regular region. Then $\lVert R \rVert$ is a polygonal region. Furthermore, if $q \in \operatorname{bd}(R)$, then
+  \begin{equation}\label{eq:flux-inequality}
+    \sum_{\substack{Q \mskip 1mu \subseteq \mskip 0.3mu R \\[0.2ex] Q \ni q}} \iota(\delta; Q) \leq -\frac{2\theta_{\lVert R \rVert}(q)}{\pi}.
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  By Proposition \ref{prop:real-boundary}, $\operatorname{bd} (\lVert R \rVert)$ is covered by the collection of box neighborhoods centered at each point of $\operatorname{bd} R$. Since a sector itself is a polygonal region, it suffices to show that for each $q \in \operatorname{bd} R$, there exists some $\theta(q) \in (-\pi, \pi]$  satisfying \eqref{eq:flux-inequality} such that
+  \begin{equation}
+    B(q)  \cap \lVert R \rVert \cong B(0) \cap W_{\theta(q)}.
+  \end{equation}
+  Let $q'$ be a neighboring boundary point. By Proposition \ref{prop:gridlike}, there exists a subsquare $Q_1 \subseteq R$ containing both $q$ and $q'$, and by choosing a suitable isometry, we may assume that 
+  \begin{equation}
+    q = (0, 0), \quad q' = (1, 0); \quad Q_1 = \{ (0, 0), (1, 0), (0, 1), (1, 1)\}.
+  \end{equation}
+  There are three cases:
+  \begin{enumerate}
+      \item Suppose $(0, 1) \in \operatorname{bd}(R)$.
+      We show that $(0, -1) \not\in R$ and $(-1, 0) \not\in R$.
+      Indeed, if one of these points belongs to $R$, then it must be an interior point, since the origin cannot have another neighboring boundary point.
+      This implies that both points belong to $R$, since they are each contained in the other's lattice neighborhood.
+      Then
+      \begin{equation}
+        B'(0, 0) \subseteq Q_1 \cap B'(0, -1) \cup B'(-1, 0) \subseteq R,
+      \end{equation}
+      which implies the origin is an interior point. This is a contradiciton, so $(0, -1) \not\in R$ and $(-1, 0) \not\in R$. It follows that $B(q) \cap \lVert R \rVert = B(0) \cap W_{\pi/2}$.
+      Furthermore, there is exactly one subsquare containing the origin, namely
+      \begin{equation}
+        Q_1 = \{ (0, 0), (+1, 0), (0, +1), (+1, +1)\}.
+      \end{equation}
+      Any domino $\delta \subseteq R$ containing $q$ must be contained within a subsquare by Proposition \ref{prop:gridlike}; the only such one is $Q_1$. Therefore,
+      \begin{equation}
+        \sum_{\substack{Q \mskip 1mu \subseteq \mskip 0.3mu R \\[0.2ex] Q \ni q}} \iota(\delta, Q) = -1,
+      \end{equation}
+      so the inequality \eqref{eq:flux-inequality} is also satisfied.
+
+      \item Suppose $(-1, 0) \in \operatorname{bd}(R)$. 
+      Then $(0, 1)$ must be an interior point, since it cannot be another boundary point.
+      It follows that $(-1, 1) \in R$. 
+      Additionally, $(0, -1) \not\in R$, for if it did belong to $R$, then it would also be an interior point, so
+      \begin{equation}
+        B'(0, 0) \subseteq B'(0, 1) \cup B'(0, -1) \subseteq R,
+      \end{equation}
+      which implies the origin is an interior point.
+      This is a contradiction, so $(0, -1) \not \in R$.
+      It follows that $B(q) \cap \lVert R \rVert = B(0) \cap W_{\pi}$.
+      Furthermore, there are exactly two subsquares containing the origin, namely
+      \begin{align}
+        Q_1 &= \{ (0, 0), (+1, 0), (0, +1), (+1, +1)\} \\
+        Q_2 &= \{ (0, 0), (-1, 0), (0, +1), (-1, +1)\}.
+      \end{align}
+      Any domino $\delta \subseteq R$ containing $q$ must be contained within at least one of these subsquare by Proposition \ref{prop:gridlike}. Therefore,
+      \begin{equation}
+        \sum_{\substack{Q \mskip 1mu \subseteq \mskip 0.3mu R \\[0.2ex] Q \ni q}} \iota(\delta, Q) \leq -1 + 1 = 0,
+      \end{equation}
+      so the inequality \eqref{eq:flux-inequality} is also satisfied.
+      \item Suppose $(0, -1) \in \operatorname{bd}(R)$. 
+      Then $(0, 1)$ must be an interior point, since it cannot be another boundary point.
+      It follows that $(-1, 0) \in R$, which again must be an interior point, since it also cannot be another boundary point.
+      Additionally, $(1, -1) \not\in R$, for if it did belong to $R$, then
+      \begin{equation}
+        B'(0, 0) \subseteq B'(0, 1) \cup B'(-1, 0) \cup \{(1, -1)\} \subseteq R,
+      \end{equation}
+      which implies the origin is an interior point.
+      This is a contradiction, so $(1, -1) \not \in R$.
+      It follows that $B(q) \cap \lVert R \rVert = B(0) \cap W_{-\pi/2}$.
+      Furthermore, there are exactly three subsquares containing the origin, namely
+      \begin{align}
+        Q_1 &= \{ (0, 0), (+1, 0), (0, +1), (+1, +1)\} \\
+        Q_2 &= \{ (0, 0), (-1, 0), (0, +1), (-1, +1)\} \\
+        Q_3 &= \{ (0, 0), (-1, 0), (0, -1), (-1, -1)\}.
+      \end{align}
+      Any domino $\delta \subseteq R$ containing $q$ must be contained within at least one of these subsquares. Therefore,
+      \begin{equation}
+        \sum_{\substack{Q \mskip 1mu \subseteq \mskip 0.3mu R \\[0.2ex] Q \ni q}} \iota(\delta, Q) \leq -1 + 1 + 1 = 1,
+      \end{equation}
+      so the inequality \eqref{eq:flux-inequality} is also satisfied.
+    \end{enumerate}
+    The conclusion follows.
+\end{proof}
